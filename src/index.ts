@@ -1,5 +1,5 @@
 import { GraphQLClient } from 'graphql-request';
-import { getSdk } from './generated/sdk';
+import { getSdk, type Sdk } from './generated/sdk';
 
 /**
  * Options for creating a Plain SDK client
@@ -38,7 +38,7 @@ export interface PlainClientOptions {
  * const threads = await client.Threads({ customerId: 'c_123' });
  * ```
  */
-export function createPlainClient(options: PlainClientOptions) {
+export function createPlainClient(options: PlainClientOptions): Sdk {
   if (!options.apiKey) {
     throw new Error('apiKey is required');
   }
