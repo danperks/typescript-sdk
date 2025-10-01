@@ -1,0 +1,18 @@
+overwrite: true
+schema: ./src/generated/schema.graphql
+generates:
+  ./src/generated/operations.graphql:
+    plugins:
+      - ./packages/codegen-operations/dist/index.js
+    config:
+      maxDepth: 1
+      skipTypes:
+        - Node
+        - PageInfo
+        - Actor                      # Union with circular deps (refs UserActor -> User -> Label -> Actor)
+        - InternalActor              # Union with circular deps (refs UserActor -> User -> Label -> Actor)
+        - Entry                      # Union type
+        - TierMembership             # Union type
+        - HelpCenterArticleGroup     # Circular reference with HelpCenterArticle
+      generateQueries: true
+      generateMutations: true

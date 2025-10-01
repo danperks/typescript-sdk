@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__fetch__fetch",
+      "Bash(npm install)",
+      "Bash(npm run generate:schema:*)",
+      "Bash(npm run generate:sdk:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx tsx:*)",
+      "Bash(npm run generate:client:*)",
+      "Bash(npm run generate:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run generate:operations:*)",
+      "Bash(git checkout:*)",
+      "Read(///**)",
+      "Bash(awk:*)",
+      "Bash(for line in 2604 4573 5469 6983 6989 7043 7328 8641 11056)",
+      "Bash(npm run build:plugins:*)",
+      "Bash(tee:*)",
+      "Bash(git branch:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

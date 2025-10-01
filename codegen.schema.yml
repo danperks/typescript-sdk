@@ -1,0 +1,9 @@
+overwrite: true
+schema: https://core-api.uk.plain.com/graphql/v1/schema.graphql
+generates:
+  ./src/generated/schema.graphql:
+    plugins:
+      - schema-ast
+  ./src/generated/introspection.json:
+    plugins:
+      - introspection

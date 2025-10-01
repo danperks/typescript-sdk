@@ -1,0 +1,17 @@
+overwrite: true
+schema: ./src/generated/schema.graphql
+documents:
+  - ./src/generated/operations.graphql
+generates:
+  ./src/generated/sdk.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-graphql-request
+    config:
+      rawRequest: false
+      skipTypename: false
+      preResolveTypes: false
+      namingConvention:
+        typeNames: pascal-case#pascalCase
+        enumValues: keep

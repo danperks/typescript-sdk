@@ -1,0 +1,22 @@
+{
+  "name": "@plain-sdk/codegen-operations",
+  "version": "0.1.0",
+  "description": "GraphQL Codegen plugin to auto-generate operations and fragments",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "peerDependencies": {
+    "graphql": "^16.8.1"
+  },
+  "dependencies": {
+    "@graphql-codegen/plugin-helpers": "^5.0.0",
+    "@graphql-codegen/visitor-plugin-common": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  }
+}

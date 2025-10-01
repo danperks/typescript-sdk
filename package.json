@@ -1,0 +1,52 @@
+{
+  "name": "@plain/sdk",
+  "version": "0.1.0",
+  "description": "The Plain Client SDK for interacting with the Plain GraphQL API",
+  "author": "Plain",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:plugins": "cd packages/codegen-operations && npm run build",
+    "generate:schema": "graphql-codegen --config codegen.schema.yml",
+    "generate:operations": "npm run build:plugins && graphql-codegen --config codegen.operations.yml",
+    "generate:sdk": "graphql-codegen --config codegen.sdk.yml",
+    "generate": "npm run generate:schema && npm run generate:operations && npm run generate:sdk",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run generate && npm run build"
+  },
+  "dependencies": {
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/introspection": "^4.0.0",
+    "@graphql-codegen/schema-ast": "^4.0.0",
+    "@graphql-codegen/typescript": "^4.0.1",
+    "@graphql-codegen/typescript-graphql-request": "^6.2.0",
+    "@graphql-codegen/typescript-operations": "^4.0.1",
+    "@types/node": "^20.10.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "plain",
+    "graphql",
+    "sdk",
+    "api",
+    "client"
+  ]
+}
