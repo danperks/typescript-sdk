@@ -1,7 +1,7 @@
 import {
 	type CustomerFieldsFragment,
-	createPlainClient,
 	type ThreadFieldsFragment,
+	createPlainClient,
 } from "../src";
 
 // Check for API key
@@ -108,7 +108,6 @@ function processCustomer(customer: CustomerFieldsFragment) {
 		email: customer.email.email,
 		isVerified: customer.email.isVerified,
 		createdDate: new Date(customer.createdAt.iso8601),
-		status: customer.status,
 	};
 }
 
@@ -183,18 +182,23 @@ async function threadLabelsExample() {
 			"Added labels:",
 			addResult.addLabels.labels.map((l) => l.labelType.name),
 		);
-	}
 
-	// Remove labels
-	const removeResult = await client.removeLabels({
-		input: {
-			threadId,
-			labelTypeIds: ["lt_billing"],
-		},
-	});
+		// Remove labels using the actual label IDs
+		const labelIdsToRemove = addResult.addLabels.labels
+			.filter((l) => l.labelType.id === "lt_billing")
+			.map((l) => l.id);
 
-	if (removeResult.removeLabels.thread) {
-		console.log("Thread updated:", removeResult.removeLabels.thread.id);
+		if (labelIdsToRemove.length > 0) {
+			const removeResult = await client.removeLabels({
+				input: {
+					labelIds: labelIdsToRemove,
+				},
+			});
+
+			if (removeResult.removeLabels.thread) {
+				console.log("Thread updated:", removeResult.removeLabels.thread.id);
+			}
+		}
 	}
 }
 
