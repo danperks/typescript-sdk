@@ -249,14 +249,6 @@ async function main() {
 		}
 
 		console.log("\n✅ Complete!");
-		console.log("\n💡 SDK Usage Demonstrated:");
-		console.log("   ✓ Workspace queries");
-		console.log("   ✓ Customer queries with filtering");
-		console.log("   ✓ Thread queries and pagination");
-		console.log("   ✓ Detailed object fetching");
-		console.log("   ✓ Nested relationships (customer → threads → labels)");
-		console.log("   ✓ Timeline entries (messages, emails, notes, events)");
-		console.log("   ✓ All types are fully typed for autocomplete!");
 	} catch (error) {
 		console.error("❌ Error:", error);
 		process.exit(1);
