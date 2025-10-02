@@ -25,6 +25,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: npm ci
@@ -44,26 +45,27 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          git diff --exit-code src/generated/ src/client.ts || echo "changes=true" >> $GITHUB_OUTPUT
+          git diff --exit-code src/generated/ || echo "changes=true" >> $GITHUB_OUTPUT
 
-      - name: Create Pull Request
+      - name: Configure Git
         if: steps.check_changes.outputs.changes == 'true'
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'chore: update generated SDK'
-          title: 'chore: Update generated SDK from Plain API'
-          body: |
-            This PR updates the SDK to match the latest Plain GraphQL API schema.
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-            ## Changes
-            - Updated GraphQL schema
-            - Regenerated SDK types and methods
-            - Updated client methods
+      - name: Bump version
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          npm version patch -m "chore: auto-update SDK to v%s"
+          echo "NEW_VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
 
-            Please review the changes and merge if everything looks correct.
-          branch: update-sdk
-          delete-branch: true
-          labels: |
-            automated
-            sdk-update
+      - name: Commit and push
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git push origin main --follow-tags
+
+      - name: Publish to npm
+        if: steps.check_changes.outputs.changes == 'true'
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

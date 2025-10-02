@@ -4,6 +4,13 @@
   "description": "The Plain Client SDK for interacting with the Plain GraphQL API",
   "author": "Plain",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/team-plain/plain-sdk.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
