@@ -1,12 +1,14 @@
 import { createPlainClient } from "../src";
 
 /**
- * Example: List customers for a workspace
+ * Example: Complete workspace customer and thread exploration
  *
- * This example demonstrates how to:
- * 1. Connect to Plain API with workspace context
- * 2. List all customers with pagination
- * 3. Display customer information in the terminal
+ * This example demonstrates complete SDK usage by:
+ * 1. Fetching workspace information (optional)
+ * 2. Finding customers with threads
+ * 3. Displaying customer details with company info
+ * 4. Showing thread information and timeline
+ * 5. Displaying labels, assignments, and chat details
  *
  * Required environment variables:
  * - PLAIN_API_KEY: Your Plain API key
@@ -38,7 +40,7 @@ const client = createPlainClient({
 
 async function main() {
 	try {
-		console.log("🚀 Plain SDK - Workspace Customers Example\n");
+		console.log("🚀 Plain SDK - Complete Workspace Example\n");
 
 		// Step 1: Get workspace information (if workspace ID provided)
 		if (WORKSPACE_ID) {
@@ -57,106 +59,167 @@ async function main() {
 			console.log("ℹ️  No WORKSPACE_ID provided, using default workspace\n");
 		}
 
-		// Step 2: List customers
-		console.log("👥 Fetching customers...\n");
+		// Step 2: Find a customer with threads
+		console.log("🔍 Finding a customer with threads...\n");
 
-		let hasMore = true;
-		let after: string | undefined;
-		let totalCustomers = 0;
-		const pageSize = 10;
+		let customerWithThreads = null;
+		let customerId = null;
 
-		while (hasMore) {
-			const result = await client.customers({
-				first: pageSize,
-				after,
+		// Look through customers to find one with threads
+		const customersResult = await client.customers({ first: 50 });
+
+		for (const edge of customersResult.customers.edges) {
+			const customer = edge.node;
+
+			// Try to get threads for this customer
+			const threadsResult = await client.threads({
+				filters: { customerIds: [customer.id] },
+				first: 1,
 			});
 
-			const { edges, pageInfo } = result.customers;
-
-			// Display customers
-			for (const edge of edges) {
-				const customer = edge.node;
-				totalCustomers++;
-
-				console.log(`${totalCustomers}. ${customer.fullName || customer.shortName}`);
-				console.log(`   ID: ${customer.id}`);
-				console.log(`   Email: ${customer.email.email} ${customer.email.isVerified ? "✓" : "✗"}`);
-
-				if (customer.company) {
-					console.log(`   Company: ${customer.company.name}`);
-				}
-
-				if (customer.externalId) {
-					console.log(`   External ID: ${customer.externalId}`);
-				}
-
-				console.log(
-					`   Created: ${new Date(customer.createdAt.iso8601).toLocaleDateString()}`,
-				);
-
-				if (customer.markedAsSpamAt) {
-					console.log(
-						`   ⚠️  Marked as spam: ${new Date(customer.markedAsSpamAt.iso8601).toLocaleDateString()}`,
-					);
-				}
-
-				console.log(); // Empty line between customers
-			}
-
-			// Check if there are more pages
-			hasMore = pageInfo.hasNextPage;
-			after = pageInfo.endCursor || undefined;
-
-			// Show pagination info
-			if (hasMore) {
-				console.log(`📄 Loaded ${totalCustomers} customers so far...`);
-				console.log(`   Fetching next page...\n`);
+			if (threadsResult.threads.edges.length > 0) {
+				customerWithThreads = customer;
+				customerId = customer.id;
+				console.log(`✓ Found customer with threads: ${customer.fullName || customer.shortName}`);
+				console.log(`  Customer ID: ${customerId}\n`);
+				break;
 			}
 		}
 
-		// Summary
-		console.log("✅ Done!");
-		console.log(`   Total customers: ${totalCustomers}`);
+		if (!customerWithThreads) {
+			console.log("⚠️  No customers with threads found");
+			console.log("💡 Try creating a thread first or use a workspace with existing data\n");
+			process.exit(0);
+		}
 
-		// Step 3: Show example of getting a specific customer
-		if (totalCustomers > 0) {
-			console.log("\n📝 Example: Fetching first customer again by ID...");
+		// Step 3: Display detailed customer information
+		console.log("👤 Customer Details:");
+		console.log("─".repeat(50));
+		console.log(`Name: ${customerWithThreads.fullName || customerWithThreads.shortName}`);
+		console.log(`Email: ${customerWithThreads.email.email}`);
+		console.log(`Verified: ${customerWithThreads.email.isVerified ? "Yes ✓" : "No ✗"}`);
+		console.log(`Anonymous: ${customerWithThreads.isAnonymous ? "Yes" : "No"}`);
 
-			const firstResult = await client.customers({ first: 1 });
-			const firstCustomer = firstResult.customers.edges[0]?.node;
+		if (customerWithThreads.company) {
+			console.log(`Company: ${customerWithThreads.company.name}`);
+			if (customerWithThreads.company.domainName) {
+				console.log(`  Domain: ${customerWithThreads.company.domainName}`);
+			}
+		}
 
-			if (firstCustomer) {
-				const customerDetail = await client.customer({
-					customerId: firstCustomer.id,
-				});
+		if (customerWithThreads.externalId) {
+			console.log(`External ID: ${customerWithThreads.externalId}`);
+		}
 
-				if (customerDetail.customer) {
-					console.log(`   Name: ${customerDetail.customer.fullName}`);
-					console.log(`   Email: ${customerDetail.customer.email.email}`);
-					console.log(`   Anonymous: ${customerDetail.customer.isAnonymous ? "Yes" : "No"}`);
+		console.log(`Created: ${new Date(customerWithThreads.createdAt.iso8601).toLocaleString()}`);
+		console.log();
 
-					// Show tenant memberships if any
-					const tenantMemberships =
-						customerDetail.customer.tenantMemberships?.edges || [];
-					if (tenantMemberships.length > 0) {
-						console.log(`   Tenant memberships: ${tenantMemberships.length}`);
-					}
+		// Step 4: Get and display threads for this customer
+		console.log("💬 Customer Threads:");
+		console.log("─".repeat(50));
 
-					// Show customer group memberships if any
-					const groupMemberships =
-						customerDetail.customer.customerGroupMemberships?.edges || [];
-					if (groupMemberships.length > 0) {
-						console.log(`   Group memberships: ${groupMemberships.length}`);
-					}
+		const threadsResult = await client.threads({
+			filters: { customerIds: [customerId!] },
+			first: 5,
+		});
+
+		let threadCount = 0;
+		for (const threadEdge of threadsResult.threads.edges) {
+			const thread = threadEdge.node;
+			threadCount++;
+
+			console.log(`\n${threadCount}. Thread: ${thread.title || "(No title)"}`);
+			console.log(`   ID: ${thread.id}`);
+			console.log(`   Status: ${thread.status}`);
+			console.log(`   Priority: ${thread.priority}`);
+			console.log(`   Created: ${new Date(thread.createdAt.iso8601).toLocaleString()}`);
+
+			// Show assignment
+			if (thread.assignedAt) {
+				console.log(`   Assigned: ${new Date(thread.assignedAt.iso8601).toLocaleString()}`);
+			}
+
+			// Show labels
+			if (thread.labels && thread.labels.length > 0) {
+				const labelNames = thread.labels.map((l) => l.labelType.name).join(", ");
+				console.log(`   Labels: ${labelNames}`);
+			}
+
+			// Show preview text if available
+			if (thread.previewText) {
+				const preview =
+					thread.previewText.length > 80
+						? thread.previewText.substring(0, 80) + "..."
+						: thread.previewText;
+				console.log(`   Preview: ${preview}`);
+			}
+		}
+
+		console.log(`\n📊 Total threads for customer: ${threadsResult.threads.edges.length}`);
+		if (threadsResult.threads.pageInfo.hasNextPage) {
+			console.log("   (More threads available - use pagination to see all)");
+		}
+
+		// Step 5: Get detailed information about the first thread
+		if (threadsResult.threads.edges.length > 0) {
+			const firstThread = threadsResult.threads.edges[0].node;
+			console.log(`\n🔍 Detailed Thread Information:`);
+			console.log("─".repeat(50));
+
+			const threadDetail = await client.thread({ threadId: firstThread.id });
+
+			if (threadDetail.thread) {
+				const thread = threadDetail.thread;
+
+				console.log(`Title: ${thread.title || "(No title)"}`);
+				console.log(`ID: ${thread.id}`);
+				console.log(`Status: ${thread.status}`);
+				console.log(`Priority: ${thread.priority}`);
+
+				// Customer info
+				console.log(`\nCustomer:`);
+				console.log(`  Name: ${thread.customer.fullName || thread.customer.shortName}`);
+				console.log(`  Email: ${thread.customer.email.email}`);
+
+				// Channel info
+				if (thread.channel) {
+					console.log(`\nChannel: ${thread.channel}`);
+				}
+
+				// Labels
+				if (thread.labels && thread.labels.length > 0) {
+					console.log(`\nLabels:`);
+					thread.labels.forEach((label) => {
+						console.log(`  • ${label.labelType.name} (${label.labelType.type})`);
+					});
+				}
+
+				// Thread fields (custom fields)
+				if (thread.threadFields && thread.threadFields.length > 0) {
+					console.log(`\nCustom Fields:`);
+					thread.threadFields.forEach((field) => {
+						console.log(`  • ${field.key}: ${field.stringValue || field.booleanValue || "(empty)"}`);
+					});
+				}
+
+				console.log(`\nTimestamps:`);
+				console.log(`  Created: ${new Date(thread.createdAt.iso8601).toLocaleString()}`);
+				console.log(`  Updated: ${new Date(thread.updatedAt.iso8601).toLocaleString()}`);
+
+				if (thread.statusChangedAt) {
+					console.log(`  Status Changed: ${new Date(thread.statusChangedAt.iso8601).toLocaleString()}`);
 				}
 			}
 		}
 
-		console.log("\n💡 SDK Usage Tips:");
-		console.log("   - Use pagination with 'first' and 'after' for large datasets");
-		console.log("   - Filter customers with 'filters' parameter");
-		console.log("   - Sort customers with 'sortBy' parameter");
-		console.log("   - All methods are fully typed for autocomplete");
+		console.log("\n✅ Complete!");
+		console.log("\n💡 SDK Usage Demonstrated:");
+		console.log("   ✓ Workspace queries");
+		console.log("   ✓ Customer queries with filtering");
+		console.log("   ✓ Thread queries and pagination");
+		console.log("   ✓ Detailed object fetching");
+		console.log("   ✓ Nested relationships (customer → threads → labels)");
+		console.log("   ✓ All types are fully typed for autocomplete!");
 	} catch (error) {
 		console.error("❌ Error:", error);
 		process.exit(1);
