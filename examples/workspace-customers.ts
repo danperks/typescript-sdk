@@ -209,6 +209,42 @@ async function main() {
 				if (thread.statusChangedAt) {
 					console.log(`  Status Changed: ${new Date(thread.statusChangedAt.iso8601).toLocaleString()}`);
 				}
+
+				// Step 6: Show timeline entries (messages/events)
+				console.log(`\n💬 Thread Timeline:`);
+				console.log("─".repeat(50));
+
+				const timelineResult = await client.timelineEntries({
+					customerId: customerId!,
+					first: 5,
+				});
+
+				if (timelineResult.timelineEntries.edges.length > 0) {
+					let entryCount = 0;
+					for (const edge of timelineResult.timelineEntries.edges) {
+						const entry = edge.node;
+						entryCount++;
+
+						console.log(`\n${entryCount}. ${entry.__typename}`);
+						console.log(`   Time: ${new Date(entry.timestamp.iso8601).toLocaleString()}`);
+						console.log(`   ID: ${entry.id}`);
+
+						// Show LLM-extracted text if available
+						if (entry.llmText) {
+							const preview = entry.llmText.length > 150
+								? entry.llmText.substring(0, 150) + "..."
+								: entry.llmText;
+							console.log(`   Content: ${preview}`);
+						}
+					}
+
+					console.log(`\n   Total timeline entries: ${timelineResult.timelineEntries.edges.length}`);
+					if (timelineResult.timelineEntries.pageInfo.hasNextPage) {
+						console.log(`   (More entries available - use pagination)`);
+					}
+				} else {
+					console.log(`   No timeline entries found`);
+				}
 			}
 		}
 
@@ -219,6 +255,7 @@ async function main() {
 		console.log("   ✓ Thread queries and pagination");
 		console.log("   ✓ Detailed object fetching");
 		console.log("   ✓ Nested relationships (customer → threads → labels)");
+		console.log("   ✓ Timeline entries (messages, emails, notes, events)");
 		console.log("   ✓ All types are fully typed for autocomplete!");
 	} catch (error) {
 		console.error("❌ Error:", error);
