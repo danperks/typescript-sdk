@@ -32,6 +32,7 @@
     "generate": "npm run generate:schema && npm run generate:operations && npm run generate:sdk",
     "build": "tsup",
     "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run generate && npm run build"
   },
   "dependencies": {

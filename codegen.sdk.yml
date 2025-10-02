@@ -12,6 +12,7 @@ generates:
       rawRequest: false
       skipTypename: false
       preResolveTypes: false
+      legacyMode: false
       namingConvention:
         typeNames: pascal-case#pascalCase
         enumValues: keep
