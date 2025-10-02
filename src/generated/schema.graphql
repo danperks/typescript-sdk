@@ -2044,13 +2044,13 @@ type CustomerCardInstanceRequestErrorDetail {
 """An invalid response body was returned from the configured API URL."""
 type CustomerCardInstanceResponseBodyErrorDetail {
   message: String!
-  responseBody: String!
+  responseBody: String! @deprecated(reason: "No longer supported, returns dummy data")
 }
 
 """A non-200 status code was returned from the configured API URL."""
 type CustomerCardInstanceStatusCodeErrorDetail {
   message: String!
-  responseBody: String!
+  responseBody: String! @deprecated(reason: "No longer supported, returns dummy data")
   statusCode: Int!
 }
 
@@ -8376,6 +8376,7 @@ type WorkspaceSlackIntegration {
   integrationId: ID!
   isReinstallRequired: Boolean!
   slackChannelName: String!
+  slackTeamId: String!
   slackTeamImageUrl68px: String
   slackTeamName: String!
   updatedAt: DateTime!

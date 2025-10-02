@@ -1413,12 +1413,10 @@ fragment CustomerCardInstanceRequestErrorDetailFields on CustomerCardInstanceReq
 
 fragment CustomerCardInstanceResponseBodyErrorDetailFields on CustomerCardInstanceResponseBodyErrorDetail {
   message
-  responseBody
 }
 
 fragment CustomerCardInstanceStatusCodeErrorDetailFields on CustomerCardInstanceStatusCodeErrorDetail {
   message
-  responseBody
   statusCode
 }
 
@@ -5996,6 +5994,7 @@ fragment WorkspaceSlackIntegrationFields on WorkspaceSlackIntegration {
   integrationId
   isReinstallRequired
   slackChannelName
+  slackTeamId
   slackTeamImageUrl68px
   slackTeamName
   updatedAt {
