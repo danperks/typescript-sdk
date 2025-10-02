@@ -6460,19 +6460,19 @@ fragment ThreadStatusDetailFields on ThreadStatusDetail {
 }
 
 # Auto-generated queries
-query ActiveThreadCluster($threadId: ID!) {
+query activeThreadCluster($threadId: ID!) {
   activeThreadCluster(threadId: $threadId) {
     ...ThreadClusterFields
   }
 }
 
-query Autoresponder($autoresponderId: ID!) {
+query autoresponder($autoresponderId: ID!) {
   autoresponder(autoresponderId: $autoresponderId) {
     ...AutoresponderFields
   }
 }
 
-query Autoresponders($after: String, $before: String, $first: Int, $last: Int) {
+query autoresponders($after: String, $before: String, $first: Int, $last: Int) {
   autoresponders(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -6489,7 +6489,7 @@ query Autoresponders($after: String, $before: String, $first: Int, $last: Int) {
   }
 }
 
-query BillingPlans($after: String, $before: String, $first: Int, $last: Int) {
+query billingPlans($after: String, $before: String, $first: Int, $last: Int) {
   billingPlans(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -6506,31 +6506,31 @@ query BillingPlans($after: String, $before: String, $first: Int, $last: Int) {
   }
 }
 
-query BusinessHours {
+query businessHours {
   businessHours {
     ...BusinessHoursFields
   }
 }
 
-query BusinessHoursSlots {
+query businessHoursSlots {
   businessHoursSlots {
     ...BusinessHoursSlotFields
   }
 }
 
-query ChatApp($chatAppId: ID!) {
+query chatApp($chatAppId: ID!) {
   chatApp(chatAppId: $chatAppId) {
     ...ChatAppFields
   }
 }
 
-query ChatAppSecret($chatAppId: ID!) {
+query chatAppSecret($chatAppId: ID!) {
   chatAppSecret(chatAppId: $chatAppId) {
     ...ChatAppHiddenSecretFields
   }
 }
 
-query ChatApps($after: String, $before: String, $first: Int, $last: Int) {
+query chatApps($after: String, $before: String, $first: Int, $last: Int) {
   chatApps(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -6547,7 +6547,7 @@ query ChatApps($after: String, $before: String, $first: Int, $last: Int) {
   }
 }
 
-query Companies($after: String, $before: String, $filters: CompaniesFilter, $first: Int, $last: Int) {
+query companies($after: String, $before: String, $filters: CompaniesFilter, $first: Int, $last: Int) {
   companies(after: $after, before: $before, filters: $filters, first: $first, last: $last) {
     edges {
       node {
@@ -6564,13 +6564,13 @@ query Companies($after: String, $before: String, $filters: CompaniesFilter, $fir
   }
 }
 
-query Company($companyId: ID!) {
+query company($companyId: ID!) {
   company(companyId: $companyId) {
     ...CompanyFields
   }
 }
 
-query ConnectedDiscordChannels($after: String, $before: String, $discordGuildId: String!, $first: Int, $last: Int) {
+query connectedDiscordChannels($after: String, $before: String, $discordGuildId: String!, $first: Int, $last: Int) {
   connectedDiscordChannels(after: $after, before: $before, discordGuildId: $discordGuildId, first: $first, last: $last) {
     edges {
       node {
@@ -6587,7 +6587,7 @@ query ConnectedDiscordChannels($after: String, $before: String, $discordGuildId:
   }
 }
 
-query ConnectedMSTeamsChannels($after: String, $before: String, $first: Int, $last: Int) {
+query connectedMSTeamsChannels($after: String, $before: String, $first: Int, $last: Int) {
   connectedMSTeamsChannels(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -6604,13 +6604,13 @@ query ConnectedMSTeamsChannels($after: String, $before: String, $first: Int, $la
   }
 }
 
-query ConnectedSlackChannel($connectedSlackChannelId: ID!) {
+query connectedSlackChannel($connectedSlackChannelId: ID!) {
   connectedSlackChannel(connectedSlackChannelId: $connectedSlackChannelId) {
     ...ConnectedSlackChannelFields
   }
 }
 
-query ConnectedSlackChannels($after: String, $before: String, $filters: ConnectedSlackChannelsFilter, $first: Int, $last: Int) {
+query connectedSlackChannels($after: String, $before: String, $filters: ConnectedSlackChannelsFilter, $first: Int, $last: Int) {
   connectedSlackChannels(after: $after, before: $before, filters: $filters, first: $first, last: $last) {
     edges {
       node {
@@ -6627,43 +6627,43 @@ query ConnectedSlackChannels($after: String, $before: String, $filters: Connecte
   }
 }
 
-query Customer($customerId: ID!) {
+query customer($customerId: ID!) {
   customer(customerId: $customerId) {
     ...CustomerFields
   }
 }
 
-query CustomerByEmail($email: String!) {
+query customerByEmail($email: String!) {
   customerByEmail(email: $email) {
     ...CustomerFields
   }
 }
 
-query CustomerByExternalId($externalId: ID!) {
+query customerByExternalId($externalId: ID!) {
   customerByExternalId(externalId: $externalId) {
     ...CustomerFields
   }
 }
 
-query CustomerCardConfig($customerCardConfigId: ID!) {
+query customerCardConfig($customerCardConfigId: ID!) {
   customerCardConfig(customerCardConfigId: $customerCardConfigId) {
     ...CustomerCardConfigFields
   }
 }
 
-query CustomerCardConfigs {
+query customerCardConfigs {
   customerCardConfigs {
     ...CustomerCardConfigFields
   }
 }
 
-query CustomerGroup($customerGroupId: ID!) {
+query customerGroup($customerGroupId: ID!) {
   customerGroup(customerGroupId: $customerGroupId) {
     ...CustomerGroupFields
   }
 }
 
-query CustomerGroups($after: String, $before: String, $filters: CustomerGroupsFilter, $first: Int, $last: Int) {
+query customerGroups($after: String, $before: String, $filters: CustomerGroupsFilter, $first: Int, $last: Int) {
   customerGroups(after: $after, before: $before, filters: $filters, first: $first, last: $last) {
     edges {
       node {
@@ -6680,13 +6680,13 @@ query CustomerGroups($after: String, $before: String, $filters: CustomerGroupsFi
   }
 }
 
-query CustomerSurvey($id: ID!) {
+query customerSurvey($id: ID!) {
   customerSurvey(id: $id) {
     ...CustomerSurveyFields
   }
 }
 
-query CustomerSurveys($after: String, $before: String, $first: Int, $last: Int) {
+query customerSurveys($after: String, $before: String, $first: Int, $last: Int) {
   customerSurveys(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -6703,7 +6703,7 @@ query CustomerSurveys($after: String, $before: String, $first: Int, $last: Int) 
   }
 }
 
-query Customers($after: String, $before: String, $filters: CustomersFilter, $first: Int, $last: Int, $sortBy: CustomersSort) {
+query customers($after: String, $before: String, $filters: CustomersFilter, $first: Int, $last: Int, $sortBy: CustomersSort) {
   customers(after: $after, before: $before, filters: $filters, first: $first, last: $last, sortBy: $sortBy) {
     edges {
       node {
@@ -6720,13 +6720,13 @@ query Customers($after: String, $before: String, $filters: CustomersFilter, $fir
   }
 }
 
-query EscalationPath($id: ID!) {
+query escalationPath($id: ID!) {
   escalationPath(id: $id) {
     ...EscalationPathFields
   }
 }
 
-query EscalationPaths($after: String, $before: String, $first: Int, $last: Int) {
+query escalationPaths($after: String, $before: String, $first: Int, $last: Int) {
   escalationPaths(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -6743,55 +6743,55 @@ query EscalationPaths($after: String, $before: String, $first: Int, $last: Int) 
   }
 }
 
-query GeneratedReplies($options: [GenerateReplyOption!], $threadId: ID!) {
+query generatedReplies($options: [GenerateReplyOption!], $threadId: ID!) {
   generatedReplies(options: $options, threadId: $threadId) {
     ...GeneratedReplyFields
   }
 }
 
-query GetMSTeamsMembersForChannel($msTeamsChannelId: ID!, $msTeamsTeamId: ID!) {
+query getMSTeamsMembersForChannel($msTeamsChannelId: ID!, $msTeamsTeamId: ID!) {
   getMSTeamsMembersForChannel(msTeamsChannelId: $msTeamsChannelId, msTeamsTeamId: $msTeamsTeamId) {
     ...MSTeamsChannelMembersFields
   }
 }
 
-query GithubUserAuthIntegration {
+query githubUserAuthIntegration {
   githubUserAuthIntegration {
     ...GithubUserAuthIntegrationFields
   }
 }
 
-query HeatmapMetric($name: String!, $options: HeatmapMetricOptionsInput) {
+query heatmapMetric($name: String!, $options: HeatmapMetricOptionsInput) {
   heatmapMetric(name: $name, options: $options) {
     ...HeatmapMetricFields
   }
 }
 
-query HelpCenter($id: ID!) {
+query helpCenter($id: ID!) {
   helpCenter(id: $id) {
     ...HelpCenterFields
   }
 }
 
-query HelpCenterArticle($id: ID!) {
+query helpCenterArticle($id: ID!) {
   helpCenterArticle(id: $id) {
     ...HelpCenterArticleFields
   }
 }
 
-query HelpCenterArticleBySlug($helpCenterId: ID!, $slug: String!) {
+query helpCenterArticleBySlug($helpCenterId: ID!, $slug: String!) {
   helpCenterArticleBySlug(helpCenterId: $helpCenterId, slug: $slug) {
     ...HelpCenterArticleFields
   }
 }
 
-query HelpCenterIndex($id: ID!) {
+query helpCenterIndex($id: ID!) {
   helpCenterIndex(id: $id) {
     ...HelpCenterIndexFields
   }
 }
 
-query HelpCenters($after: String, $before: String, $first: Int, $last: Int) {
+query helpCenters($after: String, $before: String, $first: Int, $last: Int) {
   helpCenters(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -6808,7 +6808,7 @@ query HelpCenters($after: String, $before: String, $first: Int, $last: Int) {
   }
 }
 
-query IndexedDocuments($after: String, $before: String, $filters: IndexedDocumentsFilter, $first: Int, $last: Int) {
+query indexedDocuments($after: String, $before: String, $filters: IndexedDocumentsFilter, $first: Int, $last: Int) {
   indexedDocuments(after: $after, before: $before, filters: $filters, first: $first, last: $last) {
     edges {
       node {
@@ -6825,13 +6825,13 @@ query IndexedDocuments($after: String, $before: String, $filters: IndexedDocumen
   }
 }
 
-query IssueTrackerFields($issueTrackerType: String!, $selectedFields: [SelectedIssueTrackerField!]!) {
+query issueTrackerFields($issueTrackerType: String!, $selectedFields: [SelectedIssueTrackerField!]!) {
   issueTrackerFields(issueTrackerType: $issueTrackerType, selectedFields: $selectedFields) {
     ...IssueTrackerFieldFields
   }
 }
 
-query KnowledgeSources($after: String, $before: String, $filters: KnowledgeSourcesFilter, $first: Int, $last: Int) {
+query knowledgeSources($after: String, $before: String, $filters: KnowledgeSourcesFilter, $first: Int, $last: Int) {
   knowledgeSources(after: $after, before: $before, filters: $filters, first: $first, last: $last) {
     edges {
       node {
@@ -6848,13 +6848,13 @@ query KnowledgeSources($after: String, $before: String, $filters: KnowledgeSourc
   }
 }
 
-query LabelType($labelTypeId: ID!) {
+query labelType($labelTypeId: ID!) {
   labelType(labelTypeId: $labelTypeId) {
     ...LabelTypeFields
   }
 }
 
-query LabelTypes($after: String, $before: String, $filters: LabelTypeFilter, $first: Int, $last: Int) {
+query labelTypes($after: String, $before: String, $filters: LabelTypeFilter, $first: Int, $last: Int) {
   labelTypes(after: $after, before: $before, filters: $filters, first: $first, last: $last) {
     edges {
       node {
@@ -6871,13 +6871,13 @@ query LabelTypes($after: String, $before: String, $filters: LabelTypeFilter, $fi
   }
 }
 
-query MachineUser($machineUserId: ID!) {
+query machineUser($machineUserId: ID!) {
   machineUser(machineUserId: $machineUserId) {
     ...MachineUserFields
   }
 }
 
-query MachineUsers($after: String, $before: String, $filters: MachineUsersFilter, $first: Int, $last: Int) {
+query machineUsers($after: String, $before: String, $filters: MachineUsersFilter, $first: Int, $last: Int) {
   machineUsers(after: $after, before: $before, filters: $filters, first: $first, last: $last) {
     edges {
       node {
@@ -6894,25 +6894,25 @@ query MachineUsers($after: String, $before: String, $filters: MachineUsersFilter
   }
 }
 
-query MyBillingRota {
+query myBillingRota {
   myBillingRota {
     ...BillingRotaFields
   }
 }
 
-query MyBillingSubscription {
+query myBillingSubscription {
   myBillingSubscription {
     ...BillingSubscriptionFields
   }
 }
 
-query MyEmailSignature {
+query myEmailSignature {
   myEmailSignature {
     ...EmailSignatureFields
   }
 }
 
-query MyFavoritePages($after: String, $before: String, $first: Int, $last: Int) {
+query myFavoritePages($after: String, $before: String, $first: Int, $last: Int) {
   myFavoritePages(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -6929,91 +6929,91 @@ query MyFavoritePages($after: String, $before: String, $first: Int, $last: Int) 
   }
 }
 
-query MyJiraIntegrationToken {
+query myJiraIntegrationToken {
   myJiraIntegrationToken {
     ...JiraIntegrationTokenFields
   }
 }
 
-query MyLinearInstallationInfo($redirectUrl: String!) {
+query myLinearInstallationInfo($redirectUrl: String!) {
   myLinearInstallationInfo(redirectUrl: $redirectUrl) {
     ...UserLinearInstallationInfoFields
   }
 }
 
-query MyLinearIntegration {
+query myLinearIntegration {
   myLinearIntegration {
     ...UserLinearIntegrationFields
   }
 }
 
-query MyLinearIntegrationToken {
+query myLinearIntegrationToken {
   myLinearIntegrationToken {
     ...LinearIntegrationTokenFields
   }
 }
 
-query MyMSTeamsInstallationInfo($redirectUrl: String!) {
+query myMSTeamsInstallationInfo($redirectUrl: String!) {
   myMSTeamsInstallationInfo(redirectUrl: $redirectUrl) {
     ...UserMSTeamsInstallationInfoFields
   }
 }
 
-query MyMSTeamsIntegration {
+query myMSTeamsIntegration {
   myMSTeamsIntegration {
     ...UserMSTeamsIntegrationFields
   }
 }
 
-query MyMachineUser {
+query myMachineUser {
   myMachineUser {
     ...MachineUserFields
   }
 }
 
-query MyPaymentMethod {
+query myPaymentMethod {
   myPaymentMethod {
     ...PaymentMethodFields
   }
 }
 
-query MyPermissions {
+query myPermissions {
   myPermissions {
     ...PermissionsFields
   }
 }
 
-query MySlackInstallationInfo($redirectUrl: String!) {
+query mySlackInstallationInfo($redirectUrl: String!) {
   mySlackInstallationInfo(redirectUrl: $redirectUrl) {
     ...UserSlackInstallationInfoFields
   }
 }
 
-query MySlackIntegration {
+query mySlackIntegration {
   mySlackIntegration {
     ...UserSlackIntegrationFields
   }
 }
 
-query MyUser {
+query myUser {
   myUser {
     ...UserFields
   }
 }
 
-query MyUserAccount {
+query myUserAccount {
   myUserAccount {
     ...UserAccountFields
   }
 }
 
-query MyWorkspace {
+query myWorkspace {
   myWorkspace {
     ...WorkspaceFields
   }
 }
 
-query MyWorkspaceInvites($after: String, $before: String, $first: Int, $last: Int) {
+query myWorkspaceInvites($after: String, $before: String, $first: Int, $last: Int) {
   myWorkspaceInvites(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7030,7 +7030,7 @@ query MyWorkspaceInvites($after: String, $before: String, $first: Int, $last: In
   }
 }
 
-query MyWorkspaces($after: String, $before: String, $first: Int, $last: Int) {
+query myWorkspaces($after: String, $before: String, $first: Int, $last: Int) {
   myWorkspaces(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7047,19 +7047,19 @@ query MyWorkspaces($after: String, $before: String, $first: Int, $last: Int) {
   }
 }
 
-query Permissions {
+query permissions {
   permissions {
     ...PermissionsFields
   }
 }
 
-query RelatedThreads($threadId: ID!) {
+query relatedThreads($threadId: ID!) {
   relatedThreads(threadId: $threadId) {
     ...ThreadWithDistanceFields
   }
 }
 
-query Roles($after: String, $before: String, $first: Int, $last: Int) {
+query roles($after: String, $before: String, $first: Int, $last: Int) {
   roles(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7076,13 +7076,13 @@ query Roles($after: String, $before: String, $first: Int, $last: Int) {
   }
 }
 
-query SavedThreadsView($savedThreadsViewId: ID!) {
+query savedThreadsView($savedThreadsViewId: ID!) {
   savedThreadsView(savedThreadsViewId: $savedThreadsViewId) {
     ...SavedThreadsViewFields
   }
 }
 
-query SavedThreadsViews($after: String, $before: String, $first: Int, $last: Int) {
+query savedThreadsViews($after: String, $before: String, $first: Int, $last: Int) {
   savedThreadsViews(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7099,7 +7099,7 @@ query SavedThreadsViews($after: String, $before: String, $first: Int, $last: Int
   }
 }
 
-query SearchCompanies($after: String, $before: String, $filters: CompaniesFilter, $first: Int, $last: Int, $searchQuery: CompaniesSearchQuery!) {
+query searchCompanies($after: String, $before: String, $filters: CompaniesFilter, $first: Int, $last: Int, $searchQuery: CompaniesSearchQuery!) {
   searchCompanies(after: $after, before: $before, filters: $filters, first: $first, last: $last, searchQuery: $searchQuery) {
     edges {
       node {
@@ -7116,7 +7116,7 @@ query SearchCompanies($after: String, $before: String, $filters: CompaniesFilter
   }
 }
 
-query SearchCustomers($after: String, $before: String, $first: Int, $last: Int, $searchQuery: CustomersSearchQuery!) {
+query searchCustomers($after: String, $before: String, $first: Int, $last: Int, $searchQuery: CustomersSearchQuery!) {
   searchCustomers(after: $after, before: $before, first: $first, last: $last, searchQuery: $searchQuery) {
     edges {
       node {
@@ -7133,7 +7133,7 @@ query SearchCustomers($after: String, $before: String, $first: Int, $last: Int, 
   }
 }
 
-query SearchSlackUsers($after: String, $before: String, $first: Int, $last: Int, $searchQuery: String!, $slackChannelId: String!, $slackTeamId: String!) {
+query searchSlackUsers($after: String, $before: String, $first: Int, $last: Int, $searchQuery: String!, $slackChannelId: String!, $slackTeamId: String!) {
   searchSlackUsers(after: $after, before: $before, first: $first, last: $last, searchQuery: $searchQuery, slackChannelId: $slackChannelId, slackTeamId: $slackTeamId) {
     edges {
       node {
@@ -7150,7 +7150,7 @@ query SearchSlackUsers($after: String, $before: String, $first: Int, $last: Int,
   }
 }
 
-query SearchTenants($after: String, $before: String, $first: Int, $last: Int, $searchQuery: TenantsSearchQuery!) {
+query searchTenants($after: String, $before: String, $first: Int, $last: Int, $searchQuery: TenantsSearchQuery!) {
   searchTenants(after: $after, before: $before, first: $first, last: $last, searchQuery: $searchQuery) {
     edges {
       node {
@@ -7167,7 +7167,7 @@ query SearchTenants($after: String, $before: String, $first: Int, $last: Int, $s
   }
 }
 
-query SearchThreadLinkCandidates($after: String, $before: String, $filters: ThreadLinkCandidateFilter!, $first: Int, $last: Int, $searchQuery: String!) {
+query searchThreadLinkCandidates($after: String, $before: String, $filters: ThreadLinkCandidateFilter!, $first: Int, $last: Int, $searchQuery: String!) {
   searchThreadLinkCandidates(after: $after, before: $before, filters: $filters, first: $first, last: $last, searchQuery: $searchQuery) {
     edges {
       node {
@@ -7184,7 +7184,7 @@ query SearchThreadLinkCandidates($after: String, $before: String, $filters: Thre
   }
 }
 
-query SearchThreadSlackUsers($after: String, $before: String, $first: Int, $last: Int, $searchQuery: String!, $threadId: ID!) {
+query searchThreadSlackUsers($after: String, $before: String, $first: Int, $last: Int, $searchQuery: String!, $threadId: ID!) {
   searchThreadSlackUsers(after: $after, before: $before, first: $first, last: $last, searchQuery: $searchQuery, threadId: $threadId) {
     edges {
       node {
@@ -7201,7 +7201,7 @@ query SearchThreadSlackUsers($after: String, $before: String, $first: Int, $last
   }
 }
 
-query SearchThreads($after: String, $before: String, $filters: ThreadsFilter, $first: Int, $last: Int, $searchQuery: ThreadsSearchQuery!) {
+query searchThreads($after: String, $before: String, $filters: ThreadsFilter, $first: Int, $last: Int, $searchQuery: ThreadsSearchQuery!) {
   searchThreads(after: $after, before: $before, filters: $filters, first: $first, last: $last, searchQuery: $searchQuery) {
     edges {
       node {
@@ -7218,13 +7218,13 @@ query SearchThreads($after: String, $before: String, $filters: ThreadsFilter, $f
   }
 }
 
-query ServiceAuthorization($serviceAuthorizationId: ID!) {
+query serviceAuthorization($serviceAuthorizationId: ID!) {
   serviceAuthorization(serviceAuthorizationId: $serviceAuthorizationId) {
     ...ServiceAuthorizationFields
   }
 }
 
-query ServiceAuthorizations($after: String, $before: String, $filters: ServiceAuthorizationsFilter, $first: Int, $last: Int) {
+query serviceAuthorizations($after: String, $before: String, $filters: ServiceAuthorizationsFilter, $first: Int, $last: Int) {
   serviceAuthorizations(after: $after, before: $before, filters: $filters, first: $first, last: $last) {
     edges {
       node {
@@ -7241,25 +7241,25 @@ query ServiceAuthorizations($after: String, $before: String, $filters: ServiceAu
   }
 }
 
-query SingleValueMetric($name: String!, $options: SingleValueMetricOptions) {
+query singleValueMetric($name: String!, $options: SingleValueMetricOptions) {
   singleValueMetric(name: $name, options: $options) {
     ...SingleValueMetricFields
   }
 }
 
-query SlackUser($slackChannelId: String!, $slackTeamId: String!, $slackUserId: ID!) {
+query slackUser($slackChannelId: String!, $slackTeamId: String!, $slackUserId: ID!) {
   slackUser(slackChannelId: $slackChannelId, slackTeamId: $slackTeamId, slackUserId: $slackUserId) {
     ...SlackUserFields
   }
 }
 
-query Snippet($snippetId: ID!) {
+query snippet($snippetId: ID!) {
   snippet(snippetId: $snippetId) {
     ...SnippetFields
   }
 }
 
-query Snippets($after: String, $before: String, $first: Int, $last: Int) {
+query snippets($after: String, $before: String, $first: Int, $last: Int) {
   snippets(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7276,19 +7276,19 @@ query Snippets($after: String, $before: String, $first: Int, $last: Int) {
   }
 }
 
-query SubscriptionEventTypes {
+query subscriptionEventTypes {
   subscriptionEventTypes {
     ...SubscriptionEventTypeFields
   }
 }
 
-query Tenant($tenantId: ID!) {
+query tenant($tenantId: ID!) {
   tenant(tenantId: $tenantId) {
     ...TenantFields
   }
 }
 
-query TenantFieldSchemas($after: String, $before: String, $filters: TenantFieldSchemasFilter, $first: Int, $last: Int) {
+query tenantFieldSchemas($after: String, $before: String, $filters: TenantFieldSchemasFilter, $first: Int, $last: Int) {
   tenantFieldSchemas(after: $after, before: $before, filters: $filters, first: $first, last: $last) {
     edges {
       node {
@@ -7305,7 +7305,7 @@ query TenantFieldSchemas($after: String, $before: String, $filters: TenantFieldS
   }
 }
 
-query Tenants($after: String, $before: String, $first: Int, $last: Int) {
+query tenants($after: String, $before: String, $first: Int, $last: Int) {
   tenants(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7322,37 +7322,37 @@ query Tenants($after: String, $before: String, $first: Int, $last: Int) {
   }
 }
 
-query Thread($threadId: ID!) {
+query thread($threadId: ID!) {
   thread(threadId: $threadId) {
     ...ThreadFields
   }
 }
 
-query ThreadByExternalId($customerId: ID!, $externalId: ID!) {
+query threadByExternalId($customerId: ID!, $externalId: ID!) {
   threadByExternalId(customerId: $customerId, externalId: $externalId) {
     ...ThreadFields
   }
 }
 
-query ThreadByRef($ref: String!) {
+query threadByRef($ref: String!) {
   threadByRef(ref: $ref) {
     ...ThreadFields
   }
 }
 
-query ThreadCluster($id: ID!) {
+query threadCluster($id: ID!) {
   threadCluster(id: $id) {
     ...ThreadClusterFields
   }
 }
 
-query ThreadClusters($variant: String) {
+query threadClusters($variant: String) {
   threadClusters(variant: $variant) {
     ...ThreadClusterFields
   }
 }
 
-query ThreadClustersPaginated($after: String, $before: String, $filters: ThreadClustersFilter, $first: Int, $last: Int) {
+query threadClustersPaginated($after: String, $before: String, $filters: ThreadClustersFilter, $first: Int, $last: Int) {
   threadClustersPaginated(after: $after, before: $before, filters: $filters, first: $first, last: $last) {
     edges {
       node {
@@ -7369,19 +7369,19 @@ query ThreadClustersPaginated($after: String, $before: String, $filters: ThreadC
   }
 }
 
-query ThreadDiscussion($threadDiscussionId: ID!) {
+query threadDiscussion($threadDiscussionId: ID!) {
   threadDiscussion(threadDiscussionId: $threadDiscussionId) {
     ...ThreadDiscussionFields
   }
 }
 
-query ThreadFieldSchema($threadFieldSchemaId: ID!) {
+query threadFieldSchema($threadFieldSchemaId: ID!) {
   threadFieldSchema(threadFieldSchemaId: $threadFieldSchemaId) {
     ...ThreadFieldSchemaFields
   }
 }
 
-query ThreadFieldSchemas($after: String, $before: String, $first: Int, $last: Int) {
+query threadFieldSchemas($after: String, $before: String, $first: Int, $last: Int) {
   threadFieldSchemas(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7398,7 +7398,7 @@ query ThreadFieldSchemas($after: String, $before: String, $first: Int, $last: In
   }
 }
 
-query ThreadLinkGroups($after: String, $before: String, $filters: ThreadLinkGroupFilter, $first: Int, $last: Int) {
+query threadLinkGroups($after: String, $before: String, $filters: ThreadLinkGroupFilter, $first: Int, $last: Int) {
   threadLinkGroups(after: $after, before: $before, filters: $filters, first: $first, last: $last) {
     edges {
       node {
@@ -7415,13 +7415,13 @@ query ThreadLinkGroups($after: String, $before: String, $filters: ThreadLinkGrou
   }
 }
 
-query ThreadSlackUser($slackUserId: ID!, $threadId: ID!) {
+query threadSlackUser($slackUserId: ID!, $threadId: ID!) {
   threadSlackUser(slackUserId: $slackUserId, threadId: $threadId) {
     ...SlackUserFields
   }
 }
 
-query Threads($after: String, $before: String, $filters: ThreadsFilter, $first: Int, $last: Int, $sortBy: ThreadsSort) {
+query threads($after: String, $before: String, $filters: ThreadsFilter, $first: Int, $last: Int, $sortBy: ThreadsSort) {
   threads(after: $after, before: $before, filters: $filters, first: $first, last: $last, sortBy: $sortBy) {
     edges {
       node {
@@ -7438,13 +7438,13 @@ query Threads($after: String, $before: String, $filters: ThreadsFilter, $first: 
   }
 }
 
-query Tier($tierId: ID!) {
+query tier($tierId: ID!) {
   tier(tierId: $tierId) {
     ...TierFields
   }
 }
 
-query Tiers($after: String, $before: String, $first: Int, $last: Int) {
+query tiers($after: String, $before: String, $first: Int, $last: Int) {
   tiers(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7461,13 +7461,13 @@ query Tiers($after: String, $before: String, $first: Int, $last: Int) {
   }
 }
 
-query TimeSeriesMetric($name: String!, $options: TimeSeriesMetricOptions) {
+query timeSeriesMetric($name: String!, $options: TimeSeriesMetricOptions) {
   timeSeriesMetric(name: $name, options: $options) {
     ...TimeSeriesMetricFields
   }
 }
 
-query TimelineEntries($after: String, $before: String, $customerId: ID!, $first: Int, $last: Int) {
+query timelineEntries($after: String, $before: String, $customerId: ID!, $first: Int, $last: Int) {
   timelineEntries(after: $after, before: $before, customerId: $customerId, first: $first, last: $last) {
     edges {
       node {
@@ -7484,31 +7484,31 @@ query TimelineEntries($after: String, $before: String, $customerId: ID!, $first:
   }
 }
 
-query TimelineEntry($customerId: ID!, $timelineEntryId: ID!) {
+query timelineEntry($customerId: ID!, $timelineEntryId: ID!) {
   timelineEntry(customerId: $customerId, timelineEntryId: $timelineEntryId) {
     ...TimelineEntryFields
   }
 }
 
-query User($userId: ID!) {
+query user($userId: ID!) {
   user(userId: $userId) {
     ...UserFields
   }
 }
 
-query UserAuthDiscordChannelInstallationInfo($redirectUrl: String!) {
+query userAuthDiscordChannelInstallationInfo($redirectUrl: String!) {
   userAuthDiscordChannelInstallationInfo(redirectUrl: $redirectUrl) {
     ...UserAuthDiscordChannelInstallationInfoFields
   }
 }
 
-query UserAuthDiscordChannelIntegration($discordGuildId: String!) {
+query userAuthDiscordChannelIntegration($discordGuildId: String!) {
   userAuthDiscordChannelIntegration(discordGuildId: $discordGuildId) {
     ...UserAuthDiscordChannelIntegrationFields
   }
 }
 
-query UserAuthDiscordChannelIntegrations($after: String, $before: String, $first: Int, $last: Int) {
+query userAuthDiscordChannelIntegrations($after: String, $before: String, $first: Int, $last: Int) {
   userAuthDiscordChannelIntegrations(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7525,37 +7525,37 @@ query UserAuthDiscordChannelIntegrations($after: String, $before: String, $first
   }
 }
 
-query UserAuthSlackInstallationInfo($redirectUrl: String!, $slackTeamId: String) {
+query userAuthSlackInstallationInfo($redirectUrl: String!, $slackTeamId: String) {
   userAuthSlackInstallationInfo(redirectUrl: $redirectUrl, slackTeamId: $slackTeamId) {
     ...UserAuthSlackInstallationInfoFields
   }
 }
 
-query UserAuthSlackIntegration($slackTeamId: String!) {
+query userAuthSlackIntegration($slackTeamId: String!) {
   userAuthSlackIntegration(slackTeamId: $slackTeamId) {
     ...UserAuthSlackIntegrationFields
   }
 }
 
-query UserAuthSlackIntegrationByThreadId($threadId: ID!) {
+query userAuthSlackIntegrationByThreadId($threadId: ID!) {
   userAuthSlackIntegrationByThreadId(threadId: $threadId) {
     ...UserAuthSlackIntegrationFields
   }
 }
 
-query UserByEmail($email: String!) {
+query userByEmail($email: String!) {
   userByEmail(email: $email) {
     ...UserFields
   }
 }
 
-query UserSlackChannelMemberships($slackTeamId: String!) {
+query userSlackChannelMemberships($slackTeamId: String!) {
   userSlackChannelMemberships(slackTeamId: $slackTeamId) {
     ...SlackChannelMembershipFields
   }
 }
 
-query Users($after: String, $before: String, $filters: UsersFilter, $first: Int, $last: Int) {
+query users($after: String, $before: String, $filters: UsersFilter, $first: Int, $last: Int) {
   users(after: $after, before: $before, filters: $filters, first: $first, last: $last) {
     edges {
       node {
@@ -7572,13 +7572,13 @@ query Users($after: String, $before: String, $filters: UsersFilter, $first: Int,
   }
 }
 
-query WebhookTarget($webhookTargetId: ID!) {
+query webhookTarget($webhookTargetId: ID!) {
   webhookTarget(webhookTargetId: $webhookTargetId) {
     ...WebhookTargetFields
   }
 }
 
-query WebhookTargets($after: String, $before: String, $first: Int, $last: Int) {
+query webhookTargets($after: String, $before: String, $first: Int, $last: Int) {
   webhookTargets(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7595,7 +7595,7 @@ query WebhookTargets($after: String, $before: String, $first: Int, $last: Int) {
   }
 }
 
-query WebhookVersions($after: String, $before: String, $first: Int, $last: Int) {
+query webhookVersions($after: String, $before: String, $first: Int, $last: Int) {
   webhookVersions(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7612,13 +7612,13 @@ query WebhookVersions($after: String, $before: String, $first: Int, $last: Int) 
   }
 }
 
-query WorkflowRule($workflowRuleId: ID!) {
+query workflowRule($workflowRuleId: ID!) {
   workflowRule(workflowRuleId: $workflowRuleId) {
     ...WorkflowRuleFields
   }
 }
 
-query WorkflowRules($after: String, $before: String, $first: Int, $last: Int) {
+query workflowRules($after: String, $before: String, $first: Int, $last: Int) {
   workflowRules(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7635,31 +7635,31 @@ query WorkflowRules($after: String, $before: String, $first: Int, $last: Int) {
   }
 }
 
-query Workspace($workspaceId: ID!) {
+query workspace($workspaceId: ID!) {
   workspace(workspaceId: $workspaceId) {
     ...WorkspaceFields
   }
 }
 
-query WorkspaceChatSettings {
+query workspaceChatSettings {
   workspaceChatSettings {
     ...WorkspaceChatSettingsFields
   }
 }
 
-query WorkspaceDiscordChannelInstallationInfo($redirectUrl: String!) {
+query workspaceDiscordChannelInstallationInfo($redirectUrl: String!) {
   workspaceDiscordChannelInstallationInfo(redirectUrl: $redirectUrl) {
     ...WorkspaceDiscordChannelInstallationInfoFields
   }
 }
 
-query WorkspaceDiscordChannelIntegration($integrationId: ID!) {
+query workspaceDiscordChannelIntegration($integrationId: ID!) {
   workspaceDiscordChannelIntegration(integrationId: $integrationId) {
     ...WorkspaceDiscordChannelIntegrationFields
   }
 }
 
-query WorkspaceDiscordChannelIntegrations($after: String, $before: String, $first: Int, $last: Int) {
+query workspaceDiscordChannelIntegrations($after: String, $before: String, $first: Int, $last: Int) {
   workspaceDiscordChannelIntegrations(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7676,13 +7676,13 @@ query WorkspaceDiscordChannelIntegrations($after: String, $before: String, $firs
   }
 }
 
-query WorkspaceDiscordIntegration($integrationId: ID!) {
+query workspaceDiscordIntegration($integrationId: ID!) {
   workspaceDiscordIntegration(integrationId: $integrationId) {
     ...WorkspaceDiscordIntegrationFields
   }
 }
 
-query WorkspaceDiscordIntegrations($after: String, $before: String, $first: Int, $last: Int) {
+query workspaceDiscordIntegrations($after: String, $before: String, $first: Int, $last: Int) {
   workspaceDiscordIntegrations(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7699,19 +7699,19 @@ query WorkspaceDiscordIntegrations($after: String, $before: String, $first: Int,
   }
 }
 
-query WorkspaceEmailSettings {
+query workspaceEmailSettings {
   workspaceEmailSettings {
     ...WorkspaceEmailSettingsFields
   }
 }
 
-query WorkspaceHmac {
+query workspaceHmac {
   workspaceHmac {
     ...WorkspaceHmacFields
   }
 }
 
-query WorkspaceInvites($after: String, $before: String, $first: Int, $last: Int) {
+query workspaceInvites($after: String, $before: String, $first: Int, $last: Int) {
   workspaceInvites(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7728,31 +7728,31 @@ query WorkspaceInvites($after: String, $before: String, $first: Int, $last: Int)
   }
 }
 
-query WorkspaceMSTeamsInstallationInfo($redirectUrl: String!) {
+query workspaceMSTeamsInstallationInfo($redirectUrl: String!) {
   workspaceMSTeamsInstallationInfo(redirectUrl: $redirectUrl) {
     ...WorkspaceMSTeamsInstallationInfoFields
   }
 }
 
-query WorkspaceMSTeamsIntegration {
+query workspaceMSTeamsIntegration {
   workspaceMSTeamsIntegration {
     ...WorkspaceMSTeamsIntegrationFields
   }
 }
 
-query WorkspaceSlackChannelInstallationInfo($redirectUrl: String!) {
+query workspaceSlackChannelInstallationInfo($redirectUrl: String!) {
   workspaceSlackChannelInstallationInfo(redirectUrl: $redirectUrl) {
     ...WorkspaceSlackChannelInstallationInfoFields
   }
 }
 
-query WorkspaceSlackChannelIntegration($integrationId: ID!) {
+query workspaceSlackChannelIntegration($integrationId: ID!) {
   workspaceSlackChannelIntegration(integrationId: $integrationId) {
     ...WorkspaceSlackChannelIntegrationFields
   }
 }
 
-query WorkspaceSlackChannelIntegrations($after: String, $before: String, $first: Int, $last: Int) {
+query workspaceSlackChannelIntegrations($after: String, $before: String, $first: Int, $last: Int) {
   workspaceSlackChannelIntegrations(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7769,19 +7769,19 @@ query WorkspaceSlackChannelIntegrations($after: String, $before: String, $first:
   }
 }
 
-query WorkspaceSlackInstallationInfo($redirectUrl: String!) {
+query workspaceSlackInstallationInfo($redirectUrl: String!) {
   workspaceSlackInstallationInfo(redirectUrl: $redirectUrl) {
     ...WorkspaceSlackInstallationInfoFields
   }
 }
 
-query WorkspaceSlackIntegration($integrationId: ID!) {
+query workspaceSlackIntegration($integrationId: ID!) {
   workspaceSlackIntegration(integrationId: $integrationId) {
     ...WorkspaceSlackIntegrationFields
   }
 }
 
-query WorkspaceSlackIntegrations($after: String, $before: String, $first: Int, $last: Int) {
+query workspaceSlackIntegrations($after: String, $before: String, $first: Int, $last: Int) {
   workspaceSlackIntegrations(after: $after, before: $before, first: $first, last: $last) {
     edges {
       node {
@@ -7799,7 +7799,7 @@ query WorkspaceSlackIntegrations($after: String, $before: String, $first: Int, $
 }
 
 # Auto-generated mutations
-mutation AcceptWorkspaceInvite($input: AcceptWorkspaceInviteInput!) {
+mutation acceptWorkspaceInvite($input: AcceptWorkspaceInviteInput!) {
   acceptWorkspaceInvite(input: $input) {
     invite {
       ...WorkspaceInviteFields
@@ -7816,7 +7816,7 @@ mutation AcceptWorkspaceInvite($input: AcceptWorkspaceInviteInput!) {
   }
 }
 
-mutation AddAdditionalAssignees($input: AddAdditionalAssigneesInput!) {
+mutation addAdditionalAssignees($input: AddAdditionalAssigneesInput!) {
   addAdditionalAssignees(input: $input) {
     thread {
       ...ThreadFields
@@ -7833,7 +7833,7 @@ mutation AddAdditionalAssignees($input: AddAdditionalAssigneesInput!) {
   }
 }
 
-mutation AddCustomerToCustomerGroups($input: AddCustomerToCustomerGroupsInput!) {
+mutation addCustomerToCustomerGroups($input: AddCustomerToCustomerGroupsInput!) {
   addCustomerToCustomerGroups(input: $input) {
     customerGroupMemberships {
       ...CustomerGroupMembershipFields
@@ -7850,7 +7850,7 @@ mutation AddCustomerToCustomerGroups($input: AddCustomerToCustomerGroupsInput!) 
   }
 }
 
-mutation AddCustomerToTenants($input: AddCustomerToTenantsInput!) {
+mutation addCustomerToTenants($input: AddCustomerToTenantsInput!) {
   addCustomerToTenants(input: $input) {
     customer {
       ...CustomerFields
@@ -7867,7 +7867,7 @@ mutation AddCustomerToTenants($input: AddCustomerToTenantsInput!) {
   }
 }
 
-mutation AddGeneratedReply($input: AddGeneratedReplyInput!) {
+mutation addGeneratedReply($input: AddGeneratedReplyInput!) {
   addGeneratedReply(input: $input) {
     generatedReply {
       ...GeneratedReplyFields
@@ -7884,7 +7884,7 @@ mutation AddGeneratedReply($input: AddGeneratedReplyInput!) {
   }
 }
 
-mutation AddLabels($input: AddLabelsInput!) {
+mutation addLabels($input: AddLabelsInput!) {
   addLabels(input: $input) {
     labels {
       ...LabelFields
@@ -7904,7 +7904,7 @@ mutation AddLabels($input: AddLabelsInput!) {
   }
 }
 
-mutation AddLabelsToUser($input: AddLabelsToUserInput!) {
+mutation addLabelsToUser($input: AddLabelsToUserInput!) {
   addLabelsToUser(input: $input) {
     labels {
       ...LabelFields
@@ -7924,7 +7924,7 @@ mutation AddLabelsToUser($input: AddLabelsToUserInput!) {
   }
 }
 
-mutation AddMembersToTier($input: AddMembersToTierInput!) {
+mutation addMembersToTier($input: AddMembersToTierInput!) {
   addMembersToTier(input: $input) {
 
     error {
@@ -7939,7 +7939,7 @@ mutation AddMembersToTier($input: AddMembersToTierInput!) {
   }
 }
 
-mutation AddUserToActiveBillingRota($input: AddUserToActiveBillingRotaInput!) {
+mutation addUserToActiveBillingRota($input: AddUserToActiveBillingRotaInput!) {
   addUserToActiveBillingRota(input: $input) {
     billingRota {
       ...BillingRotaFields
@@ -7956,7 +7956,7 @@ mutation AddUserToActiveBillingRota($input: AddUserToActiveBillingRotaInput!) {
   }
 }
 
-mutation AddWorkspaceAlternateSupportEmailAddress($input: AddWorkspaceAlternateSupportEmailAddressInput!) {
+mutation addWorkspaceAlternateSupportEmailAddress($input: AddWorkspaceAlternateSupportEmailAddressInput!) {
   addWorkspaceAlternateSupportEmailAddress(input: $input) {
     workspaceEmailDomainSettings {
       ...WorkspaceEmailDomainSettingsFields
@@ -7973,7 +7973,7 @@ mutation AddWorkspaceAlternateSupportEmailAddress($input: AddWorkspaceAlternateS
   }
 }
 
-mutation ArchiveLabelType($input: ArchiveLabelTypeInput!) {
+mutation archiveLabelType($input: ArchiveLabelTypeInput!) {
   archiveLabelType(input: $input) {
     labelType {
       ...LabelTypeFields
@@ -7990,7 +7990,7 @@ mutation ArchiveLabelType($input: ArchiveLabelTypeInput!) {
   }
 }
 
-mutation AssignRolesToUser($input: AssignRolesToUserInput!) {
+mutation assignRolesToUser($input: AssignRolesToUserInput!) {
   assignRolesToUser(input: $input) {
 
     error {
@@ -8005,7 +8005,7 @@ mutation AssignRolesToUser($input: AssignRolesToUserInput!) {
   }
 }
 
-mutation AssignThread($input: AssignThreadInput!) {
+mutation assignThread($input: AssignThreadInput!) {
   assignThread(input: $input) {
     thread {
       ...ThreadFields
@@ -8022,7 +8022,7 @@ mutation AssignThread($input: AssignThreadInput!) {
   }
 }
 
-mutation BulkJoinSlackChannels($input: BulkJoinSlackChannelsInput!) {
+mutation bulkJoinSlackChannels($input: BulkJoinSlackChannelsInput!) {
   bulkJoinSlackChannels(input: $input) {
 
     error {
@@ -8037,7 +8037,7 @@ mutation BulkJoinSlackChannels($input: BulkJoinSlackChannelsInput!) {
   }
 }
 
-mutation BulkUpsertThreadFields($input: BulkUpsertThreadFieldsInput!) {
+mutation bulkUpsertThreadFields($input: BulkUpsertThreadFieldsInput!) {
   bulkUpsertThreadFields(input: $input) {
     results {
       ...BulkUpsertThreadFieldResultFields
@@ -8054,7 +8054,7 @@ mutation BulkUpsertThreadFields($input: BulkUpsertThreadFieldsInput!) {
   }
 }
 
-mutation CalculateRoleChangeCost($input: CalculateRoleChangeCostInput!) {
+mutation calculateRoleChangeCost($input: CalculateRoleChangeCostInput!) {
   calculateRoleChangeCost(input: $input) {
     roleChangeCost {
       ...RoleChangeCostFields
@@ -8071,7 +8071,7 @@ mutation CalculateRoleChangeCost($input: CalculateRoleChangeCostInput!) {
   }
 }
 
-mutation ChangeBillingPlan($input: ChangeBillingPlanInput!) {
+mutation changeBillingPlan($input: ChangeBillingPlanInput!) {
   changeBillingPlan(input: $input) {
 
     error {
@@ -8086,7 +8086,7 @@ mutation ChangeBillingPlan($input: ChangeBillingPlanInput!) {
   }
 }
 
-mutation ChangeThreadCustomer($input: ChangeThreadCustomerInput!) {
+mutation changeThreadCustomer($input: ChangeThreadCustomerInput!) {
   changeThreadCustomer(input: $input) {
     thread {
       ...ThreadFields
@@ -8103,7 +8103,7 @@ mutation ChangeThreadCustomer($input: ChangeThreadCustomerInput!) {
   }
 }
 
-mutation ChangeThreadPriority($input: ChangeThreadPriorityInput!) {
+mutation changeThreadPriority($input: ChangeThreadPriorityInput!) {
   changeThreadPriority(input: $input) {
     thread {
       ...ThreadFields
@@ -8120,7 +8120,7 @@ mutation ChangeThreadPriority($input: ChangeThreadPriorityInput!) {
   }
 }
 
-mutation ChangeUserStatus($input: ChangeUserStatusInput!) {
+mutation changeUserStatus($input: ChangeUserStatusInput!) {
   changeUserStatus(input: $input) {
     user {
       ...UserFields
@@ -8137,7 +8137,7 @@ mutation ChangeUserStatus($input: ChangeUserStatusInput!) {
   }
 }
 
-mutation CompleteServiceAuthorization($input: CompleteServiceAuthorizationInput!) {
+mutation completeServiceAuthorization($input: CompleteServiceAuthorizationInput!) {
   completeServiceAuthorization(input: $input) {
     serviceAuthorization {
       ...ServiceAuthorizationFields
@@ -8154,7 +8154,7 @@ mutation CompleteServiceAuthorization($input: CompleteServiceAuthorizationInput!
   }
 }
 
-mutation CreateApiKey($input: CreateApiKeyInput!) {
+mutation createApiKey($input: CreateApiKeyInput!) {
   createApiKey(input: $input) {
     apiKey {
       ...ApiKeyFields
@@ -8172,7 +8172,7 @@ mutation CreateApiKey($input: CreateApiKeyInput!) {
   }
 }
 
-mutation CreateAttachmentDownloadUrl($input: CreateAttachmentDownloadUrlInput!) {
+mutation createAttachmentDownloadUrl($input: CreateAttachmentDownloadUrlInput!) {
   createAttachmentDownloadUrl(input: $input) {
     attachmentDownloadUrl {
       ...AttachmentDownloadUrlFields
@@ -8190,7 +8190,7 @@ mutation CreateAttachmentDownloadUrl($input: CreateAttachmentDownloadUrlInput!) 
   }
 }
 
-mutation CreateAttachmentUploadUrl($input: CreateAttachmentUploadUrlInput!) {
+mutation createAttachmentUploadUrl($input: CreateAttachmentUploadUrlInput!) {
   createAttachmentUploadUrl(input: $input) {
     attachmentUploadUrl {
       ...AttachmentUploadUrlFields
@@ -8207,7 +8207,7 @@ mutation CreateAttachmentUploadUrl($input: CreateAttachmentUploadUrlInput!) {
   }
 }
 
-mutation CreateAutoresponder($input: CreateAutoresponderInput!) {
+mutation createAutoresponder($input: CreateAutoresponderInput!) {
   createAutoresponder(input: $input) {
     autoresponder {
       ...AutoresponderFields
@@ -8224,7 +8224,7 @@ mutation CreateAutoresponder($input: CreateAutoresponderInput!) {
   }
 }
 
-mutation CreateBillingPortalSession {
+mutation createBillingPortalSession {
   createBillingPortalSession {
     billingPortalSessionUrl
     error {
@@ -8239,7 +8239,7 @@ mutation CreateBillingPortalSession {
   }
 }
 
-mutation CreateChatApp($input: CreateChatAppInput!) {
+mutation createChatApp($input: CreateChatAppInput!) {
   createChatApp(input: $input) {
     chatApp {
       ...ChatAppFields
@@ -8256,7 +8256,7 @@ mutation CreateChatApp($input: CreateChatAppInput!) {
   }
 }
 
-mutation CreateChatAppSecret($input: CreateChatAppSecretInput!) {
+mutation createChatAppSecret($input: CreateChatAppSecretInput!) {
   createChatAppSecret(input: $input) {
     chatAppSecret {
       ...ChatAppSecretFields
@@ -8273,7 +8273,7 @@ mutation CreateChatAppSecret($input: CreateChatAppSecretInput!) {
   }
 }
 
-mutation CreateCheckoutSession($input: CreateCheckoutSessionInput!) {
+mutation createCheckoutSession($input: CreateCheckoutSessionInput!) {
   createCheckoutSession(input: $input) {
     sessionClientSecret
     error {
@@ -8288,7 +8288,7 @@ mutation CreateCheckoutSession($input: CreateCheckoutSessionInput!) {
   }
 }
 
-mutation CreateCustomerCardConfig($input: CreateCustomerCardConfigInput!) {
+mutation createCustomerCardConfig($input: CreateCustomerCardConfigInput!) {
   createCustomerCardConfig(input: $input) {
     customerCardConfig {
       ...CustomerCardConfigFields
@@ -8305,7 +8305,7 @@ mutation CreateCustomerCardConfig($input: CreateCustomerCardConfigInput!) {
   }
 }
 
-mutation CreateCustomerEvent($input: CreateCustomerEventInput!) {
+mutation createCustomerEvent($input: CreateCustomerEventInput!) {
   createCustomerEvent(input: $input) {
     customerEvent {
       ...CustomerEventFields
@@ -8322,7 +8322,7 @@ mutation CreateCustomerEvent($input: CreateCustomerEventInput!) {
   }
 }
 
-mutation CreateCustomerGroup($input: CreateCustomerGroupInput!) {
+mutation createCustomerGroup($input: CreateCustomerGroupInput!) {
   createCustomerGroup(input: $input) {
     customerGroup {
       ...CustomerGroupFields
@@ -8339,7 +8339,7 @@ mutation CreateCustomerGroup($input: CreateCustomerGroupInput!) {
   }
 }
 
-mutation CreateCustomerSurvey($input: CreateCustomerSurveyInput!) {
+mutation createCustomerSurvey($input: CreateCustomerSurveyInput!) {
   createCustomerSurvey(input: $input) {
     customerSurvey {
       ...CustomerSurveyFields
@@ -8356,7 +8356,7 @@ mutation CreateCustomerSurvey($input: CreateCustomerSurveyInput!) {
   }
 }
 
-mutation CreateEmailPreviewUrl($input: CreateEmailPreviewUrlInput!) {
+mutation createEmailPreviewUrl($input: CreateEmailPreviewUrlInput!) {
   createEmailPreviewUrl(input: $input) {
     emailPreviewUrl {
       ...EmailPreviewUrlFields
@@ -8373,7 +8373,7 @@ mutation CreateEmailPreviewUrl($input: CreateEmailPreviewUrlInput!) {
   }
 }
 
-mutation CreateEscalationPath($input: CreateEscalationPathInput!) {
+mutation createEscalationPath($input: CreateEscalationPathInput!) {
   createEscalationPath(input: $input) {
     escalationPath {
       ...EscalationPathFields
@@ -8390,7 +8390,7 @@ mutation CreateEscalationPath($input: CreateEscalationPathInput!) {
   }
 }
 
-mutation CreateGithubUserAuthIntegration($input: CreateGithubUserAuthIntegrationInput!) {
+mutation createGithubUserAuthIntegration($input: CreateGithubUserAuthIntegrationInput!) {
   createGithubUserAuthIntegration(input: $input) {
     integration {
       ...GithubUserAuthIntegrationFields
@@ -8407,7 +8407,7 @@ mutation CreateGithubUserAuthIntegration($input: CreateGithubUserAuthIntegration
   }
 }
 
-mutation CreateHelpCenter($input: CreateHelpCenterInput!) {
+mutation createHelpCenter($input: CreateHelpCenterInput!) {
   createHelpCenter(input: $input) {
     helpCenter {
       ...HelpCenterFields
@@ -8424,7 +8424,7 @@ mutation CreateHelpCenter($input: CreateHelpCenterInput!) {
   }
 }
 
-mutation CreateHelpCenterArticleGroup($input: CreateHelpCenterArticleGroupInput!) {
+mutation createHelpCenterArticleGroup($input: CreateHelpCenterArticleGroupInput!) {
   createHelpCenterArticleGroup(input: $input) {
 
     error {
@@ -8439,7 +8439,7 @@ mutation CreateHelpCenterArticleGroup($input: CreateHelpCenterArticleGroupInput!
   }
 }
 
-mutation CreateIndexedDocument($input: CreateIndexedDocumentInput!) {
+mutation createIndexedDocument($input: CreateIndexedDocumentInput!) {
   createIndexedDocument(input: $input) {
     indexedDocument {
       ...IndexedDocumentFields
@@ -8456,7 +8456,7 @@ mutation CreateIndexedDocument($input: CreateIndexedDocumentInput!) {
   }
 }
 
-mutation CreateIssueTrackerIssue($input: CreateIssueTrackerIssueInput!) {
+mutation createIssueTrackerIssue($input: CreateIssueTrackerIssueInput!) {
   createIssueTrackerIssue(input: $input) {
     threadLinkCandidate {
       ...ThreadLinkCandidateFields
@@ -8473,7 +8473,7 @@ mutation CreateIssueTrackerIssue($input: CreateIssueTrackerIssueInput!) {
   }
 }
 
-mutation CreateKnowledgeSource($input: CreateKnowledgeSourceInput!) {
+mutation createKnowledgeSource($input: CreateKnowledgeSourceInput!) {
   createKnowledgeSource(input: $input) {
     knowledgeSource {
         ... on KnowledgeSourceSitemap {
@@ -8495,7 +8495,7 @@ mutation CreateKnowledgeSource($input: CreateKnowledgeSourceInput!) {
   }
 }
 
-mutation CreateLabelType($input: CreateLabelTypeInput!) {
+mutation createLabelType($input: CreateLabelTypeInput!) {
   createLabelType(input: $input) {
     labelType {
       ...LabelTypeFields
@@ -8512,7 +8512,7 @@ mutation CreateLabelType($input: CreateLabelTypeInput!) {
   }
 }
 
-mutation CreateMachineUser($input: CreateMachineUserInput!) {
+mutation createMachineUser($input: CreateMachineUserInput!) {
   createMachineUser(input: $input) {
     machineUser {
       ...MachineUserFields
@@ -8529,7 +8529,7 @@ mutation CreateMachineUser($input: CreateMachineUserInput!) {
   }
 }
 
-mutation CreateMyFavoritePage($input: CreateMyFavoritePageInput!) {
+mutation createMyFavoritePage($input: CreateMyFavoritePageInput!) {
   createMyFavoritePage(input: $input) {
     favoritePage {
       ...FavoritePageFields
@@ -8546,7 +8546,7 @@ mutation CreateMyFavoritePage($input: CreateMyFavoritePageInput!) {
   }
 }
 
-mutation CreateMyLinearIntegration($input: CreateMyLinearIntegrationInput!) {
+mutation createMyLinearIntegration($input: CreateMyLinearIntegrationInput!) {
   createMyLinearIntegration(input: $input) {
     integration {
       ...UserLinearIntegrationFields
@@ -8563,7 +8563,7 @@ mutation CreateMyLinearIntegration($input: CreateMyLinearIntegrationInput!) {
   }
 }
 
-mutation CreateMyMSTeamsIntegration($input: CreateMyMSTeamsIntegrationInput!) {
+mutation createMyMSTeamsIntegration($input: CreateMyMSTeamsIntegrationInput!) {
   createMyMSTeamsIntegration(input: $input) {
     integration {
       ...UserMSTeamsIntegrationFields
@@ -8580,7 +8580,7 @@ mutation CreateMyMSTeamsIntegration($input: CreateMyMSTeamsIntegrationInput!) {
   }
 }
 
-mutation CreateMySlackIntegration($input: CreateMySlackIntegrationInput!) {
+mutation createMySlackIntegration($input: CreateMySlackIntegrationInput!) {
   createMySlackIntegration(input: $input) {
     integration {
       ...UserSlackIntegrationFields
@@ -8597,7 +8597,7 @@ mutation CreateMySlackIntegration($input: CreateMySlackIntegrationInput!) {
   }
 }
 
-mutation CreateNote($input: CreateNoteInput!) {
+mutation createNote($input: CreateNoteInput!) {
   createNote(input: $input) {
     note {
       ...NoteFields
@@ -8614,7 +8614,7 @@ mutation CreateNote($input: CreateNoteInput!) {
   }
 }
 
-mutation CreateSavedThreadsView($input: CreateSavedThreadsViewInput!) {
+mutation createSavedThreadsView($input: CreateSavedThreadsViewInput!) {
   createSavedThreadsView(input: $input) {
     savedThreadsView {
       ...SavedThreadsViewFields
@@ -8631,7 +8631,7 @@ mutation CreateSavedThreadsView($input: CreateSavedThreadsViewInput!) {
   }
 }
 
-mutation CreateServiceLevelAgreement($input: CreateServiceLevelAgreementInput!) {
+mutation createServiceLevelAgreement($input: CreateServiceLevelAgreementInput!) {
   createServiceLevelAgreement(input: $input) {
     serviceLevelAgreement {
       ...ServiceLevelAgreementFields
@@ -8648,7 +8648,7 @@ mutation CreateServiceLevelAgreement($input: CreateServiceLevelAgreementInput!) 
   }
 }
 
-mutation CreateSnippet($input: CreateSnippetInput!) {
+mutation createSnippet($input: CreateSnippetInput!) {
   createSnippet(input: $input) {
     snippet {
       ...SnippetFields
@@ -8665,7 +8665,7 @@ mutation CreateSnippet($input: CreateSnippetInput!) {
   }
 }
 
-mutation CreateThread($input: CreateThreadInput!) {
+mutation createThread($input: CreateThreadInput!) {
   createThread(input: $input) {
     thread {
       ...ThreadFields
@@ -8682,7 +8682,7 @@ mutation CreateThread($input: CreateThreadInput!) {
   }
 }
 
-mutation CreateThreadChannelAssociation($input: CreateThreadChannelAssociationInput!) {
+mutation createThreadChannelAssociation($input: CreateThreadChannelAssociationInput!) {
   createThreadChannelAssociation(input: $input) {
     threadChannelAssociation {
       ...ThreadChannelAssociationFields
@@ -8699,7 +8699,7 @@ mutation CreateThreadChannelAssociation($input: CreateThreadChannelAssociationIn
   }
 }
 
-mutation CreateThreadDiscussion($input: CreateThreadDiscussionInput!) {
+mutation createThreadDiscussion($input: CreateThreadDiscussionInput!) {
   createThreadDiscussion(input: $input) {
     threadDiscussion {
       ...ThreadDiscussionFields
@@ -8716,7 +8716,7 @@ mutation CreateThreadDiscussion($input: CreateThreadDiscussionInput!) {
   }
 }
 
-mutation CreateThreadEvent($input: CreateThreadEventInput!) {
+mutation createThreadEvent($input: CreateThreadEventInput!) {
   createThreadEvent(input: $input) {
     threadEvent {
       ...ThreadEventFields
@@ -8733,7 +8733,7 @@ mutation CreateThreadEvent($input: CreateThreadEventInput!) {
   }
 }
 
-mutation CreateThreadFieldSchema($input: CreateThreadFieldSchemaInput!) {
+mutation createThreadFieldSchema($input: CreateThreadFieldSchemaInput!) {
   createThreadFieldSchema(input: $input) {
     threadFieldSchema {
       ...ThreadFieldSchemaFields
@@ -8750,7 +8750,7 @@ mutation CreateThreadFieldSchema($input: CreateThreadFieldSchemaInput!) {
   }
 }
 
-mutation CreateThreadLink($input: CreateThreadLinkInput!) {
+mutation createThreadLink($input: CreateThreadLinkInput!) {
   createThreadLink(input: $input) {
     threadLink {
       ...ThreadLinkFields
@@ -8767,7 +8767,7 @@ mutation CreateThreadLink($input: CreateThreadLinkInput!) {
   }
 }
 
-mutation CreateTier($input: CreateTierInput!) {
+mutation createTier($input: CreateTierInput!) {
   createTier(input: $input) {
     tier {
       ...TierFields
@@ -8784,7 +8784,7 @@ mutation CreateTier($input: CreateTierInput!) {
   }
 }
 
-mutation CreateUserAccount($input: CreateUserAccountInput!) {
+mutation createUserAccount($input: CreateUserAccountInput!) {
   createUserAccount(input: $input) {
     userAccount {
       ...UserAccountFields
@@ -8801,7 +8801,7 @@ mutation CreateUserAccount($input: CreateUserAccountInput!) {
   }
 }
 
-mutation CreateUserAuthDiscordChannelIntegration($input: CreateUserAuthDiscordChannelIntegrationInput!) {
+mutation createUserAuthDiscordChannelIntegration($input: CreateUserAuthDiscordChannelIntegrationInput!) {
   createUserAuthDiscordChannelIntegration(input: $input) {
     integration {
       ...UserAuthDiscordChannelIntegrationFields
@@ -8818,7 +8818,7 @@ mutation CreateUserAuthDiscordChannelIntegration($input: CreateUserAuthDiscordCh
   }
 }
 
-mutation CreateUserAuthSlackIntegration($input: CreateUserAuthSlackIntegrationInput!) {
+mutation createUserAuthSlackIntegration($input: CreateUserAuthSlackIntegrationInput!) {
   createUserAuthSlackIntegration(input: $input) {
     integration {
       ...UserAuthSlackIntegrationFields
@@ -8835,7 +8835,7 @@ mutation CreateUserAuthSlackIntegration($input: CreateUserAuthSlackIntegrationIn
   }
 }
 
-mutation CreateWebhookTarget($input: CreateWebhookTargetInput!) {
+mutation createWebhookTarget($input: CreateWebhookTargetInput!) {
   createWebhookTarget(input: $input) {
     webhookTarget {
       ...WebhookTargetFields
@@ -8852,7 +8852,7 @@ mutation CreateWebhookTarget($input: CreateWebhookTargetInput!) {
   }
 }
 
-mutation CreateWorkflowRule($input: CreateWorkflowRuleInput!) {
+mutation createWorkflowRule($input: CreateWorkflowRuleInput!) {
   createWorkflowRule(input: $input) {
     workflowRule {
       ...WorkflowRuleFields
@@ -8869,7 +8869,7 @@ mutation CreateWorkflowRule($input: CreateWorkflowRuleInput!) {
   }
 }
 
-mutation CreateWorkspace($input: CreateWorkspaceInput!) {
+mutation createWorkspace($input: CreateWorkspaceInput!) {
   createWorkspace(input: $input) {
     workspace {
       ...WorkspaceFields
@@ -8886,7 +8886,7 @@ mutation CreateWorkspace($input: CreateWorkspaceInput!) {
   }
 }
 
-mutation CreateWorkspaceDiscordChannelIntegration($input: CreateWorkspaceDiscordChannelIntegrationInput!) {
+mutation createWorkspaceDiscordChannelIntegration($input: CreateWorkspaceDiscordChannelIntegrationInput!) {
   createWorkspaceDiscordChannelIntegration(input: $input) {
     integration {
       ...WorkspaceDiscordChannelIntegrationFields
@@ -8903,7 +8903,7 @@ mutation CreateWorkspaceDiscordChannelIntegration($input: CreateWorkspaceDiscord
   }
 }
 
-mutation CreateWorkspaceDiscordIntegration($input: CreateWorkspaceDiscordIntegrationInput!) {
+mutation createWorkspaceDiscordIntegration($input: CreateWorkspaceDiscordIntegrationInput!) {
   createWorkspaceDiscordIntegration(input: $input) {
     integration {
       ...WorkspaceDiscordIntegrationFields
@@ -8920,7 +8920,7 @@ mutation CreateWorkspaceDiscordIntegration($input: CreateWorkspaceDiscordIntegra
   }
 }
 
-mutation CreateWorkspaceEmailDomainSettings($input: CreateWorkspaceEmailDomainSettingsInput!) {
+mutation createWorkspaceEmailDomainSettings($input: CreateWorkspaceEmailDomainSettingsInput!) {
   createWorkspaceEmailDomainSettings(input: $input) {
     workspaceEmailDomainSettings {
       ...WorkspaceEmailDomainSettingsFields
@@ -8937,7 +8937,7 @@ mutation CreateWorkspaceEmailDomainSettings($input: CreateWorkspaceEmailDomainSe
   }
 }
 
-mutation CreateWorkspaceFileUploadUrl($input: CreateWorkspaceFileUploadUrlInput!) {
+mutation createWorkspaceFileUploadUrl($input: CreateWorkspaceFileUploadUrlInput!) {
   createWorkspaceFileUploadUrl(input: $input) {
     workspaceFileUploadUrl {
       ...WorkspaceFileUploadUrlFields
@@ -8954,7 +8954,7 @@ mutation CreateWorkspaceFileUploadUrl($input: CreateWorkspaceFileUploadUrlInput!
   }
 }
 
-mutation CreateWorkspaceMSTeamsIntegration($input: CreateWorkspaceMSTeamsIntegrationInput!) {
+mutation createWorkspaceMSTeamsIntegration($input: CreateWorkspaceMSTeamsIntegrationInput!) {
   createWorkspaceMSTeamsIntegration(input: $input) {
     integration {
       ...WorkspaceMSTeamsIntegrationFields
@@ -8971,7 +8971,7 @@ mutation CreateWorkspaceMSTeamsIntegration($input: CreateWorkspaceMSTeamsIntegra
   }
 }
 
-mutation CreateWorkspaceSlackChannelIntegration($input: CreateWorkspaceSlackChannelIntegrationInput!) {
+mutation createWorkspaceSlackChannelIntegration($input: CreateWorkspaceSlackChannelIntegrationInput!) {
   createWorkspaceSlackChannelIntegration(input: $input) {
     integration {
       ...WorkspaceSlackChannelIntegrationFields
@@ -8988,7 +8988,7 @@ mutation CreateWorkspaceSlackChannelIntegration($input: CreateWorkspaceSlackChan
   }
 }
 
-mutation CreateWorkspaceSlackIntegration($input: CreateWorkspaceSlackIntegrationInput!) {
+mutation createWorkspaceSlackIntegration($input: CreateWorkspaceSlackIntegrationInput!) {
   createWorkspaceSlackIntegration(input: $input) {
     integration {
       ...WorkspaceSlackIntegrationFields
@@ -9005,7 +9005,7 @@ mutation CreateWorkspaceSlackIntegration($input: CreateWorkspaceSlackIntegration
   }
 }
 
-mutation DeleteApiKey($input: DeleteApiKeyInput!) {
+mutation deleteApiKey($input: DeleteApiKeyInput!) {
   deleteApiKey(input: $input) {
     apiKey {
       ...ApiKeyFields
@@ -9022,7 +9022,7 @@ mutation DeleteApiKey($input: DeleteApiKeyInput!) {
   }
 }
 
-mutation DeleteAutoresponder($input: DeleteAutoresponderInput!) {
+mutation deleteAutoresponder($input: DeleteAutoresponderInput!) {
   deleteAutoresponder(input: $input) {
     autoresponder {
       ...AutoresponderFields
@@ -9039,7 +9039,7 @@ mutation DeleteAutoresponder($input: DeleteAutoresponderInput!) {
   }
 }
 
-mutation DeleteBusinessHours {
+mutation deleteBusinessHours {
   deleteBusinessHours {
 
     error {
@@ -9054,7 +9054,7 @@ mutation DeleteBusinessHours {
   }
 }
 
-mutation DeleteChatApp($input: DeleteChatAppInput!) {
+mutation deleteChatApp($input: DeleteChatAppInput!) {
   deleteChatApp(input: $input) {
 
     error {
@@ -9069,7 +9069,7 @@ mutation DeleteChatApp($input: DeleteChatAppInput!) {
   }
 }
 
-mutation DeleteChatAppSecret($input: DeleteChatAppSecretInput!) {
+mutation deleteChatAppSecret($input: DeleteChatAppSecretInput!) {
   deleteChatAppSecret(input: $input) {
 
     error {
@@ -9084,7 +9084,7 @@ mutation DeleteChatAppSecret($input: DeleteChatAppSecretInput!) {
   }
 }
 
-mutation DeleteCompany($input: DeleteCompanyInput!) {
+mutation deleteCompany($input: DeleteCompanyInput!) {
   deleteCompany(input: $input) {
     company {
       ...CompanyFields
@@ -9101,7 +9101,7 @@ mutation DeleteCompany($input: DeleteCompanyInput!) {
   }
 }
 
-mutation DeleteCustomer($input: DeleteCustomerInput!) {
+mutation deleteCustomer($input: DeleteCustomerInput!) {
   deleteCustomer(input: $input) {
 
     error {
@@ -9116,7 +9116,7 @@ mutation DeleteCustomer($input: DeleteCustomerInput!) {
   }
 }
 
-mutation DeleteCustomerCardConfig($input: DeleteCustomerCardConfigInput!) {
+mutation deleteCustomerCardConfig($input: DeleteCustomerCardConfigInput!) {
   deleteCustomerCardConfig(input: $input) {
 
     error {
@@ -9131,7 +9131,7 @@ mutation DeleteCustomerCardConfig($input: DeleteCustomerCardConfigInput!) {
   }
 }
 
-mutation DeleteCustomerGroup($input: DeleteCustomerGroupInput!) {
+mutation deleteCustomerGroup($input: DeleteCustomerGroupInput!) {
   deleteCustomerGroup(input: $input) {
 
     error {
@@ -9146,7 +9146,7 @@ mutation DeleteCustomerGroup($input: DeleteCustomerGroupInput!) {
   }
 }
 
-mutation DeleteCustomerSurvey($input: DeleteCustomerSurveyInput!) {
+mutation deleteCustomerSurvey($input: DeleteCustomerSurveyInput!) {
   deleteCustomerSurvey(input: $input) {
 
     error {
@@ -9161,7 +9161,7 @@ mutation DeleteCustomerSurvey($input: DeleteCustomerSurveyInput!) {
   }
 }
 
-mutation DeleteEscalationPath($input: DeleteEscalationPathInput!) {
+mutation deleteEscalationPath($input: DeleteEscalationPathInput!) {
   deleteEscalationPath(input: $input) {
 
     error {
@@ -9176,7 +9176,7 @@ mutation DeleteEscalationPath($input: DeleteEscalationPathInput!) {
   }
 }
 
-mutation DeleteGithubUserAuthIntegration {
+mutation deleteGithubUserAuthIntegration {
   deleteGithubUserAuthIntegration {
     deletedIntegrationId
     error {
@@ -9191,7 +9191,7 @@ mutation DeleteGithubUserAuthIntegration {
   }
 }
 
-mutation DeleteHelpCenter($input: DeleteHelpCenterInput!) {
+mutation deleteHelpCenter($input: DeleteHelpCenterInput!) {
   deleteHelpCenter(input: $input) {
 
     error {
@@ -9206,7 +9206,7 @@ mutation DeleteHelpCenter($input: DeleteHelpCenterInput!) {
   }
 }
 
-mutation DeleteHelpCenterArticle($input: DeleteHelpCenterArticleInput!) {
+mutation deleteHelpCenterArticle($input: DeleteHelpCenterArticleInput!) {
   deleteHelpCenterArticle(input: $input) {
 
     error {
@@ -9221,7 +9221,7 @@ mutation DeleteHelpCenterArticle($input: DeleteHelpCenterArticleInput!) {
   }
 }
 
-mutation DeleteHelpCenterArticleGroup($input: DeleteHelpCenterArticleGroupInput!) {
+mutation deleteHelpCenterArticleGroup($input: DeleteHelpCenterArticleGroupInput!) {
   deleteHelpCenterArticleGroup(input: $input) {
 
     error {
@@ -9236,7 +9236,7 @@ mutation DeleteHelpCenterArticleGroup($input: DeleteHelpCenterArticleGroupInput!
   }
 }
 
-mutation DeleteKnowledgeSource($input: DeleteKnowledgeSourceInput!) {
+mutation deleteKnowledgeSource($input: DeleteKnowledgeSourceInput!) {
   deleteKnowledgeSource(input: $input) {
 
     error {
@@ -9251,7 +9251,7 @@ mutation DeleteKnowledgeSource($input: DeleteKnowledgeSourceInput!) {
   }
 }
 
-mutation DeleteMachineUser($input: DeleteMachineUserInput!) {
+mutation deleteMachineUser($input: DeleteMachineUserInput!) {
   deleteMachineUser(input: $input) {
     machineUser {
       ...MachineUserFields
@@ -9268,7 +9268,7 @@ mutation DeleteMachineUser($input: DeleteMachineUserInput!) {
   }
 }
 
-mutation DeleteMyFavoritePage($input: DeleteMyFavoritePageInput!) {
+mutation deleteMyFavoritePage($input: DeleteMyFavoritePageInput!) {
   deleteMyFavoritePage(input: $input) {
 
     error {
@@ -9283,7 +9283,7 @@ mutation DeleteMyFavoritePage($input: DeleteMyFavoritePageInput!) {
   }
 }
 
-mutation DeleteMyLinearIntegration {
+mutation deleteMyLinearIntegration {
   deleteMyLinearIntegration {
 
     error {
@@ -9298,7 +9298,7 @@ mutation DeleteMyLinearIntegration {
   }
 }
 
-mutation DeleteMyMSTeamsIntegration {
+mutation deleteMyMSTeamsIntegration {
   deleteMyMSTeamsIntegration {
     integration {
       ...UserMSTeamsIntegrationFields
@@ -9315,7 +9315,7 @@ mutation DeleteMyMSTeamsIntegration {
   }
 }
 
-mutation DeleteMyServiceAuthorization($input: DeleteMyServiceAuthorizationInput!) {
+mutation deleteMyServiceAuthorization($input: DeleteMyServiceAuthorizationInput!) {
   deleteMyServiceAuthorization(input: $input) {
 
     error {
@@ -9330,7 +9330,7 @@ mutation DeleteMyServiceAuthorization($input: DeleteMyServiceAuthorizationInput!
   }
 }
 
-mutation DeleteMySlackIntegration {
+mutation deleteMySlackIntegration {
   deleteMySlackIntegration {
 
     error {
@@ -9345,7 +9345,7 @@ mutation DeleteMySlackIntegration {
   }
 }
 
-mutation DeleteNote($input: DeleteNoteInput!) {
+mutation deleteNote($input: DeleteNoteInput!) {
   deleteNote(input: $input) {
     note {
       ...NoteFields
@@ -9362,7 +9362,7 @@ mutation DeleteNote($input: DeleteNoteInput!) {
   }
 }
 
-mutation DeleteSavedThreadsView($input: DeleteSavedThreadsViewInput!) {
+mutation deleteSavedThreadsView($input: DeleteSavedThreadsViewInput!) {
   deleteSavedThreadsView(input: $input) {
 
     error {
@@ -9377,7 +9377,7 @@ mutation DeleteSavedThreadsView($input: DeleteSavedThreadsViewInput!) {
   }
 }
 
-mutation DeleteServiceAuthorization($input: DeleteServiceAuthorizationInput!) {
+mutation deleteServiceAuthorization($input: DeleteServiceAuthorizationInput!) {
   deleteServiceAuthorization(input: $input) {
 
     error {
@@ -9392,7 +9392,7 @@ mutation DeleteServiceAuthorization($input: DeleteServiceAuthorizationInput!) {
   }
 }
 
-mutation DeleteServiceLevelAgreement($input: DeleteServiceLevelAgreementInput!) {
+mutation deleteServiceLevelAgreement($input: DeleteServiceLevelAgreementInput!) {
   deleteServiceLevelAgreement(input: $input) {
     serviceLevelAgreement {
       ...ServiceLevelAgreementFields
@@ -9409,7 +9409,7 @@ mutation DeleteServiceLevelAgreement($input: DeleteServiceLevelAgreementInput!) 
   }
 }
 
-mutation DeleteSnippet($input: DeleteSnippetInput!) {
+mutation deleteSnippet($input: DeleteSnippetInput!) {
   deleteSnippet(input: $input) {
     snippet {
       ...SnippetFields
@@ -9426,7 +9426,7 @@ mutation DeleteSnippet($input: DeleteSnippetInput!) {
   }
 }
 
-mutation DeleteTenant($input: DeleteTenantInput!) {
+mutation deleteTenant($input: DeleteTenantInput!) {
   deleteTenant(input: $input) {
     tenant {
       ...TenantFields
@@ -9443,7 +9443,7 @@ mutation DeleteTenant($input: DeleteTenantInput!) {
   }
 }
 
-mutation DeleteTenantField($input: DeleteTenantFieldInput!) {
+mutation deleteTenantField($input: DeleteTenantFieldInput!) {
   deleteTenantField(input: $input) {
     tenantField {
       ...TenantFieldFields
@@ -9460,7 +9460,7 @@ mutation DeleteTenantField($input: DeleteTenantFieldInput!) {
   }
 }
 
-mutation DeleteTenantFieldSchema($input: DeleteTenantFieldSchemaInput!) {
+mutation deleteTenantFieldSchema($input: DeleteTenantFieldSchemaInput!) {
   deleteTenantFieldSchema(input: $input) {
     tenantFieldSchema {
       ...TenantFieldSchemaFields
@@ -9477,7 +9477,7 @@ mutation DeleteTenantFieldSchema($input: DeleteTenantFieldSchemaInput!) {
   }
 }
 
-mutation DeleteThreadChannelAssociation($input: DeleteThreadChannelAssociationInput!) {
+mutation deleteThreadChannelAssociation($input: DeleteThreadChannelAssociationInput!) {
   deleteThreadChannelAssociation(input: $input) {
 
     error {
@@ -9492,7 +9492,7 @@ mutation DeleteThreadChannelAssociation($input: DeleteThreadChannelAssociationIn
   }
 }
 
-mutation DeleteThreadField($input: DeleteThreadFieldInput!) {
+mutation deleteThreadField($input: DeleteThreadFieldInput!) {
   deleteThreadField(input: $input) {
 
     error {
@@ -9507,7 +9507,7 @@ mutation DeleteThreadField($input: DeleteThreadFieldInput!) {
   }
 }
 
-mutation DeleteThreadFieldSchema($input: DeleteThreadFieldSchemaInput!) {
+mutation deleteThreadFieldSchema($input: DeleteThreadFieldSchemaInput!) {
   deleteThreadFieldSchema(input: $input) {
 
     error {
@@ -9522,7 +9522,7 @@ mutation DeleteThreadFieldSchema($input: DeleteThreadFieldSchemaInput!) {
   }
 }
 
-mutation DeleteThreadLink($input: DeleteThreadLinkInput!) {
+mutation deleteThreadLink($input: DeleteThreadLinkInput!) {
   deleteThreadLink(input: $input) {
 
     error {
@@ -9537,7 +9537,7 @@ mutation DeleteThreadLink($input: DeleteThreadLinkInput!) {
   }
 }
 
-mutation DeleteTier($input: DeleteTierInput!) {
+mutation deleteTier($input: DeleteTierInput!) {
   deleteTier(input: $input) {
     tier {
       ...TierFields
@@ -9554,7 +9554,7 @@ mutation DeleteTier($input: DeleteTierInput!) {
   }
 }
 
-mutation DeleteUser($input: DeleteUserInput!) {
+mutation deleteUser($input: DeleteUserInput!) {
   deleteUser(input: $input) {
 
     error {
@@ -9569,7 +9569,7 @@ mutation DeleteUser($input: DeleteUserInput!) {
   }
 }
 
-mutation DeleteUserAuthDiscordChannelIntegration($input: DeleteUserAuthDiscordChannelIntegrationInput!) {
+mutation deleteUserAuthDiscordChannelIntegration($input: DeleteUserAuthDiscordChannelIntegrationInput!) {
   deleteUserAuthDiscordChannelIntegration(input: $input) {
 
     error {
@@ -9584,7 +9584,7 @@ mutation DeleteUserAuthDiscordChannelIntegration($input: DeleteUserAuthDiscordCh
   }
 }
 
-mutation DeleteUserAuthSlackIntegration($input: DeleteUserAuthSlackIntegrationInput!) {
+mutation deleteUserAuthSlackIntegration($input: DeleteUserAuthSlackIntegrationInput!) {
   deleteUserAuthSlackIntegration(input: $input) {
 
     error {
@@ -9599,7 +9599,7 @@ mutation DeleteUserAuthSlackIntegration($input: DeleteUserAuthSlackIntegrationIn
   }
 }
 
-mutation DeleteWebhookTarget($input: DeleteWebhookTargetInput!) {
+mutation deleteWebhookTarget($input: DeleteWebhookTargetInput!) {
   deleteWebhookTarget(input: $input) {
 
     error {
@@ -9614,7 +9614,7 @@ mutation DeleteWebhookTarget($input: DeleteWebhookTargetInput!) {
   }
 }
 
-mutation DeleteWorkflowRule($input: DeleteWorkflowRuleInput!) {
+mutation deleteWorkflowRule($input: DeleteWorkflowRuleInput!) {
   deleteWorkflowRule(input: $input) {
 
     error {
@@ -9629,7 +9629,7 @@ mutation DeleteWorkflowRule($input: DeleteWorkflowRuleInput!) {
   }
 }
 
-mutation DeleteWorkspaceDiscordChannelIntegration($input: DeleteWorkspaceDiscordChannelIntegrationInput!) {
+mutation deleteWorkspaceDiscordChannelIntegration($input: DeleteWorkspaceDiscordChannelIntegrationInput!) {
   deleteWorkspaceDiscordChannelIntegration(input: $input) {
 
     error {
@@ -9644,7 +9644,7 @@ mutation DeleteWorkspaceDiscordChannelIntegration($input: DeleteWorkspaceDiscord
   }
 }
 
-mutation DeleteWorkspaceDiscordIntegration($input: DeleteWorkspaceDiscordIntegrationInput!) {
+mutation deleteWorkspaceDiscordIntegration($input: DeleteWorkspaceDiscordIntegrationInput!) {
   deleteWorkspaceDiscordIntegration(input: $input) {
     integration {
       ...WorkspaceDiscordIntegrationFields
@@ -9661,7 +9661,7 @@ mutation DeleteWorkspaceDiscordIntegration($input: DeleteWorkspaceDiscordIntegra
   }
 }
 
-mutation DeleteWorkspaceEmailDomainSettings {
+mutation deleteWorkspaceEmailDomainSettings {
   deleteWorkspaceEmailDomainSettings {
 
     error {
@@ -9676,7 +9676,7 @@ mutation DeleteWorkspaceEmailDomainSettings {
   }
 }
 
-mutation DeleteWorkspaceFile($input: DeleteWorkspaceFileInput!) {
+mutation deleteWorkspaceFile($input: DeleteWorkspaceFileInput!) {
   deleteWorkspaceFile(input: $input) {
 
     error {
@@ -9691,7 +9691,7 @@ mutation DeleteWorkspaceFile($input: DeleteWorkspaceFileInput!) {
   }
 }
 
-mutation DeleteWorkspaceInvite($input: DeleteWorkspaceInviteInput!) {
+mutation deleteWorkspaceInvite($input: DeleteWorkspaceInviteInput!) {
   deleteWorkspaceInvite(input: $input) {
     invite {
       ...WorkspaceInviteFields
@@ -9708,7 +9708,7 @@ mutation DeleteWorkspaceInvite($input: DeleteWorkspaceInviteInput!) {
   }
 }
 
-mutation DeleteWorkspaceMSTeamsIntegration($input: DeleteWorkspaceMSTeamsIntegrationInput!) {
+mutation deleteWorkspaceMSTeamsIntegration($input: DeleteWorkspaceMSTeamsIntegrationInput!) {
   deleteWorkspaceMSTeamsIntegration(input: $input) {
     integration {
       ...WorkspaceMSTeamsIntegrationFields
@@ -9725,7 +9725,7 @@ mutation DeleteWorkspaceMSTeamsIntegration($input: DeleteWorkspaceMSTeamsIntegra
   }
 }
 
-mutation DeleteWorkspaceSlackChannelIntegration($input: DeleteWorkspaceSlackChannelIntegrationInput!) {
+mutation deleteWorkspaceSlackChannelIntegration($input: DeleteWorkspaceSlackChannelIntegrationInput!) {
   deleteWorkspaceSlackChannelIntegration(input: $input) {
     integration {
       ...WorkspaceSlackChannelIntegrationFields
@@ -9742,7 +9742,7 @@ mutation DeleteWorkspaceSlackChannelIntegration($input: DeleteWorkspaceSlackChan
   }
 }
 
-mutation DeleteWorkspaceSlackIntegration($input: DeleteWorkspaceSlackIntegrationInput!) {
+mutation deleteWorkspaceSlackIntegration($input: DeleteWorkspaceSlackIntegrationInput!) {
   deleteWorkspaceSlackIntegration(input: $input) {
     integration {
       ...WorkspaceSlackIntegrationFields
@@ -9759,7 +9759,7 @@ mutation DeleteWorkspaceSlackIntegration($input: DeleteWorkspaceSlackIntegration
   }
 }
 
-mutation EscalateThread($input: EscalateThreadInput!) {
+mutation escalateThread($input: EscalateThreadInput!) {
   escalateThread(input: $input) {
     thread {
       ...ThreadFields
@@ -9776,7 +9776,7 @@ mutation EscalateThread($input: EscalateThreadInput!) {
   }
 }
 
-mutation ForkThread($input: ForkThreadInput!) {
+mutation forkThread($input: ForkThreadInput!) {
   forkThread(input: $input) {
     thread {
       ...ThreadFields
@@ -9793,7 +9793,7 @@ mutation ForkThread($input: ForkThreadInput!) {
   }
 }
 
-mutation GenerateHelpCenterArticle($input: GenerateHelpCenterArticleInput!) {
+mutation generateHelpCenterArticle($input: GenerateHelpCenterArticleInput!) {
   generateHelpCenterArticle(input: $input) {
     helpCenterArticles {
       ...HelpCenterArticleFields
@@ -9810,7 +9810,7 @@ mutation GenerateHelpCenterArticle($input: GenerateHelpCenterArticleInput!) {
   }
 }
 
-mutation InviteUserToWorkspace($input: InviteUserToWorkspaceInput!) {
+mutation inviteUserToWorkspace($input: InviteUserToWorkspaceInput!) {
   inviteUserToWorkspace(input: $input) {
     invite {
       ...WorkspaceInviteFields
@@ -9827,7 +9827,7 @@ mutation InviteUserToWorkspace($input: InviteUserToWorkspaceInput!) {
   }
 }
 
-mutation MarkCustomerAsSpam($input: MarkCustomerAsSpamInput!) {
+mutation markCustomerAsSpam($input: MarkCustomerAsSpamInput!) {
   markCustomerAsSpam(input: $input) {
     customer {
       ...CustomerFields
@@ -9844,7 +9844,7 @@ mutation MarkCustomerAsSpam($input: MarkCustomerAsSpamInput!) {
   }
 }
 
-mutation MarkThreadAsDone($input: MarkThreadAsDoneInput!) {
+mutation markThreadAsDone($input: MarkThreadAsDoneInput!) {
   markThreadAsDone(input: $input) {
     thread {
       ...ThreadFields
@@ -9861,7 +9861,7 @@ mutation MarkThreadAsDone($input: MarkThreadAsDoneInput!) {
   }
 }
 
-mutation MarkThreadAsTodo($input: MarkThreadAsTodoInput!) {
+mutation markThreadAsTodo($input: MarkThreadAsTodoInput!) {
   markThreadAsTodo(input: $input) {
     thread {
       ...ThreadFields
@@ -9878,7 +9878,7 @@ mutation MarkThreadAsTodo($input: MarkThreadAsTodoInput!) {
   }
 }
 
-mutation MarkThreadDiscussionAsResolved($input: MarkThreadDiscussionAsResolvedInput!) {
+mutation markThreadDiscussionAsResolved($input: MarkThreadDiscussionAsResolvedInput!) {
   markThreadDiscussionAsResolved(input: $input) {
 
     error {
@@ -9893,7 +9893,7 @@ mutation MarkThreadDiscussionAsResolved($input: MarkThreadDiscussionAsResolvedIn
   }
 }
 
-mutation MoveLabelType($input: MoveLabelTypeInput!) {
+mutation moveLabelType($input: MoveLabelTypeInput!) {
   moveLabelType(input: $input) {
     labelType {
       ...LabelTypeFields
@@ -9910,7 +9910,7 @@ mutation MoveLabelType($input: MoveLabelTypeInput!) {
   }
 }
 
-mutation PreviewBillingPlanChange($input: PreviewBillingPlanChangeInput!) {
+mutation previewBillingPlanChange($input: PreviewBillingPlanChangeInput!) {
   previewBillingPlanChange(input: $input) {
     preview {
       ...BillingPlanChangePreviewFields
@@ -9927,7 +9927,7 @@ mutation PreviewBillingPlanChange($input: PreviewBillingPlanChangeInput!) {
   }
 }
 
-mutation RefreshConnectedDiscordChannels($input: RefreshConnectedDiscordChannelsInput!) {
+mutation refreshConnectedDiscordChannels($input: RefreshConnectedDiscordChannelsInput!) {
   refreshConnectedDiscordChannels(input: $input) {
 
     error {
@@ -9942,7 +9942,7 @@ mutation RefreshConnectedDiscordChannels($input: RefreshConnectedDiscordChannels
   }
 }
 
-mutation RefreshWorkspaceSlackChannelIntegration($input: RefreshWorkspaceSlackChannelIntegrationInput!) {
+mutation refreshWorkspaceSlackChannelIntegration($input: RefreshWorkspaceSlackChannelIntegrationInput!) {
   refreshWorkspaceSlackChannelIntegration(input: $input) {
     integration {
       ...WorkspaceSlackChannelIntegrationFields
@@ -9959,7 +9959,7 @@ mutation RefreshWorkspaceSlackChannelIntegration($input: RefreshWorkspaceSlackCh
   }
 }
 
-mutation RegenerateWorkspaceHmac {
+mutation regenerateWorkspaceHmac {
   regenerateWorkspaceHmac {
     workspaceHmac {
       ...WorkspaceHmacFields
@@ -9976,7 +9976,7 @@ mutation RegenerateWorkspaceHmac {
   }
 }
 
-mutation ReloadCustomerCardInstance($input: ReloadCustomerCardInstanceInput!) {
+mutation reloadCustomerCardInstance($input: ReloadCustomerCardInstanceInput!) {
   reloadCustomerCardInstance(input: $input) {
     customerCardInstance {
       ...CustomerCardInstanceFields
@@ -9993,7 +9993,7 @@ mutation ReloadCustomerCardInstance($input: ReloadCustomerCardInstanceInput!) {
   }
 }
 
-mutation RemoveAdditionalAssignees($input: RemoveAdditionalAssigneesInput!) {
+mutation removeAdditionalAssignees($input: RemoveAdditionalAssigneesInput!) {
   removeAdditionalAssignees(input: $input) {
     thread {
       ...ThreadFields
@@ -10010,7 +10010,7 @@ mutation RemoveAdditionalAssignees($input: RemoveAdditionalAssigneesInput!) {
   }
 }
 
-mutation RemoveCustomerFromCustomerGroups($input: RemoveCustomerFromCustomerGroupsInput!) {
+mutation removeCustomerFromCustomerGroups($input: RemoveCustomerFromCustomerGroupsInput!) {
   removeCustomerFromCustomerGroups(input: $input) {
 
     error {
@@ -10025,7 +10025,7 @@ mutation RemoveCustomerFromCustomerGroups($input: RemoveCustomerFromCustomerGrou
   }
 }
 
-mutation RemoveCustomerFromTenants($input: RemoveCustomerFromTenantsInput!) {
+mutation removeCustomerFromTenants($input: RemoveCustomerFromTenantsInput!) {
   removeCustomerFromTenants(input: $input) {
     customer {
       ...CustomerFields
@@ -10042,7 +10042,7 @@ mutation RemoveCustomerFromTenants($input: RemoveCustomerFromTenantsInput!) {
   }
 }
 
-mutation RemoveLabels($input: RemoveLabelsInput!) {
+mutation removeLabels($input: RemoveLabelsInput!) {
   removeLabels(input: $input) {
     thread {
       ...ThreadFields
@@ -10059,7 +10059,7 @@ mutation RemoveLabels($input: RemoveLabelsInput!) {
   }
 }
 
-mutation RemoveLabelsFromUser($input: RemoveLabelsFromUserInput!) {
+mutation removeLabelsFromUser($input: RemoveLabelsFromUserInput!) {
   removeLabelsFromUser(input: $input) {
     labels {
       ...LabelFields
@@ -10079,7 +10079,7 @@ mutation RemoveLabelsFromUser($input: RemoveLabelsFromUserInput!) {
   }
 }
 
-mutation RemoveMembersFromTier($input: RemoveMembersFromTierInput!) {
+mutation removeMembersFromTier($input: RemoveMembersFromTierInput!) {
   removeMembersFromTier(input: $input) {
 
     error {
@@ -10094,7 +10094,7 @@ mutation RemoveMembersFromTier($input: RemoveMembersFromTierInput!) {
   }
 }
 
-mutation RemoveTenantFieldSchemaMapping($input: RemoveTenantFieldSchemaMappingInput!) {
+mutation removeTenantFieldSchemaMapping($input: RemoveTenantFieldSchemaMappingInput!) {
   removeTenantFieldSchemaMapping(input: $input) {
     tenantFieldSchema {
       ...TenantFieldSchemaFields
@@ -10111,7 +10111,7 @@ mutation RemoveTenantFieldSchemaMapping($input: RemoveTenantFieldSchemaMappingIn
   }
 }
 
-mutation RemoveUserFromActiveBillingRota($input: RemoveUserFromActiveBillingRotaInput!) {
+mutation removeUserFromActiveBillingRota($input: RemoveUserFromActiveBillingRotaInput!) {
   removeUserFromActiveBillingRota(input: $input) {
     billingRota {
       ...BillingRotaFields
@@ -10128,7 +10128,7 @@ mutation RemoveUserFromActiveBillingRota($input: RemoveUserFromActiveBillingRota
   }
 }
 
-mutation RemoveWorkspaceAlternateSupportEmailAddress($input: RemoveWorkspaceAlternateSupportEmailAddressInput!) {
+mutation removeWorkspaceAlternateSupportEmailAddress($input: RemoveWorkspaceAlternateSupportEmailAddressInput!) {
   removeWorkspaceAlternateSupportEmailAddress(input: $input) {
     workspaceEmailDomainSettings {
       ...WorkspaceEmailDomainSettingsFields
@@ -10145,7 +10145,7 @@ mutation RemoveWorkspaceAlternateSupportEmailAddress($input: RemoveWorkspaceAlte
   }
 }
 
-mutation ReorderAutoresponders($input: ReorderAutorespondersInput!) {
+mutation reorderAutoresponders($input: ReorderAutorespondersInput!) {
   reorderAutoresponders(input: $input) {
     autoresponders {
       ...AutoresponderFields
@@ -10162,7 +10162,7 @@ mutation ReorderAutoresponders($input: ReorderAutorespondersInput!) {
   }
 }
 
-mutation ReorderCustomerCardConfigs($input: ReorderCustomerCardConfigsInput!) {
+mutation reorderCustomerCardConfigs($input: ReorderCustomerCardConfigsInput!) {
   reorderCustomerCardConfigs(input: $input) {
     customerCardConfigs {
       ...CustomerCardConfigFields
@@ -10179,7 +10179,7 @@ mutation ReorderCustomerCardConfigs($input: ReorderCustomerCardConfigsInput!) {
   }
 }
 
-mutation ReorderCustomerSurveys($input: ReorderCustomerSurveysInput!) {
+mutation reorderCustomerSurveys($input: ReorderCustomerSurveysInput!) {
   reorderCustomerSurveys(input: $input) {
     customerSurveys {
       ...CustomerSurveyFields
@@ -10196,7 +10196,7 @@ mutation ReorderCustomerSurveys($input: ReorderCustomerSurveysInput!) {
   }
 }
 
-mutation ReorderThreadFieldSchemas($input: ReorderThreadFieldSchemasInput!) {
+mutation reorderThreadFieldSchemas($input: ReorderThreadFieldSchemasInput!) {
   reorderThreadFieldSchemas(input: $input) {
     threadFieldSchemas {
       ...ThreadFieldSchemaFields
@@ -10213,7 +10213,7 @@ mutation ReorderThreadFieldSchemas($input: ReorderThreadFieldSchemasInput!) {
   }
 }
 
-mutation ReplyToEmail($input: ReplyToEmailInput!) {
+mutation replyToEmail($input: ReplyToEmailInput!) {
   replyToEmail(input: $input) {
     email {
       ...EmailFields
@@ -10230,7 +10230,7 @@ mutation ReplyToEmail($input: ReplyToEmailInput!) {
   }
 }
 
-mutation ReplyToThread($input: ReplyToThreadInput!) {
+mutation replyToThread($input: ReplyToThreadInput!) {
   replyToThread(input: $input) {
 
     error {
@@ -10245,7 +10245,7 @@ mutation ReplyToThread($input: ReplyToThreadInput!) {
   }
 }
 
-mutation ResolveCustomerForMSTeamsChannel($input: ResolveCustomerForMSTeamsChannelInput!) {
+mutation resolveCustomerForMSTeamsChannel($input: ResolveCustomerForMSTeamsChannelInput!) {
   resolveCustomerForMSTeamsChannel(input: $input) {
     customer {
       ...CustomerFields
@@ -10262,7 +10262,7 @@ mutation ResolveCustomerForMSTeamsChannel($input: ResolveCustomerForMSTeamsChann
   }
 }
 
-mutation ResolveCustomerForSlackChannel($input: ResolveCustomerForSlackChannelInput!) {
+mutation resolveCustomerForSlackChannel($input: ResolveCustomerForSlackChannelInput!) {
   resolveCustomerForSlackChannel(input: $input) {
     customer {
       ...CustomerFields
@@ -10279,7 +10279,7 @@ mutation ResolveCustomerForSlackChannel($input: ResolveCustomerForSlackChannelIn
   }
 }
 
-mutation SendBulkEmail($input: SendBulkEmailInput!) {
+mutation sendBulkEmail($input: SendBulkEmailInput!) {
   sendBulkEmail(input: $input) {
 
     error {
@@ -10294,7 +10294,7 @@ mutation SendBulkEmail($input: SendBulkEmailInput!) {
   }
 }
 
-mutation SendChat($input: SendChatInput!) {
+mutation sendChat($input: SendChatInput!) {
   sendChat(input: $input) {
     chat {
       ...ChatFields
@@ -10311,7 +10311,7 @@ mutation SendChat($input: SendChatInput!) {
   }
 }
 
-mutation SendCustomerChat($input: SendCustomerChatInput!) {
+mutation sendCustomerChat($input: SendCustomerChatInput!) {
   sendCustomerChat(input: $input) {
     chat {
       ...ChatFields
@@ -10328,7 +10328,7 @@ mutation SendCustomerChat($input: SendCustomerChatInput!) {
   }
 }
 
-mutation SendDiscordMessage($input: SendDiscordMessageInput!) {
+mutation sendDiscordMessage($input: SendDiscordMessageInput!) {
   sendDiscordMessage(input: $input) {
     discordMessage {
       ...DiscordMessageFields
@@ -10345,7 +10345,7 @@ mutation SendDiscordMessage($input: SendDiscordMessageInput!) {
   }
 }
 
-mutation SendMSTeamsMessage($input: SendMSTeamsMessageInput!) {
+mutation sendMSTeamsMessage($input: SendMSTeamsMessageInput!) {
   sendMSTeamsMessage(input: $input) {
     msTeamsMessage {
       ...MSTeamsMessageFields
@@ -10362,7 +10362,7 @@ mutation SendMSTeamsMessage($input: SendMSTeamsMessageInput!) {
   }
 }
 
-mutation SendNewEmail($input: SendNewEmailInput!) {
+mutation sendNewEmail($input: SendNewEmailInput!) {
   sendNewEmail(input: $input) {
     email {
       ...EmailFields
@@ -10379,7 +10379,7 @@ mutation SendNewEmail($input: SendNewEmailInput!) {
   }
 }
 
-mutation SendSlackMessage($input: SendSlackMessageInput!) {
+mutation sendSlackMessage($input: SendSlackMessageInput!) {
   sendSlackMessage(input: $input) {
 
     error {
@@ -10394,7 +10394,7 @@ mutation SendSlackMessage($input: SendSlackMessageInput!) {
   }
 }
 
-mutation SendThreadDiscussionMessage($input: SendThreadDiscussionMessageInput!) {
+mutation sendThreadDiscussionMessage($input: SendThreadDiscussionMessageInput!) {
   sendThreadDiscussionMessage(input: $input) {
     threadDiscussionMessage {
       ...ThreadDiscussionMessageFields
@@ -10411,7 +10411,7 @@ mutation SendThreadDiscussionMessage($input: SendThreadDiscussionMessageInput!) 
   }
 }
 
-mutation SetCustomerTenants($input: SetCustomerTenantsInput!) {
+mutation setCustomerTenants($input: SetCustomerTenantsInput!) {
   setCustomerTenants(input: $input) {
     customer {
       ...CustomerFields
@@ -10428,7 +10428,7 @@ mutation SetCustomerTenants($input: SetCustomerTenantsInput!) {
   }
 }
 
-mutation SetupTenantFieldSchemaMapping($input: SetupTenantFieldSchemaMappingInput!) {
+mutation setupTenantFieldSchemaMapping($input: SetupTenantFieldSchemaMappingInput!) {
   setupTenantFieldSchemaMapping(input: $input) {
     tenantFieldSchema {
       ...TenantFieldSchemaFields
@@ -10445,7 +10445,7 @@ mutation SetupTenantFieldSchemaMapping($input: SetupTenantFieldSchemaMappingInpu
   }
 }
 
-mutation ShareThreadToUserInSlack($input: ShareThreadToUserInSlackInput!) {
+mutation shareThreadToUserInSlack($input: ShareThreadToUserInSlackInput!) {
   shareThreadToUserInSlack(input: $input) {
 
     error {
@@ -10460,7 +10460,7 @@ mutation ShareThreadToUserInSlack($input: ShareThreadToUserInSlackInput!) {
   }
 }
 
-mutation SnoozeThread($input: SnoozeThreadInput!) {
+mutation snoozeThread($input: SnoozeThreadInput!) {
   snoozeThread(input: $input) {
     thread {
       ...ThreadFields
@@ -10477,7 +10477,7 @@ mutation SnoozeThread($input: SnoozeThreadInput!) {
   }
 }
 
-mutation StartServiceAuthorization($input: StartServiceAuthorizationInput!) {
+mutation startServiceAuthorization($input: StartServiceAuthorizationInput!) {
   startServiceAuthorization(input: $input) {
     connectionDetails {
       ...ServiceAuthorizationConnectionDetailsFields
@@ -10494,7 +10494,7 @@ mutation StartServiceAuthorization($input: StartServiceAuthorizationInput!) {
   }
 }
 
-mutation SyncBusinessHoursSlots($input: SyncBusinessHoursSlotsInput!) {
+mutation syncBusinessHoursSlots($input: SyncBusinessHoursSlotsInput!) {
   syncBusinessHoursSlots(input: $input) {
     slots {
       ...BusinessHoursSlotFields
@@ -10511,7 +10511,7 @@ mutation SyncBusinessHoursSlots($input: SyncBusinessHoursSlotsInput!) {
   }
 }
 
-mutation ToggleSlackMessageReaction($input: ToggleSlackMessageReactionInput!) {
+mutation toggleSlackMessageReaction($input: ToggleSlackMessageReactionInput!) {
   toggleSlackMessageReaction(input: $input) {
 
     error {
@@ -10526,7 +10526,7 @@ mutation ToggleSlackMessageReaction($input: ToggleSlackMessageReactionInput!) {
   }
 }
 
-mutation ToggleWorkflowRulePublished($input: ToggleWorkflowRulePublishedInput!) {
+mutation toggleWorkflowRulePublished($input: ToggleWorkflowRulePublishedInput!) {
   toggleWorkflowRulePublished(input: $input) {
     workflowRule {
       ...WorkflowRuleFields
@@ -10543,7 +10543,7 @@ mutation ToggleWorkflowRulePublished($input: ToggleWorkflowRulePublishedInput!) 
   }
 }
 
-mutation UnarchiveLabelType($input: UnarchiveLabelTypeInput!) {
+mutation unarchiveLabelType($input: UnarchiveLabelTypeInput!) {
   unarchiveLabelType(input: $input) {
     labelType {
       ...LabelTypeFields
@@ -10560,7 +10560,7 @@ mutation UnarchiveLabelType($input: UnarchiveLabelTypeInput!) {
   }
 }
 
-mutation UnassignThread($input: UnassignThreadInput!) {
+mutation unassignThread($input: UnassignThreadInput!) {
   unassignThread(input: $input) {
     thread {
       ...ThreadFields
@@ -10577,7 +10577,7 @@ mutation UnassignThread($input: UnassignThreadInput!) {
   }
 }
 
-mutation UnmarkCustomerAsSpam($input: UnmarkCustomerAsSpamInput!) {
+mutation unmarkCustomerAsSpam($input: UnmarkCustomerAsSpamInput!) {
   unmarkCustomerAsSpam(input: $input) {
     customer {
       ...CustomerFields
@@ -10594,7 +10594,7 @@ mutation UnmarkCustomerAsSpam($input: UnmarkCustomerAsSpamInput!) {
   }
 }
 
-mutation UpdateActiveBillingRota($input: UpdateActiveBillingRotaInput!) {
+mutation updateActiveBillingRota($input: UpdateActiveBillingRotaInput!) {
   updateActiveBillingRota(input: $input) {
     billingRota {
       ...BillingRotaFields
@@ -10611,7 +10611,7 @@ mutation UpdateActiveBillingRota($input: UpdateActiveBillingRotaInput!) {
   }
 }
 
-mutation UpdateApiKey($input: UpdateApiKeyInput!) {
+mutation updateApiKey($input: UpdateApiKeyInput!) {
   updateApiKey(input: $input) {
     apiKey {
       ...ApiKeyFields
@@ -10628,7 +10628,7 @@ mutation UpdateApiKey($input: UpdateApiKeyInput!) {
   }
 }
 
-mutation UpdateAutoresponder($input: UpdateAutoresponderInput!) {
+mutation updateAutoresponder($input: UpdateAutoresponderInput!) {
   updateAutoresponder(input: $input) {
     autoresponder {
       ...AutoresponderFields
@@ -10645,7 +10645,7 @@ mutation UpdateAutoresponder($input: UpdateAutoresponderInput!) {
   }
 }
 
-mutation UpdateChatApp($input: UpdateChatAppInput!) {
+mutation updateChatApp($input: UpdateChatAppInput!) {
   updateChatApp(input: $input) {
     chatApp {
       ...ChatAppFields
@@ -10662,7 +10662,7 @@ mutation UpdateChatApp($input: UpdateChatAppInput!) {
   }
 }
 
-mutation UpdateCompanyTier($input: UpdateCompanyTierInput!) {
+mutation updateCompanyTier($input: UpdateCompanyTierInput!) {
   updateCompanyTier(input: $input) {
     companyTierMembership {
       ...CompanyTierMembershipFields
@@ -10679,7 +10679,7 @@ mutation UpdateCompanyTier($input: UpdateCompanyTierInput!) {
   }
 }
 
-mutation UpdateConnectedDiscordChannel($input: UpdateConnectedDiscordChannelInput!) {
+mutation updateConnectedDiscordChannel($input: UpdateConnectedDiscordChannelInput!) {
   updateConnectedDiscordChannel(input: $input) {
     connectedDiscordChannel {
       ...ConnectedDiscordChannelFields
@@ -10696,7 +10696,7 @@ mutation UpdateConnectedDiscordChannel($input: UpdateConnectedDiscordChannelInpu
   }
 }
 
-mutation UpdateConnectedSlackChannel($input: UpdateConnectedSlackChannelInput!) {
+mutation updateConnectedSlackChannel($input: UpdateConnectedSlackChannelInput!) {
   updateConnectedSlackChannel(input: $input) {
     connectedSlackChannel {
       ...ConnectedSlackChannelFields
@@ -10713,7 +10713,7 @@ mutation UpdateConnectedSlackChannel($input: UpdateConnectedSlackChannelInput!) 
   }
 }
 
-mutation UpdateCustomerCardConfig($input: UpdateCustomerCardConfigInput!) {
+mutation updateCustomerCardConfig($input: UpdateCustomerCardConfigInput!) {
   updateCustomerCardConfig(input: $input) {
     customerCardConfig {
       ...CustomerCardConfigFields
@@ -10730,7 +10730,7 @@ mutation UpdateCustomerCardConfig($input: UpdateCustomerCardConfigInput!) {
   }
 }
 
-mutation UpdateCustomerCompany($input: UpdateCustomerCompanyInput!) {
+mutation updateCustomerCompany($input: UpdateCustomerCompanyInput!) {
   updateCustomerCompany(input: $input) {
     customer {
       ...CustomerFields
@@ -10747,7 +10747,7 @@ mutation UpdateCustomerCompany($input: UpdateCustomerCompanyInput!) {
   }
 }
 
-mutation UpdateCustomerGroup($input: UpdateCustomerGroupInput!) {
+mutation updateCustomerGroup($input: UpdateCustomerGroupInput!) {
   updateCustomerGroup(input: $input) {
     customerGroup {
       ...CustomerGroupFields
@@ -10764,7 +10764,7 @@ mutation UpdateCustomerGroup($input: UpdateCustomerGroupInput!) {
   }
 }
 
-mutation UpdateCustomerSurvey($input: UpdateCustomerSurveyInput!) {
+mutation updateCustomerSurvey($input: UpdateCustomerSurveyInput!) {
   updateCustomerSurvey(input: $input) {
     customerSurvey {
       ...CustomerSurveyFields
@@ -10781,7 +10781,7 @@ mutation UpdateCustomerSurvey($input: UpdateCustomerSurveyInput!) {
   }
 }
 
-mutation UpdateEscalationPath($input: UpdateEscalationPathInput!) {
+mutation updateEscalationPath($input: UpdateEscalationPathInput!) {
   updateEscalationPath(input: $input) {
     escalationPath {
       ...EscalationPathFields
@@ -10798,7 +10798,7 @@ mutation UpdateEscalationPath($input: UpdateEscalationPathInput!) {
   }
 }
 
-mutation UpdateGeneratedReply($input: UpdateGeneratedReplyInput!) {
+mutation updateGeneratedReply($input: UpdateGeneratedReplyInput!) {
   updateGeneratedReply(input: $input) {
     generatedReply {
       ...GeneratedReplyFields
@@ -10815,7 +10815,7 @@ mutation UpdateGeneratedReply($input: UpdateGeneratedReplyInput!) {
   }
 }
 
-mutation UpdateHelpCenter($input: UpdateHelpCenterInput!) {
+mutation updateHelpCenter($input: UpdateHelpCenterInput!) {
   updateHelpCenter(input: $input) {
     helpCenter {
       ...HelpCenterFields
@@ -10832,7 +10832,7 @@ mutation UpdateHelpCenter($input: UpdateHelpCenterInput!) {
   }
 }
 
-mutation UpdateHelpCenterArticleGroup($input: UpdateHelpCenterArticleGroupInput!) {
+mutation updateHelpCenterArticleGroup($input: UpdateHelpCenterArticleGroupInput!) {
   updateHelpCenterArticleGroup(input: $input) {
 
     error {
@@ -10847,7 +10847,7 @@ mutation UpdateHelpCenterArticleGroup($input: UpdateHelpCenterArticleGroupInput!
   }
 }
 
-mutation UpdateHelpCenterCustomDomainName($input: UpdateHelpCenterCustomDomainNameInput!) {
+mutation updateHelpCenterCustomDomainName($input: UpdateHelpCenterCustomDomainNameInput!) {
   updateHelpCenterCustomDomainName(input: $input) {
     helpCenter {
       ...HelpCenterFields
@@ -10864,7 +10864,7 @@ mutation UpdateHelpCenterCustomDomainName($input: UpdateHelpCenterCustomDomainNa
   }
 }
 
-mutation UpdateHelpCenterIndex($input: UpdateHelpCenterIndexInput!) {
+mutation updateHelpCenterIndex($input: UpdateHelpCenterIndexInput!) {
   updateHelpCenterIndex(input: $input) {
     helpCenterIndex {
       ...HelpCenterIndexFields
@@ -10881,7 +10881,7 @@ mutation UpdateHelpCenterIndex($input: UpdateHelpCenterIndexInput!) {
   }
 }
 
-mutation UpdateLabelType($input: UpdateLabelTypeInput!) {
+mutation updateLabelType($input: UpdateLabelTypeInput!) {
   updateLabelType(input: $input) {
     labelType {
       ...LabelTypeFields
@@ -10898,7 +10898,7 @@ mutation UpdateLabelType($input: UpdateLabelTypeInput!) {
   }
 }
 
-mutation UpdateMachineUser($input: UpdateMachineUserInput!) {
+mutation updateMachineUser($input: UpdateMachineUserInput!) {
   updateMachineUser(input: $input) {
     machineUser {
       ...MachineUserFields
@@ -10915,7 +10915,7 @@ mutation UpdateMachineUser($input: UpdateMachineUserInput!) {
   }
 }
 
-mutation UpdateMyUser($input: UpdateMyUserInput!) {
+mutation updateMyUser($input: UpdateMyUserInput!) {
   updateMyUser(input: $input) {
     user {
       ...UserFields
@@ -10932,7 +10932,7 @@ mutation UpdateMyUser($input: UpdateMyUserInput!) {
   }
 }
 
-mutation UpdateSavedThreadsView($input: UpdateSavedThreadsViewInput!) {
+mutation updateSavedThreadsView($input: UpdateSavedThreadsViewInput!) {
   updateSavedThreadsView(input: $input) {
     savedThreadsView {
       ...SavedThreadsViewFields
@@ -10949,7 +10949,7 @@ mutation UpdateSavedThreadsView($input: UpdateSavedThreadsViewInput!) {
   }
 }
 
-mutation UpdateServiceLevelAgreement($input: UpdateServiceLevelAgreementInput!) {
+mutation updateServiceLevelAgreement($input: UpdateServiceLevelAgreementInput!) {
   updateServiceLevelAgreement(input: $input) {
     serviceLevelAgreement {
       ...ServiceLevelAgreementFields
@@ -10966,7 +10966,7 @@ mutation UpdateServiceLevelAgreement($input: UpdateServiceLevelAgreementInput!) 
   }
 }
 
-mutation UpdateSetting($input: UpdateSettingInput!) {
+mutation updateSetting($input: UpdateSettingInput!) {
   updateSetting(input: $input) {
     setting {
         ... on BooleanSetting {
@@ -10994,7 +10994,7 @@ mutation UpdateSetting($input: UpdateSettingInput!) {
   }
 }
 
-mutation UpdateSnippet($input: UpdateSnippetInput!) {
+mutation updateSnippet($input: UpdateSnippetInput!) {
   updateSnippet(input: $input) {
     snippet {
       ...SnippetFields
@@ -11011,7 +11011,7 @@ mutation UpdateSnippet($input: UpdateSnippetInput!) {
   }
 }
 
-mutation UpdateTenantTier($input: UpdateTenantTierInput!) {
+mutation updateTenantTier($input: UpdateTenantTierInput!) {
   updateTenantTier(input: $input) {
     tenantTierMembership {
       ...TenantTierMembershipFields
@@ -11028,7 +11028,7 @@ mutation UpdateTenantTier($input: UpdateTenantTierInput!) {
   }
 }
 
-mutation UpdateThreadEscalationPath($input: UpdateThreadEscalationPathInput!) {
+mutation updateThreadEscalationPath($input: UpdateThreadEscalationPathInput!) {
   updateThreadEscalationPath(input: $input) {
     thread {
       ...ThreadFields
@@ -11045,7 +11045,7 @@ mutation UpdateThreadEscalationPath($input: UpdateThreadEscalationPathInput!) {
   }
 }
 
-mutation UpdateThreadFieldSchema($input: UpdateThreadFieldSchemaInput!) {
+mutation updateThreadFieldSchema($input: UpdateThreadFieldSchemaInput!) {
   updateThreadFieldSchema(input: $input) {
     threadFieldSchema {
       ...ThreadFieldSchemaFields
@@ -11062,7 +11062,7 @@ mutation UpdateThreadFieldSchema($input: UpdateThreadFieldSchemaInput!) {
   }
 }
 
-mutation UpdateThreadTenant($input: UpdateThreadTenantInput!) {
+mutation updateThreadTenant($input: UpdateThreadTenantInput!) {
   updateThreadTenant(input: $input) {
     thread {
       ...ThreadFields
@@ -11079,7 +11079,7 @@ mutation UpdateThreadTenant($input: UpdateThreadTenantInput!) {
   }
 }
 
-mutation UpdateThreadTier($input: UpdateThreadTierInput!) {
+mutation updateThreadTier($input: UpdateThreadTierInput!) {
   updateThreadTier(input: $input) {
     thread {
       ...ThreadFields
@@ -11096,7 +11096,7 @@ mutation UpdateThreadTier($input: UpdateThreadTierInput!) {
   }
 }
 
-mutation UpdateThreadTitle($input: UpdateThreadTitleInput!) {
+mutation updateThreadTitle($input: UpdateThreadTitleInput!) {
   updateThreadTitle(input: $input) {
     thread {
       ...ThreadFields
@@ -11113,7 +11113,7 @@ mutation UpdateThreadTitle($input: UpdateThreadTitleInput!) {
   }
 }
 
-mutation UpdateTier($input: UpdateTierInput!) {
+mutation updateTier($input: UpdateTierInput!) {
   updateTier(input: $input) {
     tier {
       ...TierFields
@@ -11130,7 +11130,7 @@ mutation UpdateTier($input: UpdateTierInput!) {
   }
 }
 
-mutation UpdateWebhookTarget($input: UpdateWebhookTargetInput!) {
+mutation updateWebhookTarget($input: UpdateWebhookTargetInput!) {
   updateWebhookTarget(input: $input) {
     webhookTarget {
       ...WebhookTargetFields
@@ -11147,7 +11147,7 @@ mutation UpdateWebhookTarget($input: UpdateWebhookTargetInput!) {
   }
 }
 
-mutation UpdateWorkflowRule($input: UpdateWorkflowRuleInput!) {
+mutation updateWorkflowRule($input: UpdateWorkflowRuleInput!) {
   updateWorkflowRule(input: $input) {
     workflowRule {
       ...WorkflowRuleFields
@@ -11164,7 +11164,7 @@ mutation UpdateWorkflowRule($input: UpdateWorkflowRuleInput!) {
   }
 }
 
-mutation UpdateWorkspace($input: UpdateWorkspaceInput!) {
+mutation updateWorkspace($input: UpdateWorkspaceInput!) {
   updateWorkspace(input: $input) {
     workspace {
       ...WorkspaceFields
@@ -11181,7 +11181,7 @@ mutation UpdateWorkspace($input: UpdateWorkspaceInput!) {
   }
 }
 
-mutation UpdateWorkspaceEmailSettings($input: UpdateWorkspaceEmailSettingsInput!) {
+mutation updateWorkspaceEmailSettings($input: UpdateWorkspaceEmailSettingsInput!) {
   updateWorkspaceEmailSettings(input: $input) {
     workspaceEmailSettings {
       ...WorkspaceEmailSettingsFields
@@ -11198,7 +11198,7 @@ mutation UpdateWorkspaceEmailSettings($input: UpdateWorkspaceEmailSettingsInput!
   }
 }
 
-mutation UpsertBusinessHours($input: UpsertBusinessHoursInput!) {
+mutation upsertBusinessHours($input: UpsertBusinessHoursInput!) {
   upsertBusinessHours(input: $input) {
     businessHours {
       ...BusinessHoursFields
@@ -11216,7 +11216,7 @@ mutation UpsertBusinessHours($input: UpsertBusinessHoursInput!) {
   }
 }
 
-mutation UpsertCompany($input: UpsertCompanyInput!) {
+mutation upsertCompany($input: UpsertCompanyInput!) {
   upsertCompany(input: $input) {
     company {
       ...CompanyFields
@@ -11234,7 +11234,7 @@ mutation UpsertCompany($input: UpsertCompanyInput!) {
   }
 }
 
-mutation UpsertCustomer($input: UpsertCustomerInput!) {
+mutation upsertCustomer($input: UpsertCustomerInput!) {
   upsertCustomer(input: $input) {
     customer {
       ...CustomerFields
@@ -11252,7 +11252,7 @@ mutation UpsertCustomer($input: UpsertCustomerInput!) {
   }
 }
 
-mutation UpsertCustomerGroup($input: UpsertCustomerGroupInput!) {
+mutation upsertCustomerGroup($input: UpsertCustomerGroupInput!) {
   upsertCustomerGroup(input: $input) {
     customerGroup {
       ...CustomerGroupFields
@@ -11270,7 +11270,7 @@ mutation UpsertCustomerGroup($input: UpsertCustomerGroupInput!) {
   }
 }
 
-mutation UpsertHelpCenterArticle($input: UpsertHelpCenterArticleInput!) {
+mutation upsertHelpCenterArticle($input: UpsertHelpCenterArticleInput!) {
   upsertHelpCenterArticle(input: $input) {
     helpCenterArticle {
       ...HelpCenterArticleFields
@@ -11287,7 +11287,7 @@ mutation UpsertHelpCenterArticle($input: UpsertHelpCenterArticleInput!) {
   }
 }
 
-mutation UpsertMyEmailSignature($input: UpsertMyEmailSignatureInput!) {
+mutation upsertMyEmailSignature($input: UpsertMyEmailSignatureInput!) {
   upsertMyEmailSignature(input: $input) {
     emailSignature {
       ...EmailSignatureFields
@@ -11305,7 +11305,7 @@ mutation UpsertMyEmailSignature($input: UpsertMyEmailSignatureInput!) {
   }
 }
 
-mutation UpsertTenant($input: UpsertTenantInput!) {
+mutation upsertTenant($input: UpsertTenantInput!) {
   upsertTenant(input: $input) {
     result
     tenant {
@@ -11323,7 +11323,7 @@ mutation UpsertTenant($input: UpsertTenantInput!) {
   }
 }
 
-mutation UpsertTenantField($input: UpsertTenantFieldInput!) {
+mutation upsertTenantField($input: UpsertTenantFieldInput!) {
   upsertTenantField(input: $input) {
     result
     tenantField {
@@ -11341,7 +11341,7 @@ mutation UpsertTenantField($input: UpsertTenantFieldInput!) {
   }
 }
 
-mutation UpsertTenantFieldSchema($input: UpsertTenantFieldSchemaInput!) {
+mutation upsertTenantFieldSchema($input: UpsertTenantFieldSchemaInput!) {
   upsertTenantFieldSchema(input: $input) {
     result
     tenantFieldSchemas {
@@ -11359,7 +11359,7 @@ mutation UpsertTenantFieldSchema($input: UpsertTenantFieldSchemaInput!) {
   }
 }
 
-mutation UpsertThreadField($input: UpsertThreadFieldInput!) {
+mutation upsertThreadField($input: UpsertThreadFieldInput!) {
   upsertThreadField(input: $input) {
     result
     threadField {
@@ -11377,7 +11377,7 @@ mutation UpsertThreadField($input: UpsertThreadFieldInput!) {
   }
 }
 
-mutation VerifyHelpCenterCustomDomainName($input: VerifyHelpCenterCustomDomainNameInput!) {
+mutation verifyHelpCenterCustomDomainName($input: VerifyHelpCenterCustomDomainNameInput!) {
   verifyHelpCenterCustomDomainName(input: $input) {
     helpCenter {
       ...HelpCenterFields
@@ -11394,7 +11394,7 @@ mutation VerifyHelpCenterCustomDomainName($input: VerifyHelpCenterCustomDomainNa
   }
 }
 
-mutation VerifyWorkspaceEmailDnsSettings {
+mutation verifyWorkspaceEmailDnsSettings {
   verifyWorkspaceEmailDnsSettings {
     workspaceEmailDomainSettings {
       ...WorkspaceEmailDomainSettingsFields
@@ -11411,7 +11411,7 @@ mutation VerifyWorkspaceEmailDnsSettings {
   }
 }
 
-mutation VerifyWorkspaceEmailForwardingSettings($input: VerifyWorkspaceEmailForwardingSettingsInput!) {
+mutation verifyWorkspaceEmailForwardingSettings($input: VerifyWorkspaceEmailForwardingSettingsInput!) {
   verifyWorkspaceEmailForwardingSettings(input: $input) {
     workspaceEmailDomainSettings {
       ...WorkspaceEmailDomainSettingsFields

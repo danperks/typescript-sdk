@@ -364,7 +364,7 @@ function generateQuery(
     return null;
   }
 
-  const operationName = capitalize(fieldName);
+  const operationName = toCamelCase(fieldName);
   const args = field.args.map((arg: any) => `$${arg.name}: ${arg.type}`).join(', ');
   const argNames = field.args.map((arg: any) => `${arg.name}: $${arg.name}`).join(', ');
 
@@ -428,7 +428,7 @@ function generateMutation(
     return null;
   }
 
-  const operationName = capitalize(fieldName);
+  const operationName = toCamelCase(fieldName);
   const args = field.args.map((arg: any) => `$${arg.name}: ${arg.type}`).join(', ');
   const argNames = field.args.map((arg: any) => `${arg.name}: $${arg.name}`).join(', ');
 
@@ -514,6 +514,6 @@ function getNamedType(type: any): any {
   return type;
 }
 
-function capitalize(str: string): string {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+function toCamelCase(str: string): string {
+  return str.charAt(0).toLowerCase() + str.slice(1);
 }

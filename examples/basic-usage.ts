@@ -21,7 +21,7 @@ const client = createPlainClient({
 
 // Example 1: Get a customer using the CustomerFieldsFragment type
 async function getCustomerExample() {
-	const result = await client.Customer({
+	const result = await client.customer({
 		customerId: "c_01K2MEXWJ5XHJ6JVB5EKTA9PJA",
 	});
 
@@ -36,7 +36,7 @@ async function getCustomerExample() {
 
 // Example 2: Create a thread and work with typed responses
 async function createThreadExample() {
-	const result = await client.CreateThread({
+	const result = await client.createThread({
 		input: {
 			customerIdentifier: {
 				customerId: "c_123",
@@ -74,7 +74,7 @@ async function createThreadExample() {
 
 // Example 3: Working with paginated results
 async function listThreadsExample() {
-	const result = await client.Threads({ first: 10 });
+	const result = await client.threads({ first: 10 });
 
 	// Access the PageInfo fragment
 	console.log("Has next page:", result.threads.pageInfo.hasNextPage);
@@ -87,7 +87,7 @@ async function listThreadsExample() {
 
 	// Load next page if available
 	if (result.threads.pageInfo.hasNextPage) {
-		const nextPage = await client.Threads({
+		const nextPage = await client.threads({
 			first: 10,
 			after: result.threads.pageInfo.endCursor!,
 		});
@@ -114,7 +114,7 @@ function processCustomer(customer: CustomerFieldsFragment) {
 
 // Example 5: Upsert customer with full type safety
 async function upsertCustomerExample() {
-	const result = await client.UpsertCustomer({
+	const result = await client.upsertCustomer({
 		input: {
 			identifier: {
 				emailAddress: "john@example.com",
@@ -151,7 +151,7 @@ async function upsertCustomerExample() {
 // Example 6: Working with companies
 async function companyExample() {
 	// Get a single company
-	const companyResult = await client.Company({ companyId: "comp_123" });
+	const companyResult = await client.company({ companyId: "comp_123" });
 
 	if (companyResult.company) {
 		console.log("Company:", companyResult.company.name);
@@ -159,7 +159,7 @@ async function companyExample() {
 	}
 
 	// List all companies
-	const companiesResult = await client.Companies({ first: 10 });
+	const companiesResult = await client.companies({ first: 10 });
 
 	for (const edge of companiesResult.companies.edges) {
 		console.log(`- ${edge.node.name}`);
@@ -171,7 +171,7 @@ async function threadLabelsExample() {
 	const threadId = "th_123";
 
 	// Add labels
-	const addResult = await client.AddLabels({
+	const addResult = await client.addLabels({
 		input: {
 			threadId,
 			labelTypeIds: ["lt_urgent", "lt_billing"],
@@ -186,7 +186,7 @@ async function threadLabelsExample() {
 	}
 
 	// Remove labels
-	const removeResult = await client.RemoveLabels({
+	const removeResult = await client.removeLabels({
 		input: {
 			threadId,
 			labelTypeIds: ["lt_billing"],

@@ -34,8 +34,8 @@ export interface PlainClientOptions {
  * });
  *
  * // Use any generated SDK method
- * const customer = await client.Customer({ customerId: 'c_123' });
- * const threads = await client.Threads({ customerId: 'c_123' });
+ * const customer = await client.customer({ customerId: 'c_123' });
+ * const threads = await client.threads({ customerId: 'c_123' });
  * ```
  */
 export function createPlainClient(options: PlainClientOptions): Sdk {

@@ -18,7 +18,8 @@
       "Bash(npm run build:plugins:*)",
       "Bash(tee:*)",
       "Bash(git branch:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
