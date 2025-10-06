@@ -57,3 +57,6 @@ export function createPlainClient(options: PlainClientOptions): Sdk {
 
 // Export all generated types and functions
 export * from './generated/sdk';
+
+// Export webhook utilities and types
+export * from './webhooks';

@@ -277,6 +277,115 @@ const status: ThreadStatus = 'TODO'; // ✓ Valid
 const priority: ThreadPriority = 2; // ✓ Valid
 ```
 
+## Webhooks
+
+Plain can send webhook events to your application when things happen in your workspace (e.g., new threads, customer updates). The SDK includes full support for verifying webhook signatures and handling events with type safety.
+
+### Quick Start
+
+1. **Get your HMAC secret** from **Settings → Request signing** in Plain
+2. **Set up a webhook endpoint** that receives POST requests
+3. **Verify signatures** to ensure requests are from Plain
+4. **Handle events** with type-safe event types
+
+### Verifying Webhook Signatures
+
+Plain signs all webhook requests with HMAC-SHA256. Always verify signatures before processing webhooks:
+
+```typescript
+import { verifyWebhookSignature, type WebhookRequest } from '@team-plain/typescript-sdk';
+
+// Express.js example
+app.post('/webhooks/plain', express.raw({ type: 'application/json' }), (req, res) => {
+  const signature = req.headers['plain-request-signature'] as string;
+
+  const isValid = verifyWebhookSignature({
+    body: req.body, // Must be raw body (Buffer/string)
+    signature,
+    secret: process.env.PLAIN_HMAC_SECRET!
+  });
+
+  if (!isValid) {
+    return res.status(403).send('Invalid signature');
+  }
+
+  const webhook: WebhookRequest = JSON.parse(req.body.toString());
+  // Process webhook...
+  res.status(200).send('OK');
+});
+```
+
+**Important:** You must use the raw request body for signature verification. Use `express.raw()` middleware or similar to preserve the original body.
+
+### Handling Events
+
+The SDK provides the `WebhookRequest` type for type-safe event handling:
+
+```typescript
+import type { WebhookRequest } from '@team-plain/typescript-sdk';
+
+function handleWebhook(webhook: WebhookRequest) {
+  // webhook.type is typed as a union of all event types
+  switch (webhook.type) {
+    case 'thread.thread_created':
+      console.log('New thread:', webhook.payload.thread.title);
+      break;
+
+    case 'customer.customer_created':
+      console.log('New customer:', webhook.payload.customer.fullName);
+      break;
+
+    case 'thread.email_received':
+      console.log('Email from:', webhook.payload.email.from.email);
+      break;
+
+    // ... handle other event types
+  }
+}
+```
+
+### Idempotency
+
+Webhooks may be delivered more than once. Use the event ID for idempotency:
+
+```typescript
+const eventId = webhook.id; // Same across all delivery attempts
+
+// Check if you've already processed this event
+if (await hasProcessedEvent(eventId)) {
+  return; // Already processed
+}
+
+// Process the webhook...
+await processWebhook(webhook);
+
+// Mark as processed
+await markEventAsProcessed(eventId);
+```
+
+### Supported Webhook Events
+
+The SDK provides types for all 29 Plain webhook events:
+
+- **Thread Events**: `thread.thread_created`, `thread.thread_status_transitioned`, `thread.thread_assignment_transitioned`, `thread.email_received`, `thread.email_sent`, `thread.chat_sent`, `thread.chat_received`, `thread.thread_labels_changed`, `thread.thread_priority_changed`, and more
+- **Customer Events**: `customer.customer_created`, `customer.customer_updated`, `customer.customer_deleted`, `customer.customer_changed`
+- **Timeline Events**: `timeline.timeline_entry_changed`
+
+### Framework Integration Examples
+
+See [`examples/webhook-verification.ts`](./examples/webhook-verification.ts) for complete integration examples including:
+
+- **Express.js** - Using `express.raw()` middleware
+- **Next.js App Router** - Using route handlers
+- **Type-safe event handlers** - Organizing webhook processing
+- **Testing** - Generating and verifying signatures
+
+### Learn More
+
+- [Plain Webhooks Documentation](https://www.plain.com/docs/webhooks)
+- [Request Signing](https://www.plain.com/docs/request-signing)
+- [Webhook Events Reference](https://www.plain.com/docs/webhooks#webhook-events)
+
 ## Error Handling
 
 The SDK follows Plain's error response pattern. Most mutation operations return an error field:
@@ -305,12 +414,17 @@ Check out the [examples](./examples) directory for complete working examples:
 
 - [`basic-usage.ts`](./examples/basic-usage.ts) - Common SDK operations and patterns
 - [`workspace-customers.ts`](./examples/workspace-customers.ts) - Complete workspace exploration example
+- [`webhook-verification.ts`](./examples/webhook-verification.ts) - Webhook signature verification and event handling
 
 To run the examples:
 
 ```bash
 export PLAIN_API_KEY="plainApiKey_xxx"
 npx tsx examples/basic-usage.ts
+
+# For webhook examples
+export PLAIN_HMAC_SECRET="your-hmac-secret"
+npx tsx examples/webhook-verification.ts
 ```
 
 ## How It Works

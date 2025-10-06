@@ -29,6 +29,14 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Verify webhook exports
+        run: node .github/scripts/verify-webhook-exports.js
+
+      - name: Test webhook verification example
+        run: npx tsx examples/webhook-verification.ts
+        env:
+          PLAIN_HMAC_SECRET: test-secret
+
       - name: Check generated files are up to date
         run: |
           npm run generate
