@@ -27,7 +27,7 @@ export interface PlainClientOptions {
  *
  * @example
  * ```typescript
- * import { createPlainClient } from '@plain/sdk';
+ * import { createPlainClient } from '@team-plain/typescript-sdk';
  *
  * const client = createPlainClient({
  *   apiKey: 'plainApiKey_xxx'

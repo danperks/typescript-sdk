@@ -1,5 +1,5 @@
 {
-  "name": "@team-plain/sdk",
+  "name": "@team-plain/typescript-sdk",
   "version": "0.1.0",
   "description": "The Plain Client SDK for interacting with the Plain GraphQL API",
   "author": "Plain",
