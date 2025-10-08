@@ -90,24 +90,38 @@ export const plugin: PluginFunction<OperationsPluginConfig> = (
     }
   }
 
-  // Generate union fragment helpers
+  // Generate minimal union fragments with just __typename
   for (const [unionName, members] of unionTypes.entries()) {
     // Skip if union is in skipTypes
     if (skipTypes.includes(unionName)) {
       continue;
     }
 
-    // Only generate if all members have or will have fragments
+    // Only generate if members exist
     const validMembers = members.filter(member =>
       !skipTypes.includes(member) &&
       !member.startsWith('__')
     );
 
     if (validMembers.length > 0) {
+      // Generate minimal union fragment with just __typename and id (if available)
       const inlineFragments = validMembers
-        .map(member => `  ... on ${member} {
-    ...${member}Fields
-  }`)
+        .map(member => {
+          const memberType = schema.getType(member) as any;
+          const hasIdField = memberType && typeof memberType.getFields === 'function' &&
+            memberType.getFields().id;
+
+          if (hasIdField) {
+            return `  ... on ${member} {
+    __typename
+    id
+  }`;
+          } else {
+            return `  ... on ${member} {
+    __typename
+  }`;
+          }
+        })
         .join('\n');
 
       const unionFragment = `fragment ${unionName}Fields on ${unionName} {
@@ -240,83 +254,71 @@ function generateFragment(
 
     // Handle object types using astNode check
     if (fieldType.astNode?.kind === 'ObjectTypeDefinition') {
-      const fragmentName = `${fieldTypeName}Fields`;
-
       // Check for circular dependency in ancestor chain
       if (currentAncestors.has(fieldTypeName)) {
         // Would create a cycle, skip to avoid infinite loop
         continue;
       }
 
-      // Check if it's a connection type
+      // Check if it's a connection type - ONLY include id for lazy loading
       if (fieldTypeName.endsWith('Connection')) {
-        // Get the actual node type from the Edge type's node field
-        const edgeTypeName = fieldTypeName.replace('Connection', 'Edge');
-        const edgeType = schema.getType(edgeTypeName);
-
-        let nodeTypeName = fieldTypeName.replace('Connection', ''); // fallback
-
-        if (edgeType && typeof edgeType.getFields === 'function') {
-          const edgeFields = edgeType.getFields();
-          if (edgeFields.node) {
-            const nodeType = getNamedType(edgeFields.node.type);
-            nodeTypeName = nodeType.name;
-          }
-        }
-
-        // Check if the node type would create a cycle or is in skipTypes
-        if (currentAncestors.has(nodeTypeName) || skipTypes.includes(nodeTypeName)) {
-          // Skip connection to avoid cycle or skipped types
-          continue;
-        }
-
-        fieldStrings.push(`  ${fieldName} {
-    edges {
-      node {
-        ...${nodeTypeName}Fields
-      }
-      cursor
-    }
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-      startCursor
-      endCursor
-    }
-  }`);
-        dependencies.add(nodeTypeName);
+        // Skip connections entirely - they will be fetched via getters
+        continue;
       } else if (fieldTypeName.endsWith('Edge')) {
         // Skip edge types, handled in connections
         continue;
       } else if (skipTypes.includes(fieldTypeName)) {
         // Skip fields that reference skipped types
         continue;
-      } else if (currentDepth < maxDepth) {
-        // Avoid circular dependencies
-        if (!dependencies.has(fieldTypeName)) {
+      } else {
+        // For nested objects, check if there's a query to fetch it
+        const queryType = schema.getQueryType();
+        const hasQuery = queryType ? Object.keys(queryType.getFields()).some(key => {
+          const queryField = queryType.getFields()[key];
+          const queryReturnType = getNamedType(queryField.type);
+          return queryReturnType.name === fieldTypeName;
+        }) : false;
+
+        const nestedType = schema.getType(fieldTypeName);
+        const hasIdField = nestedType && typeof nestedType.getFields === 'function' &&
+          nestedType.getFields().id;
+
+        if (hasQuery && hasIdField) {
+          // Has query available - only store ID for lazy loading
           fieldStrings.push(`  ${fieldName} {
-    ...${fragmentName}
+    id
   }`);
-          dependencies.add(fieldTypeName);
+        } else if (!hasQuery) {
+          // No query available - inline all scalar fields
+          const nestedFragment = generateInlineFragment(
+            nestedType as any,
+            schema,
+            skipTypes,
+            currentAncestors
+          );
+          if (nestedFragment) {
+            fieldStrings.push(`  ${fieldName} ${nestedFragment}`);
+          }
         }
+        // If has query but no id field, skip it
       }
     }
 
-    // Handle union types - reference the union fragment we'll generate
+    // Handle union types - only include __typename for minimal fragments
     if (fieldType.astNode?.kind === 'UnionTypeDefinition') {
       // Skip if union is in skipTypes
       if (!skipTypes.includes(fieldTypeName)) {
         fieldStrings.push(`  ${fieldName} {
-    ...${fieldTypeName}Fields
+    __typename
   }`);
       }
       continue;
     }
 
+    // Handle interface types - only include __typename for minimal fragments
     if (fieldType.astNode?.kind === 'InterfaceTypeDefinition') {
-      // For interfaces, reference the interface fragment
       fieldStrings.push(`  ${fieldName} {
-    ...${fieldTypeName}Fields
+    __typename
   }`);
       continue;
     }
@@ -334,6 +336,127 @@ function generateFragment(
   return `fragment ${typeName}Fields on ${typeName} {
 ${fieldStrings.join('\n')}
 }`;
+}
+
+/**
+ * Generate inline fragment for objects without queries
+ * Includes scalar fields and recursively inlines nested objects without queries
+ */
+function generateInlineFragment(
+  type: any,
+  schema: any,
+  skipTypes: string[],
+  ancestorTypes: Set<string>
+): string | null {
+  if (!type || typeof type.getFields !== 'function') {
+    return null;
+  }
+
+  const fields = type.getFields();
+  const fieldStrings: string[] = [];
+
+  for (const [fieldName, field] of Object.entries(fields)) {
+    const fieldObj = field as any;
+
+    // Skip deprecated fields
+    if (fieldObj.deprecationReason) {
+      continue;
+    }
+
+    // Skip fields with required arguments
+    const hasRequiredArgs = fieldObj.args?.some((arg: any) => {
+      const argType = arg.type.toString();
+      return argType.endsWith('!');
+    });
+
+    if (hasRequiredArgs) {
+      continue;
+    }
+
+    const fieldType = getNamedType(fieldObj.type);
+    const fieldTypeName = fieldType.name;
+
+    // Skip if field returns a skip type
+    if (skipTypes.includes(fieldTypeName)) {
+      continue;
+    }
+
+    // Check if it's a scalar or enum
+    const isScalar = SCALAR_TYPES.includes(fieldTypeName) ||
+                     fieldType.astNode?.kind === 'ScalarTypeDefinition' ||
+                     fieldType.astNode?.kind === 'EnumTypeDefinition';
+
+    if (isScalar) {
+      // Handle custom types that need subfield selection
+      if (['DateTime', 'EmailAddress'].includes(fieldTypeName)) {
+        if (fieldTypeName === 'DateTime') {
+          fieldStrings.push(`    ${fieldName} {
+      iso8601
+      unixTimestamp
+    }`);
+        } else if (fieldTypeName === 'EmailAddress') {
+          fieldStrings.push(`    ${fieldName} {
+      email
+      isVerified
+    }`);
+        }
+      } else {
+        fieldStrings.push(`    ${fieldName}`);
+      }
+    } else if (fieldType.astNode?.kind === 'ObjectTypeDefinition') {
+      // Check for circular reference
+      if (ancestorTypes.has(fieldTypeName)) {
+        continue;
+      }
+
+      // Skip connection and edge types
+      if (fieldTypeName.endsWith('Connection') || fieldTypeName.endsWith('Edge')) {
+        continue;
+      }
+
+      // Check if there's a query to fetch this nested object
+      const queryType = schema.getQueryType();
+      const hasQuery = queryType ? Object.keys(queryType.getFields()).some(key => {
+        const queryField = queryType.getFields()[key];
+        const queryReturnType = getNamedType(queryField.type);
+        return queryReturnType.name === fieldTypeName;
+      }) : false;
+
+      const nestedType = schema.getType(fieldTypeName);
+      const hasIdField = nestedType && typeof nestedType.getFields === 'function' &&
+        nestedType.getFields().id;
+
+      if (hasQuery && hasIdField) {
+        // Has query available - only store ID for lazy loading
+        fieldStrings.push(`    ${fieldName} {
+      id
+    }`);
+      } else if (!hasQuery) {
+        // No query available - recursively inline this nested object
+        const updatedAncestors = new Set(ancestorTypes);
+        updatedAncestors.add(type.name);
+        const nestedFragment = generateInlineFragment(
+          nestedType as any,
+          schema,
+          skipTypes,
+          updatedAncestors
+        );
+        if (nestedFragment) {
+          fieldStrings.push(`    ${fieldName} ${nestedFragment}`);
+        }
+      }
+    }
+  }
+
+  if (fieldStrings.length === 0) {
+    return `{
+    __typename
+  }`;
+  }
+
+  return `{
+${fieldStrings.join('\n')}
+  }`;
 }
 
 function generateQuery(

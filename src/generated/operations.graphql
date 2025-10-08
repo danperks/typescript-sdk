@@ -1,10 +1,47 @@
 # Auto-generated fragments
 fragment AcceptWorkspaceInviteOutputFields on AcceptWorkspaceInviteOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   invite {
-    ...WorkspaceInviteFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    email
+    id
+    isAccepted
+    role {
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
+  }
+    roles {
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
+  }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    usingBillingRotaSeat
+    workspace {
+      id
+    }
   }
 }
 
@@ -18,85 +55,211 @@ fragment ActorEdgeFields on ActorEdge {
 
 fragment AddAdditionalAssigneesOutputFields on AddAdditionalAssigneesOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment AddCustomerToCustomerGroupsOutputFields on AddCustomerToCustomerGroupsOutput {
   customerGroupMemberships {
-    ...CustomerGroupMembershipFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    customerGroup {
+      id
+    }
+    customerId
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment AddCustomerToTenantsOutputFields on AddCustomerToTenantsOutput {
   customer {
-    ...CustomerFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment AddGeneratedReplyOutputFields on AddGeneratedReplyOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   generatedReply {
-    ...GeneratedReplyFields
+    id
   }
 }
 
 fragment AddLabelsOutputFields on AddLabelsOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   labels {
-    ...LabelFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    labelType {
+      id
+    }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment AddLabelsToUserOutputFields on AddLabelsToUserOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   labels {
-    ...LabelFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    labelType {
+      id
+    }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   user {
-    ...UserFields
+    id
   }
 }
 
 fragment AddMembersToTierOutputFields on AddMembersToTierOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment AddUserToActiveBillingRotaOutputFields on AddUserToActiveBillingRotaOutput {
-  billingRota {
-    ...BillingRotaFields
-  }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment AddWorkspaceAlternateSupportEmailAddressOutputFields on AddWorkspaceAlternateSupportEmailAddressOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   workspaceEmailDomainSettings {
-    ...WorkspaceEmailDomainSettingsFields
+    alternateSupportEmailAddresses
+    dkimDnsRecord {
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    domainName
+    inboundForwardingEmail
+    isDomainConfigured
+    isForwardingConfigured
+    returnPathDnsRecord {
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    supportEmailAddress
   }
 }
 
@@ -126,31 +289,67 @@ fragment ApiKeyConnectionFields on ApiKeyConnection {
 fragment ApiKeyEdgeFields on ApiKeyEdge {
   cursor
   node {
-    ...ApiKeyFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    deletedAt {
+      iso8601
+      unixTimestamp
+    }
+    description
+    id
+    isDeleted
+    permissions
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment ArchiveLabelTypeOutputFields on ArchiveLabelTypeOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   labelType {
-    ...LabelTypeFields
+    id
   }
 }
 
 fragment AssignRolesToUserOutputFields on AssignRolesToUserOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment AssignThreadOutputFields on AssignThreadOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
@@ -163,7 +362,9 @@ fragment AttachmentFields on Attachment {
   fileMimeType
   fileName
   fileSize {
-    ...FileSizeFields
+    bytes
+    kiloBytes
+    megaBytes
   }
   id
   type
@@ -175,7 +376,24 @@ fragment AttachmentFields on Attachment {
 
 fragment AttachmentDownloadUrlFields on AttachmentDownloadUrl {
   attachment {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   downloadUrl
   expiresAt {
@@ -186,21 +404,39 @@ fragment AttachmentDownloadUrlFields on AttachmentDownloadUrl {
 
 fragment AttachmentUploadUrlFields on AttachmentUploadUrl {
   attachment {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   expiresAt {
     iso8601
     unixTimestamp
   }
   uploadFormData {
-    ...UploadFormDataFields
+    key
+    value
   }
   uploadFormUrl
 }
 
 fragment AutoresponderFields on Autoresponder {
   conditions {
-    ...AutoresponderConditionFields
+    __typename
   }
   createdAt {
     iso8601
@@ -231,7 +467,7 @@ fragment AutoresponderConnectionFields on AutoresponderConnection {
 fragment AutoresponderEdgeFields on AutoresponderEdge {
   cursor
   node {
-    ...AutoresponderFields
+    id
   }
 }
 
@@ -276,7 +512,7 @@ fragment BillingPlanFields on BillingPlan {
   key
   name
   prices {
-    ...RecurringPriceFields
+    __typename
   }
 }
 
@@ -286,7 +522,8 @@ fragment BillingPlanChangePreviewFields on BillingPlanChangePreview {
     unixTimestamp
   }
   immediateCost {
-    ...PriceFields
+    amount
+    currency
   }
 }
 
@@ -297,7 +534,12 @@ fragment BillingPlanConnectionFields on BillingPlanConnection {
 fragment BillingPlanEdgeFields on BillingPlanEdge {
   cursor
   node {
-    ...BillingPlanFields
+    description
+    features
+    highlightedLabel
+    isSelfCheckoutEligible
+    key
+    name
   }
 }
 
@@ -316,7 +558,7 @@ fragment BillingSubscriptionFields on BillingSubscription {
     unixTimestamp
   }
   entitlements {
-    ...BillingFeatureEntitlementFields
+    __typename
   }
   planKey
   planName
@@ -331,29 +573,75 @@ fragment BooleanSettingFields on BooleanSetting {
   booleanValue
   code
   scope {
-    ...SettingScopeFields
+    id
+    scopeType
   }
 }
 
 fragment BulkJoinSlackChannelsOutputFields on BulkJoinSlackChannelsOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment BulkUpsertThreadFieldResultFields on BulkUpsertThreadFieldResult {
   result
   threadField {
-    ...ThreadFieldFields
+    booleanValue
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    isAiGenerated
+    key
+    stringValue
+    threadId
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment BulkUpsertThreadFieldsOutputFields on BulkUpsertThreadFieldsOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   results {
-    ...BulkUpsertThreadFieldResultFields
+    result
+    threadField {
+    booleanValue
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    isAiGenerated
+    key
+    stringValue
+    threadId
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
   }
 }
 
@@ -367,7 +655,62 @@ fragment BusinessHoursFields on BusinessHours {
     unixTimestamp
   }
   weekDays {
-    ...BusinessHoursWeekDaysFields
+    friday {
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
+  }
+    monday {
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
+  }
+    saturday {
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
+  }
+    sunday {
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
+  }
+    thursday {
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
+  }
+    tuesday {
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
+  }
+    wednesday {
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
+  }
   }
 }
 
@@ -375,68 +718,196 @@ fragment BusinessHoursSlotFields on BusinessHoursSlot {
   closesAt
   opensAt
   timezone {
-    ...TimezoneFields
+    name
   }
   weekday
 }
 
 fragment BusinessHoursWeekDayFields on BusinessHoursWeekDay {
   endTime {
-    ...TimeFields
+    iso8601
+  }
+  startTime {
+    iso8601
   }
 }
 
 fragment BusinessHoursWeekDaysFields on BusinessHoursWeekDays {
   friday {
-    ...BusinessHoursWeekDayFields
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
+  }
+  monday {
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
+  }
+  saturday {
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
+  }
+  sunday {
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
+  }
+  thursday {
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
+  }
+  tuesday {
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
+  }
+  wednesday {
+    endTime {
+    iso8601
+  }
+    startTime {
+    iso8601
+  }
   }
 }
 
 fragment CalculateRoleChangeCostOutputFields on CalculateRoleChangeCostOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   roleChangeCost {
-    ...RoleChangeCostFields
+    addingSeatType
+    adjustedPrice {
+    amount
+    currency
+  }
+    dueNowPrice {
+    amount
+    currency
+  }
+    fullPrice {
+    amount
+    currency
+  }
+    intervalCount
+    intervalUnit
+    quantity
+    removingSeatType
+    totalPrice {
+    amount
+    currency
+  }
   }
 }
 
 fragment ChangeBillingPlanOutputFields on ChangeBillingPlanOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment ChangeThreadCustomerOutputFields on ChangeThreadCustomerOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment ChangeThreadPriorityOutputFields on ChangeThreadPriorityOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment ChangeUserStatusOutputFields on ChangeUserStatusOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   user {
-    ...UserFields
+    id
   }
 }
 
 fragment ChatFields on Chat {
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   createdAt {
     iso8601
@@ -461,7 +932,31 @@ fragment ChatAppFields on ChatApp {
   }
   id
   logo {
-    ...WorkspaceFileFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    visibility
   }
   name
   updatedAt {
@@ -477,7 +972,7 @@ fragment ChatAppConnectionFields on ChatAppConnection {
 fragment ChatAppEdgeFields on ChatAppEdge {
   cursor
   node {
-    ...ChatAppFields
+    id
   }
 }
 
@@ -508,7 +1003,24 @@ fragment ChatAppSecretFields on ChatAppSecret {
 
 fragment ChatEntryFields on ChatEntry {
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   chatId
   customerReadAt {
@@ -527,7 +1039,7 @@ fragment ChatThreadChannelDetailsFields on ChatThreadChannelDetails {
 
 fragment CompanyFields on Company {
   accountOwner {
-    ...UserFields
+    id
   }
   contractValue
   createdAt {
@@ -544,10 +1056,10 @@ fragment CompanyFields on Company {
   logoUrl
   name
   threadChannelAssociations {
-    ...ThreadChannelAssociationFields
+    __typename
   }
   tier {
-    ...TierFields
+    id
   }
   updatedAt {
     iso8601
@@ -562,13 +1074,13 @@ fragment CompanyConnectionFields on CompanyConnection {
 fragment CompanyEdgeFields on CompanyEdge {
   cursor
   node {
-    ...CompanyFields
+    id
   }
 }
 
 fragment CompanySearchResultFields on CompanySearchResult {
   company {
-    ...CompanyFields
+    id
   }
 }
 
@@ -579,7 +1091,9 @@ fragment CompanySearchResultConnectionFields on CompanySearchResultConnection {
 fragment CompanySearchResultEdgeFields on CompanySearchResultEdge {
   cursor
   node {
-    ...CompanySearchResultFields
+    company {
+      id
+    }
   }
 }
 
@@ -599,10 +1113,17 @@ fragment CompanyTierMembershipFields on CompanyTierMembership {
 
 fragment CompleteServiceAuthorizationOutputFields on CompleteServiceAuthorizationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   serviceAuthorization {
-    ...ServiceAuthorizationFields
+    id
   }
 }
 
@@ -613,7 +1134,7 @@ fragment ComponentBadgeFields on ComponentBadge {
 
 fragment ComponentContainerFields on ComponentContainer {
   containerContent {
-    ...ComponentContainerContentFields
+    __typename
   }
 }
 
@@ -639,10 +1160,10 @@ fragment ComponentPlainTextFields on ComponentPlainText {
 
 fragment ComponentRowFields on ComponentRow {
   rowAsideContent {
-    ...ComponentRowContentFields
+    __typename
   }
   rowMainContent {
-    ...ComponentRowContentFields
+    __typename
   }
 }
 
@@ -679,7 +1200,19 @@ fragment ConnectedDiscordChannelConnectionFields on ConnectedDiscordChannelConne
 fragment ConnectedDiscordChannelEdgeFields on ConnectedDiscordChannelEdge {
   cursor
   node {
-    ...ConnectedDiscordChannelFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    discordChannelId
+    discordGuildId
+    id
+    isEnabled
+    name
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
@@ -708,7 +1241,21 @@ fragment ConnectedMSTeamsChannelConnectionFields on ConnectedMSTeamsChannelConne
 fragment ConnectedMSTeamsChannelEdgeFields on ConnectedMSTeamsChannelEdge {
   cursor
   node {
-    ...ConnectedMSTeamsChannelFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    msTeamsChannelId
+    msTeamsTeamId
+    msTeamsTenantId
+    name
+    teamName
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    workspaceId
   }
 }
 
@@ -725,7 +1272,17 @@ fragment ConnectedSlackChannelFields on ConnectedSlackChannel {
   slackChannelId
   slackTeamId
   threadChannelAssociations {
-    ...SlackThreadChannelAssociationFields
+    companyId
+    connectedSlackChannelId
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   updatedAt {
     iso8601
@@ -740,452 +1297,1023 @@ fragment ConnectedSlackChannelConnectionFields on ConnectedSlackChannelConnectio
 fragment ConnectedSlackChannelEdgeFields on ConnectedSlackChannelEdge {
   cursor
   node {
-    ...ConnectedSlackChannelFields
+    id
   }
 }
 
 fragment CreateApiKeyOutputFields on CreateApiKeyOutput {
   apiKey {
-    ...ApiKeyFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    deletedAt {
+      iso8601
+      unixTimestamp
+    }
+    description
+    id
+    isDeleted
+    permissions
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   apiKeySecret
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment CreateAttachmentDownloadUrlOutputFields on CreateAttachmentDownloadUrlOutput {
   attachmentDownloadUrl {
-    ...AttachmentDownloadUrlFields
+    attachment {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
   }
   attachmentVirusScanResult
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment CreateAttachmentUploadUrlOutputFields on CreateAttachmentUploadUrlOutput {
   attachmentUploadUrl {
-    ...AttachmentUploadUrlFields
+    attachment {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+    uploadFormData {
+    key
+    value
+  }
+    uploadFormUrl
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment CreateAutoresponderOutputFields on CreateAutoresponderOutput {
   autoresponder {
-    ...AutoresponderFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment CreateBillingPortalSessionOutputFields on CreateBillingPortalSessionOutput {
   billingPortalSessionUrl
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment CreateChatAppOutputFields on CreateChatAppOutput {
   chatApp {
-    ...ChatAppFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment CreateChatAppSecretOutputFields on CreateChatAppSecretOutput {
   chatAppSecret {
-    ...ChatAppSecretFields
+    chatAppId
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    secret
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment CreateCheckoutSessionOutputFields on CreateCheckoutSessionOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   sessionClientSecret
 }
 
 fragment CreateCustomerCardConfigOutputFields on CreateCustomerCardConfigOutput {
   customerCardConfig {
-    ...CustomerCardConfigFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment CreateCustomerEventOutputFields on CreateCustomerEventOutput {
   customerEvent {
-    ...CustomerEventFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    customerId
+    id
+    title
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment CreateCustomerGroupOutputFields on CreateCustomerGroupOutput {
   customerGroup {
-    ...CustomerGroupFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment CreateCustomerSurveyOutputFields on CreateCustomerSurveyOutput {
   customerSurvey {
-    ...CustomerSurveyFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment CreateEmailPreviewUrlOutputFields on CreateEmailPreviewUrlOutput {
   emailPreviewUrl {
-    ...EmailPreviewUrlFields
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+    previewUrl
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment CreateEscalationPathOutputFields on CreateEscalationPathOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   escalationPath {
-    ...EscalationPathFields
+    id
   }
 }
 
 fragment CreateGithubUserAuthIntegrationOutputFields on CreateGithubUserAuthIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   integration {
-    ...GithubUserAuthIntegrationFields
+    id
   }
 }
 
 fragment CreateHelpCenterArticleGroupOutputFields on CreateHelpCenterArticleGroupOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment CreateHelpCenterOutputFields on CreateHelpCenterOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   helpCenter {
-    ...HelpCenterFields
+    id
   }
 }
 
 fragment CreateIndexedDocumentOutputFields on CreateIndexedDocumentOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   indexedDocument {
-    ...IndexedDocumentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    labelTypes {
+      id
+    }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    url
   }
 }
 
 fragment CreateIssueTrackerIssueOutputFields on CreateIssueTrackerIssueOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   threadLinkCandidate {
-    ...ThreadLinkCandidateFields
+    description
+    sourceId
+    sourceStatus {
+    color
+    icon
+    key
+    label
+  }
+    sourceType
+    status
+    title
+    url
   }
 }
 
 fragment CreateKnowledgeSourceOutputFields on CreateKnowledgeSourceOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   knowledgeSource {
-    ...KnowledgeSourceFields
+    __typename
   }
 }
 
 fragment CreateLabelTypeOutputFields on CreateLabelTypeOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   labelType {
-    ...LabelTypeFields
+    id
   }
 }
 
 fragment CreateMachineUserOutputFields on CreateMachineUserOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   machineUser {
-    ...MachineUserFields
+    id
   }
 }
 
 fragment CreateMyFavoritePageOutputFields on CreateMyFavoritePageOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   favoritePage {
-    ...FavoritePageFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    key
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment CreateMyLinearIntegrationOutputFields on CreateMyLinearIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  integration {
-    ...UserLinearIntegrationFields
+    message
+    type
   }
 }
 
 fragment CreateMyMSTeamsIntegrationOutputFields on CreateMyMSTeamsIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   integration {
-    ...UserMSTeamsIntegrationFields
+    id
   }
 }
 
 fragment CreateMySlackIntegrationOutputFields on CreateMySlackIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  integration {
-    ...UserSlackIntegrationFields
+    message
+    type
   }
 }
 
 fragment CreateNoteOutputFields on CreateNoteOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   note {
-    ...NoteFields
+    attachments {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    customer {
+      id
+    }
+    deletedAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    isDeleted
+    markdown
+    text
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment CreateSavedThreadsViewOutputFields on CreateSavedThreadsViewOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   savedThreadsView {
-    ...SavedThreadsViewFields
+    id
   }
 }
 
 fragment CreateServiceLevelAgreementOutputFields on CreateServiceLevelAgreementOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   serviceLevelAgreement {
-    ...ServiceLevelAgreementFields
+    __typename
   }
 }
 
 fragment CreateSnippetOutputFields on CreateSnippetOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   snippet {
-    ...SnippetFields
+    id
   }
 }
 
 fragment CreateThreadChannelAssociationOutputFields on CreateThreadChannelAssociationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   threadChannelAssociation {
-    ...ThreadChannelAssociationFields
+    __typename
   }
 }
 
 fragment CreateThreadDiscussionOutputFields on CreateThreadDiscussionOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   threadDiscussion {
-    ...ThreadDiscussionFields
+    id
   }
 }
 
 fragment CreateThreadEventOutputFields on CreateThreadEventOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   threadEvent {
-    ...ThreadEventFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    customerId
+    id
+    threadId
+    title
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment CreateThreadFieldSchemaOutputFields on CreateThreadFieldSchemaOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   threadFieldSchema {
-    ...ThreadFieldSchemaFields
+    id
   }
 }
 
 fragment CreateThreadLinkOutputFields on CreateThreadLinkOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   threadLink {
-    ...ThreadLinkFields
+    __typename
   }
 }
 
 fragment CreateThreadOutputFields on CreateThreadOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment CreateTierOutputFields on CreateTierOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   tier {
-    ...TierFields
+    id
   }
 }
 
 fragment CreateUserAccountOutputFields on CreateUserAccountOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   userAccount {
-    ...UserAccountFields
+    id
   }
 }
 
 fragment CreateUserAuthDiscordChannelIntegrationOutputFields on CreateUserAuthDiscordChannelIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   integration {
-    ...UserAuthDiscordChannelIntegrationFields
+    id
   }
 }
 
 fragment CreateUserAuthSlackIntegrationOutputFields on CreateUserAuthSlackIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  integration {
-    ...UserAuthSlackIntegrationFields
+    message
+    type
   }
 }
 
 fragment CreateWebhookTargetOutputFields on CreateWebhookTargetOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   webhookTarget {
-    ...WebhookTargetFields
+    id
   }
 }
 
 fragment CreateWorkflowRuleOutputFields on CreateWorkflowRuleOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   workflowRule {
-    ...WorkflowRuleFields
+    id
   }
 }
 
 fragment CreateWorkspaceDiscordChannelIntegrationOutputFields on CreateWorkspaceDiscordChannelIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   integration {
-    ...WorkspaceDiscordChannelIntegrationFields
+    id
   }
 }
 
 fragment CreateWorkspaceDiscordIntegrationOutputFields on CreateWorkspaceDiscordIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  integration {
-    ...WorkspaceDiscordIntegrationFields
+    message
+    type
   }
 }
 
 fragment CreateWorkspaceEmailDomainSettingsOutputFields on CreateWorkspaceEmailDomainSettingsOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   workspaceEmailDomainSettings {
-    ...WorkspaceEmailDomainSettingsFields
+    alternateSupportEmailAddresses
+    dkimDnsRecord {
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    domainName
+    inboundForwardingEmail
+    isDomainConfigured
+    isForwardingConfigured
+    returnPathDnsRecord {
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    supportEmailAddress
   }
 }
 
 fragment CreateWorkspaceFileUploadUrlOutputFields on CreateWorkspaceFileUploadUrlOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   workspaceFileUploadUrl {
-    ...WorkspaceFileUploadUrlFields
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+    uploadFormData {
+    key
+    value
+  }
+    uploadFormUrl
+    workspaceFile {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    visibility
+  }
   }
 }
 
 fragment CreateWorkspaceMSTeamsIntegrationOutputFields on CreateWorkspaceMSTeamsIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   integration {
-    ...WorkspaceMSTeamsIntegrationFields
+    id
   }
 }
 
 fragment CreateWorkspaceOutputFields on CreateWorkspaceOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   workspace {
-    ...WorkspaceFields
+    id
   }
 }
 
 fragment CreateWorkspaceSlackChannelIntegrationOutputFields on CreateWorkspaceSlackChannelIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  integration {
-    ...WorkspaceSlackChannelIntegrationFields
+    message
+    type
   }
 }
 
 fragment CreateWorkspaceSlackIntegrationOutputFields on CreateWorkspaceSlackIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  integration {
-    ...WorkspaceSlackIntegrationFields
+    message
+    type
   }
 }
 
@@ -1196,10 +2324,27 @@ fragment CsatCustomerSurveyTemplateFields on CsatCustomerSurveyTemplate {
 
 fragment CustomEntryFields on CustomEntry {
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   components {
-    ...CustomTimelineEntryComponentFields
+    __typename
   }
   externalId
   title
@@ -1212,29 +2357,18 @@ fragment CustomerFields on Customer {
     unixTimestamp
   }
   assignedToUser {
-    ...UserActorFields
+    user {
+      id
+    }
+    userId
   }
   avatarUrl
   company {
-    ...CompanyFields
+    id
   }
   createdAt {
     iso8601
     unixTimestamp
-  }
-  customerGroupMemberships {
-    edges {
-      node {
-        ...CustomerGroupMembershipFields
-      }
-      cursor
-    }
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-      startCursor
-      endCursor
-    }
   }
   email {
     email
@@ -1244,7 +2378,7 @@ fragment CustomerFields on Customer {
   fullName
   id
   identities {
-    ...CustomerIdentityFields
+    __typename
   }
   isAnonymous
   markedAsSpamAt {
@@ -1252,20 +2386,6 @@ fragment CustomerFields on Customer {
     unixTimestamp
   }
   shortName
-  tenantMemberships {
-    edges {
-      node {
-        ...CustomerTenantMembershipFields
-      }
-      cursor
-    }
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-      startCursor
-      endCursor
-    }
-  }
   updatedAt {
     iso8601
     unixTimestamp
@@ -1274,14 +2394,15 @@ fragment CustomerFields on Customer {
 
 fragment CustomerActorFields on CustomerActor {
   customer {
-    ...CustomerFields
+    id
   }
   customerId
 }
 
 fragment CustomerCardConfigFields on CustomerCardConfig {
   apiHeaders {
-    ...CustomerCardConfigApiHeaderFields
+    name
+    value
   }
   apiUrl
   createdAt {
@@ -1311,7 +2432,7 @@ fragment CustomerCardInstanceFields on CustomerCardInstance {
     unixTimestamp
   }
   customerCardConfig {
-    ...CustomerCardConfigFields
+    id
   }
   customerId
   id
@@ -1332,7 +2453,7 @@ fragment CustomerCardInstanceCardTooBigErrorDetailFields on CustomerCardInstance
 fragment CustomerCardInstanceChangeFields on CustomerCardInstanceChange {
   changeType
   customerCardInstance {
-    ...CustomerCardInstanceFields
+    __typename
   }
 }
 
@@ -1342,11 +2463,11 @@ fragment CustomerCardInstanceErrorFields on CustomerCardInstanceError {
     unixTimestamp
   }
   customerCardConfig {
-    ...CustomerCardConfigFields
+    id
   }
   customerId
   errorDetail {
-    ...CustomerCardInstanceErrorDetailFields
+    __typename
   }
   id
   threadId
@@ -1358,14 +2479,14 @@ fragment CustomerCardInstanceErrorFields on CustomerCardInstanceError {
 
 fragment CustomerCardInstanceLoadedFields on CustomerCardInstanceLoaded {
   components {
-    ...CustomerCardComponentFields
+    __typename
   }
   createdAt {
     iso8601
     unixTimestamp
   }
   customerCardConfig {
-    ...CustomerCardConfigFields
+    id
   }
   customerId
   expiresAt {
@@ -1390,7 +2511,7 @@ fragment CustomerCardInstanceLoadingFields on CustomerCardInstanceLoading {
     unixTimestamp
   }
   customerCardConfig {
-    ...CustomerCardConfigFields
+    id
   }
   customerId
   id
@@ -1432,7 +2553,7 @@ fragment CustomerCardInstanceUnknownErrorDetailFields on CustomerCardInstanceUnk
 fragment CustomerChangeFields on CustomerChange {
   changeType
   customer {
-    ...CustomerFields
+    id
   }
 }
 
@@ -1443,20 +2564,20 @@ fragment CustomerConnectionFields on CustomerConnection {
 fragment CustomerEdgeFields on CustomerEdge {
   cursor
   node {
-    ...CustomerFields
+    id
   }
 }
 
 fragment CustomerEmailActorFields on CustomerEmailActor {
   customer {
-    ...CustomerFields
+    id
   }
   customerId
 }
 
 fragment CustomerEventFields on CustomerEvent {
   components {
-    ...EventComponentFields
+    __typename
   }
   createdAt {
     iso8601
@@ -1473,7 +2594,7 @@ fragment CustomerEventFields on CustomerEvent {
 
 fragment CustomerEventEntryFields on CustomerEventEntry {
   components {
-    ...EventComponentFields
+    __typename
   }
   customerId
   externalId
@@ -1504,7 +2625,7 @@ fragment CustomerGroupConnectionFields on CustomerGroupConnection {
 fragment CustomerGroupEdgeFields on CustomerGroupEdge {
   cursor
   node {
-    ...CustomerGroupFields
+    id
   }
 }
 
@@ -1514,7 +2635,7 @@ fragment CustomerGroupMembershipFields on CustomerGroupMembership {
     unixTimestamp
   }
   customerGroup {
-    ...CustomerGroupFields
+    id
   }
   customerId
   updatedAt {
@@ -1530,7 +2651,18 @@ fragment CustomerGroupMembershipConnectionFields on CustomerGroupMembershipConne
 fragment CustomerGroupMembershipEdgeFields on CustomerGroupMembershipEdge {
   cursor
   node {
-    ...CustomerGroupMembershipFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    customerGroup {
+      id
+    }
+    customerId
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
@@ -1541,13 +2673,13 @@ fragment CustomerSearchConnectionFields on CustomerSearchConnection {
 fragment CustomerSearchEdgeFields on CustomerSearchEdge {
   cursor
   node {
-    ...CustomerFields
+    id
   }
 }
 
 fragment CustomerSurveyFields on CustomerSurvey {
   conditions {
-    ...CustomerSurveyConditionFields
+    __typename
   }
   createdAt {
     iso8601
@@ -1560,7 +2692,7 @@ fragment CustomerSurveyFields on CustomerSurvey {
   order
   responseDelayMinutes
   template {
-    ...CustomerSurveyTemplateFields
+    __typename
   }
   updatedAt {
     iso8601
@@ -1575,7 +2707,7 @@ fragment CustomerSurveyConnectionFields on CustomerSurveyConnection {
 fragment CustomerSurveyEdgeFields on CustomerSurveyEdge {
   cursor
   node {
-    ...CustomerSurveyFields
+    id
   }
 }
 
@@ -1605,7 +2737,7 @@ fragment CustomerTenantMembershipFields on CustomerTenantMembership {
     unixTimestamp
   }
   tenant {
-    ...TenantFields
+    id
   }
   updatedAt {
     iso8601
@@ -1620,7 +2752,17 @@ fragment CustomerTenantMembershipConnectionFields on CustomerTenantMembershipCon
 fragment CustomerTenantMembershipEdgeFields on CustomerTenantMembershipEdge {
   cursor
   node {
-    ...CustomerTenantMembershipFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    tenant {
+      id
+    }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
@@ -1636,341 +2778,776 @@ fragment DefaultServiceIntegrationFields on DefaultServiceIntegration {
 
 fragment DeleteApiKeyOutputFields on DeleteApiKeyOutput {
   apiKey {
-    ...ApiKeyFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    deletedAt {
+      iso8601
+      unixTimestamp
+    }
+    description
+    id
+    isDeleted
+    permissions
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteAutoresponderOutputFields on DeleteAutoresponderOutput {
   autoresponder {
-    ...AutoresponderFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteBusinessHoursOutputFields on DeleteBusinessHoursOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteChatAppOutputFields on DeleteChatAppOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteChatAppSecretOutputFields on DeleteChatAppSecretOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteCompanyOutputFields on DeleteCompanyOutput {
   company {
-    ...CompanyFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteCustomerCardConfigOutputFields on DeleteCustomerCardConfigOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteCustomerGroupOutputFields on DeleteCustomerGroupOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteCustomerOutputFields on DeleteCustomerOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteCustomerSurveyOutputFields on DeleteCustomerSurveyOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteEscalationPathOutputFields on DeleteEscalationPathOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteGithubUserAuthIntegrationOutputFields on DeleteGithubUserAuthIntegrationOutput {
   deletedIntegrationId
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteHelpCenterArticleGroupOutputFields on DeleteHelpCenterArticleGroupOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteHelpCenterArticleOutputFields on DeleteHelpCenterArticleOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteHelpCenterOutputFields on DeleteHelpCenterOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteKnowledgeSourceOutputFields on DeleteKnowledgeSourceOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteMachineUserOutputFields on DeleteMachineUserOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   machineUser {
-    ...MachineUserFields
+    id
   }
 }
 
 fragment DeleteMyFavoritePageOutputFields on DeleteMyFavoritePageOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteMyLinearIntegrationOutputFields on DeleteMyLinearIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteMyMSTeamsIntegrationOutputFields on DeleteMyMSTeamsIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   integration {
-    ...UserMSTeamsIntegrationFields
+    id
   }
 }
 
 fragment DeleteMyServiceAuthorizationOutputFields on DeleteMyServiceAuthorizationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteMySlackIntegrationOutputFields on DeleteMySlackIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteNoteOutputFields on DeleteNoteOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   note {
-    ...NoteFields
+    attachments {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    customer {
+      id
+    }
+    deletedAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    isDeleted
+    markdown
+    text
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment DeleteSavedThreadsViewOutputFields on DeleteSavedThreadsViewOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteServiceAuthorizationOutputFields on DeleteServiceAuthorizationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteServiceLevelAgreementOutputFields on DeleteServiceLevelAgreementOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   serviceLevelAgreement {
-    ...ServiceLevelAgreementFields
+    __typename
   }
 }
 
 fragment DeleteSnippetOutputFields on DeleteSnippetOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   snippet {
-    ...SnippetFields
+    id
   }
 }
 
 fragment DeleteTenantFieldOutputFields on DeleteTenantFieldOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   tenantField {
-    ...TenantFieldFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    externalFieldId
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment DeleteTenantFieldSchemaOutputFields on DeleteTenantFieldSchemaOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   tenantFieldSchema {
-    ...TenantFieldSchemaFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    externalFieldId
+    id
+    isVisible
+    label
+    mapsTo
+    options
+    order
+    source
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment DeleteTenantOutputFields on DeleteTenantOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   tenant {
-    ...TenantFields
+    id
   }
 }
 
 fragment DeleteThreadChannelAssociationOutputFields on DeleteThreadChannelAssociationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteThreadFieldOutputFields on DeleteThreadFieldOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteThreadFieldSchemaOutputFields on DeleteThreadFieldSchemaOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteThreadLinkOutputFields on DeleteThreadLinkOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteTierOutputFields on DeleteTierOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   tier {
-    ...TierFields
+    id
   }
 }
 
 fragment DeleteUserAuthDiscordChannelIntegrationOutputFields on DeleteUserAuthDiscordChannelIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteUserAuthSlackIntegrationOutputFields on DeleteUserAuthSlackIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteUserOutputFields on DeleteUserOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteWebhookTargetOutputFields on DeleteWebhookTargetOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteWorkflowRuleOutputFields on DeleteWorkflowRuleOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteWorkspaceDiscordChannelIntegrationOutputFields on DeleteWorkspaceDiscordChannelIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteWorkspaceDiscordIntegrationOutputFields on DeleteWorkspaceDiscordIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  integration {
-    ...WorkspaceDiscordIntegrationFields
+    message
+    type
   }
 }
 
 fragment DeleteWorkspaceEmailDomainSettingsOutputFields on DeleteWorkspaceEmailDomainSettingsOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteWorkspaceFileOutputFields on DeleteWorkspaceFileOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment DeleteWorkspaceInviteOutputFields on DeleteWorkspaceInviteOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   invite {
-    ...WorkspaceInviteFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    email
+    id
+    isAccepted
+    role {
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
+  }
+    roles {
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
+  }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    usingBillingRotaSeat
+    workspace {
+      id
+    }
   }
 }
 
 fragment DeleteWorkspaceMSTeamsIntegrationOutputFields on DeleteWorkspaceMSTeamsIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   integration {
-    ...WorkspaceMSTeamsIntegrationFields
+    id
   }
 }
 
 fragment DeleteWorkspaceSlackChannelIntegrationOutputFields on DeleteWorkspaceSlackChannelIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  integration {
-    ...WorkspaceSlackChannelIntegrationFields
+    message
+    type
   }
 }
 
 fragment DeleteWorkspaceSlackIntegrationOutputFields on DeleteWorkspaceSlackIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  integration {
-    ...WorkspaceSlackIntegrationFields
+    message
+    type
   }
 }
 
@@ -1997,7 +3574,24 @@ fragment DiscordCustomerIdentityFields on DiscordCustomerIdentity {
 
 fragment DiscordMessageFields on DiscordMessage {
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   createdAt {
     iso8601
@@ -2022,7 +3616,24 @@ fragment DiscordMessageFields on DiscordMessage {
 
 fragment DiscordMessageEntryFields on DiscordMessageEntry {
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   customerId
   deletedOnDiscordAt {
@@ -2061,10 +3672,28 @@ fragment DnsRecordFields on DnsRecord {
 
 fragment EmailFields on Email {
   additionalRecipients {
-    ...EmailParticipantFields
+    email
+    name
   }
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   category
   createdAt {
@@ -2072,7 +3701,15 @@ fragment EmailFields on Email {
     unixTimestamp
   }
   customer {
-    ...CustomerFields
+    id
+  }
+  from {
+    email
+    name
+  }
+  hiddenRecipients {
+    email
+    name
   }
   id
   inReplyToEmailId
@@ -2080,9 +3717,13 @@ fragment EmailFields on Email {
   subject
   textContent
   thread {
-    ...ThreadFields
+    id
   }
   threadDiscussionId
+  to {
+    email
+    name
+  }
   updatedAt {
     iso8601
     unixTimestamp
@@ -2105,7 +3746,8 @@ fragment EmailBounceFields on EmailBounce {
   }
   isSendRetriable
   recipient {
-    ...EmailParticipantFields
+    email
+    name
   }
 }
 
@@ -2115,21 +3757,55 @@ fragment EmailCustomerIdentityFields on EmailCustomerIdentity {
 
 fragment EmailEntryFields on EmailEntry {
   additionalRecipients {
-    ...EmailParticipantFields
+    email
+    name
   }
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   authenticity
   bounces {
-    ...EmailBounceFields
+    bouncedAt {
+      iso8601
+      unixTimestamp
+    }
+    isSendRetriable
+    recipient {
+    email
+    name
+  }
   }
   category
   emailId
+  from {
+    email
+    name
+  }
   fullMarkdownContent
   fullTextContent
   hasMoreMarkdownContent
   hasMoreTextContent
+  hiddenRecipients {
+    email
+    name
+  }
   isStartOfThread
   markdownContent
   receivedAt {
@@ -2143,12 +3819,16 @@ fragment EmailEntryFields on EmailEntry {
   }
   subject
   textContent
+  to {
+    email
+    name
+  }
 }
 
 fragment EmailParticipantFields on EmailParticipant {
   email
   emailActor {
-    ...EmailActorFields
+    __typename
   }
   name
 }
@@ -2176,10 +3856,17 @@ fragment EmailSignatureFields on EmailSignature {
 
 fragment EscalateThreadOutputFields on EscalateThreadOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
@@ -2192,7 +3879,7 @@ fragment EscalationPathFields on EscalationPath {
   id
   name
   steps {
-    ...EscalationPathStepFields
+    __typename
   }
   updatedAt {
     iso8601
@@ -2207,21 +3894,21 @@ fragment EscalationPathConnectionFields on EscalationPathConnection {
 fragment EscalationPathEdgeFields on EscalationPathEdge {
   cursor
   node {
-    ...EscalationPathFields
+    id
   }
 }
 
 fragment EscalationPathStepLabelTypeFields on EscalationPathStepLabelType {
   id
   labelType {
-    ...LabelTypeFields
+    id
   }
 }
 
 fragment EscalationPathStepUserFields on EscalationPathStepUser {
   id
   user {
-    ...UserFields
+    id
   }
 }
 
@@ -2245,7 +3932,16 @@ fragment FavoritePageConnectionFields on FavoritePageConnection {
 fragment FavoritePageEdgeFields on FavoritePageEdge {
   cursor
   node {
-    ...FavoritePageFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    key
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
@@ -2257,7 +3953,7 @@ fragment FileSizeFields on FileSize {
 
 fragment FirstResponseTimeServiceLevelAgreementFields on FirstResponseTimeServiceLevelAgreement {
   breachActions {
-    ...BreachActionFields
+    __typename
   }
   createdAt {
     iso8601
@@ -2266,7 +3962,8 @@ fragment FirstResponseTimeServiceLevelAgreementFields on FirstResponseTimeServic
   firstResponseTimeMinutes
   id
   threadLabelTypeIdFilter {
-    ...ServiceLevelAgreementThreadLabelTypeIdFilterFields
+    labelTypeIds
+    requireAll
   }
   threadPriorityFilter
   updatedAt {
@@ -2278,19 +3975,33 @@ fragment FirstResponseTimeServiceLevelAgreementFields on FirstResponseTimeServic
 
 fragment ForkThreadOutputFields on ForkThreadOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment GenerateHelpCenterArticleOutputFields on GenerateHelpCenterArticleOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   helpCenterArticles {
-    ...HelpCenterArticleFields
+    id
   }
 }
 
@@ -2317,7 +4028,10 @@ fragment GenericThreadLinkFields on GenericThreadLink {
   id
   sourceId
   sourceStatus {
-    ...ThreadLinkSourceStatusFields
+    color
+    icon
+    key
+    label
   }
   sourceType
   status
@@ -2351,33 +4065,77 @@ fragment HeatmapHourFields on HeatmapHour {
 
 fragment HeatmapMetricFields on HeatmapMetric {
   days {
-    ...HeatmapHourFields
+    percentage
+    threadIds
+    total
   }
 }
 
 fragment HelpCenterFields on HelpCenter {
   access {
-    ...HelpCenterAccessSettingsFields
+    companyIds
+    customerIds
+    tenantIds
+    tierIds
   }
   agentAvatarImage {
-    ...HelpCenterThemedImageFields
+    dark {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
   }
-  articles {
-    edges {
-      node {
-        ...HelpCenterArticleFields
-      }
-      cursor
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
     }
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-      startCursor
-      endCursor
+    visibility
+  }
+    light {
+    createdAt {
+      iso8601
+      unixTimestamp
     }
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    visibility
+  }
   }
   authMechanism {
-    ...HelpCenterAuthMechanismFields
+    __typename
   }
   bodyCustomJs
   color
@@ -2391,15 +4149,141 @@ fragment HelpCenterFields on HelpCenter {
   }
   description
   domainSettings {
-    ...HelpCenterDomainSettingsFields
+    customDomainName
+    customDomainNameVerificationTxtRecord {
+    name
+    value
+  }
+    customDomainNameVerifiedAt {
+      iso8601
+      unixTimestamp
+    }
+    domainName
+  }
+  favicon {
+    dark {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    visibility
+  }
+    light {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    visibility
+  }
   }
   headCustomJs
   id
   internalName
   isChatEnabled
   isDeleted
+  logo {
+    dark {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    visibility
+  }
+    light {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    visibility
+  }
+  }
   portalSettings {
-    ...HelpCenterPortalSettingsFields
+    isAdditionalRecipientsEnabled
+    isEnabled
+    threadVisibility {
+    customerCompany
+    customerTenants
+  }
   }
   publicName
   publishedAt {
@@ -2407,7 +4291,31 @@ fragment HelpCenterFields on HelpCenter {
     unixTimestamp
   }
   socialPreviewImage {
-    ...WorkspaceFileFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    visibility
   }
   type
   updatedAt {
@@ -2458,7 +4366,7 @@ fragment HelpCenterArticleConnectionFields on HelpCenterArticleConnection {
 fragment HelpCenterArticleEdgeFields on HelpCenterArticleEdge {
   cursor
   node {
-    ...HelpCenterArticleFields
+    id
   }
 }
 
@@ -2473,10 +4381,10 @@ fragment HelpCenterArticleGroupEdgeFields on HelpCenterArticleGroupEdge {
 fragment HelpCenterArticleSearchResultFields on HelpCenterArticleSearchResult {
   content
   helpCenter {
-    ...HelpCenterFields
+    id
   }
   helpCenterArticle {
-    ...HelpCenterArticleFields
+    id
   }
 }
 
@@ -2503,7 +4411,8 @@ fragment HelpCenterDomainNameVerificationTxtRecordFields on HelpCenterDomainName
 fragment HelpCenterDomainSettingsFields on HelpCenterDomainSettings {
   customDomainName
   customDomainNameVerificationTxtRecord {
-    ...HelpCenterDomainNameVerificationTxtRecordFields
+    name
+    value
   }
   customDomainNameVerifiedAt {
     iso8601
@@ -2515,7 +4424,7 @@ fragment HelpCenterDomainSettingsFields on HelpCenterDomainSettings {
 fragment HelpCenterEdgeFields on HelpCenterEdge {
   cursor
   node {
-    ...HelpCenterFields
+    id
   }
 }
 
@@ -2527,7 +4436,11 @@ fragment HelpCenterIndexFields on HelpCenterIndex {
   hash
   helpCenterId
   navIndex {
-    ...HelpCenterIndexItemFields
+    id
+    parentId
+    slug
+    title
+    type
   }
   updatedAt {
     iso8601
@@ -2545,18 +4458,33 @@ fragment HelpCenterIndexItemFields on HelpCenterIndexItem {
 
 fragment HelpCenterPortalSettingsFields on HelpCenterPortalSettings {
   formFields {
-    ...HelpCenterPortalSettingsFormFieldFields
+    __typename
   }
   isAdditionalRecipientsEnabled
   isEnabled
   threadVisibility {
-    ...HelpCenterPortalSettingsThreadVisibilityFields
+    customerCompany
+    customerTenants
   }
 }
 
 fragment HelpCenterPortalSettingsDropdownFormFieldFields on HelpCenterPortalSettingsDropdownFormField {
   dropdownOptions {
-    ...HelpCenterPortalSettingsDropdownOptionFields
+    dropdownOptionId
+    label
+    threadDetails {
+    labelTypes {
+      id
+    }
+    priority
+    threadFields {
+    selectedBooleanValue
+    selectedStringValue
+    threadFieldSchema {
+      id
+    }
+  }
+  }
   }
   id
   isRequired
@@ -2569,7 +4497,17 @@ fragment HelpCenterPortalSettingsDropdownOptionFields on HelpCenterPortalSetting
   dropdownOptionId
   label
   threadDetails {
-    ...HelpCenterPortalSettingsThreadDetailsFields
+    labelTypes {
+      id
+    }
+    priority
+    threadFields {
+    selectedBooleanValue
+    selectedStringValue
+    threadFieldSchema {
+      id
+    }
+  }
   }
 }
 
@@ -2579,21 +4517,35 @@ fragment HelpCenterPortalSettingsTextFormFieldFields on HelpCenterPortalSettings
   label
   placeholder
   threadDetails {
-    ...HelpCenterPortalSettingsThreadDetailsFields
+    labelTypes {
+      id
+    }
+    priority
+    threadFields {
+    selectedBooleanValue
+    selectedStringValue
+    threadFieldSchema {
+      id
+    }
+  }
   }
   type
 }
 
 fragment HelpCenterPortalSettingsThreadDetailsFields on HelpCenterPortalSettingsThreadDetails {
   assignees {
-    ...ThreadAssigneeFields
+    __typename
   }
   labelTypes {
-    ...LabelTypeFields
+    id
   }
   priority
   threadFields {
-    ...HelpCenterPortalSettingsThreadFieldsFields
+    selectedBooleanValue
+    selectedStringValue
+    threadFieldSchema {
+      id
+    }
   }
 }
 
@@ -2601,7 +4553,7 @@ fragment HelpCenterPortalSettingsThreadFieldsFields on HelpCenterPortalSettingsT
   selectedBooleanValue
   selectedStringValue
   threadFieldSchema {
-    ...ThreadFieldSchemaFields
+    id
   }
 }
 
@@ -2612,7 +4564,58 @@ fragment HelpCenterPortalSettingsThreadVisibilityFields on HelpCenterPortalSetti
 
 fragment HelpCenterThemedImageFields on HelpCenterThemedImage {
   dark {
-    ...WorkspaceFileFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    visibility
+  }
+  light {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    visibility
   }
 }
 
@@ -2628,10 +4631,10 @@ fragment IndexedDocumentFields on IndexedDocument {
   }
   id
   labelTypes {
-    ...LabelTypeFields
+    id
   }
   status {
-    ...IndexedDocumentStatusFields
+    __typename
   }
   updatedAt {
     iso8601
@@ -2647,14 +4650,38 @@ fragment IndexedDocumentConnectionFields on IndexedDocumentConnection {
 fragment IndexedDocumentEdgeFields on IndexedDocumentEdge {
   cursor
   node {
-    ...IndexedDocumentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    labelTypes {
+      id
+    }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    url
   }
 }
 
 fragment IndexedDocumentSearchResultFields on IndexedDocumentSearchResult {
   content
   indexedDocument {
-    ...IndexedDocumentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    labelTypes {
+      id
+    }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    url
   }
 }
 
@@ -2704,10 +4731,47 @@ fragment IndexingStatusPendingFields on IndexingStatusPending {
 
 fragment InviteUserToWorkspaceOutputFields on InviteUserToWorkspaceOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   invite {
-    ...WorkspaceInviteFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    email
+    id
+    isAccepted
+    role {
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
+  }
+    roles {
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
+  }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    usingBillingRotaSeat
+    workspace {
+      id
+    }
   }
 }
 
@@ -2716,7 +4780,10 @@ fragment IssueTrackerFieldFields on IssueTrackerField {
   key
   name
   options {
-    ...IssueTrackerFieldOptionFields
+    color
+    icon
+    name
+    value
   }
   parentFieldKey
   selectedValue
@@ -2748,7 +4815,8 @@ fragment JiraIssueThreadLinkFields on JiraIssueThreadLink {
   jiraIssueId
   jiraIssueKey
   jiraIssueType {
-    ...JiraIssueTypeFields
+    iconUrl
+    name
   }
   sourceId
   sourceType
@@ -2778,7 +4846,10 @@ fragment JiraSiteIntegrationFields on JiraSiteIntegration {
   key
   name
   site {
-    ...JiraSiteFields
+    avatarUrl
+    id
+    name
+    url
   }
 }
 
@@ -2789,7 +4860,7 @@ fragment KnowledgeSourceConnectionFields on KnowledgeSourceConnection {
 fragment KnowledgeSourceEdgeFields on KnowledgeSourceEdge {
   cursor
   node {
-    ...KnowledgeSourceFields
+    __typename
   }
 }
 
@@ -2800,10 +4871,10 @@ fragment KnowledgeSourceSitemapFields on KnowledgeSourceSitemap {
   }
   id
   labelTypes {
-    ...LabelTypeFields
+    id
   }
   status {
-    ...IndexingStatusFields
+    __typename
   }
   type
   updatedAt {
@@ -2820,10 +4891,10 @@ fragment KnowledgeSourceUrlFields on KnowledgeSourceUrl {
   }
   id
   labelTypes {
-    ...LabelTypeFields
+    id
   }
   status {
-    ...IndexingStatusFields
+    __typename
   }
   type
   updatedAt {
@@ -2840,7 +4911,7 @@ fragment LabelFields on Label {
   }
   id
   labelType {
-    ...LabelTypeFields
+    id
   }
   updatedAt {
     iso8601
@@ -2878,7 +4949,7 @@ fragment LabelTypeConnectionFields on LabelTypeConnection {
 fragment LabelTypeEdgeFields on LabelTypeEdge {
   cursor
   node {
-    ...LabelTypeFields
+    id
   }
 }
 
@@ -2906,7 +4977,9 @@ fragment LinearIssueThreadLinkFields on LinearIssueThreadLink {
   linearIssueId
   linearIssueIdentifier
   linearIssueState {
-    ...LinearIssueStateFields
+    color
+    label
+    type
   }
   linearIssueUpdatedAt {
     iso8601
@@ -2942,13 +5015,36 @@ fragment MSTeamsChannelMemberFields on MSTeamsChannelMember {
 
 fragment MSTeamsChannelMembersFields on MSTeamsChannelMembers {
   members {
-    ...MSTeamsChannelMemberFields
+    displayName
+    email
+    id
+    roles
+    tenantId
+    userId
+    visibleHistoryStartDateTime
   }
 }
 
 fragment MSTeamsMessageFields on MSTeamsMessage {
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   createdAt {
     iso8601
@@ -2981,7 +5077,24 @@ fragment MSTeamsMessageFields on MSTeamsMessage {
 
 fragment MSTeamsMessageEntryFields on MSTeamsMessageEntry {
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   customerId
   deletedOnMsTeamsAt {
@@ -3007,22 +5120,32 @@ fragment MSTeamsThreadChannelDetailsFields on MSTeamsThreadChannelDetails {
 }
 
 fragment MachineUserFields on MachineUser {
-  apiKeys {
-    edges {
-      node {
-        ...ApiKeyFields
-      }
-      cursor
+  avatar {
+    createdAt {
+      iso8601
+      unixTimestamp
     }
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-      startCursor
-      endCursor
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
     }
   }
-  avatar {
-    ...WorkspaceFileFields
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    visibility
   }
   createdAt {
     iso8601
@@ -3046,7 +5169,7 @@ fragment MachineUserFields on MachineUser {
 
 fragment MachineUserActorFields on MachineUserActor {
   machineUser {
-    ...MachineUserFields
+    id
   }
   machineUserId
 }
@@ -3058,40 +5181,68 @@ fragment MachineUserConnectionFields on MachineUserConnection {
 fragment MachineUserEdgeFields on MachineUserEdge {
   cursor
   node {
-    ...MachineUserFields
+    id
   }
 }
 
 fragment MarkCustomerAsSpamOutputFields on MarkCustomerAsSpamOutput {
   customer {
-    ...CustomerFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment MarkThreadAsDoneOutputFields on MarkThreadAsDoneOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment MarkThreadAsTodoOutputFields on MarkThreadAsTodoOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment MarkThreadDiscussionAsResolvedOutputFields on MarkThreadDiscussionAsResolvedOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
@@ -3116,17 +5267,26 @@ fragment MinimalThreadWithDistanceFields on MinimalThreadWithDistance {
 
 fragment MoveLabelTypeOutputFields on MoveLabelTypeOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   labelType {
-    ...LabelTypeFields
+    id
   }
 }
 
 fragment MutationErrorFields on MutationError {
   code
   fields {
-    ...MutationFieldErrorFields
+    field
+    message
+    type
   }
   message
   type
@@ -3140,7 +5300,7 @@ fragment MutationFieldErrorFields on MutationFieldError {
 
 fragment NextResponseTimeServiceLevelAgreementFields on NextResponseTimeServiceLevelAgreement {
   breachActions {
-    ...BreachActionFields
+    __typename
   }
   createdAt {
     iso8601
@@ -3149,7 +5309,8 @@ fragment NextResponseTimeServiceLevelAgreementFields on NextResponseTimeServiceL
   id
   nextResponseTimeMinutes
   threadLabelTypeIdFilter {
-    ...ServiceLevelAgreementThreadLabelTypeIdFilterFields
+    labelTypeIds
+    requireAll
   }
   threadPriorityFilter
   updatedAt {
@@ -3161,14 +5322,31 @@ fragment NextResponseTimeServiceLevelAgreementFields on NextResponseTimeServiceL
 
 fragment NoteFields on Note {
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   createdAt {
     iso8601
     unixTimestamp
   }
   customer {
-    ...CustomerFields
+    id
   }
   deletedAt {
     iso8601
@@ -3186,7 +5364,24 @@ fragment NoteFields on Note {
 
 fragment NoteEntryFields on NoteEntry {
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   markdown
   noteId
@@ -3197,7 +5392,8 @@ fragment NumberSettingFields on NumberSetting {
   code
   numberValue
   scope {
-    ...SettingScopeFields
+    id
+    scopeType
   }
 }
 
@@ -3239,10 +5435,24 @@ fragment PlainThreadThreadLinkFields on PlainThreadThreadLink {
 
 fragment PreviewBillingPlanChangeOutputFields on PreviewBillingPlanChangeOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   preview {
-    ...BillingPlanChangePreviewFields
+    earliestEffectiveAt {
+      iso8601
+      unixTimestamp
+    }
+    immediateCost {
+    amount
+    currency
+  }
   }
 }
 
@@ -3265,181 +5475,435 @@ fragment RecurringPriceFields on RecurringPrice {
 
 fragment RefreshConnectedDiscordChannelsOutputFields on RefreshConnectedDiscordChannelsOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment RefreshWorkspaceSlackChannelIntegrationOutputFields on RefreshWorkspaceSlackChannelIntegrationOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  integration {
-    ...WorkspaceSlackChannelIntegrationFields
+    message
+    type
   }
 }
 
 fragment RegenerateWorkspaceHmacOutputFields on RegenerateWorkspaceHmacOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  workspaceHmac {
-    ...WorkspaceHmacFields
+    message
+    type
   }
 }
 
 fragment ReloadCustomerCardInstanceOutputFields on ReloadCustomerCardInstanceOutput {
   customerCardInstance {
-    ...CustomerCardInstanceFields
+    __typename
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment RemoveAdditionalAssigneesOutputFields on RemoveAdditionalAssigneesOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment RemoveCustomerFromCustomerGroupsOutputFields on RemoveCustomerFromCustomerGroupsOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment RemoveCustomerFromTenantsOutputFields on RemoveCustomerFromTenantsOutput {
   customer {
-    ...CustomerFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment RemoveLabelsFromUserOutputFields on RemoveLabelsFromUserOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   labels {
-    ...LabelFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    labelType {
+      id
+    }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   user {
-    ...UserFields
+    id
   }
 }
 
 fragment RemoveLabelsOutputFields on RemoveLabelsOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment RemoveMembersFromTierOutputFields on RemoveMembersFromTierOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment RemoveTenantFieldSchemaMappingOutputFields on RemoveTenantFieldSchemaMappingOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   tenantFieldSchema {
-    ...TenantFieldSchemaFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    externalFieldId
+    id
+    isVisible
+    label
+    mapsTo
+    options
+    order
+    source
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment RemoveUserFromActiveBillingRotaOutputFields on RemoveUserFromActiveBillingRotaOutput {
-  billingRota {
-    ...BillingRotaFields
-  }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment RemoveWorkspaceAlternateSupportEmailAddressOutputFields on RemoveWorkspaceAlternateSupportEmailAddressOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   workspaceEmailDomainSettings {
-    ...WorkspaceEmailDomainSettingsFields
+    alternateSupportEmailAddresses
+    dkimDnsRecord {
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    domainName
+    inboundForwardingEmail
+    isDomainConfigured
+    isForwardingConfigured
+    returnPathDnsRecord {
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    supportEmailAddress
   }
 }
 
 fragment ReorderAutorespondersOutputFields on ReorderAutorespondersOutput {
   autoresponders {
-    ...AutoresponderFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment ReorderCustomerCardConfigsOutputFields on ReorderCustomerCardConfigsOutput {
   customerCardConfigs {
-    ...CustomerCardConfigFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment ReorderCustomerSurveysOutputFields on ReorderCustomerSurveysOutput {
   customerSurveys {
-    ...CustomerSurveyFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment ReorderThreadFieldSchemasOutputFields on ReorderThreadFieldSchemasOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   threadFieldSchemas {
-    ...ThreadFieldSchemaFields
+    id
   }
 }
 
 fragment ReplyToEmailOutputFields on ReplyToEmailOutput {
   email {
-    ...EmailFields
+    additionalRecipients {
+    email
+    name
+  }
+    attachments {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    category
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    customer {
+      id
+    }
+    from {
+    email
+    name
+  }
+    hiddenRecipients {
+    email
+    name
+  }
+    id
+    inReplyToEmailId
+    markdownContent
+    subject
+    textContent
+    thread {
+      id
+    }
+    threadDiscussionId
+    to {
+    email
+    name
+  }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment ReplyToThreadOutputFields on ReplyToThreadOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment ResolveCustomerForMSTeamsChannelOutputFields on ResolveCustomerForMSTeamsChannelOutput {
   customer {
-    ...CustomerFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment ResolveCustomerForSlackChannelOutputFields on ResolveCustomerForSlackChannelOutput {
   customer {
-    ...CustomerFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
@@ -3455,12 +5919,25 @@ fragment RoleFields on Role {
 fragment RoleChangeCostFields on RoleChangeCost {
   addingSeatType
   adjustedPrice {
-    ...PriceFields
+    amount
+    currency
+  }
+  dueNowPrice {
+    amount
+    currency
+  }
+  fullPrice {
+    amount
+    currency
   }
   intervalCount
   intervalUnit
   quantity
   removingSeatType
+  totalPrice {
+    amount
+    currency
+  }
 }
 
 fragment RoleConnectionFields on RoleConnection {
@@ -3470,7 +5947,12 @@ fragment RoleConnectionFields on RoleConnection {
 fragment RoleEdgeFields on RoleEdge {
   cursor
   node {
-    ...RoleFields
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
   }
 }
 
@@ -3484,7 +5966,47 @@ fragment SavedThreadsViewFields on SavedThreadsView {
   id
   name
   threadsFilter {
-    ...SavedThreadsViewFilterFields
+    assignedToUser
+    companies
+    customerGroups
+    displayOptions {
+    hasAssignees
+    hasChannels
+    hasCompany
+    hasCustomer
+    hasCustomerGroups
+    hasIssueTrackerIssues
+    hasLabels
+    hasLastUpdated
+    hasLinkedThreads
+    hasPreviewText
+    hasServiceLevelAgreements
+    hasStatus
+    hasTier
+  }
+    groupBy
+    labelTypeIds
+    layout
+    messageSource
+    participants
+    priorities
+    slaStatuses
+    slaTypes
+    sort {
+    direction
+    field
+  }
+    statusDetails
+    statuses
+    supportEmailAddresses
+    tenants
+    threadFields {
+    booleanValue
+    key
+    stringValue
+  }
+    threadLinkGroupIds
+    tiers
   }
   updatedAt {
     iso8601
@@ -3499,7 +6021,7 @@ fragment SavedThreadsViewConnectionFields on SavedThreadsViewConnection {
 fragment SavedThreadsViewEdgeFields on SavedThreadsViewEdge {
   cursor
   node {
-    ...SavedThreadsViewFields
+    id
   }
 }
 
@@ -3508,7 +6030,19 @@ fragment SavedThreadsViewFilterFields on SavedThreadsViewFilter {
   companies
   customerGroups
   displayOptions {
-    ...ThreadsDisplayOptionsFields
+    hasAssignees
+    hasChannels
+    hasCompany
+    hasCustomer
+    hasCustomerGroups
+    hasIssueTrackerIssues
+    hasLabels
+    hasLastUpdated
+    hasLinkedThreads
+    hasPreviewText
+    hasServiceLevelAgreements
+    hasStatus
+    hasTier
   }
   groupBy
   labelTypeIds
@@ -3519,14 +6053,17 @@ fragment SavedThreadsViewFilterFields on SavedThreadsViewFilter {
   slaStatuses
   slaTypes
   sort {
-    ...SavedThreadsViewSortFields
+    direction
+    field
   }
   statusDetails
   statuses
   supportEmailAddresses
   tenants
   threadFields {
-    ...SavedThreadsViewFilterThreadFieldFields
+    booleanValue
+    key
+    stringValue
   }
   threadLinkGroupIds
   tiers
@@ -3545,67 +6082,372 @@ fragment SavedThreadsViewSortFields on SavedThreadsViewSort {
 
 fragment SendBulkEmailOutputFields on SendBulkEmailOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment SendChatOutputFields on SendChatOutput {
   chat {
-    ...ChatFields
+    attachments {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    customerReadAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    text
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment SendCustomerChatOutputFields on SendCustomerChatOutput {
   chat {
-    ...ChatFields
+    attachments {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    customerReadAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    text
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment SendDiscordMessageOutputFields on SendDiscordMessageOutput {
   discordMessage {
-    ...DiscordMessageFields
+    attachments {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    deletedOnDiscordAt {
+      iso8601
+      unixTimestamp
+    }
+    discordMessageId
+    discordMessageLink
+    lastEditedOnDiscordAt {
+      iso8601
+      unixTimestamp
+    }
+    markdownContent
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment SendMSTeamsMessageOutputFields on SendMSTeamsMessageOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   msTeamsMessage {
-    ...MSTeamsMessageFields
+    attachments {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    deletedOnMsTeamsAt {
+      iso8601
+      unixTimestamp
+    }
+    hasUnprocessedAttachments
+    id
+    lastEditedOnMsTeamsAt {
+      iso8601
+      unixTimestamp
+    }
+    markdownContent
+    msTeamsConversationId
+    msTeamsMessageId
+    msTeamsMessageLink
+    msTeamsTeamId
+    msTeamsTenantId
+    parentMessageId
+    text
+    threadId
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment SendNewEmailOutputFields on SendNewEmailOutput {
   email {
-    ...EmailFields
+    additionalRecipients {
+    email
+    name
+  }
+    attachments {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    category
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    customer {
+      id
+    }
+    from {
+    email
+    name
+  }
+    hiddenRecipients {
+    email
+    name
+  }
+    id
+    inReplyToEmailId
+    markdownContent
+    subject
+    textContent
+    thread {
+      id
+    }
+    threadDiscussionId
+    to {
+    email
+    name
+  }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment SendSlackMessageOutputFields on SendSlackMessageOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment SendThreadDiscussionMessageOutputFields on SendThreadDiscussionMessageOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   threadDiscussionMessage {
-    ...ThreadDiscussionMessageFields
+    attachments {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    deletedOnSlackAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    lastEditedOnSlackAt {
+      iso8601
+      unixTimestamp
+    }
+    reactions {
+    imageUrl
+    name
+  }
+    slackMessageLink
+    text
+    threadDiscussionId
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
@@ -3620,7 +6462,7 @@ fragment ServiceAuthorizationFields on ServiceAuthorization {
   }
   id
   serviceIntegration {
-    ...ServiceIntegrationFields
+    __typename
   }
   status
   updatedAt {
@@ -3642,7 +6484,7 @@ fragment ServiceAuthorizationConnectionDetailsFields on ServiceAuthorizationConn
 fragment ServiceAuthorizationEdgeFields on ServiceAuthorizationEdge {
   cursor
   node {
-    ...ServiceAuthorizationFields
+    id
   }
 }
 
@@ -3653,7 +6495,7 @@ fragment ServiceIntegrationFields on ServiceIntegration {
 
 fragment ServiceLevelAgreementFields on ServiceLevelAgreement {
   breachActions {
-    ...BreachActionFields
+    __typename
   }
   createdAt {
     iso8601
@@ -3661,7 +6503,8 @@ fragment ServiceLevelAgreementFields on ServiceLevelAgreement {
   }
   id
   threadLabelTypeIdFilter {
-    ...ServiceLevelAgreementThreadLabelTypeIdFilterFields
+    labelTypeIds
+    requireAll
   }
   threadPriorityFilter
   updatedAt {
@@ -3719,10 +6562,10 @@ fragment ServiceLevelAgreementStatusDetailPendingFields on ServiceLevelAgreement
 
 fragment ServiceLevelAgreementStatusSummaryFields on ServiceLevelAgreementStatusSummary {
   firstResponseTime {
-    ...ServiceLevelAgreementStatusDetailFields
+    __typename
   }
   nextResponseTime {
-    ...ServiceLevelAgreementStatusDetailFields
+    __typename
   }
 }
 
@@ -3730,7 +6573,7 @@ fragment ServiceLevelAgreementStatusTransitionedEntryFields on ServiceLevelAgree
   nextStatus
   previousStatus
   serviceLevelAgreement {
-    ...ServiceLevelAgreementFields
+    __typename
   }
 }
 
@@ -3741,10 +6584,17 @@ fragment ServiceLevelAgreementThreadLabelTypeIdFilterFields on ServiceLevelAgree
 
 fragment SetCustomerTenantsOutputFields on SetCustomerTenantsOutput {
   customer {
-    ...CustomerFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
@@ -3755,28 +6605,64 @@ fragment SettingScopeFields on SettingScope {
 
 fragment SetupTenantFieldSchemaMappingOutputFields on SetupTenantFieldSchemaMappingOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   tenantFieldSchema {
-    ...TenantFieldSchemaFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    externalFieldId
+    id
+    isVisible
+    label
+    mapsTo
+    options
+    order
+    source
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment ShareThreadToUserInSlackOutputFields on ShareThreadToUserInSlackOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment SingleValueMetricFields on SingleValueMetric {
   values {
-    ...SingleValueMetricValueFields
+    dimension {
+    type
+    value
+  }
+    userId
+    value
   }
 }
 
 fragment SingleValueMetricValueFields on SingleValueMetricValue {
   dimension {
-    ...MetricDimensionFields
+    type
+    value
   }
   userId
   value
@@ -3792,7 +6678,24 @@ fragment SlackCustomerIdentityFields on SlackCustomerIdentity {
 
 fragment SlackMessageEntryFields on SlackMessageEntry {
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   customerId
   deletedOnSlackAt {
@@ -3804,10 +6707,11 @@ fragment SlackMessageEntryFields on SlackMessageEntry {
     unixTimestamp
   }
   reactions {
-    ...SlackReactionFields
+    imageUrl
+    name
   }
   relatedThread {
-    ...SlackMessageEntryRelatedThreadFields
+    threadId
   }
   slackMessageLink
   slackWebMessageLink
@@ -3825,7 +6729,24 @@ fragment SlackReactionFields on SlackReaction {
 
 fragment SlackReplyEntryFields on SlackReplyEntry {
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   customerId
   deletedOnSlackAt {
@@ -3837,7 +6758,8 @@ fragment SlackReplyEntryFields on SlackReplyEntry {
     unixTimestamp
   }
   reactions {
-    ...SlackReactionFields
+    imageUrl
+    name
   }
   slackMessageLink
   slackWebMessageLink
@@ -3889,7 +6811,7 @@ fragment SlackUserConnectionFields on SlackUserConnection {
 fragment SlackUserEdgeFields on SlackUserEdge {
   cursor
   node {
-    ...SlackUserFields
+    id
   }
 }
 
@@ -3926,32 +6848,49 @@ fragment SnippetConnectionFields on SnippetConnection {
 fragment SnippetEdgeFields on SnippetEdge {
   cursor
   node {
-    ...SnippetFields
+    id
   }
 }
 
 fragment SnoozeThreadOutputFields on SnoozeThreadOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment StartServiceAuthorizationOutputFields on StartServiceAuthorizationOutput {
   connectionDetails {
-    ...ServiceAuthorizationConnectionDetailsFields
+    hmacDigest
+    serviceAuthorizationId
+    serviceIntegrationKey
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment StringArraySettingFields on StringArraySetting {
   code
   scope {
-    ...SettingScopeFields
+    id
+    scopeType
   }
   stringArrayValue
 }
@@ -3959,7 +6898,8 @@ fragment StringArraySettingFields on StringArraySetting {
 fragment StringSettingFields on StringSetting {
   code
   scope {
-    ...SettingScopeFields
+    id
+    scopeType
   }
   stringValue
 }
@@ -3999,10 +6939,14 @@ fragment SurveyResponseFields on SurveyResponse {
 
 fragment SyncBusinessHoursSlotsOutputFields on SyncBusinessHoursSlotsOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  slots {
-    ...BusinessHoursSlotFields
+    message
+    type
   }
 }
 
@@ -4024,10 +6968,19 @@ fragment TenantFields on Tenant {
   name
   source
   tenantFields {
-    ...TenantFieldFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    externalFieldId
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   tier {
-    ...TierFields
+    id
   }
   updatedAt {
     iso8601
@@ -4043,7 +6996,7 @@ fragment TenantConnectionFields on TenantConnection {
 fragment TenantEdgeFields on TenantEdge {
   cursor
   node {
-    ...TenantFields
+    id
   }
 }
 
@@ -4059,7 +7012,7 @@ fragment TenantFieldFields on TenantField {
     unixTimestamp
   }
   value {
-    ...TenantFieldValueFields
+    __typename
   }
 }
 
@@ -4105,7 +7058,23 @@ fragment TenantFieldSchemaConnectionFields on TenantFieldSchemaConnection {
 fragment TenantFieldSchemaEdgeFields on TenantFieldSchemaEdge {
   cursor
   node {
-    ...TenantFieldSchemaFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    externalFieldId
+    id
+    isVisible
+    label
+    mapsTo
+    options
+    order
+    source
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
@@ -4119,7 +7088,7 @@ fragment TenantFieldStringValueFields on TenantFieldStringValue {
 
 fragment TenantSearchResultFields on TenantSearchResult {
   tenant {
-    ...TenantFields
+    id
   }
 }
 
@@ -4130,7 +7099,9 @@ fragment TenantSearchResultConnectionFields on TenantSearchResultConnection {
 fragment TenantSearchResultEdgeFields on TenantSearchResultEdge {
   cursor
   node {
-    ...TenantSearchResultFields
+    tenant {
+      id
+    }
   }
 }
 
@@ -4150,57 +7121,81 @@ fragment TenantTierMembershipFields on TenantTierMembership {
 
 fragment ThreadFields on Thread {
   additionalAssignees {
-    ...ThreadAssigneeFields
+    __typename
   }
   assignedAt {
     iso8601
     unixTimestamp
   }
   assignedTo {
-    ...ThreadAssigneeFields
+    __typename
   }
   channel
   channelDetails {
-    ...ThreadChannelDetailsFields
+    __typename
   }
   createdAt {
     iso8601
     unixTimestamp
   }
   customer {
-    ...CustomerFields
+    id
   }
   description
   escalationDetails {
-    ...ThreadEscalationDetailsFields
+    escalationPath {
+      id
+    }
   }
   externalId
   firstInboundMessageInfo {
-    ...ThreadMessageInfoFields
+    messageSource
+    timestamp {
+      iso8601
+      unixTimestamp
+    }
+  }
+  firstOutboundMessageInfo {
+    messageSource
+    timestamp {
+      iso8601
+      unixTimestamp
+    }
   }
   id
   labels {
-    ...LabelFields
-  }
-  links {
-    edges {
-      node {
-        ...ThreadLinkFields
-      }
-      cursor
+    createdAt {
+      iso8601
+      unixTimestamp
     }
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-      startCursor
-      endCursor
+    id
+    labelType {
+      id
+    }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+  lastInboundMessageInfo {
+    messageSource
+    timestamp {
+      iso8601
+      unixTimestamp
+    }
+  }
+  lastOutboundMessageInfo {
+    messageSource
+    timestamp {
+      iso8601
+      unixTimestamp
     }
   }
   previewText
   priority
   ref
   serviceLevelAgreementStatusSummary {
-    ...ServiceLevelAgreementStatusSummaryFields
+    __typename
   }
   status
   statusChangedAt {
@@ -4208,37 +7203,53 @@ fragment ThreadFields on Thread {
     unixTimestamp
   }
   statusDetail {
-    ...ThreadStatusDetailFields
+    __typename
   }
   supportEmailAddresses
   surveyResponse {
-    ...SurveyResponseFields
+    comment
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    rating
+    respondedAt {
+      iso8601
+      unixTimestamp
+    }
+    sentiment
+    surveyId
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   tenant {
-    ...TenantFields
+    id
   }
   threadDiscussions {
-    ...ThreadDiscussionFields
+    id
   }
   threadFields {
-    ...ThreadFieldFields
+    booleanValue
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    isAiGenerated
+    key
+    stringValue
+    threadId
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   tier {
-    ...TierFields
-  }
-  timelineEntries {
-    edges {
-      node {
-        ...TimelineEntryFields
-      }
-      cursor
-    }
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-      startCursor
-      endCursor
-    }
+    id
   }
   title
   updatedAt {
@@ -4249,26 +7260,26 @@ fragment ThreadFields on Thread {
 
 fragment ThreadAdditionalAssigneesTransitionedEntryFields on ThreadAdditionalAssigneesTransitionedEntry {
   nextAssignees {
-    ...ThreadAssigneeFields
+    __typename
   }
   previousAssignees {
-    ...ThreadAssigneeFields
+    __typename
   }
 }
 
 fragment ThreadAssignmentTransitionedEntryFields on ThreadAssignmentTransitionedEntry {
   nextAssignee {
-    ...ThreadAssigneeFields
+    __typename
   }
   previousAssignee {
-    ...ThreadAssigneeFields
+    __typename
   }
 }
 
 fragment ThreadChangeFields on ThreadChange {
   changeType
   thread {
-    ...ThreadFields
+    id
   }
 }
 
@@ -4297,7 +7308,10 @@ fragment ThreadClusterFields on ThreadCluster {
   id
   sentiment
   threads {
-    ...MinimalThreadWithDistanceFields
+    customerId
+    distance
+    threadId
+    tierId
   }
   title
   updatedAt {
@@ -4313,7 +7327,7 @@ fragment ThreadClusterConnectionFields on ThreadClusterConnection {
 fragment ThreadClusterEdgeFields on ThreadClusterEdge {
   cursor
   node {
-    ...ThreadClusterFields
+    id
   }
 }
 
@@ -4328,20 +7342,6 @@ fragment ThreadDiscussionFields on ThreadDiscussion {
   }
   emailRecipients
   id
-  messages {
-    edges {
-      node {
-        ...ThreadDiscussionMessageFields
-      }
-      cursor
-    }
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-      startCursor
-      endCursor
-    }
-  }
   resolvedAt {
     iso8601
     unixTimestamp
@@ -4370,7 +7370,24 @@ fragment ThreadDiscussionEntryFields on ThreadDiscussionEntry {
 
 fragment ThreadDiscussionMessageFields on ThreadDiscussionMessage {
   attachments {
-    ...AttachmentFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   createdAt {
     iso8601
@@ -4386,7 +7403,8 @@ fragment ThreadDiscussionMessageFields on ThreadDiscussionMessage {
     unixTimestamp
   }
   reactions {
-    ...ThreadDiscussionMessageReactionFields
+    imageUrl
+    name
   }
   slackMessageLink
   text
@@ -4404,7 +7422,50 @@ fragment ThreadDiscussionMessageConnectionFields on ThreadDiscussionMessageConne
 fragment ThreadDiscussionMessageEdgeFields on ThreadDiscussionMessageEdge {
   cursor
   node {
-    ...ThreadDiscussionMessageFields
+    attachments {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    deletedOnSlackAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    lastEditedOnSlackAt {
+      iso8601
+      unixTimestamp
+    }
+    reactions {
+    imageUrl
+    name
+  }
+    slackMessageLink
+    text
+    threadDiscussionId
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
@@ -4429,22 +7490,22 @@ fragment ThreadDiscussionResolvedEntryFields on ThreadDiscussionResolvedEntry {
 fragment ThreadEdgeFields on ThreadEdge {
   cursor
   node {
-    ...ThreadFields
+    id
   }
 }
 
 fragment ThreadEscalationDetailsFields on ThreadEscalationDetails {
   escalationPath {
-    ...EscalationPathFields
+    id
   }
   nextEscalationPathStep {
-    ...EscalationPathStepFields
+    __typename
   }
 }
 
 fragment ThreadEventFields on ThreadEvent {
   components {
-    ...EventComponentFields
+    __typename
   }
   createdAt {
     iso8601
@@ -4462,7 +7523,7 @@ fragment ThreadEventFields on ThreadEvent {
 
 fragment ThreadEventEntryFields on ThreadEventEntry {
   components {
-    ...EventComponentFields
+    __typename
   }
   customerId
   externalId
@@ -4496,10 +7557,11 @@ fragment ThreadFieldSchemaFields on ThreadFieldSchema {
   defaultBooleanValue
   defaultStringValue
   dependsOnLabels {
-    ...DependsOnLabelTypeFields
+    labelTypeId
   }
   dependsOnThreadField {
-    ...DependsOnThreadFieldTypeFields
+    threadFieldSchemaId
+    threadFieldSchemaValue
   }
   description
   enumValues
@@ -4519,7 +7581,7 @@ fragment ThreadFieldSchemaFields on ThreadFieldSchema {
 fragment ThreadFieldSchemaChangeFields on ThreadFieldSchemaChange {
   changeType
   threadFieldSchema {
-    ...ThreadFieldSchemaFields
+    id
   }
 }
 
@@ -4530,13 +7592,38 @@ fragment ThreadFieldSchemaConnectionFields on ThreadFieldSchemaConnection {
 fragment ThreadFieldSchemaEdgeFields on ThreadFieldSchemaEdge {
   cursor
   node {
-    ...ThreadFieldSchemaFields
+    id
   }
 }
 
 fragment ThreadLabelsChangedEntryFields on ThreadLabelsChangedEntry {
   nextLabels {
-    ...LabelFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    labelType {
+      id
+    }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+  previousLabels {
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    labelType {
+      id
+    }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
@@ -4563,7 +7650,10 @@ fragment ThreadLinkCandidateFields on ThreadLinkCandidate {
   description
   sourceId
   sourceStatus {
-    ...ThreadLinkSourceStatusFields
+    color
+    icon
+    key
+    label
   }
   sourceType
   status
@@ -4578,7 +7668,18 @@ fragment ThreadLinkCandidateConnectionFields on ThreadLinkCandidateConnection {
 fragment ThreadLinkCandidateEdgeFields on ThreadLinkCandidateEdge {
   cursor
   node {
-    ...ThreadLinkCandidateFields
+    description
+    sourceId
+    sourceStatus {
+    color
+    icon
+    key
+    label
+  }
+    sourceType
+    status
+    title
+    url
   }
 }
 
@@ -4589,47 +7690,39 @@ fragment ThreadLinkConnectionFields on ThreadLinkConnection {
 fragment ThreadLinkEdgeFields on ThreadLinkEdge {
   cursor
   node {
-    ...ThreadLinkFields
+    __typename
   }
 }
 
 fragment ThreadLinkGroupFields on ThreadLinkGroup {
   companyMetrics {
-    ...ThreadLinkGroupCompanyMetricsFields
+    byCompany {
+    company {
+      id
+    }
+    metrics {
+    totalCount
+  }
+  }
+    noCompany {
+    totalCount
+  }
   }
   currentViewRank
   defaultViewRank
   id
-  threadLinks {
-    edges {
-      node {
-        ...ThreadLinkFields
-      }
-      cursor
-    }
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-      startCursor
-      endCursor
-    }
-  }
-  threads {
-    edges {
-      node {
-        ...ThreadFields
-      }
-      cursor
-    }
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-      startCursor
-      endCursor
-    }
-  }
   tierMetrics {
-    ...ThreadLinkGroupTierMetricsFields
+    byTier {
+    metrics {
+    totalCount
+  }
+    tier {
+      id
+    }
+  }
+    noTier {
+    totalCount
+  }
   }
 }
 
@@ -4639,10 +7732,15 @@ fragment ThreadLinkGroupAggregateMetricsFields on ThreadLinkGroupAggregateMetric
 
 fragment ThreadLinkGroupCompanyMetricsFields on ThreadLinkGroupCompanyMetrics {
   byCompany {
-    ...ThreadLinkGroupSingleCompanyMetricsFields
+    company {
+      id
+    }
+    metrics {
+    totalCount
+  }
   }
   noCompany {
-    ...ThreadLinkGroupAggregateMetricsFields
+    totalCount
   }
 }
 
@@ -4653,34 +7751,67 @@ fragment ThreadLinkGroupConnectionFields on ThreadLinkGroupConnection {
 fragment ThreadLinkGroupEdgeFields on ThreadLinkGroupEdge {
   cursor
   node {
-    ...ThreadLinkGroupFields
+    companyMetrics {
+    byCompany {
+    company {
+      id
+    }
+    metrics {
+    totalCount
+  }
+  }
+    noCompany {
+    totalCount
+  }
+  }
+    currentViewRank
+    defaultViewRank
+    id
+    tierMetrics {
+    byTier {
+    metrics {
+    totalCount
+  }
+    tier {
+      id
+    }
+  }
+    noTier {
+    totalCount
+  }
+  }
   }
 }
 
 fragment ThreadLinkGroupSingleCompanyMetricsFields on ThreadLinkGroupSingleCompanyMetrics {
   company {
-    ...CompanyFields
+    id
   }
   metrics {
-    ...ThreadLinkGroupAggregateMetricsFields
+    totalCount
   }
 }
 
 fragment ThreadLinkGroupSingleTierMetricsFields on ThreadLinkGroupSingleTierMetrics {
   metrics {
-    ...ThreadLinkGroupAggregateMetricsFields
+    totalCount
   }
   tier {
-    ...TierFields
+    id
   }
 }
 
 fragment ThreadLinkGroupTierMetricsFields on ThreadLinkGroupTierMetrics {
   byTier {
-    ...ThreadLinkGroupSingleTierMetricsFields
+    metrics {
+    totalCount
+  }
+    tier {
+      id
+    }
   }
   noTier {
-    ...ThreadLinkGroupAggregateMetricsFields
+    totalCount
   }
 }
 
@@ -4693,10 +7824,10 @@ fragment ThreadLinkSourceStatusFields on ThreadLinkSourceStatus {
 
 fragment ThreadLinkUpdatedEntryFields on ThreadLinkUpdatedEntry {
   previousThreadLink {
-    ...ThreadLinkFields
+    __typename
   }
   threadLink {
-    ...ThreadLinkFields
+    __typename
   }
 }
 
@@ -4715,7 +7846,7 @@ fragment ThreadPriorityChangedEntryFields on ThreadPriorityChangedEntry {
 
 fragment ThreadSearchResultFields on ThreadSearchResult {
   thread {
-    ...ThreadFields
+    id
   }
 }
 
@@ -4726,7 +7857,9 @@ fragment ThreadSearchResultConnectionFields on ThreadSearchResultConnection {
 fragment ThreadSearchResultEdgeFields on ThreadSearchResultEdge {
   cursor
   node {
-    ...ThreadSearchResultFields
+    thread {
+      id
+    }
   }
 }
 
@@ -4830,18 +7963,18 @@ fragment ThreadStatusDetailWaitingForDurationFields on ThreadStatusDetailWaiting
 fragment ThreadStatusTransitionedEntryFields on ThreadStatusTransitionedEntry {
   nextStatus
   nextStatusDetail {
-    ...ThreadStatusDetailFields
+    __typename
   }
   previousStatus
   previousStatusDetail {
-    ...ThreadStatusDetailFields
+    __typename
   }
 }
 
 fragment ThreadWithDistanceFields on ThreadWithDistance {
   distance
   thread {
-    ...ThreadFields
+    id
   }
 }
 
@@ -4874,7 +8007,7 @@ fragment TierFields on Tier {
   isMachineTier
   name
   serviceLevelAgreements {
-    ...ServiceLevelAgreementFields
+    __typename
   }
   updatedAt {
     iso8601
@@ -4889,7 +8022,7 @@ fragment TierConnectionFields on TierConnection {
 fragment TierEdgeFields on TierEdge {
   cursor
   node {
-    ...TierFields
+    id
   }
 }
 
@@ -4906,7 +8039,9 @@ fragment TieredRecurringPriceFields on TieredRecurringPrice {
   billingIntervalUnit
   currency
   tiers {
-    ...PriceTierFields
+    flatAmount
+    maxSeats
+    perSeatAmount
   }
 }
 
@@ -4916,7 +8051,13 @@ fragment TimeFields on Time {
 
 fragment TimeSeriesMetricFields on TimeSeriesMetric {
   series {
-    ...TimeSeriesSeriesFields
+    dimension {
+    type
+    value
+  }
+    threadIds
+    userId
+    values
   }
   timestamps {
     iso8601
@@ -4931,7 +8072,8 @@ fragment TimeSeriesMetricDimensionFields on TimeSeriesMetricDimension {
 
 fragment TimeSeriesSeriesFields on TimeSeriesSeries {
   dimension {
-    ...TimeSeriesMetricDimensionFields
+    type
+    value
   }
   threadIds
   userId
@@ -4952,7 +8094,7 @@ fragment TimelineEntryFields on TimelineEntry {
 fragment TimelineEntryChangeFields on TimelineEntryChange {
   changeType
   timelineEntry {
-    ...TimelineEntryFields
+    id
   }
 }
 
@@ -4963,13 +8105,13 @@ fragment TimelineEntryConnectionFields on TimelineEntryConnection {
 fragment TimelineEntryEdgeFields on TimelineEntryEdge {
   cursor
   node {
-    ...TimelineEntryFields
+    id
   }
 }
 
 fragment TimelineEventEntryFields on TimelineEventEntry {
   components {
-    ...EventComponentFields
+    __typename
   }
   customerId
   externalId
@@ -4988,355 +8130,673 @@ fragment ToggleFeatureEntitlementFields on ToggleFeatureEntitlement {
 
 fragment ToggleSlackMessageReactionOutputFields on ToggleSlackMessageReactionOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment ToggleWorkflowRulePublishedOutputFields on ToggleWorkflowRulePublishedOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   workflowRule {
-    ...WorkflowRuleFields
+    id
   }
 }
 
 fragment UnarchiveLabelTypeOutputFields on UnarchiveLabelTypeOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   labelType {
-    ...LabelTypeFields
+    id
   }
 }
 
 fragment UnassignThreadOutputFields on UnassignThreadOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment UnmarkCustomerAsSpamOutputFields on UnmarkCustomerAsSpamOutput {
   customer {
-    ...CustomerFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment UpdateActiveBillingRotaOutputFields on UpdateActiveBillingRotaOutput {
-  billingRota {
-    ...BillingRotaFields
-  }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment UpdateApiKeyOutputFields on UpdateApiKeyOutput {
   apiKey {
-    ...ApiKeyFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    deletedAt {
+      iso8601
+      unixTimestamp
+    }
+    description
+    id
+    isDeleted
+    permissions
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment UpdateAutoresponderOutputFields on UpdateAutoresponderOutput {
   autoresponder {
-    ...AutoresponderFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment UpdateChatAppOutputFields on UpdateChatAppOutput {
   chatApp {
-    ...ChatAppFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment UpdateCompanyTierOutputFields on UpdateCompanyTierOutput {
   companyTierMembership {
-    ...CompanyTierMembershipFields
+    companyId
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    tierId
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment UpdateConnectedDiscordChannelOutputFields on UpdateConnectedDiscordChannelOutput {
   connectedDiscordChannel {
-    ...ConnectedDiscordChannelFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    discordChannelId
+    discordGuildId
+    id
+    isEnabled
+    name
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment UpdateConnectedSlackChannelOutputFields on UpdateConnectedSlackChannelOutput {
   connectedSlackChannel {
-    ...ConnectedSlackChannelFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment UpdateCustomerCardConfigOutputFields on UpdateCustomerCardConfigOutput {
   customerCardConfig {
-    ...CustomerCardConfigFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment UpdateCustomerCompanyOutputFields on UpdateCustomerCompanyOutput {
   customer {
-    ...CustomerFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment UpdateCustomerGroupOutputFields on UpdateCustomerGroupOutput {
   customerGroup {
-    ...CustomerGroupFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment UpdateCustomerSurveyOutputFields on UpdateCustomerSurveyOutput {
   customerSurvey {
-    ...CustomerSurveyFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment UpdateEscalationPathOutputFields on UpdateEscalationPathOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   escalationPath {
-    ...EscalationPathFields
+    id
   }
 }
 
 fragment UpdateGeneratedReplyOutputFields on UpdateGeneratedReplyOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   generatedReply {
-    ...GeneratedReplyFields
+    id
   }
 }
 
 fragment UpdateHelpCenterArticleGroupOutputFields on UpdateHelpCenterArticleGroupOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
 }
 
 fragment UpdateHelpCenterCustomDomainNameOutputFields on UpdateHelpCenterCustomDomainNameOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   helpCenter {
-    ...HelpCenterFields
+    id
   }
 }
 
 fragment UpdateHelpCenterIndexOutputFields on UpdateHelpCenterIndexOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  helpCenterIndex {
-    ...HelpCenterIndexFields
+    message
+    type
   }
 }
 
 fragment UpdateHelpCenterOutputFields on UpdateHelpCenterOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   helpCenter {
-    ...HelpCenterFields
+    id
   }
 }
 
 fragment UpdateLabelTypeOutputFields on UpdateLabelTypeOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   labelType {
-    ...LabelTypeFields
+    id
   }
 }
 
 fragment UpdateMachineUserOutputFields on UpdateMachineUserOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   machineUser {
-    ...MachineUserFields
+    id
   }
 }
 
 fragment UpdateMyUserOutputFields on UpdateMyUserOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   user {
-    ...UserFields
+    id
   }
 }
 
 fragment UpdateSavedThreadsViewOutputFields on UpdateSavedThreadsViewOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   savedThreadsView {
-    ...SavedThreadsViewFields
+    id
   }
 }
 
 fragment UpdateServiceLevelAgreementOutputFields on UpdateServiceLevelAgreementOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   serviceLevelAgreement {
-    ...ServiceLevelAgreementFields
+    __typename
   }
 }
 
 fragment UpdateSettingOutputFields on UpdateSettingOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   setting {
-    ...SettingFields
+    __typename
   }
 }
 
 fragment UpdateSnippetOutputFields on UpdateSnippetOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   snippet {
-    ...SnippetFields
+    id
   }
 }
 
 fragment UpdateTenantTierOutputFields on UpdateTenantTierOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   tenantTierMembership {
-    ...TenantTierMembershipFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    tenantId
+    tierId
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment UpdateThreadEscalationPathOutputFields on UpdateThreadEscalationPathOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment UpdateThreadFieldSchemaOutputFields on UpdateThreadFieldSchemaOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   threadFieldSchema {
-    ...ThreadFieldSchemaFields
+    id
   }
 }
 
 fragment UpdateThreadTenantOutputFields on UpdateThreadTenantOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment UpdateThreadTierOutputFields on UpdateThreadTierOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment UpdateThreadTitleOutputFields on UpdateThreadTitleOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   thread {
-    ...ThreadFields
+    id
   }
 }
 
 fragment UpdateTierOutputFields on UpdateTierOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   tier {
-    ...TierFields
+    id
   }
 }
 
 fragment UpdateWebhookTargetOutputFields on UpdateWebhookTargetOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   webhookTarget {
-    ...WebhookTargetFields
+    id
   }
 }
 
 fragment UpdateWorkflowRuleOutputFields on UpdateWorkflowRuleOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   workflowRule {
-    ...WorkflowRuleFields
+    id
   }
 }
 
 fragment UpdateWorkspaceEmailSettingsOutputFields on UpdateWorkspaceEmailSettingsOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
   }
-  workspaceEmailSettings {
-    ...WorkspaceEmailSettingsFields
+    message
+    type
   }
 }
 
 fragment UpdateWorkspaceOutputFields on UpdateWorkspaceOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   workspace {
-    ...WorkspaceFields
+    id
   }
 }
 
@@ -5346,107 +8806,215 @@ fragment UploadFormDataFields on UploadFormData {
 }
 
 fragment UpsertBusinessHoursOutputFields on UpsertBusinessHoursOutput {
-  businessHours {
-    ...BusinessHoursFields
-  }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   result
 }
 
 fragment UpsertCompanyOutputFields on UpsertCompanyOutput {
   company {
-    ...CompanyFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   result
 }
 
 fragment UpsertCustomerGroupOutputFields on UpsertCustomerGroupOutput {
   customerGroup {
-    ...CustomerGroupFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   result
 }
 
 fragment UpsertCustomerOutputFields on UpsertCustomerOutput {
   customer {
-    ...CustomerFields
+    id
   }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   result
 }
 
 fragment UpsertHelpCenterArticleOutputFields on UpsertHelpCenterArticleOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   helpCenterArticle {
-    ...HelpCenterArticleFields
+    id
   }
 }
 
 fragment UpsertMyEmailSignatureOutputFields on UpsertMyEmailSignatureOutput {
-  emailSignature {
-    ...EmailSignatureFields
-  }
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   result
 }
 
 fragment UpsertTenantFieldOutputFields on UpsertTenantFieldOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   result
   tenantField {
-    ...TenantFieldFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    externalFieldId
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment UpsertTenantFieldSchemaOutputFields on UpsertTenantFieldSchemaOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   result
   tenantFieldSchemas {
-    ...TenantFieldSchemaFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    externalFieldId
+    id
+    isVisible
+    label
+    mapsTo
+    options
+    order
+    source
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment UpsertTenantOutputFields on UpsertTenantOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   result
   tenant {
-    ...TenantFields
+    id
   }
 }
 
 fragment UpsertThreadFieldOutputFields on UpsertThreadFieldOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   result
   threadField {
-    ...ThreadFieldFields
+    booleanValue
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    isAiGenerated
+    key
+    stringValue
+    threadId
+    type
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
 }
 
 fragment UserFields on User {
   additionalLegacyRoles {
-    ...RoleFields
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
   }
   avatarUrl
   createdAt {
@@ -5462,11 +9030,39 @@ fragment UserFields on User {
   id
   isDeleted
   labels {
-    ...LabelFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    id
+    labelType {
+      id
+    }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   publicName
+  role {
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
+  }
+  roles {
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
+  }
   slackIdentities {
-    ...SlackUserIdentityFields
+    slackTeamId
+    slackUserId
   }
   status
   statusChangedAt {
@@ -5488,7 +9084,7 @@ fragment UserAccountFields on UserAccount {
 
 fragment UserActorFields on UserActor {
   user {
-    ...UserFields
+    id
   }
   userId
 }
@@ -5521,7 +9117,7 @@ fragment UserAuthDiscordChannelIntegrationConnectionFields on UserAuthDiscordCha
 fragment UserAuthDiscordChannelIntegrationEdgeFields on UserAuthDiscordChannelIntegrationEdge {
   cursor
   node {
-    ...UserAuthDiscordChannelIntegrationFields
+    id
   }
 }
 
@@ -5547,7 +9143,7 @@ fragment UserAuthSlackIntegrationFields on UserAuthSlackIntegration {
 fragment UserChangeFields on UserChange {
   changeType
   user {
-    ...UserFields
+    id
   }
 }
 
@@ -5558,13 +9154,13 @@ fragment UserConnectionFields on UserConnection {
 fragment UserEdgeFields on UserEdge {
   cursor
   node {
-    ...UserFields
+    id
   }
 }
 
 fragment UserEmailActorFields on UserEmailActor {
   user {
-    ...UserFields
+    id
   }
   userId
 }
@@ -5626,28 +9222,115 @@ fragment UserSlackIntegrationFields on UserSlackIntegration {
 
 fragment VerifyHelpCenterCustomDomainNameOutputFields on VerifyHelpCenterCustomDomainNameOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   helpCenter {
-    ...HelpCenterFields
+    id
   }
 }
 
 fragment VerifyWorkspaceEmailDnsSettingsOutputFields on VerifyWorkspaceEmailDnsSettingsOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   workspaceEmailDomainSettings {
-    ...WorkspaceEmailDomainSettingsFields
+    alternateSupportEmailAddresses
+    dkimDnsRecord {
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    domainName
+    inboundForwardingEmail
+    isDomainConfigured
+    isForwardingConfigured
+    returnPathDnsRecord {
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    supportEmailAddress
   }
 }
 
 fragment VerifyWorkspaceEmailForwardingSettingsOutputFields on VerifyWorkspaceEmailForwardingSettingsOutput {
   error {
-    ...MutationErrorFields
+    code
+    fields {
+    field
+    message
+    type
+  }
+    message
+    type
   }
   workspaceEmailDomainSettings {
-    ...WorkspaceEmailDomainSettingsFields
+    alternateSupportEmailAddresses
+    dkimDnsRecord {
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    domainName
+    inboundForwardingEmail
+    isDomainConfigured
+    isForwardingConfigured
+    returnPathDnsRecord {
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    supportEmailAddress
   }
 }
 
@@ -5658,7 +9341,7 @@ fragment WebhookTargetFields on WebhookTarget {
   }
   description
   eventSubscriptions {
-    ...WebhookTargetEventSubscriptionFields
+    eventType
   }
   id
   isEnabled
@@ -5677,7 +9360,7 @@ fragment WebhookTargetConnectionFields on WebhookTargetConnection {
 fragment WebhookTargetEdgeFields on WebhookTargetEdge {
   cursor
   node {
-    ...WebhookTargetFields
+    id
   }
 }
 
@@ -5698,7 +9381,9 @@ fragment WebhookVersionConnectionFields on WebhookVersionConnection {
 fragment WebhookVersionEdgeFields on WebhookVersionEdge {
   cursor
   node {
-    ...WebhookVersionFields
+    isDeprecated
+    isLatest
+    version
   }
 }
 
@@ -5727,7 +9412,7 @@ fragment WorkflowRuleConnectionFields on WorkflowRuleConnection {
 fragment WorkflowRuleEdgeFields on WorkflowRuleEdge {
   cursor
   node {
-    ...WorkflowRuleFields
+    id
   }
 }
 
@@ -5740,19 +9425,37 @@ fragment WorkspaceFields on Workspace {
   id
   isDemoWorkspace
   logo {
-    ...WorkspaceFileFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    visibility
   }
   name
   publicName
   updatedAt {
     iso8601
     unixTimestamp
-  }
-  workspaceChatSettings {
-    ...WorkspaceChatSettingsFields
-  }
-  workspaceEmailSettings {
-    ...WorkspaceEmailSettingsFields
   }
 }
 
@@ -5789,7 +9492,7 @@ fragment WorkspaceDiscordChannelIntegrationConnectionFields on WorkspaceDiscordC
 fragment WorkspaceDiscordChannelIntegrationEdgeFields on WorkspaceDiscordChannelIntegrationEdge {
   cursor
   node {
-    ...WorkspaceDiscordChannelIntegrationFields
+    id
   }
 }
 
@@ -5813,27 +9516,49 @@ fragment WorkspaceDiscordIntegrationConnectionFields on WorkspaceDiscordIntegrat
 
 fragment WorkspaceDiscordIntegrationEdgeFields on WorkspaceDiscordIntegrationEdge {
   cursor
-  node {
-    ...WorkspaceDiscordIntegrationFields
-  }
 }
 
 fragment WorkspaceEdgeFields on WorkspaceEdge {
   cursor
   node {
-    ...WorkspaceFields
+    id
   }
 }
 
 fragment WorkspaceEmailDomainSettingsFields on WorkspaceEmailDomainSettings {
   alternateSupportEmailAddresses
   dkimDnsRecord {
-    ...DnsRecordFields
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
   }
   domainName
   inboundForwardingEmail
   isDomainConfigured
   isForwardingConfigured
+  returnPathDnsRecord {
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
   supportEmailAddress
 }
 
@@ -5841,7 +9566,40 @@ fragment WorkspaceEmailSettingsFields on WorkspaceEmailSettings {
   bccEmail
   isEnabled
   workspaceEmailDomainSettings {
-    ...WorkspaceEmailDomainSettingsFields
+    alternateSupportEmailAddresses
+    dkimDnsRecord {
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    domainName
+    inboundForwardingEmail
+    isDomainConfigured
+    isForwardingConfigured
+    returnPathDnsRecord {
+    isVerified
+    lastCheckedAt {
+      iso8601
+      unixTimestamp
+    }
+    name
+    type
+    value
+    verifiedAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    supportEmailAddress
   }
 }
 
@@ -5851,13 +9609,19 @@ fragment WorkspaceFileFields on WorkspaceFile {
     unixTimestamp
   }
   downloadUrl {
-    ...WorkspaceFileDownloadUrlFields
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
   }
   fileExtension
   fileMimeType
   fileName
   fileSize {
-    ...FileSizeFields
+    bytes
+    kiloBytes
+    megaBytes
   }
   id
   updatedAt {
@@ -5881,11 +9645,36 @@ fragment WorkspaceFileUploadUrlFields on WorkspaceFileUploadUrl {
     unixTimestamp
   }
   uploadFormData {
-    ...UploadFormDataFields
+    key
+    value
   }
   uploadFormUrl
   workspaceFile {
-    ...WorkspaceFileFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    downloadUrl {
+    downloadUrl
+    expiresAt {
+      iso8601
+      unixTimestamp
+    }
+  }
+    fileExtension
+    fileMimeType
+    fileName
+    fileSize {
+    bytes
+    kiloBytes
+    megaBytes
+  }
+    id
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    visibility
   }
 }
 
@@ -5910,7 +9699,20 @@ fragment WorkspaceInviteFields on WorkspaceInvite {
   id
   isAccepted
   role {
-    ...RoleFields
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
+  }
+  roles {
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
   }
   updatedAt {
     iso8601
@@ -5918,7 +9720,7 @@ fragment WorkspaceInviteFields on WorkspaceInvite {
   }
   usingBillingRotaSeat
   workspace {
-    ...WorkspaceFields
+    id
   }
 }
 
@@ -5929,7 +9731,37 @@ fragment WorkspaceInviteConnectionFields on WorkspaceInviteConnection {
 fragment WorkspaceInviteEdgeFields on WorkspaceInviteEdge {
   cursor
   node {
-    ...WorkspaceInviteFields
+    createdAt {
+      iso8601
+      unixTimestamp
+    }
+    email
+    id
+    isAccepted
+    role {
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
+  }
+    roles {
+    description
+    id
+    isAssignableToThread
+    key
+    name
+    permissions
+  }
+    updatedAt {
+      iso8601
+      unixTimestamp
+    }
+    usingBillingRotaSeat
+    workspace {
+      id
+    }
   }
 }
 
@@ -5977,9 +9809,6 @@ fragment WorkspaceSlackChannelIntegrationConnectionFields on WorkspaceSlackChann
 
 fragment WorkspaceSlackChannelIntegrationEdgeFields on WorkspaceSlackChannelIntegrationEdge {
   cursor
-  node {
-    ...WorkspaceSlackChannelIntegrationFields
-  }
 }
 
 fragment WorkspaceSlackInstallationInfoFields on WorkspaceSlackInstallationInfo {
@@ -6009,452 +9838,458 @@ fragment WorkspaceSlackIntegrationConnectionFields on WorkspaceSlackIntegrationC
 
 fragment WorkspaceSlackIntegrationEdgeFields on WorkspaceSlackIntegrationEdge {
   cursor
-  node {
-    ...WorkspaceSlackIntegrationFields
-  }
 }
 
 fragment AutoresponderConditionFields on AutoresponderCondition {
   ... on AutoresponderBusinessHoursCondition {
-    ...AutoresponderBusinessHoursConditionFields
+    __typename
   }
   ... on AutoresponderLabelCondition {
-    ...AutoresponderLabelConditionFields
+    __typename
   }
   ... on AutoresponderPrioritiesCondition {
-    ...AutoresponderPrioritiesConditionFields
+    __typename
   }
   ... on AutoresponderSupportEmailsCondition {
-    ...AutoresponderSupportEmailsConditionFields
+    __typename
   }
   ... on AutoresponderTierCondition {
-    ...AutoresponderTierConditionFields
+    __typename
   }
 }
 
 fragment BreachActionFields on BreachAction {
   ... on BeforeBreachAction {
-    ...BeforeBreachActionFields
+    __typename
   }
 }
 
 fragment ComponentContainerContentFields on ComponentContainerContent {
   ... on ComponentBadge {
-    ...ComponentBadgeFields
+    __typename
   }
   ... on ComponentCopyButton {
-    ...ComponentCopyButtonFields
+    __typename
   }
   ... on ComponentDivider {
-    ...ComponentDividerFields
+    __typename
   }
   ... on ComponentLinkButton {
-    ...ComponentLinkButtonFields
+    __typename
   }
   ... on ComponentPlainText {
-    ...ComponentPlainTextFields
+    __typename
   }
   ... on ComponentRow {
-    ...ComponentRowFields
+    __typename
   }
   ... on ComponentSpacer {
-    ...ComponentSpacerFields
+    __typename
   }
   ... on ComponentText {
-    ...ComponentTextFields
+    __typename
   }
 }
 
 fragment ComponentRowContentFields on ComponentRowContent {
   ... on ComponentBadge {
-    ...ComponentBadgeFields
+    __typename
   }
   ... on ComponentCopyButton {
-    ...ComponentCopyButtonFields
+    __typename
   }
   ... on ComponentDivider {
-    ...ComponentDividerFields
+    __typename
   }
   ... on ComponentLinkButton {
-    ...ComponentLinkButtonFields
+    __typename
   }
   ... on ComponentPlainText {
-    ...ComponentPlainTextFields
+    __typename
   }
   ... on ComponentSpacer {
-    ...ComponentSpacerFields
+    __typename
   }
   ... on ComponentText {
-    ...ComponentTextFields
+    __typename
   }
 }
 
 fragment CustomTimelineEntryComponentFields on CustomTimelineEntryComponent {
   ... on ComponentBadge {
-    ...ComponentBadgeFields
+    __typename
   }
   ... on ComponentContainer {
-    ...ComponentContainerFields
+    __typename
   }
   ... on ComponentCopyButton {
-    ...ComponentCopyButtonFields
+    __typename
   }
   ... on ComponentDivider {
-    ...ComponentDividerFields
+    __typename
   }
   ... on ComponentLinkButton {
-    ...ComponentLinkButtonFields
+    __typename
   }
   ... on ComponentPlainText {
-    ...ComponentPlainTextFields
+    __typename
   }
   ... on ComponentRow {
-    ...ComponentRowFields
+    __typename
   }
   ... on ComponentSpacer {
-    ...ComponentSpacerFields
+    __typename
   }
   ... on ComponentText {
-    ...ComponentTextFields
+    __typename
   }
 }
 
 fragment CustomerCardComponentFields on CustomerCardComponent {
   ... on ComponentBadge {
-    ...ComponentBadgeFields
+    __typename
   }
   ... on ComponentContainer {
-    ...ComponentContainerFields
+    __typename
   }
   ... on ComponentCopyButton {
-    ...ComponentCopyButtonFields
+    __typename
   }
   ... on ComponentDivider {
-    ...ComponentDividerFields
+    __typename
   }
   ... on ComponentLinkButton {
-    ...ComponentLinkButtonFields
+    __typename
   }
   ... on ComponentPlainText {
-    ...ComponentPlainTextFields
+    __typename
   }
   ... on ComponentRow {
-    ...ComponentRowFields
+    __typename
   }
   ... on ComponentSpacer {
-    ...ComponentSpacerFields
+    __typename
   }
   ... on ComponentText {
-    ...ComponentTextFields
+    __typename
   }
 }
 
 fragment CustomerCardInstanceChangesResultFields on CustomerCardInstanceChangesResult {
   ... on CustomerCardInstanceChange {
-    ...CustomerCardInstanceChangeFields
+    __typename
   }
   ... on SubscriptionAcknowledgement {
-    ...SubscriptionAcknowledgementFields
+    __typename
   }
 }
 
 fragment CustomerCardInstanceErrorDetailFields on CustomerCardInstanceErrorDetail {
   ... on CustomerCardInstanceCardTooBigErrorDetail {
-    ...CustomerCardInstanceCardTooBigErrorDetailFields
+    __typename
   }
   ... on CustomerCardInstanceMissingCardErrorDetail {
-    ...CustomerCardInstanceMissingCardErrorDetailFields
+    __typename
   }
   ... on CustomerCardInstanceRequestErrorDetail {
-    ...CustomerCardInstanceRequestErrorDetailFields
+    __typename
   }
   ... on CustomerCardInstanceResponseBodyErrorDetail {
-    ...CustomerCardInstanceResponseBodyErrorDetailFields
+    __typename
   }
   ... on CustomerCardInstanceStatusCodeErrorDetail {
-    ...CustomerCardInstanceStatusCodeErrorDetailFields
+    __typename
   }
   ... on CustomerCardInstanceTimeoutErrorDetail {
-    ...CustomerCardInstanceTimeoutErrorDetailFields
+    __typename
   }
   ... on CustomerCardInstanceUnknownErrorDetail {
-    ...CustomerCardInstanceUnknownErrorDetailFields
+    __typename
   }
 }
 
 fragment CustomerIdentityFields on CustomerIdentity {
   ... on DiscordCustomerIdentity {
-    ...DiscordCustomerIdentityFields
+    __typename
   }
   ... on EmailCustomerIdentity {
-    ...EmailCustomerIdentityFields
+    __typename
   }
   ... on SlackCustomerIdentity {
-    ...SlackCustomerIdentityFields
+    __typename
   }
 }
 
 fragment CustomerSurveyConditionFields on CustomerSurveyCondition {
   ... on CustomerSurveyLabelCondition {
-    ...CustomerSurveyLabelConditionFields
+    __typename
   }
   ... on CustomerSurveyMessageSourceCondition {
-    ...CustomerSurveyMessageSourceConditionFields
+    __typename
   }
   ... on CustomerSurveyPrioritiesCondition {
-    ...CustomerSurveyPrioritiesConditionFields
+    __typename
   }
   ... on CustomerSurveySupportEmailsCondition {
-    ...CustomerSurveySupportEmailsConditionFields
+    __typename
   }
   ... on CustomerSurveyTiersCondition {
-    ...CustomerSurveyTiersConditionFields
+    __typename
   }
 }
 
 fragment CustomerSurveyTemplateFields on CustomerSurveyTemplate {
   ... on CsatCustomerSurveyTemplate {
-    ...CsatCustomerSurveyTemplateFields
+    __typename
   }
 }
 
 fragment EmailActorFields on EmailActor {
   ... on CustomerEmailActor {
-    ...CustomerEmailActorFields
+    __typename
   }
   ... on DeletedCustomerEmailActor {
-    ...DeletedCustomerEmailActorFields
+    __typename
   }
   ... on SupportEmailAddressEmailActor {
-    ...SupportEmailAddressEmailActorFields
+    __typename
   }
   ... on UserEmailActor {
-    ...UserEmailActorFields
+    __typename
   }
 }
 
 fragment EscalationPathStepFields on EscalationPathStep {
   ... on EscalationPathStepLabelType {
-    ...EscalationPathStepLabelTypeFields
+    __typename
+    id
   }
   ... on EscalationPathStepUser {
-    ...EscalationPathStepUserFields
+    __typename
+    id
   }
 }
 
 fragment EventComponentFields on EventComponent {
   ... on ComponentBadge {
-    ...ComponentBadgeFields
+    __typename
   }
   ... on ComponentCopyButton {
-    ...ComponentCopyButtonFields
+    __typename
   }
   ... on ComponentDivider {
-    ...ComponentDividerFields
+    __typename
   }
   ... on ComponentLinkButton {
-    ...ComponentLinkButtonFields
+    __typename
   }
   ... on ComponentPlainText {
-    ...ComponentPlainTextFields
+    __typename
   }
   ... on ComponentRow {
-    ...ComponentRowFields
+    __typename
   }
   ... on ComponentSpacer {
-    ...ComponentSpacerFields
+    __typename
   }
   ... on ComponentText {
-    ...ComponentTextFields
+    __typename
   }
 }
 
 fragment HelpCenterAuthMechanismFields on HelpCenterAuthMechanism {
   ... on HelpCenterAuthMechanismWorkosAuthkit {
-    ...HelpCenterAuthMechanismWorkosAuthkitFields
+    __typename
   }
   ... on HelpCenterAuthMechanismWorkosConnect {
-    ...HelpCenterAuthMechanismWorkosConnectFields
+    __typename
   }
 }
 
 fragment HelpCenterPortalSettingsFormFieldFields on HelpCenterPortalSettingsFormField {
   ... on HelpCenterPortalSettingsDropdownFormField {
-    ...HelpCenterPortalSettingsDropdownFormFieldFields
+    __typename
+    id
   }
   ... on HelpCenterPortalSettingsTextFormField {
-    ...HelpCenterPortalSettingsTextFormFieldFields
+    __typename
+    id
   }
 }
 
 fragment IndexedDocumentStatusFields on IndexedDocumentStatus {
   ... on IndexedDocumentStatusFailed {
-    ...IndexedDocumentStatusFailedFields
+    __typename
   }
   ... on IndexedDocumentStatusIndexed {
-    ...IndexedDocumentStatusIndexedFields
+    __typename
   }
   ... on IndexedDocumentStatusPending {
-    ...IndexedDocumentStatusPendingFields
+    __typename
   }
 }
 
 fragment IndexingStatusFields on IndexingStatus {
   ... on IndexingStatusFailed {
-    ...IndexingStatusFailedFields
+    __typename
   }
   ... on IndexingStatusIndexed {
-    ...IndexingStatusIndexedFields
+    __typename
   }
   ... on IndexingStatusPending {
-    ...IndexingStatusPendingFields
+    __typename
   }
 }
 
 fragment KnowledgeSourceFields on KnowledgeSource {
   ... on KnowledgeSourceSitemap {
-    ...KnowledgeSourceSitemapFields
+    __typename
+    id
   }
   ... on KnowledgeSourceUrl {
-    ...KnowledgeSourceUrlFields
+    __typename
+    id
   }
 }
 
 fragment KnowledgeSourceSearchResultFields on KnowledgeSourceSearchResult {
   ... on HelpCenterArticleSearchResult {
-    ...HelpCenterArticleSearchResultFields
+    __typename
   }
   ... on IndexedDocumentSearchResult {
-    ...IndexedDocumentSearchResultFields
+    __typename
   }
 }
 
 fragment ServiceLevelAgreementStatusDetailFields on ServiceLevelAgreementStatusDetail {
   ... on ServiceLevelAgreementStatusDetailAchieved {
-    ...ServiceLevelAgreementStatusDetailAchievedFields
+    __typename
   }
   ... on ServiceLevelAgreementStatusDetailBreached {
-    ...ServiceLevelAgreementStatusDetailBreachedFields
+    __typename
   }
   ... on ServiceLevelAgreementStatusDetailBreaching {
-    ...ServiceLevelAgreementStatusDetailBreachingFields
+    __typename
   }
   ... on ServiceLevelAgreementStatusDetailCancelled {
-    ...ServiceLevelAgreementStatusDetailCancelledFields
+    __typename
   }
   ... on ServiceLevelAgreementStatusDetailImminentBreach {
-    ...ServiceLevelAgreementStatusDetailImminentBreachFields
+    __typename
   }
   ... on ServiceLevelAgreementStatusDetailPending {
-    ...ServiceLevelAgreementStatusDetailPendingFields
+    __typename
   }
 }
 
 fragment SettingFields on Setting {
   ... on BooleanSetting {
-    ...BooleanSettingFields
+    __typename
   }
   ... on NumberSetting {
-    ...NumberSettingFields
+    __typename
   }
   ... on StringArraySetting {
-    ...StringArraySettingFields
+    __typename
   }
   ... on StringSetting {
-    ...StringSettingFields
+    __typename
   }
 }
 
 fragment TenantFieldValueFields on TenantFieldValue {
   ... on TenantFieldBooleanValue {
-    ...TenantFieldBooleanValueFields
+    __typename
   }
   ... on TenantFieldDateTimeValue {
-    ...TenantFieldDateTimeValueFields
+    __typename
   }
   ... on TenantFieldNumberValue {
-    ...TenantFieldNumberValueFields
+    __typename
   }
   ... on TenantFieldStringArrayValue {
-    ...TenantFieldStringArrayValueFields
+    __typename
   }
   ... on TenantFieldStringValue {
-    ...TenantFieldStringValueFields
+    __typename
   }
 }
 
 fragment ThreadAssigneeFields on ThreadAssignee {
   ... on MachineUser {
-    ...MachineUserFields
+    __typename
+    id
   }
   ... on System {
-    ...SystemFields
+    __typename
+    id
   }
   ... on User {
-    ...UserFields
+    __typename
+    id
   }
 }
 
 fragment ThreadChannelDetailsFields on ThreadChannelDetails {
   ... on ChatThreadChannelDetails {
-    ...ChatThreadChannelDetailsFields
+    __typename
   }
   ... on DiscordThreadChannelDetails {
-    ...DiscordThreadChannelDetailsFields
+    __typename
   }
   ... on ImportThreadChannelDetails {
-    ...ImportThreadChannelDetailsFields
+    __typename
   }
   ... on MSTeamsThreadChannelDetails {
-    ...MSTeamsThreadChannelDetailsFields
+    __typename
   }
   ... on SlackThreadChannelDetails {
-    ...SlackThreadChannelDetailsFields
+    __typename
   }
 }
 
 fragment ThreadStatusDetailFields on ThreadStatusDetail {
   ... on ThreadStatusDetailCreated {
-    ...ThreadStatusDetailCreatedFields
+    __typename
   }
   ... on ThreadStatusDetailDoneAutomaticallySet {
-    ...ThreadStatusDetailDoneAutomaticallySetFields
+    __typename
   }
   ... on ThreadStatusDetailDoneManuallySet {
-    ...ThreadStatusDetailDoneManuallySetFields
+    __typename
   }
   ... on ThreadStatusDetailIgnored {
-    ...ThreadStatusDetailIgnoredFields
+    __typename
   }
   ... on ThreadStatusDetailInProgress {
-    ...ThreadStatusDetailInProgressFields
+    __typename
   }
   ... on ThreadStatusDetailLinearUpdated {
-    ...ThreadStatusDetailLinearUpdatedFields
+    __typename
   }
   ... on ThreadStatusDetailNewReply {
-    ...ThreadStatusDetailNewReplyFields
+    __typename
   }
   ... on ThreadStatusDetailReplied {
-    ...ThreadStatusDetailRepliedFields
+    __typename
   }
   ... on ThreadStatusDetailSnoozed {
-    ...ThreadStatusDetailSnoozedFields
+    __typename
   }
   ... on ThreadStatusDetailThreadDiscussionResolved {
-    ...ThreadStatusDetailThreadDiscussionResolvedFields
+    __typename
   }
   ... on ThreadStatusDetailThreadLinkUpdated {
-    ...ThreadStatusDetailThreadLinkUpdatedFields
+    __typename
   }
   ... on ThreadStatusDetailUnsnoozed {
-    ...ThreadStatusDetailUnsnoozedFields
+    __typename
   }
   ... on ThreadStatusDetailWaitingForCustomer {
-    ...ThreadStatusDetailWaitingForCustomerFields
+    __typename
   }
   ... on ThreadStatusDetailWaitingForDuration {
-    ...ThreadStatusDetailWaitingForDurationFields
+    __typename
   }
 }
 

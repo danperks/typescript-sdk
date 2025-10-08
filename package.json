@@ -46,6 +46,8 @@
     "@graphql-codegen/typescript": "4.0.1",
     "@graphql-codegen/typescript-graphql-request": "6.2.0",
     "@graphql-codegen/typescript-operations": "4.0.1",
+    "@linear/codegen-doc": "file:packages/codegen-doc",
+    "@linear/codegen-sdk": "file:packages/codegen-sdk",
     "@types/node": "20.10.0",
     "tsup": "8.0.1",
     "typescript": "5.3.3"

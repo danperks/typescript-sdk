@@ -180,7 +180,7 @@ async function threadLabelsExample() {
 	if (addResult.addLabels.labels) {
 		console.log(
 			"Added labels:",
-			addResult.addLabels.labels.map((l) => l.labelType.name),
+			addResult.addLabels.labels.map((l) => l.labelType.id),
 		);
 
 		// Remove labels using the actual label IDs
@@ -202,6 +202,88 @@ async function threadLabelsExample() {
 	}
 }
 
+// Example 8: Expanding nested objects with separate queries
+async function expandNestedObjectsExample() {
+	console.log("\n=== Example: Expanding Nested Objects ===\n");
+
+	// Step 1: Fetch a thread - this returns minimal data with only IDs for nested objects
+	const threadResult = await client.thread({
+		threadId: "th_01K2MEXWJ5XHJ6JVB5EKTA9PJA",
+	});
+
+	if (!threadResult.thread) {
+		console.log("Thread not found");
+		return;
+	}
+
+	const thread = threadResult.thread;
+
+	console.log("Thread:", thread.title);
+	console.log("Thread ID:", thread.id);
+	console.log("Status:", thread.status);
+
+	// With minimal fragments, nested objects only contain IDs
+	console.log("\nNested objects (minimal data):");
+	console.log("- Customer ID:", thread.customer?.id); // Only has ID
+	console.log("- Labels:", thread.labels?.map((l) => l.id)); // Only have IDs
+
+	// Step 2: Expand the customer - fetch full customer details using the ID
+	if (thread.customer?.id) {
+		console.log("\n--- Expanding customer ---");
+
+		const customerResult = await client.customer({
+			customerId: thread.customer.id,
+		});
+
+		if (customerResult.customer) {
+			console.log("Customer name:", customerResult.customer.fullName);
+			console.log("Customer email:", customerResult.customer.email.email);
+			console.log(
+				"Customer created:",
+				customerResult.customer.createdAt.iso8601,
+			);
+
+			// You can expand even further if the customer has nested objects
+			if (customerResult.customer.company?.id) {
+				console.log("\n--- Expanding company (nested in customer) ---");
+
+				const companyResult = await client.company({
+					companyId: customerResult.customer.company.id,
+				});
+
+				if (companyResult.company) {
+					console.log("Company name:", companyResult.company.name);
+					console.log("Company domain:", companyResult.company.domainName);
+				}
+			}
+		}
+	}
+
+	// Step 3: Expand labels - fetch full label details
+	if (thread.labels && thread.labels.length > 0) {
+		console.log("\n--- Expanding labels ---");
+
+		for (const labelRef of thread.labels) {
+			if (labelRef.labelType?.id) {
+				const labelTypeResult = await client.labelType({
+					labelTypeId: labelRef.labelType.id,
+				});
+
+				if (labelTypeResult.labelType) {
+					console.log(
+						`- Label: ${labelTypeResult.labelType.name} (archived: ${labelTypeResult.labelType.isArchived})`,
+					);
+				}
+			}
+		}
+	}
+
+	console.log("\n✅ Nested objects expanded on-demand!");
+	console.log(
+		"This approach reduces initial query size and server load significantly.",
+	);
+}
+
 // Run examples
 async function main() {
 	try {
@@ -211,6 +293,7 @@ async function main() {
 		// await upsertCustomerExample();
 		// await companyExample();
 		// await threadLabelsExample();
+		// await expandNestedObjectsExample(); // <-- New example!
 	} catch (error) {
 		console.error("Error:", error);
 	}

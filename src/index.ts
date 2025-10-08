@@ -33,9 +33,15 @@ export interface PlainClientOptions {
  *   apiKey: 'plainApiKey_xxx'
  * });
  *
- * // Use any generated SDK method
- * const customer = await client.customer({ customerId: 'c_123' });
- * const threads = await client.threads({ customerId: 'c_123' });
+ * // Fetch a thread with minimal data
+ * const { thread } = await client.thread({ threadId: 'th_123' });
+ * console.log(thread.title);
+ *
+ * // Expand nested objects on-demand
+ * if (thread.customer?.id) {
+ *   const { customer } = await client.customer({ customerId: thread.customer.id });
+ *   console.log(customer.fullName);
+ * }
  * ```
  */
 export function createPlainClient(options: PlainClientOptions): Sdk {

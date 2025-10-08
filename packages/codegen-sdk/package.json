@@ -1,0 +1,39 @@
+{
+  "name": "@linear/codegen-sdk",
+  "private": true,
+  "description": "Plugin for generating the Linear SDK from fragments and documents",
+  "version": "3.3.1",
+  "author": "Linear Orbit, Inc",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/linear/linear",
+  "engines": {
+    "node": ">=12.x",
+    "yarn": "1.x"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --no-config --external graphql --external @graphql-codegen/plugin-helpers --external @graphql-codegen/visitor-plugin-common --external @graphql-tools/graphql-file-loader --external @graphql-tools/load"
+  },
+  "dependencies": {
+    "@linear/codegen-doc": "file:../codegen-doc",
+    "tsup": "*",
+    "typescript": "*"
+  },
+  "devDependencies": {
+    "@graphql-codegen/plugin-helpers": "^2.7.0",
+    "@graphql-codegen/visitor-plugin-common": "^2.13.0",
+    "@graphql-tools/graphql-file-loader": "^6.2.5",
+    "@graphql-tools/load": "^6.2.5",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "auto-bind": "^4.0.0",
+    "graphql": "^15.4.0",
+    "rollup": "^2.38.3",
+    "rollup-plugin-gzip": "^4.1.1",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
