@@ -18,11 +18,10 @@
       "require": "./dist/index.js"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "scripts": {
     "build:plugins": "cd packages/codegen-operations && npm run build",
@@ -50,11 +49,6 @@
     "tsup": "8.0.1",
     "typescript": "5.3.3"
   },
-  "keywords": [
-    "plain",
-    "graphql",
-    "sdk",
-    "api",
-    "client"
-  ]
+  "keywords": ["plain", "graphql", "sdk", "api", "client"]
 }
+
