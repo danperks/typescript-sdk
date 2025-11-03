@@ -1,12 +1,11 @@
-query customerGroups($first: Int, $after: String, $before: String, $last: Int) {
-  customerGroups(first: $first, after: $after, before: $before, last: $last) {
-    edges {
-      node {
-        ...CustomerGroupParts
-      }
-    }
-    pageInfo {
-      ...PageInfoParts
-    }
+query customerGroups($filters: CustomerGroupsFilter, $first: Int, $after: String, $last: Int, $before: String) {
+  customerGroups(filters: $filters, first: $first, after: $after, last: $last, before: $before) {
+    ...CustomerGroupConnectionParts
   }
 }
+
+#import "customerGroupConnectionParts.gql"
+#import "customerGroupEdgeParts.gql"
+#import "customerGroupParts.gql"
+#import "dateTimeParts.gql"
+#import "pageInfoParts.gql"

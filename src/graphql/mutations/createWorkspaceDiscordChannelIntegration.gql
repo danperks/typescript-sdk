@@ -1,0 +1,16 @@
+mutation createWorkspaceDiscordChannelIntegration($input: CreateWorkspaceDiscordChannelIntegrationInput!) {
+  createWorkspaceDiscordChannelIntegration(input: $input) {
+    __typename
+    integration {
+    ...WorkspaceDiscordChannelIntegrationParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "workspaceDiscordChannelIntegrationParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

@@ -1,0 +1,9 @@
+fragment CustomRoleConnectionParts on CustomRoleConnection {
+  __typename
+  edges {
+  ...CustomRoleEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+}

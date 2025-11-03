@@ -1,0 +1,7 @@
+fragment UserAccountParts on UserAccount {
+  __typename
+  id
+  fullName
+  publicName
+  email
+}

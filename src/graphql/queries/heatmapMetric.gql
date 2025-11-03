@@ -1,0 +1,8 @@
+query heatmapMetric($name: String!, $options: HeatmapMetricOptionsInput) {
+  heatmapMetric(name: $name, options: $options) {
+    ...HeatmapMetricParts
+  }
+}
+
+#import "heatmapMetricParts.gql"
+#import "heatmapHourParts.gql"

@@ -1,0 +1,11 @@
+query autoresponders($first: Int, $after: String, $last: Int, $before: String) {
+  autoresponders(first: $first, after: $after, last: $last, before: $before) {
+    ...AutoresponderConnectionParts
+  }
+}
+
+#import "autoresponderConnectionParts.gql"
+#import "autoresponderEdgeParts.gql"
+#import "autoresponderParts.gql"
+#import "dateTimeParts.gql"
+#import "pageInfoParts.gql"

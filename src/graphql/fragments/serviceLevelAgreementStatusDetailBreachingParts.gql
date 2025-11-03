@@ -1,0 +1,7 @@
+fragment ServiceLevelAgreementStatusDetailBreachingParts on ServiceLevelAgreementStatusDetailBreaching {
+  __typename
+  breachedAt {
+    unixTimestamp
+    iso8601
+}
+}

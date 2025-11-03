@@ -1,0 +1,7 @@
+fragment ConnectedSlackChannelEdgeParts on ConnectedSlackChannelEdge {
+  __typename
+  cursor
+  node {
+  ...ConnectedSlackChannelParts
+}
+}

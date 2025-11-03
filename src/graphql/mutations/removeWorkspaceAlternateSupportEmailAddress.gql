@@ -1,0 +1,17 @@
+mutation removeWorkspaceAlternateSupportEmailAddress($input: RemoveWorkspaceAlternateSupportEmailAddressInput!) {
+  removeWorkspaceAlternateSupportEmailAddress(input: $input) {
+    __typename
+    workspaceEmailDomainSettings {
+    ...WorkspaceEmailDomainSettingsParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "workspaceEmailDomainSettingsParts.gql"
+#import "dnsRecordParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

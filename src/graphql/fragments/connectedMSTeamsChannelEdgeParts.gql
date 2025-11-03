@@ -1,0 +1,7 @@
+fragment ConnectedMSTeamsChannelEdgeParts on ConnectedMSTeamsChannelEdge {
+  __typename
+  cursor
+  node {
+  ...ConnectedMSTeamsChannelParts
+}
+}

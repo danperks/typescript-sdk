@@ -1,0 +1,9 @@
+query customerCardConfig($customerCardConfigId: ID!) {
+  customerCardConfig(customerCardConfigId: $customerCardConfigId) {
+    ...CustomerCardConfigParts
+  }
+}
+
+#import "customerCardConfigParts.gql"
+#import "customerCardConfigApiHeaderParts.gql"
+#import "dateTimeParts.gql"

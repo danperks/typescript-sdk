@@ -1,0 +1,31 @@
+query threadLinkGroups($first: Int, $after: String, $last: Int, $before: String, $filters: ThreadLinkGroupFilter) {
+  threadLinkGroups(first: $first, after: $after, last: $last, before: $before, filters: $filters) {
+    ...ThreadLinkGroupConnectionParts
+  }
+}
+
+#import "threadLinkGroupConnectionParts.gql"
+#import "threadLinkGroupEdgeParts.gql"
+#import "threadLinkGroupParts.gql"
+#import "threadLinkGroupTierMetricsParts.gql"
+#import "threadLinkGroupSingleTierMetricsParts.gql"
+#import "tierParts.gql"
+#import "dateTimeParts.gql"
+#import "threadLinkGroupAggregateMetricsParts.gql"
+#import "threadLinkGroupCompanyMetricsParts.gql"
+#import "threadLinkGroupSingleCompanyMetricsParts.gql"
+#import "companyParts.gql"
+#import "userParts.gql"
+#import "roleParts.gql"
+#import "roleScopeDefinitionParts.gql"
+#import "roleScopeParts.gql"
+#import "slackUserIdentityParts.gql"
+#import "labelParts.gql"
+#import "labelTypeParts.gql"
+#import "savedThreadsViewParts.gql"
+#import "savedThreadsViewFilterParts.gql"
+#import "savedThreadsViewFilterThreadFieldParts.gql"
+#import "savedThreadsViewFilterTenantFieldParts.gql"
+#import "savedThreadsViewSortParts.gql"
+#import "threadsDisplayOptionsParts.gql"
+#import "pageInfoParts.gql"

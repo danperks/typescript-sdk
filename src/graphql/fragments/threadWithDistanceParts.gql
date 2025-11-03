@@ -1,0 +1,37 @@
+fragment ThreadWithDistanceParts on ThreadWithDistance {
+  __typename
+  thread {
+    id
+    ref
+    title
+    description
+    previewText
+    priority
+    externalId
+    status
+    statusChangedBy {
+  __typename
+}
+    statusDetail {
+  __typename
+}
+    assignedTo {
+  __typename
+}
+    additionalAssignees {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+    supportEmailAddresses
+    channel
+    channelDetails {
+  __typename
+}
+}
+  distance
+}

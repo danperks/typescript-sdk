@@ -1,0 +1,12 @@
+mutation createCheckoutSession($input: CreateCheckoutSessionInput!) {
+  createCheckoutSession(input: $input) {
+    __typename
+    sessionClientSecret
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

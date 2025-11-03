@@ -1,0 +1,7 @@
+fragment SnippetEdgeParts on SnippetEdge {
+  __typename
+  cursor
+  node {
+  ...SnippetParts
+}
+}

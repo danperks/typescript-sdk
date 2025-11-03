@@ -1,0 +1,14 @@
+mutation createThreadChannelAssociation($input: CreateThreadChannelAssociationInput!) {
+  createThreadChannelAssociation(input: $input) {
+    __typename
+    threadChannelAssociation {
+    ...ThreadChannelAssociationParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

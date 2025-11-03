@@ -1,19 +1,31 @@
 fragment CustomerGroupMembershipParts on CustomerGroupMembership {
   __typename
   customerId
-  createdAt {
-    ...DateTimeParts
-  }
-  createdBy {
-    ...InternalActorParts
-  }
-  updatedAt {
-    ...DateTimeParts
-  }
-  updatedBy {
-    ...InternalActorParts
-  }
   customerGroup {
-    ...CustomerGroupParts
-  }
+    id
+    name
+    key
+    color
+    externalId
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
 }

@@ -1,0 +1,11 @@
+mutation changeBillingPlan($input: ChangeBillingPlanInput!) {
+  changeBillingPlan(input: $input) {
+    __typename
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

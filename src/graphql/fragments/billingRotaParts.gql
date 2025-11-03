@@ -1,0 +1,5 @@
+fragment BillingRotaParts on BillingRota {
+  __typename
+  onRotaUserIds
+  offRotaUserIds
+}

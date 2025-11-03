@@ -1,0 +1,23 @@
+fragment SlackUserParts on SlackUser {
+  __typename
+  id
+  slackUserId
+  slackAvatarUrl72px
+  slackHandle
+  fullName
+  isInChannel
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+}

@@ -1,0 +1,8 @@
+query customerGroup($customerGroupId: ID!) {
+  customerGroup(customerGroupId: $customerGroupId) {
+    ...CustomerGroupParts
+  }
+}
+
+#import "customerGroupParts.gql"
+#import "dateTimeParts.gql"

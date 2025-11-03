@@ -1,0 +1,7 @@
+fragment ThreadClusterEdgeParts on ThreadClusterEdge {
+  __typename
+  cursor
+  node {
+  ...ThreadClusterParts
+}
+}

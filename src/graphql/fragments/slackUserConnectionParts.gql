@@ -1,0 +1,9 @@
+fragment SlackUserConnectionParts on SlackUserConnection {
+  __typename
+  edges {
+  ...SlackUserEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+}

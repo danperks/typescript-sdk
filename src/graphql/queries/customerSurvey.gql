@@ -1,0 +1,8 @@
+query customerSurvey($id: ID!) {
+  customerSurvey(id: $id) {
+    ...CustomerSurveyParts
+  }
+}
+
+#import "customerSurveyParts.gql"
+#import "dateTimeParts.gql"

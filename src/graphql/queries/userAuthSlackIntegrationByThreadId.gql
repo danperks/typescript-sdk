@@ -1,0 +1,8 @@
+query userAuthSlackIntegrationByThreadId($threadId: ID!) {
+  userAuthSlackIntegrationByThreadId(threadId: $threadId) {
+    ...UserAuthSlackIntegrationParts
+  }
+}
+
+#import "userAuthSlackIntegrationParts.gql"
+#import "dateTimeParts.gql"

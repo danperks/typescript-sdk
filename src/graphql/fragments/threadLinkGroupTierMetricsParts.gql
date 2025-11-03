@@ -1,0 +1,6 @@
+fragment ThreadLinkGroupTierMetricsParts on ThreadLinkGroupTierMetrics {
+  __typename
+  noTier {
+    totalCount
+}
+}

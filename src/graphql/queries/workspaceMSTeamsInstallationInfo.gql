@@ -1,0 +1,7 @@
+query workspaceMSTeamsInstallationInfo($redirectUrl: String!) {
+  workspaceMSTeamsInstallationInfo(redirectUrl: $redirectUrl) {
+    ...WorkspaceMSTeamsInstallationInfoParts
+  }
+}
+
+#import "workspaceMSTeamsInstallationInfoParts.gql"

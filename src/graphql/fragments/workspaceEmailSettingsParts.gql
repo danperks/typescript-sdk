@@ -1,0 +1,13 @@
+fragment WorkspaceEmailSettingsParts on WorkspaceEmailSettings {
+  __typename
+  isEnabled
+  workspaceEmailDomainSettings {
+    domainName
+    supportEmailAddress
+    alternateSupportEmailAddresses
+    isForwardingConfigured
+    inboundForwardingEmail
+    isDomainConfigured
+}
+  bccEmailAddresses
+}

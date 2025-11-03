@@ -1,0 +1,7 @@
+fragment ComponentLinkButtonParts on ComponentLinkButton {
+  __typename
+  linkButtonUrl
+  linkButtonLabel
+  url
+  label
+}

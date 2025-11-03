@@ -1,14 +1,25 @@
 fragment AttachmentUploadUrlParts on AttachmentUploadUrl {
   __typename
   attachment {
-    ...AttachmentParts
-  }
+    id
+    fileName
+    fileExtension
+    fileMimeType
+    type
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
   uploadFormUrl
   uploadFormData {
     key
     value
-  }
+}
   expiresAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
 }

@@ -1,0 +1,20 @@
+fragment SlackThreadChannelAssociationParts on SlackThreadChannelAssociation {
+  __typename
+  id
+  companyId
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+  connectedSlackChannelId
+}

@@ -1,0 +1,16 @@
+mutation updateGeneratedReply($input: UpdateGeneratedReplyInput!) {
+  updateGeneratedReply(input: $input) {
+    __typename
+    generatedReply {
+    ...GeneratedReplyParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "generatedReplyParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

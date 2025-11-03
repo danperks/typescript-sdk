@@ -1,0 +1,7 @@
+fragment ChatAppEdgeParts on ChatAppEdge {
+  __typename
+  cursor
+  node {
+  ...ChatAppParts
+}
+}

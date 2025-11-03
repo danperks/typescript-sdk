@@ -1,0 +1,6 @@
+fragment PriceTierParts on PriceTier {
+  __typename
+  maxSeats
+  perSeatAmount
+  flatAmount
+}

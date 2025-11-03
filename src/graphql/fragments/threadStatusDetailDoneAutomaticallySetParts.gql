@@ -1,0 +1,8 @@
+fragment ThreadStatusDetailDoneAutomaticallySetParts on ThreadStatusDetailDoneAutomaticallySet {
+  __typename
+  statusChangedAt {
+    unixTimestamp
+    iso8601
+}
+  afterSeconds
+}

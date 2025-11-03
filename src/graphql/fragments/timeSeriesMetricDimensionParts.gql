@@ -1,0 +1,5 @@
+fragment TimeSeriesMetricDimensionParts on TimeSeriesMetricDimension {
+  __typename
+  type
+  value
+}

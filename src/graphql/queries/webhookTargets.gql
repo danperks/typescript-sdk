@@ -1,13 +1,12 @@
 query webhookTargets($first: Int, $after: String, $last: Int, $before: String) {
   webhookTargets(first: $first, after: $after, last: $last, before: $before) {
-    edges {
-      cursor
-      node {
-        ...WebhookTargetParts
-      }
-    }
-    pageInfo {
-      ...PageInfoParts
-    }
+    ...WebhookTargetConnectionParts
   }
 }
+
+#import "webhookTargetConnectionParts.gql"
+#import "webhookTargetEdgeParts.gql"
+#import "webhookTargetParts.gql"
+#import "webhookTargetEventSubscriptionParts.gql"
+#import "dateTimeParts.gql"
+#import "pageInfoParts.gql"

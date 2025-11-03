@@ -1,0 +1,5 @@
+fragment ServiceLevelAgreementThreadLabelTypeIdFilterParts on ServiceLevelAgreementThreadLabelTypeIdFilter {
+  __typename
+  labelTypeIds
+  requireAll
+}

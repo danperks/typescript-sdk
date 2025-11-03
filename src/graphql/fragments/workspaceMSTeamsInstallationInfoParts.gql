@@ -1,0 +1,4 @@
+fragment WorkspaceMSTeamsInstallationInfoParts on WorkspaceMSTeamsInstallationInfo {
+  __typename
+  installationUrl
+}

@@ -1,7 +1,11 @@
 mutation deleteThreadField($input: DeleteThreadFieldInput!) {
   deleteThreadField(input: $input) {
+    __typename
     error {
-      ...MutationErrorParts
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

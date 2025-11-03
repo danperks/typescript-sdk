@@ -1,0 +1,19 @@
+fragment CompanySearchResultParts on CompanySearchResult {
+  __typename
+  company {
+    id
+    name
+    domainName
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+    contractValue
+    isDeleted
+    deletedBy {
+  __typename
+}
+}
+}

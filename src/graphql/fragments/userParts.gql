@@ -3,12 +3,159 @@ fragment UserParts on User {
   id
   fullName
   publicName
+  avatarUrl
+  email
+  roles {
+    id
+    name
+    description
+    permissions
+    isAssignableToCustomer
+    isAssignableToThread
+    assignableBillingSeats
+    requiresBillableSeat
+    key
+    customRoleId
+    scopeDefinitions {
+    resource
+}
+}
+  role {
+    id
+    name
+    description
+    permissions
+    isAssignableToCustomer
+    isAssignableToThread
+    assignableBillingSeats
+    requiresBillableSeat
+    key
+    customRoleId
+    scopeDefinitions {
+    resource
+}
+}
+  additionalLegacyRoles {
+    id
+    name
+    description
+    permissions
+    isAssignableToCustomer
+    isAssignableToThread
+    assignableBillingSeats
+    requiresBillableSeat
+    key
+    customRoleId
+    scopeDefinitions {
+    resource
+}
+}
   slackIdentities {
     slackTeamId
     slackUserId
-  }
-  email
+}
+  labels {
+    id
+    labelType {
+    id
+    name
+    icon
+    color
+    type
+    description
+    position
+    externalId
+    isArchived
+    archivedBy {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+    createdAt {
+    unixTimestamp
+    iso8601
+}
+    createdBy {
+  __typename
+}
+    updatedAt {
+    unixTimestamp
+    iso8601
+}
+    updatedBy {
+  __typename
+}
+}
+  defaultSavedThreadsView {
+    id
+    name
+    icon
+    color
+    threadsFilter {
+    statuses
+    statusDetails
+    priorities
+    assignedToUser
+    participants
+    customerGroups
+    companies
+    tenants
+    tiers
+    labelTypeIds
+    messageSource
+    supportEmailAddresses
+    slaTypes
+    slaStatuses
+    threadLinkGroupIds
+    groupBy
+    layout
+}
+    isHidden
+    createdAt {
+    unixTimestamp
+    iso8601
+}
+    createdBy {
+  __typename
+}
+    updatedAt {
+    unixTimestamp
+    iso8601
+}
+    updatedBy {
+  __typename
+}
+}
+  status
+  statusChangedAt {
+    unixTimestamp
+    iso8601
+}
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+  isDeleted
+  deletedAt {
+    unixTimestamp
+    iso8601
+}
+  deletedBy {
+  __typename
+}
 }

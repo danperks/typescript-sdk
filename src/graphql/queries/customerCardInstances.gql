@@ -1,0 +1,5 @@
+query customerCardInstances($customerId: ID!, $threadId: ID) {
+  customerCardInstances(customerId: $customerId, threadId: $threadId) {
+    ...CustomerCardInstanceParts
+  }
+}

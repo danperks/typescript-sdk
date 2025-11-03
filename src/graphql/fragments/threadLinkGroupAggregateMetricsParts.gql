@@ -1,0 +1,4 @@
+fragment ThreadLinkGroupAggregateMetricsParts on ThreadLinkGroupAggregateMetrics {
+  __typename
+  totalCount
+}

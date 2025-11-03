@@ -1,0 +1,8 @@
+query escalationPath($id: ID!) {
+  escalationPath(id: $id) {
+    ...EscalationPathParts
+  }
+}
+
+#import "escalationPathParts.gql"
+#import "dateTimeParts.gql"

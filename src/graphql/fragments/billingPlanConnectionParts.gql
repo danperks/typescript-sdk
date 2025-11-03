@@ -1,0 +1,9 @@
+fragment BillingPlanConnectionParts on BillingPlanConnection {
+  __typename
+  edges {
+  ...BillingPlanEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+}

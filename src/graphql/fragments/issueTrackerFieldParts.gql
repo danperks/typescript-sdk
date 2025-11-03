@@ -1,0 +1,15 @@
+fragment IssueTrackerFieldParts on IssueTrackerField {
+  __typename
+  name
+  key
+  type
+  parentFieldKey
+  options {
+    name
+    value
+    icon
+    color
+}
+  selectedValue
+  isRequired
+}

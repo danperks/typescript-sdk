@@ -1,0 +1,19 @@
+fragment EmailSignatureParts on EmailSignature {
+  __typename
+  text
+  markdown
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+}

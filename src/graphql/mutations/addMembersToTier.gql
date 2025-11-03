@@ -1,0 +1,14 @@
+mutation addMembersToTier($input: AddMembersToTierInput!) {
+  addMembersToTier(input: $input) {
+    __typename
+    memberships {
+    __typename
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

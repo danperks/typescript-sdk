@@ -1,0 +1,16 @@
+mutation createWorkflowRule($input: CreateWorkflowRuleInput!) {
+  createWorkflowRule(input: $input) {
+    __typename
+    workflowRule {
+    ...WorkflowRuleParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "workflowRuleParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

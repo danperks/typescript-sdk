@@ -1,0 +1,8 @@
+query issueTrackerFields($issueTrackerType: String!, $selectedFields: [SelectedIssueTrackerField!]!) {
+  issueTrackerFields(issueTrackerType: $issueTrackerType, selectedFields: $selectedFields) {
+    ...IssueTrackerFieldParts
+  }
+}
+
+#import "issueTrackerFieldParts.gql"
+#import "issueTrackerFieldOptionParts.gql"

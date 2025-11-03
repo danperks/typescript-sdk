@@ -1,0 +1,16 @@
+mutation moveLabelType($input: MoveLabelTypeInput!) {
+  moveLabelType(input: $input) {
+    __typename
+    labelType {
+    ...LabelTypeParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "labelTypeParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

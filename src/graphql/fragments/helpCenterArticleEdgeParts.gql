@@ -1,0 +1,7 @@
+fragment HelpCenterArticleEdgeParts on HelpCenterArticleEdge {
+  __typename
+  cursor
+  node {
+  ...HelpCenterArticleParts
+}
+}

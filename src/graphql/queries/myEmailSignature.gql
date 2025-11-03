@@ -1,0 +1,8 @@
+query myEmailSignature {
+  myEmailSignature {
+    ...EmailSignatureParts
+  }
+}
+
+#import "emailSignatureParts.gql"
+#import "dateTimeParts.gql"

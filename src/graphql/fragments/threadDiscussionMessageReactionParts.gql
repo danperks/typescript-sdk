@@ -1,0 +1,8 @@
+fragment ThreadDiscussionMessageReactionParts on ThreadDiscussionMessageReaction {
+  __typename
+  name
+  actors {
+  __typename
+}
+  imageUrl
+}

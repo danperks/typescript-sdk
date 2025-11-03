@@ -1,0 +1,4 @@
+fragment UserSlackInstallationInfoParts on UserSlackInstallationInfo {
+  __typename
+  installationUrl
+}

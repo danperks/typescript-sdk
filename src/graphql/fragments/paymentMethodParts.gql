@@ -1,0 +1,4 @@
+fragment PaymentMethodParts on PaymentMethod {
+  __typename
+  isAvailable
+}

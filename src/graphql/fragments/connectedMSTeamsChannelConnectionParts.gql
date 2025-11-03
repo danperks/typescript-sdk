@@ -1,0 +1,10 @@
+fragment ConnectedMSTeamsChannelConnectionParts on ConnectedMSTeamsChannelConnection {
+  __typename
+  pageInfo {
+  ...PageInfoParts
+}
+  edges {
+  ...ConnectedMSTeamsChannelEdgeParts
+}
+  totalCount
+}

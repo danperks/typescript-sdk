@@ -1,0 +1,8 @@
+query workspaceMSTeamsIntegration {
+  workspaceMSTeamsIntegration {
+    ...WorkspaceMSTeamsIntegrationParts
+  }
+}
+
+#import "workspaceMSTeamsIntegrationParts.gql"
+#import "dateTimeParts.gql"

@@ -1,28 +1,119 @@
 fragment EmailParts on Email {
+  __typename
   id
+  thread {
+    id
+    ref
+    title
+    description
+    previewText
+    priority
+    externalId
+    status
+    statusChangedBy {
+  __typename
+}
+    statusDetail {
+  __typename
+}
+    assignedTo {
+  __typename
+}
+    additionalAssignees {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+    supportEmailAddresses
+    channel
+    channelDetails {
+  __typename
+}
+}
+  customer {
+    id
+    externalId
+    fullName
+    shortName
+    avatarUrl
+    isAnonymous
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+    markedAsSpamBy {
+  __typename
+}
+    identities {
+  __typename
+}
+    status
+}
   inReplyToEmailId
   from {
-    ...EmailParticipantParts
-  }
+    name
+    email
+    emailActor {
+  __typename
+}
+}
   to {
-    ...EmailParticipantParts
-  }
-  additionalRecipients {
-    ...EmailParticipantParts
-  }
-  hiddenRecipients {
-    ...EmailParticipantParts
-  }
+    name
+    email
+    emailActor {
+  __typename
+}
+}
   subject
   textContent
   markdownContent
-  createdAt {
-    ...DateTimeParts
-  }
-  updatedAt {
-    ...DateTimeParts
-  }
   attachments {
-    ...AttachmentParts
-  }
+    id
+    fileName
+    fileExtension
+    fileMimeType
+    type
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  additionalRecipients {
+    name
+    email
+    emailActor {
+  __typename
+}
+}
+  hiddenRecipients {
+    name
+    email
+    emailActor {
+  __typename
+}
+}
+  category
+  threadDiscussionId
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
 }

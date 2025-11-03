@@ -1,0 +1,4 @@
+fragment CustomerSurveyMessageSourceConditionParts on CustomerSurveyMessageSourceCondition {
+  __typename
+  messageSource
+}

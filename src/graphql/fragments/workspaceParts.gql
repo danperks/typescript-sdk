@@ -4,16 +4,40 @@ fragment WorkspaceParts on Workspace {
   name
   publicName
   isDemoWorkspace
+  domainName
+  domainNames
   createdBy {
-    ...ActorParts
-  }
+  __typename
+}
   createdAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   updatedBy {
-    ...ActorParts
-  }
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
+  workspaceEmailSettings {
+    isEnabled
+    bccEmailAddresses
+}
+  workspaceChatSettings {
+    isEnabled
+}
+  logo {
+    id
+    fileName
+    fileExtension
+    fileMimeType
+    visibility
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
 }

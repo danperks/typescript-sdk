@@ -1,0 +1,12 @@
+fragment MSTeamsChannelMembersParts on MSTeamsChannelMembers {
+  __typename
+  members {
+    id
+    roles
+    displayName
+    visibleHistoryStartDateTime
+    userId
+    email
+    tenantId
+}
+}

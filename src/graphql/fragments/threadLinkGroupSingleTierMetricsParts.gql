@@ -1,0 +1,22 @@
+fragment ThreadLinkGroupSingleTierMetricsParts on ThreadLinkGroupSingleTierMetrics {
+  __typename
+  tier {
+    id
+    name
+    externalId
+    color
+    isDefault
+    defaultPriority
+    defaultThreadPriority
+    isMachineTier
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  metrics {
+    totalCount
+}
+}

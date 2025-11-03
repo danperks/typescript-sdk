@@ -1,0 +1,5 @@
+fragment ToggleFeatureEntitlementParts on ToggleFeatureEntitlement {
+  __typename
+  feature
+  isEntitled
+}

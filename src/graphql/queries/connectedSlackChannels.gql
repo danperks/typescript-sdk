@@ -1,0 +1,12 @@
+query connectedSlackChannels($filters: ConnectedSlackChannelsFilter, $first: Int, $after: String, $last: Int, $before: String) {
+  connectedSlackChannels(filters: $filters, first: $first, after: $after, last: $last, before: $before) {
+    ...ConnectedSlackChannelConnectionParts
+  }
+}
+
+#import "connectedSlackChannelConnectionParts.gql"
+#import "pageInfoParts.gql"
+#import "connectedSlackChannelEdgeParts.gql"
+#import "connectedSlackChannelParts.gql"
+#import "dateTimeParts.gql"
+#import "slackThreadChannelAssociationParts.gql"

@@ -1,0 +1,4 @@
+fragment SubscriptionAcknowledgementParts on SubscriptionAcknowledgement {
+  __typename
+  subscriptionId
+}

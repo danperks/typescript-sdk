@@ -1,0 +1,30 @@
+fragment MSTeamsMessageEntryParts on MSTeamsMessageEntry {
+  __typename
+  text
+  customerId
+  markdownContent
+  msTeamsMessageId
+  msTeamsMessageLink
+  attachments {
+    id
+    fileName
+    fileExtension
+    fileMimeType
+    type
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  hasUnprocessedAttachments
+  lastEditedOnMsTeamsAt {
+    unixTimestamp
+    iso8601
+}
+  deletedOnMsTeamsAt {
+    unixTimestamp
+    iso8601
+}
+}

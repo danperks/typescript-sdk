@@ -1,7 +1,11 @@
 mutation deleteCustomerCardConfig($input: DeleteCustomerCardConfigInput!) {
   deleteCustomerCardConfig(input: $input) {
+    __typename
     error {
-      ...MutationErrorParts
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

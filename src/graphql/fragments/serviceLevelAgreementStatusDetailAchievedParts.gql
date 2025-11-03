@@ -1,0 +1,7 @@
+fragment ServiceLevelAgreementStatusDetailAchievedParts on ServiceLevelAgreementStatusDetailAchieved {
+  __typename
+  achievedAt {
+    unixTimestamp
+    iso8601
+}
+}

@@ -1,0 +1,7 @@
+query myMSTeamsInstallationInfo($redirectUrl: String!) {
+  myMSTeamsInstallationInfo(redirectUrl: $redirectUrl) {
+    ...UserMSTeamsInstallationInfoParts
+  }
+}
+
+#import "userMSTeamsInstallationInfoParts.gql"

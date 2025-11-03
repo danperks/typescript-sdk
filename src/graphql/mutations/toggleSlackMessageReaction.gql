@@ -1,0 +1,11 @@
+mutation toggleSlackMessageReaction($input: ToggleSlackMessageReactionInput!) {
+  toggleSlackMessageReaction(input: $input) {
+    __typename
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

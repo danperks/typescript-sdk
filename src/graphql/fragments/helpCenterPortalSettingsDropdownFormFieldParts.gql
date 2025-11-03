@@ -1,0 +1,12 @@
+fragment HelpCenterPortalSettingsDropdownFormFieldParts on HelpCenterPortalSettingsDropdownFormField {
+  __typename
+  id
+  type
+  label
+  placeholder
+  isRequired
+  dropdownOptions {
+    dropdownOptionId
+    label
+}
+}

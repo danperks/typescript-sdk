@@ -1,0 +1,4 @@
+fragment AutoresponderSupportEmailsConditionParts on AutoresponderSupportEmailsCondition {
+  __typename
+  supportEmailAddresses
+}

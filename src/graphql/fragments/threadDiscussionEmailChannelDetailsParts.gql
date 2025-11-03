@@ -1,0 +1,4 @@
+fragment ThreadDiscussionEmailChannelDetailsParts on ThreadDiscussionEmailChannelDetails {
+  __typename
+  emailRecipients
+}

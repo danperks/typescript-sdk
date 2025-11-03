@@ -1,0 +1,11 @@
+fragment ThreadStatusDetailRepliedParts on ThreadStatusDetailReplied {
+  __typename
+  repliedAt {
+    unixTimestamp
+    iso8601
+}
+  statusChangedAt {
+    unixTimestamp
+    iso8601
+}
+}

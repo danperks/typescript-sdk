@@ -1,0 +1,11 @@
+mutation deleteThreadFieldSchema($input: DeleteThreadFieldSchemaInput!) {
+  deleteThreadFieldSchema(input: $input) {
+    __typename
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

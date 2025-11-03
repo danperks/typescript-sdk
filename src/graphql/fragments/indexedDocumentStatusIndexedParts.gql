@@ -1,0 +1,7 @@
+fragment IndexedDocumentStatusIndexedParts on IndexedDocumentStatusIndexed {
+  __typename
+  indexedAt {
+    unixTimestamp
+    iso8601
+}
+}

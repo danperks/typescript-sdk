@@ -1,0 +1,4 @@
+fragment CustomerSurveyPrioritiesConditionParts on CustomerSurveyPrioritiesCondition {
+  __typename
+  priorities
+}

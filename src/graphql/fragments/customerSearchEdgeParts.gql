@@ -1,0 +1,7 @@
+fragment CustomerSearchEdgeParts on CustomerSearchEdge {
+  __typename
+  cursor
+  node {
+  ...CustomerParts
+}
+}

@@ -1,0 +1,21 @@
+mutation updateSavedThreadsView($input: UpdateSavedThreadsViewInput!) {
+  updateSavedThreadsView(input: $input) {
+    __typename
+    savedThreadsView {
+    ...SavedThreadsViewParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "savedThreadsViewParts.gql"
+#import "savedThreadsViewFilterParts.gql"
+#import "savedThreadsViewFilterThreadFieldParts.gql"
+#import "savedThreadsViewFilterTenantFieldParts.gql"
+#import "dateTimeParts.gql"
+#import "savedThreadsViewSortParts.gql"
+#import "threadsDisplayOptionsParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

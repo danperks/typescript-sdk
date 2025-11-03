@@ -1,0 +1,19 @@
+fragment NoteEntryParts on NoteEntry {
+  __typename
+  noteId
+  text
+  markdown
+  attachments {
+    id
+    fileName
+    fileExtension
+    fileMimeType
+    type
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+}

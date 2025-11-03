@@ -1,0 +1,16 @@
+mutation calculateRoleChangeCost($input: CalculateRoleChangeCostInput!) {
+  calculateRoleChangeCost(input: $input) {
+    __typename
+    roleChangeCost {
+    ...RoleChangeCostParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "roleChangeCostParts.gql"
+#import "priceParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

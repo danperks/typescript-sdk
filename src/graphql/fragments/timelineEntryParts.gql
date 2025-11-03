@@ -1,0 +1,17 @@
+fragment TimelineEntryParts on TimelineEntry {
+  __typename
+  id
+  customerId
+  threadId
+  timestamp {
+    unixTimestamp
+    iso8601
+}
+  entry {
+  __typename
+}
+  actor {
+  __typename
+}
+  llmText
+}

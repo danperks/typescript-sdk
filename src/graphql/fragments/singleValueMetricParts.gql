@@ -1,0 +1,7 @@
+fragment SingleValueMetricParts on SingleValueMetric {
+  __typename
+  values {
+    value
+    userId
+}
+}

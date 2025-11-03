@@ -1,0 +1,23 @@
+mutation createWorkspace($input: CreateWorkspaceInput!) {
+  createWorkspace(input: $input) {
+    __typename
+    workspace {
+    ...WorkspaceParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "workspaceParts.gql"
+#import "dateTimeParts.gql"
+#import "workspaceEmailSettingsParts.gql"
+#import "workspaceEmailDomainSettingsParts.gql"
+#import "dnsRecordParts.gql"
+#import "workspaceChatSettingsParts.gql"
+#import "workspaceFileParts.gql"
+#import "fileSizeParts.gql"
+#import "workspaceFileDownloadUrlParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

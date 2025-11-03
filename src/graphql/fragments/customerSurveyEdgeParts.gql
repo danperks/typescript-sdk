@@ -1,0 +1,7 @@
+fragment CustomerSurveyEdgeParts on CustomerSurveyEdge {
+  __typename
+  cursor
+  node {
+  ...CustomerSurveyParts
+}
+}

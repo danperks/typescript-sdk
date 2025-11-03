@@ -1,0 +1,5 @@
+fragment HelpCenterDomainNameVerificationTxtRecordParts on HelpCenterDomainNameVerificationTxtRecord {
+  __typename
+  name
+  value
+}

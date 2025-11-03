@@ -1,0 +1,11 @@
+mutation deleteThreadChannelAssociation($input: DeleteThreadChannelAssociationInput!) {
+  deleteThreadChannelAssociation(input: $input) {
+    __typename
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

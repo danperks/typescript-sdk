@@ -1,0 +1,7 @@
+fragment HeatmapHourParts on HeatmapHour {
+  __typename
+  percentage
+  total
+  threadIds
+  messageCount
+}

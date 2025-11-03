@@ -1,0 +1,8 @@
+query workspaceSlackChannelIntegration($integrationId: ID!) {
+  workspaceSlackChannelIntegration(integrationId: $integrationId) {
+    ...WorkspaceSlackChannelIntegrationParts
+  }
+}
+
+#import "workspaceSlackChannelIntegrationParts.gql"
+#import "dateTimeParts.gql"

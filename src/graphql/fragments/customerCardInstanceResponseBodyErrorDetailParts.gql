@@ -1,0 +1,5 @@
+fragment CustomerCardInstanceResponseBodyErrorDetailParts on CustomerCardInstanceResponseBodyErrorDetail {
+  __typename
+  message
+  responseBody
+}

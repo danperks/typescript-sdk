@@ -1,0 +1,22 @@
+fragment TenantFieldParts on TenantField {
+  __typename
+  id
+  externalFieldId
+  value {
+  __typename
+}
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+}

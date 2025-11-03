@@ -1,0 +1,11 @@
+mutation sendSlackMessage($input: SendSlackMessageInput!) {
+  sendSlackMessage(input: $input) {
+    __typename
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

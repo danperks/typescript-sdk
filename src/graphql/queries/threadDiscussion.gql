@@ -1,0 +1,8 @@
+query threadDiscussion($threadDiscussionId: ID!) {
+  threadDiscussion(threadDiscussionId: $threadDiscussionId) {
+    ...ThreadDiscussionParts
+  }
+}
+
+#import "threadDiscussionParts.gql"
+#import "dateTimeParts.gql"

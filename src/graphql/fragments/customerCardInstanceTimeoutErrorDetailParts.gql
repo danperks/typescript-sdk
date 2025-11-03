@@ -1,0 +1,5 @@
+fragment CustomerCardInstanceTimeoutErrorDetailParts on CustomerCardInstanceTimeoutErrorDetail {
+  __typename
+  message
+  timeoutSeconds
+}

@@ -1,10 +1,18 @@
-mutation sendCustomerChat($input:SendCustomerChatInput!) {
-  sendCustomerChat(input:$input){
+mutation sendCustomerChat($input: SendCustomerChatInput!) {
+  sendCustomerChat(input: $input) {
+    __typename
     chat {
-      ...ChatParts
-    }
+    ...ChatParts
+  }
     error {
-      ...MutationErrorParts
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "chatParts.gql"
+#import "dateTimeParts.gql"
+#import "attachmentParts.gql"
+#import "fileSizeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

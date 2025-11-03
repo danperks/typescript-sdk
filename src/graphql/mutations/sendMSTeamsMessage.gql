@@ -1,0 +1,18 @@
+mutation sendMSTeamsMessage($input: SendMSTeamsMessageInput!) {
+  sendMSTeamsMessage(input: $input) {
+    __typename
+    msTeamsMessage {
+    ...MSTeamsMessageParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mSTeamsMessageParts.gql"
+#import "dateTimeParts.gql"
+#import "attachmentParts.gql"
+#import "fileSizeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

@@ -1,0 +1,11 @@
+mutation assignRolesToUser($input: AssignRolesToUserInput!) {
+  assignRolesToUser(input: $input) {
+    __typename
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

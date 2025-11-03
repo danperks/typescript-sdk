@@ -1,0 +1,23 @@
+fragment BillingSubscriptionParts on BillingSubscription {
+  __typename
+  status
+  planKey
+  planName
+  interval
+  cancelsAt {
+    unixTimestamp
+    iso8601
+}
+  trialEndsAt {
+    unixTimestamp
+    iso8601
+}
+  entitlements {
+    feature
+    isEntitled
+}
+  endedAt {
+    unixTimestamp
+    iso8601
+}
+}

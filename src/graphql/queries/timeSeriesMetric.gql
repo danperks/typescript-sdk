@@ -1,0 +1,10 @@
+query timeSeriesMetric($name: String!, $options: TimeSeriesMetricOptions) {
+  timeSeriesMetric(name: $name, options: $options) {
+    ...TimeSeriesMetricParts
+  }
+}
+
+#import "timeSeriesMetricParts.gql"
+#import "dateTimeParts.gql"
+#import "timeSeriesSeriesParts.gql"
+#import "timeSeriesMetricDimensionParts.gql"

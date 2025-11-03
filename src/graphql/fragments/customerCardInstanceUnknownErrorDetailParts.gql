@@ -1,0 +1,4 @@
+fragment CustomerCardInstanceUnknownErrorDetailParts on CustomerCardInstanceUnknownErrorDetail {
+  __typename
+  message
+}

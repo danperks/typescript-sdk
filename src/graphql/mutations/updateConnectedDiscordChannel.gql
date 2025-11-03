@@ -1,0 +1,16 @@
+mutation updateConnectedDiscordChannel($input: UpdateConnectedDiscordChannelInput!) {
+  updateConnectedDiscordChannel(input: $input) {
+    __typename
+    connectedDiscordChannel {
+    ...ConnectedDiscordChannelParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "connectedDiscordChannelParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

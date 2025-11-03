@@ -1,0 +1,7 @@
+fragment MachineUserEdgeParts on MachineUserEdge {
+  __typename
+  cursor
+  node {
+  ...MachineUserParts
+}
+}

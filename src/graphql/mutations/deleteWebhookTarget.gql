@@ -1,7 +1,11 @@
 mutation deleteWebhookTarget($input: DeleteWebhookTargetInput!) {
   deleteWebhookTarget(input: $input) {
+    __typename
     error {
-      ...MutationErrorParts
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

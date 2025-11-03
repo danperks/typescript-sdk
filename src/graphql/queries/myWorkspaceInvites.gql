@@ -1,0 +1,23 @@
+query myWorkspaceInvites($first: Int, $after: String, $last: Int, $before: String) {
+  myWorkspaceInvites(first: $first, after: $after, last: $last, before: $before) {
+    ...WorkspaceInviteConnectionParts
+  }
+}
+
+#import "workspaceInviteConnectionParts.gql"
+#import "workspaceInviteEdgeParts.gql"
+#import "workspaceInviteParts.gql"
+#import "dateTimeParts.gql"
+#import "workspaceParts.gql"
+#import "workspaceEmailSettingsParts.gql"
+#import "workspaceEmailDomainSettingsParts.gql"
+#import "dnsRecordParts.gql"
+#import "workspaceChatSettingsParts.gql"
+#import "workspaceFileParts.gql"
+#import "fileSizeParts.gql"
+#import "workspaceFileDownloadUrlParts.gql"
+#import "roleParts.gql"
+#import "roleScopeDefinitionParts.gql"
+#import "roleScopeParts.gql"
+#import "customRoleParts.gql"
+#import "pageInfoParts.gql"

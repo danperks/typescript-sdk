@@ -1,0 +1,10 @@
+fragment TimeSeriesSeriesParts on TimeSeriesSeries {
+  __typename
+  values
+  userId
+  dimension {
+    type
+    value
+}
+  threadIds
+}

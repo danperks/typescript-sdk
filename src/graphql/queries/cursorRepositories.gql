@@ -1,0 +1,7 @@
+query cursorRepositories($integrationId: ID!) {
+  cursorRepositories(integrationId: $integrationId) {
+    ...CursorRepositoryParts
+  }
+}
+
+#import "cursorRepositoryParts.gql"

@@ -1,0 +1,4 @@
+fragment SlackCustomerIdentityParts on SlackCustomerIdentity {
+  __typename
+  slackUserId
+}

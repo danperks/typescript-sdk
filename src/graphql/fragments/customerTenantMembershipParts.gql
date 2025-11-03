@@ -1,18 +1,30 @@
 fragment CustomerTenantMembershipParts on CustomerTenantMembership {
   __typename
-  createdAt {
-    ...DateTimeParts
-  }
-  createdBy {
-    ...InternalActorParts
-  }
-  updatedAt {
-    ...DateTimeParts
-  }
-  updatedBy {
-    ...InternalActorParts
-  }
   tenant {
-    ...TenantParts
-  }
+    id
+    name
+    externalId
+    url
+    source
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
 }

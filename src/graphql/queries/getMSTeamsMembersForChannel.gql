@@ -1,0 +1,8 @@
+query getMSTeamsMembersForChannel($msTeamsChannelId: ID!, $msTeamsTeamId: ID!) {
+  getMSTeamsMembersForChannel(msTeamsChannelId: $msTeamsChannelId, msTeamsTeamId: $msTeamsTeamId) {
+    ...MSTeamsChannelMembersParts
+  }
+}
+
+#import "mSTeamsChannelMembersParts.gql"
+#import "mSTeamsChannelMemberParts.gql"

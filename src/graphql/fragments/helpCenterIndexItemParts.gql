@@ -1,0 +1,8 @@
+fragment HelpCenterIndexItemParts on HelpCenterIndexItem {
+  __typename
+  type
+  id
+  title
+  slug
+  parentId
+}

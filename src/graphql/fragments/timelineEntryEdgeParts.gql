@@ -1,0 +1,7 @@
+fragment TimelineEntryEdgeParts on TimelineEntryEdge {
+  __typename
+  cursor
+  node {
+  ...TimelineEntryParts
+}
+}

@@ -1,0 +1,11 @@
+query serviceAuthorizations($first: Int, $after: String, $last: Int, $before: String, $filters: ServiceAuthorizationsFilter) {
+  serviceAuthorizations(first: $first, after: $after, last: $last, before: $before, filters: $filters) {
+    ...ServiceAuthorizationConnectionParts
+  }
+}
+
+#import "serviceAuthorizationConnectionParts.gql"
+#import "serviceAuthorizationEdgeParts.gql"
+#import "serviceAuthorizationParts.gql"
+#import "dateTimeParts.gql"
+#import "pageInfoParts.gql"

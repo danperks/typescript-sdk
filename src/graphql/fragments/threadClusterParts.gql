@@ -1,0 +1,30 @@
+fragment ThreadClusterParts on ThreadCluster {
+  __typename
+  id
+  title
+  description
+  category
+  sentiment
+  confidence
+  emoji
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+  threads {
+    threadId
+    customerId
+    tierId
+    distance
+}
+}

@@ -1,0 +1,24 @@
+fragment HelpCenterPortalSettingsThreadFieldsParts on HelpCenterPortalSettingsThreadFields {
+  __typename
+  threadFieldSchema {
+    id
+    label
+    key
+    description
+    order
+    type
+    enumValues
+    defaultStringValue
+    defaultBooleanValue
+    isRequired
+    isAiAutoFillEnabled
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  selectedStringValue
+  selectedBooleanValue
+}

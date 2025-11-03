@@ -1,0 +1,11 @@
+query workspaceDiscordChannelIntegrations($first: Int, $after: String, $last: Int, $before: String) {
+  workspaceDiscordChannelIntegrations(first: $first, after: $after, last: $last, before: $before) {
+    ...WorkspaceDiscordChannelIntegrationConnectionParts
+  }
+}
+
+#import "workspaceDiscordChannelIntegrationConnectionParts.gql"
+#import "workspaceDiscordChannelIntegrationEdgeParts.gql"
+#import "workspaceDiscordChannelIntegrationParts.gql"
+#import "dateTimeParts.gql"
+#import "pageInfoParts.gql"

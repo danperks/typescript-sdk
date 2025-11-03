@@ -1,0 +1,49 @@
+fragment MSTeamsMessageParts on MSTeamsMessage {
+  __typename
+  id
+  threadId
+  msTeamsTenantId
+  msTeamsConversationId
+  msTeamsMessageId
+  msTeamsTeamId
+  parentMessageId
+  msTeamsMessageLink
+  text
+  markdownContent
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+  attachments {
+    id
+    fileName
+    fileExtension
+    fileMimeType
+    type
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  hasUnprocessedAttachments
+  lastEditedOnMsTeamsAt {
+    unixTimestamp
+    iso8601
+}
+  deletedOnMsTeamsAt {
+    unixTimestamp
+    iso8601
+}
+}

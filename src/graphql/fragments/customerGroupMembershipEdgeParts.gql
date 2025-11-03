@@ -1,0 +1,7 @@
+fragment CustomerGroupMembershipEdgeParts on CustomerGroupMembershipEdge {
+  __typename
+  cursor
+  node {
+  ...CustomerGroupMembershipParts
+}
+}

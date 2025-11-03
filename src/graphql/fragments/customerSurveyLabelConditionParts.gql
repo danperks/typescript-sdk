@@ -1,0 +1,4 @@
+fragment CustomerSurveyLabelConditionParts on CustomerSurveyLabelCondition {
+  __typename
+  labelTypeIds
+}

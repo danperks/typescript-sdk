@@ -1,29 +1,147 @@
 fragment CustomerParts on Customer {
   __typename
   id
+  externalId
   fullName
   shortName
-  externalId
   email {
     email
     isVerified
     verifiedAt {
-      ...DateTimeParts
-    }
-  }
+    unixTimestamp
+    iso8601
+}
+}
+  avatarUrl
+  assignedToUser {
+    userId
+    user {
+    id
+    fullName
+    publicName
+    avatarUrl
+    email
+    status
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+    isDeleted
+    deletedBy {
+  __typename
+}
+}
+}
+  assignedAt {
+    unixTimestamp
+    iso8601
+}
   company {
-    ...CompanyParts
-  }
-  updatedAt {
-    ...DateTimeParts
-  }
+    id
+    name
+    domainName
+    createdAt {
+    unixTimestamp
+    iso8601
+}
+    createdBy {
+  __typename
+}
+    updatedAt {
+    unixTimestamp
+    iso8601
+}
+    updatedBy {
+  __typename
+}
+    tier {
+    id
+    name
+    externalId
+    color
+    isDefault
+    defaultPriority
+    defaultThreadPriority
+    isMachineTier
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+    threadChannelAssociations {
+    id
+    companyId
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+    contractValue
+    accountOwner {
+    id
+    fullName
+    publicName
+    avatarUrl
+    email
+    status
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+    isDeleted
+    deletedBy {
+  __typename
+}
+}
+    isDeleted
+    deletedAt {
+    unixTimestamp
+    iso8601
+}
+    deletedBy {
+  __typename
+}
+}
+  isAnonymous
   createdAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   createdBy {
-    ...InternalActorParts
-  }
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
   markedAsSpamAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
+  markedAsSpamBy {
+  __typename
+}
+  identities {
+  __typename
+}
+  status
+  statusChangedAt {
+    unixTimestamp
+    iso8601
+}
+  lastIdleAt {
+    unixTimestamp
+    iso8601
+}
 }

@@ -1,0 +1,10 @@
+fragment CustomerConnectionParts on CustomerConnection {
+  __typename
+  edges {
+  ...CustomerEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+  totalCount
+}

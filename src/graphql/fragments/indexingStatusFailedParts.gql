@@ -1,0 +1,8 @@
+fragment IndexingStatusFailedParts on IndexingStatusFailed {
+  __typename
+  reason
+  failedAt {
+    unixTimestamp
+    iso8601
+}
+}

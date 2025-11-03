@@ -1,0 +1,8 @@
+fragment ThreadStatusDetailThreadDiscussionResolvedParts on ThreadStatusDetailThreadDiscussionResolved {
+  __typename
+  statusChangedAt {
+    unixTimestamp
+    iso8601
+}
+  threadDiscussionId
+}

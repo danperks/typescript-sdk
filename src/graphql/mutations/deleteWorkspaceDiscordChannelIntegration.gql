@@ -1,0 +1,11 @@
+mutation deleteWorkspaceDiscordChannelIntegration($input: DeleteWorkspaceDiscordChannelIntegrationInput!) {
+  deleteWorkspaceDiscordChannelIntegration(input: $input) {
+    __typename
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

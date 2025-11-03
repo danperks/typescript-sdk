@@ -1,10 +1,16 @@
 mutation updateTenantTier($input: UpdateTenantTierInput!) {
   updateTenantTier(input: $input) {
+    __typename
     tenantTierMembership {
-      ...TenantTierMembershipParts
-    }
+    ...TenantTierMembershipParts
+  }
     error {
-      ...MutationErrorParts
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "tenantTierMembershipParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

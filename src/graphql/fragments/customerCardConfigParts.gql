@@ -1,20 +1,28 @@
 fragment CustomerCardConfigParts on CustomerCardConfig {
   __typename
   id
+  order
   title
   key
   defaultTimeToLiveSeconds
   apiUrl
-  order
   apiHeaders {
     name
     value
-  }
+}
   isEnabled
   createdAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
 }

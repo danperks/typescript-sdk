@@ -1,0 +1,43 @@
+mutation addAdditionalAssignees($input: AddAdditionalAssigneesInput!) {
+  addAdditionalAssignees(input: $input) {
+    __typename
+    thread {
+    ...ThreadParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "threadParts.gql"
+#import "customerParts.gql"
+#import "emailAddressParts.gql"
+#import "dateTimeParts.gql"
+#import "userActorParts.gql"
+#import "userParts.gql"
+#import "roleParts.gql"
+#import "roleScopeDefinitionParts.gql"
+#import "roleScopeParts.gql"
+#import "slackUserIdentityParts.gql"
+#import "labelParts.gql"
+#import "labelTypeParts.gql"
+#import "savedThreadsViewParts.gql"
+#import "savedThreadsViewFilterParts.gql"
+#import "savedThreadsViewFilterThreadFieldParts.gql"
+#import "savedThreadsViewFilterTenantFieldParts.gql"
+#import "savedThreadsViewSortParts.gql"
+#import "threadsDisplayOptionsParts.gql"
+#import "companyParts.gql"
+#import "tierParts.gql"
+#import "threadFieldParts.gql"
+#import "threadDiscussionParts.gql"
+#import "threadMessageInfoParts.gql"
+#import "tenantParts.gql"
+#import "tenantFieldParts.gql"
+#import "serviceLevelAgreementStatusSummaryParts.gql"
+#import "surveyResponseParts.gql"
+#import "threadEscalationDetailsParts.gql"
+#import "escalationPathParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

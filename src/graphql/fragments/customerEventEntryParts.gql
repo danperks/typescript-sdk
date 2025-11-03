@@ -1,0 +1,10 @@
+fragment CustomerEventEntryParts on CustomerEventEntry {
+  __typename
+  timelineEventId
+  title
+  components {
+  __typename
+}
+  customerId
+  externalId
+}

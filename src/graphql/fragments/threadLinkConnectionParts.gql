@@ -1,0 +1,10 @@
+fragment ThreadLinkConnectionParts on ThreadLinkConnection {
+  __typename
+  edges {
+  ...ThreadLinkEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+  totalCount
+}

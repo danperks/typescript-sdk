@@ -1,0 +1,18 @@
+mutation upsertRoleScopes($input: UpsertRoleScopesInput!) {
+  upsertRoleScopes(input: $input) {
+    __typename
+    role {
+    ...CustomRoleParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "customRoleParts.gql"
+#import "roleScopeDefinitionParts.gql"
+#import "roleScopeParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

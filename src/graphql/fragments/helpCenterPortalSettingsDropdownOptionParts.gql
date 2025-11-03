@@ -1,0 +1,11 @@
+fragment HelpCenterPortalSettingsDropdownOptionParts on HelpCenterPortalSettingsDropdownOption {
+  __typename
+  dropdownOptionId
+  label
+  threadDetails {
+    priority
+    assignees {
+  __typename
+}
+}
+}

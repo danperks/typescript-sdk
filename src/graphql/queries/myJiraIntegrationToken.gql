@@ -1,0 +1,8 @@
+query myJiraIntegrationToken {
+  myJiraIntegrationToken {
+    ...JiraIntegrationTokenParts
+  }
+}
+
+#import "jiraIntegrationTokenParts.gql"
+#import "dateTimeParts.gql"

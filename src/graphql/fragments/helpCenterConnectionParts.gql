@@ -1,0 +1,9 @@
+fragment HelpCenterConnectionParts on HelpCenterConnection {
+  __typename
+  edges {
+  ...HelpCenterEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+}

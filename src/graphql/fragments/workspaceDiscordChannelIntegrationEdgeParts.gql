@@ -1,0 +1,7 @@
+fragment WorkspaceDiscordChannelIntegrationEdgeParts on WorkspaceDiscordChannelIntegrationEdge {
+  __typename
+  cursor
+  node {
+  ...WorkspaceDiscordChannelIntegrationParts
+}
+}

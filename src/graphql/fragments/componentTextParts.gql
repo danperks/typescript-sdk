@@ -1,0 +1,8 @@
+fragment ComponentTextParts on ComponentText {
+  __typename
+  textSize
+  textColor
+  text
+  color
+  size
+}

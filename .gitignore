@@ -21,3 +21,6 @@ docs
 
 # cache
 .eslintcache
+
+# SDK generation cache and reports (generated files are committed)
+.sdk/

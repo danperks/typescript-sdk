@@ -1,0 +1,4 @@
+fragment SupportEmailAddressEmailActorParts on SupportEmailAddressEmailActor {
+  __typename
+  supportEmailAddress
+}

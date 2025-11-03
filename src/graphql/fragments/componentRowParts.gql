@@ -1,0 +1,9 @@
+fragment ComponentRowParts on ComponentRow {
+  __typename
+  rowMainContent {
+  __typename
+}
+  rowAsideContent {
+  __typename
+}
+}

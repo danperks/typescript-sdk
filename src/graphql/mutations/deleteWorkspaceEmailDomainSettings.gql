@@ -1,0 +1,11 @@
+mutation deleteWorkspaceEmailDomainSettings {
+  deleteWorkspaceEmailDomainSettings {
+    __typename
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

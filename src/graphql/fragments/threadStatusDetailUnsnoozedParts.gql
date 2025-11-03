@@ -1,0 +1,11 @@
+fragment ThreadStatusDetailUnsnoozedParts on ThreadStatusDetailUnsnoozed {
+  __typename
+  snoozedAt {
+    unixTimestamp
+    iso8601
+}
+  statusChangedAt {
+    unixTimestamp
+    iso8601
+}
+}

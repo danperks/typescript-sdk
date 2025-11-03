@@ -1,0 +1,24 @@
+fragment EscalationPathStepLabelTypeParts on EscalationPathStepLabelType {
+  __typename
+  id
+  labelType {
+    id
+    name
+    icon
+    color
+    type
+    description
+    position
+    externalId
+    isArchived
+    archivedBy {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+}

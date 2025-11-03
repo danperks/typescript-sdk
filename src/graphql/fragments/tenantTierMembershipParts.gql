@@ -1,16 +1,20 @@
 fragment TenantTierMembershipParts on TenantTierMembership {
   __typename
   id
+  tierId
+  tenantId
   createdAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   createdBy {
-    ...InternalActorParts
-  }
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   updatedBy {
-    ...InternalActorParts
-  }
+  __typename
+}
 }

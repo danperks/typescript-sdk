@@ -1,0 +1,22 @@
+fragment CustomEntryParts on CustomEntry {
+  __typename
+  externalId
+  title
+  type
+  components {
+  __typename
+}
+  attachments {
+    id
+    fileName
+    fileExtension
+    fileMimeType
+    type
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+}

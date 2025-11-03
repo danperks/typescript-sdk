@@ -1,11 +1,17 @@
 mutation upsertThreadField($input: UpsertThreadFieldInput!) {
   upsertThreadField(input: $input) {
-    result
+    __typename
     threadField {
-      ...ThreadFieldParts
-    }
+    ...ThreadFieldParts
+  }
+    result
     error {
-      ...MutationErrorParts
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "threadFieldParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

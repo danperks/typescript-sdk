@@ -1,0 +1,12 @@
+mutation deleteWorkspaceCursorIntegration($id: ID!) {
+  deleteWorkspaceCursorIntegration(id: $id) {
+    __typename
+    id
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

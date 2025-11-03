@@ -1,0 +1,6 @@
+fragment LinearIssueThreadLinkStateTransitionedEntryParts on LinearIssueThreadLinkStateTransitionedEntry {
+  __typename
+  linearIssueId
+  previousLinearStateId
+  nextLinearStateId
+}

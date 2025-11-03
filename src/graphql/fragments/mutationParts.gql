@@ -1,0 +1,9 @@
+fragment MutationParts on Mutation {
+  __typename
+  deleteGithubUserAuthIntegration {
+    deletedIntegrationId
+}
+  createBillingPortalSession {
+    billingPortalSessionUrl
+}
+}

@@ -1,0 +1,5 @@
+fragment DefaultServiceIntegrationParts on DefaultServiceIntegration {
+  __typename
+  name
+  key
+}

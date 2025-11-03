@@ -1,0 +1,14 @@
+mutation createThreadLink($input: CreateThreadLinkInput!) {
+  createThreadLink(input: $input) {
+    __typename
+    threadLink {
+    ...ThreadLinkParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

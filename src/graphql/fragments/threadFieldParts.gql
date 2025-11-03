@@ -1,22 +1,24 @@
 fragment ThreadFieldParts on ThreadField {
   __typename
   id
+  threadId
   key
   type
-  threadId
+  isAiGenerated
   stringValue
   booleanValue
-  isAiGenerated
   createdAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   createdBy {
-    ...InternalActorParts
-  }
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   updatedBy {
-    ...InternalActorParts
-  }
+  __typename
+}
 }

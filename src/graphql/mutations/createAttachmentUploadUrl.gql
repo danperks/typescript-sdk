@@ -1,10 +1,19 @@
 mutation createAttachmentUploadUrl($input: CreateAttachmentUploadUrlInput!) {
   createAttachmentUploadUrl(input: $input) {
+    __typename
     attachmentUploadUrl {
-      ...AttachmentUploadUrlParts
-    }
+    ...AttachmentUploadUrlParts
+  }
     error {
-      ...MutationErrorParts
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "attachmentUploadUrlParts.gql"
+#import "attachmentParts.gql"
+#import "fileSizeParts.gql"
+#import "dateTimeParts.gql"
+#import "uploadFormDataParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

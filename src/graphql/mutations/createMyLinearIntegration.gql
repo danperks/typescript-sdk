@@ -1,0 +1,16 @@
+mutation createMyLinearIntegration($input: CreateMyLinearIntegrationInput!) {
+  createMyLinearIntegration(input: $input) {
+    __typename
+    integration {
+    ...UserLinearIntegrationParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "userLinearIntegrationParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

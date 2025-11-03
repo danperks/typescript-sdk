@@ -1,10 +1,14 @@
 mutation createKnowledgeSource($input: CreateKnowledgeSourceInput!) {
   createKnowledgeSource(input: $input) {
+    __typename
     knowledgeSource {
-      ...KnowledgeSourceParts
-    }
+    __typename
+  }
     error {
-      ...MutationErrorParts
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

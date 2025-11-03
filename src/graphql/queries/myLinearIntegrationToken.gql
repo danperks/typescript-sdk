@@ -1,0 +1,7 @@
+query myLinearIntegrationToken {
+  myLinearIntegrationToken {
+    ...LinearIntegrationTokenParts
+  }
+}
+
+#import "linearIntegrationTokenParts.gql"

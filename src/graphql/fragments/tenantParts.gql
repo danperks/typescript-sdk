@@ -4,19 +4,48 @@ fragment TenantParts on Tenant {
   name
   externalId
   url
+  source
   tier {
-    ...TierParts
-  }
+    id
+    name
+    externalId
+    color
+    isDefault
+    defaultPriority
+    defaultThreadPriority
+    isMachineTier
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  tenantFields {
+    id
+    externalFieldId
+    value {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
   createdAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   createdBy {
-    ...InternalActorParts
-  }
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   updatedBy {
-    ...InternalActorParts
-  }
+  __typename
+}
 }

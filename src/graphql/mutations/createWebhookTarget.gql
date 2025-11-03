@@ -1,10 +1,17 @@
 mutation createWebhookTarget($input: CreateWebhookTargetInput!) {
   createWebhookTarget(input: $input) {
+    __typename
     webhookTarget {
-      ...WebhookTargetParts
-    }
+    ...WebhookTargetParts
+  }
     error {
-      ...MutationErrorParts
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "webhookTargetParts.gql"
+#import "webhookTargetEventSubscriptionParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

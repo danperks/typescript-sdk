@@ -1,0 +1,9 @@
+query activeThreadCluster($threadId: ID!) {
+  activeThreadCluster(threadId: $threadId) {
+    ...ThreadClusterParts
+  }
+}
+
+#import "threadClusterParts.gql"
+#import "dateTimeParts.gql"
+#import "minimalThreadWithDistanceParts.gql"

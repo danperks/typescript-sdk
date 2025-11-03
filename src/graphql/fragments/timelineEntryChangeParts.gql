@@ -1,0 +1,16 @@
+fragment TimelineEntryChangeParts on TimelineEntryChange {
+  __typename
+  changeType
+  timelineEntry {
+    id
+    customerId
+    threadId
+    entry {
+  __typename
+}
+    actor {
+  __typename
+}
+    llmText
+}
+}

@@ -1,0 +1,11 @@
+query connectedMSTeamsChannels($first: Int, $after: String, $last: Int, $before: String) {
+  connectedMSTeamsChannels(first: $first, after: $after, last: $last, before: $before) {
+    ...ConnectedMSTeamsChannelConnectionParts
+  }
+}
+
+#import "connectedMSTeamsChannelConnectionParts.gql"
+#import "pageInfoParts.gql"
+#import "connectedMSTeamsChannelEdgeParts.gql"
+#import "connectedMSTeamsChannelParts.gql"
+#import "dateTimeParts.gql"

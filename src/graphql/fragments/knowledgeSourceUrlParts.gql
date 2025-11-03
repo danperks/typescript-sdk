@@ -1,0 +1,43 @@
+fragment KnowledgeSourceUrlParts on KnowledgeSourceUrl {
+  __typename
+  id
+  type
+  url
+  labelTypes {
+    id
+    name
+    icon
+    color
+    type
+    description
+    position
+    externalId
+    isArchived
+    archivedBy {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  status {
+  __typename
+}
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+}

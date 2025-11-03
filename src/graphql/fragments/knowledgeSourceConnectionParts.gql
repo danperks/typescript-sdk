@@ -1,0 +1,9 @@
+fragment KnowledgeSourceConnectionParts on KnowledgeSourceConnection {
+  __typename
+  edges {
+  ...KnowledgeSourceEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+}

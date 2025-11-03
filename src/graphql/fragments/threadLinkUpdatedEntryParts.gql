@@ -1,0 +1,35 @@
+fragment ThreadLinkUpdatedEntryParts on ThreadLinkUpdatedEntry {
+  __typename
+  threadLink {
+    id
+    threadId
+    sourceId
+    sourceType
+    title
+    description
+    url
+    status
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  previousThreadLink {
+    id
+    threadId
+    sourceId
+    sourceType
+    title
+    description
+    url
+    status
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+}

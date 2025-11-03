@@ -1,0 +1,9 @@
+fragment BooleanSettingParts on BooleanSetting {
+  __typename
+  code
+  booleanValue
+  scope {
+    id
+    scopeType
+}
+}

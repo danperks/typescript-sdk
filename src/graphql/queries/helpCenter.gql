@@ -1,0 +1,17 @@
+query helpCenter($id: ID!) {
+  helpCenter(id: $id) {
+    ...HelpCenterParts
+  }
+}
+
+#import "helpCenterParts.gql"
+#import "helpCenterDomainSettingsParts.gql"
+#import "helpCenterDomainNameVerificationTxtRecordParts.gql"
+#import "dateTimeParts.gql"
+#import "helpCenterPortalSettingsParts.gql"
+#import "helpCenterPortalSettingsThreadVisibilityParts.gql"
+#import "helpCenterThemedImageParts.gql"
+#import "workspaceFileParts.gql"
+#import "fileSizeParts.gql"
+#import "workspaceFileDownloadUrlParts.gql"
+#import "helpCenterAccessSettingsParts.gql"

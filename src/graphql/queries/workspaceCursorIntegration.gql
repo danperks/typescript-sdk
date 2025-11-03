@@ -1,0 +1,8 @@
+query workspaceCursorIntegration {
+  workspaceCursorIntegration {
+    ...WorkspaceCursorIntegrationParts
+  }
+}
+
+#import "workspaceCursorIntegrationParts.gql"
+#import "dateTimeParts.gql"

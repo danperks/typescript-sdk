@@ -1,0 +1,9 @@
+fragment WorkspaceSlackChannelIntegrationConnectionParts on WorkspaceSlackChannelIntegrationConnection {
+  __typename
+  edges {
+  ...WorkspaceSlackChannelIntegrationEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+}

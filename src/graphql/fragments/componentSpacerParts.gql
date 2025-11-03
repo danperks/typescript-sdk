@@ -1,0 +1,5 @@
+fragment ComponentSpacerParts on ComponentSpacer {
+  __typename
+  spacerSize
+  size
+}

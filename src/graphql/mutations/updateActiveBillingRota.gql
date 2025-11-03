@@ -1,0 +1,15 @@
+mutation updateActiveBillingRota($input: UpdateActiveBillingRotaInput!) {
+  updateActiveBillingRota(input: $input) {
+    __typename
+    billingRota {
+    ...BillingRotaParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "billingRotaParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

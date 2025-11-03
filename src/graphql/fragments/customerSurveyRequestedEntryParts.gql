@@ -1,0 +1,8 @@
+fragment CustomerSurveyRequestedEntryParts on CustomerSurveyRequestedEntry {
+  __typename
+  customerId
+  threadId
+  customerSurveyId
+  surveyResponseId
+  surveyResponsePublicId
+}

@@ -1,0 +1,8 @@
+query helpCenterArticleGroup($id: ID!) {
+  helpCenterArticleGroup(id: $id) {
+    ...HelpCenterArticleGroupParts
+  }
+}
+
+#import "helpCenterArticleGroupParts.gql"
+#import "dateTimeParts.gql"

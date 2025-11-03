@@ -1,0 +1,7 @@
+fragment ThreadDiscussionMessageEdgeParts on ThreadDiscussionMessageEdge {
+  __typename
+  node {
+  ...ThreadDiscussionMessageParts
+}
+  cursor
+}

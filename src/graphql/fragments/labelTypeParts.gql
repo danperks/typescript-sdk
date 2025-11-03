@@ -3,26 +3,31 @@ fragment LabelTypeParts on LabelType {
   id
   name
   icon
-
+  color
+  type
+  description
+  position
+  externalId
   isArchived
-  archivedAt {
-    ...DateTimeParts
-  }
   archivedBy {
-    ...ActorParts
-  }
-
+  __typename
+}
+  archivedAt {
+    unixTimestamp
+    iso8601
+}
   createdAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   createdBy {
-    ...ActorParts
-  }
-
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   updatedBy {
-    ...ActorParts
-  }
+  __typename
+}
 }

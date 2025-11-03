@@ -1,0 +1,16 @@
+mutation deleteWorkspaceDiscordIntegration($input: DeleteWorkspaceDiscordIntegrationInput!) {
+  deleteWorkspaceDiscordIntegration(input: $input) {
+    __typename
+    integration {
+    ...WorkspaceDiscordIntegrationParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "workspaceDiscordIntegrationParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

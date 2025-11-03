@@ -1,0 +1,8 @@
+query myBillingSubscription {
+  myBillingSubscription {
+    ...BillingSubscriptionParts
+  }
+}
+
+#import "billingSubscriptionParts.gql"
+#import "dateTimeParts.gql"

@@ -1,0 +1,10 @@
+query workspaceEmailSettings {
+  workspaceEmailSettings {
+    ...WorkspaceEmailSettingsParts
+  }
+}
+
+#import "workspaceEmailSettingsParts.gql"
+#import "workspaceEmailDomainSettingsParts.gql"
+#import "dnsRecordParts.gql"
+#import "dateTimeParts.gql"

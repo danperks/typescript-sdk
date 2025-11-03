@@ -1,0 +1,4 @@
+fragment EmailCustomerIdentityParts on EmailCustomerIdentity {
+  __typename
+  email
+}

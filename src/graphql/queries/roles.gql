@@ -1,0 +1,12 @@
+query roles($first: Int, $after: String, $last: Int, $before: String, $filters: RoleFilter) {
+  roles(first: $first, after: $after, last: $last, before: $before, filters: $filters) {
+    ...RoleConnectionParts
+  }
+}
+
+#import "roleConnectionParts.gql"
+#import "roleEdgeParts.gql"
+#import "roleParts.gql"
+#import "roleScopeDefinitionParts.gql"
+#import "roleScopeParts.gql"
+#import "pageInfoParts.gql"

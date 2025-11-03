@@ -1,0 +1,17 @@
+fragment IndexedDocumentSearchResultParts on IndexedDocumentSearchResult {
+  __typename
+  content
+  indexedDocument {
+    id
+    url
+    status {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+}

@@ -1,0 +1,6 @@
+fragment ComponentPlainTextParts on ComponentPlainText {
+  __typename
+  plainTextSize
+  plainTextColor
+  plainText
+}

@@ -1,0 +1,4 @@
+fragment UserLinearInstallationInfoParts on UserLinearInstallationInfo {
+  __typename
+  installationUrl
+}

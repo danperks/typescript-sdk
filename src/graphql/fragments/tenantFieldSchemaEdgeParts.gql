@@ -1,0 +1,7 @@
+fragment TenantFieldSchemaEdgeParts on TenantFieldSchemaEdge {
+  __typename
+  cursor
+  node {
+  ...TenantFieldSchemaParts
+}
+}

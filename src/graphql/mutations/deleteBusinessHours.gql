@@ -1,0 +1,11 @@
+mutation deleteBusinessHours {
+  deleteBusinessHours {
+    __typename
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

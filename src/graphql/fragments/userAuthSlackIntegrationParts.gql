@@ -1,0 +1,21 @@
+fragment UserAuthSlackIntegrationParts on UserAuthSlackIntegration {
+  __typename
+  integrationId
+  slackTeamId
+  slackTeamName
+  isReinstallRequired
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+}

@@ -1,0 +1,7 @@
+fragment SavedThreadsViewEdgeParts on SavedThreadsViewEdge {
+  __typename
+  cursor
+  node {
+  ...SavedThreadsViewParts
+}
+}

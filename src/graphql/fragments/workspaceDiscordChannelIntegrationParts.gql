@@ -1,0 +1,20 @@
+fragment WorkspaceDiscordChannelIntegrationParts on WorkspaceDiscordChannelIntegration {
+  __typename
+  id
+  discordGuildId
+  discordGuildName
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+}

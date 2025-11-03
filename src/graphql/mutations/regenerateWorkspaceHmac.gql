@@ -1,0 +1,16 @@
+mutation regenerateWorkspaceHmac {
+  regenerateWorkspaceHmac {
+    __typename
+    workspaceHmac {
+    ...WorkspaceHmacParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "workspaceHmacParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

@@ -1,0 +1,16 @@
+mutation createGithubUserAuthIntegration($input: CreateGithubUserAuthIntegrationInput!) {
+  createGithubUserAuthIntegration(input: $input) {
+    __typename
+    integration {
+    ...GithubUserAuthIntegrationParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "githubUserAuthIntegrationParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

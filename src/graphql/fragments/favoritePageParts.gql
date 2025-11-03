@@ -1,0 +1,19 @@
+fragment FavoritePageParts on FavoritePage {
+  __typename
+  id
+  key
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+}

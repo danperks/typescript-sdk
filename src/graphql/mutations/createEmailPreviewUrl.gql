@@ -1,0 +1,16 @@
+mutation createEmailPreviewUrl($input: CreateEmailPreviewUrlInput!) {
+  createEmailPreviewUrl(input: $input) {
+    __typename
+    emailPreviewUrl {
+    ...EmailPreviewUrlParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "emailPreviewUrlParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

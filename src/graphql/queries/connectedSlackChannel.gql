@@ -1,0 +1,9 @@
+query connectedSlackChannel($connectedSlackChannelId: ID!) {
+  connectedSlackChannel(connectedSlackChannelId: $connectedSlackChannelId) {
+    ...ConnectedSlackChannelParts
+  }
+}
+
+#import "connectedSlackChannelParts.gql"
+#import "dateTimeParts.gql"
+#import "slackThreadChannelAssociationParts.gql"

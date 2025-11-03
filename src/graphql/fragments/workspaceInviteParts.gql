@@ -1,0 +1,71 @@
+fragment WorkspaceInviteParts on WorkspaceInvite {
+  __typename
+  id
+  createdBy {
+  __typename
+}
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  email
+  workspace {
+    id
+    name
+    publicName
+    isDemoWorkspace
+    domainName
+    domainNames
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  isAccepted
+  roles {
+    id
+    name
+    description
+    permissions
+    isAssignableToCustomer
+    isAssignableToThread
+    assignableBillingSeats
+    requiresBillableSeat
+    key
+    customRoleId
+}
+  updatedBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  usingBillingRotaSeat
+  role {
+    id
+    name
+    description
+    permissions
+    isAssignableToCustomer
+    isAssignableToThread
+    assignableBillingSeats
+    requiresBillableSeat
+    key
+    customRoleId
+}
+  customRole {
+    id
+    name
+    description
+    permissionsPreset
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+}

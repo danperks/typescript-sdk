@@ -1,0 +1,8 @@
+query generatedReplies($threadId: ID!, $options: [GenerateReplyOption!]) {
+  generatedReplies(threadId: $threadId, options: $options) {
+    ...GeneratedReplyParts
+  }
+}
+
+#import "generatedReplyParts.gql"
+#import "dateTimeParts.gql"

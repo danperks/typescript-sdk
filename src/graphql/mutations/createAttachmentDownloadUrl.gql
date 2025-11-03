@@ -1,0 +1,19 @@
+mutation createAttachmentDownloadUrl($input: CreateAttachmentDownloadUrlInput!) {
+  createAttachmentDownloadUrl(input: $input) {
+    __typename
+    attachmentDownloadUrl {
+    ...AttachmentDownloadUrlParts
+  }
+    attachmentVirusScanResult
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "attachmentDownloadUrlParts.gql"
+#import "attachmentParts.gql"
+#import "fileSizeParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

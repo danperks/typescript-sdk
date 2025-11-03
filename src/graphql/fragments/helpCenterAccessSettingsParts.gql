@@ -1,0 +1,7 @@
+fragment HelpCenterAccessSettingsParts on HelpCenterAccessSettings {
+  __typename
+  tierIds
+  tenantIds
+  companyIds
+  customerIds
+}

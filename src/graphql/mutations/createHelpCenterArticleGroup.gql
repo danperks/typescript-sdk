@@ -1,0 +1,16 @@
+mutation createHelpCenterArticleGroup($input: CreateHelpCenterArticleGroupInput!) {
+  createHelpCenterArticleGroup(input: $input) {
+    __typename
+    helpCenterArticleGroup {
+    ...HelpCenterArticleGroupParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "helpCenterArticleGroupParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

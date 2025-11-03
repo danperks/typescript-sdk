@@ -1,0 +1,11 @@
+fragment TieredRecurringPriceParts on TieredRecurringPrice {
+  __typename
+  billingIntervalUnit
+  billingIntervalCount
+  currency
+  tiers {
+    maxSeats
+    perSeatAmount
+    flatAmount
+}
+}

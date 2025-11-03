@@ -1,0 +1,11 @@
+fragment ThreadStatusDetailCreatedParts on ThreadStatusDetailCreated {
+  __typename
+  statusChangedAt {
+    unixTimestamp
+    iso8601
+}
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+}

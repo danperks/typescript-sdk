@@ -1,0 +1,19 @@
+fragment BulkUpsertThreadFieldResultParts on BulkUpsertThreadFieldResult {
+  __typename
+  threadField {
+    id
+    threadId
+    key
+    type
+    isAiGenerated
+    stringValue
+    booleanValue
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  result
+}

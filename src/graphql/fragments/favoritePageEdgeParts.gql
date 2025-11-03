@@ -1,0 +1,7 @@
+fragment FavoritePageEdgeParts on FavoritePageEdge {
+  __typename
+  cursor
+  node {
+  ...FavoritePageParts
+}
+}

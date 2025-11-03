@@ -1,0 +1,21 @@
+fragment UserMSTeamsIntegrationParts on UserMSTeamsIntegration {
+  __typename
+  id
+  msTeamsTenantId
+  isReinstallRequired
+  msTeamsPreferredUsername
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+}

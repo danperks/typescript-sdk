@@ -1,16 +1,20 @@
 fragment CompanyTierMembershipParts on CompanyTierMembership {
   __typename
   id
+  tierId
+  companyId
   createdAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   createdBy {
-    ...InternalActorParts
-  }
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   updatedBy {
-    ...InternalActorParts
-  }
+  __typename
+}
 }

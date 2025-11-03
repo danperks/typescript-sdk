@@ -1,0 +1,9 @@
+fragment BusinessHoursSlotParts on BusinessHoursSlot {
+  __typename
+  timezone {
+    name
+}
+  weekday
+  opensAt
+  closesAt
+}

@@ -1,0 +1,7 @@
+fragment ThreadEdgeParts on ThreadEdge {
+  __typename
+  cursor
+  node {
+  ...ThreadParts
+}
+}

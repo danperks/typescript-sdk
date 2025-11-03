@@ -1,0 +1,14 @@
+mutation updateSetting($input: UpdateSettingInput!) {
+  updateSetting(input: $input) {
+    __typename
+    setting {
+    __typename
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

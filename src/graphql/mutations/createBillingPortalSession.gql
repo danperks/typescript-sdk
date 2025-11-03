@@ -1,0 +1,12 @@
+mutation createBillingPortalSession {
+  createBillingPortalSession {
+    __typename
+    billingPortalSessionUrl
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

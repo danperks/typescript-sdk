@@ -1,7 +1,11 @@
 mutation replyToThread($input: ReplyToThreadInput!) {
   replyToThread(input: $input) {
+    __typename
     error {
-      ...MutationErrorParts
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

@@ -1,0 +1,5 @@
+fragment ComponentCopyButtonParts on ComponentCopyButton {
+  __typename
+  copyButtonValue
+  copyButtonTooltipLabel
+}

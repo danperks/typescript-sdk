@@ -1,0 +1,8 @@
+fragment SlackReactionParts on SlackReaction {
+  __typename
+  name
+  actors {
+  __typename
+}
+  imageUrl
+}

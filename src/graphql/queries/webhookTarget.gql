@@ -1,5 +1,9 @@
-query webhookTarget($id: ID!) {
-  webhookTarget(webhookTargetId: $id) {
+query webhookTarget($webhookTargetId: ID!) {
+  webhookTarget(webhookTargetId: $webhookTargetId) {
     ...WebhookTargetParts
   }
 }
+
+#import "webhookTargetParts.gql"
+#import "webhookTargetEventSubscriptionParts.gql"
+#import "dateTimeParts.gql"

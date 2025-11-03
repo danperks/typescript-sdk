@@ -1,0 +1,7 @@
+fragment ServiceLevelAgreementStatusDetailPendingParts on ServiceLevelAgreementStatusDetailPending {
+  __typename
+  breachingAt {
+    unixTimestamp
+    iso8601
+}
+}

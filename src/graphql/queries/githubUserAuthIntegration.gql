@@ -1,0 +1,8 @@
+query githubUserAuthIntegration {
+  githubUserAuthIntegration {
+    ...GithubUserAuthIntegrationParts
+  }
+}
+
+#import "githubUserAuthIntegrationParts.gql"
+#import "dateTimeParts.gql"

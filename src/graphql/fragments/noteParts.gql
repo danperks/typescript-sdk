@@ -1,6 +1,62 @@
 fragment NoteParts on Note {
   __typename
   id
-  markdown
   text
+  markdown
+  customer {
+    id
+    externalId
+    fullName
+    shortName
+    avatarUrl
+    isAnonymous
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+    markedAsSpamBy {
+  __typename
+}
+    identities {
+  __typename
+}
+    status
+}
+  attachments {
+    id
+    fileName
+    fileExtension
+    fileMimeType
+    type
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  isDeleted
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  deletedAt {
+    unixTimestamp
+    iso8601
+}
+  deletedBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
 }

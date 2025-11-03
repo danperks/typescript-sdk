@@ -1,0 +1,16 @@
+mutation createMySlackIntegration($input: CreateMySlackIntegrationInput!) {
+  createMySlackIntegration(input: $input) {
+    __typename
+    integration {
+    ...UserSlackIntegrationParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "userSlackIntegrationParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

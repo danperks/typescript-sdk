@@ -1,0 +1,25 @@
+fragment CustomerChangeParts on CustomerChange {
+  __typename
+  changeType
+  customer {
+    id
+    externalId
+    fullName
+    shortName
+    avatarUrl
+    isAnonymous
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+    markedAsSpamBy {
+  __typename
+}
+    identities {
+  __typename
+}
+    status
+}
+}

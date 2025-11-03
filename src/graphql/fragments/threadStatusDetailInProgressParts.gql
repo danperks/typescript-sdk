@@ -1,0 +1,7 @@
+fragment ThreadStatusDetailInProgressParts on ThreadStatusDetailInProgress {
+  __typename
+  statusChangedAt {
+    unixTimestamp
+    iso8601
+}
+}

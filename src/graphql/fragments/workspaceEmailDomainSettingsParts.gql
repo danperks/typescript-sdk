@@ -1,0 +1,21 @@
+fragment WorkspaceEmailDomainSettingsParts on WorkspaceEmailDomainSettings {
+  __typename
+  domainName
+  supportEmailAddress
+  alternateSupportEmailAddresses
+  isForwardingConfigured
+  inboundForwardingEmail
+  isDomainConfigured
+  dkimDnsRecord {
+    type
+    name
+    value
+    isVerified
+}
+  returnPathDnsRecord {
+    type
+    name
+    value
+    isVerified
+}
+}

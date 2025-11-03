@@ -1,0 +1,20 @@
+mutation upsertBusinessHours($input: UpsertBusinessHoursInput!) {
+  upsertBusinessHours(input: $input) {
+    __typename
+    businessHours {
+    ...BusinessHoursParts
+  }
+    result
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "businessHoursParts.gql"
+#import "businessHoursWeekDaysParts.gql"
+#import "businessHoursWeekDayParts.gql"
+#import "timeParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

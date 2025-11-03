@@ -1,0 +1,46 @@
+fragment CustomerCardInstanceLoadedParts on CustomerCardInstanceLoaded {
+  __typename
+  id
+  customerId
+  threadId
+  customerCardConfig {
+    id
+    order
+    title
+    key
+    defaultTimeToLiveSeconds
+    apiUrl
+    isEnabled
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  components {
+  __typename
+}
+  loadedAt {
+    unixTimestamp
+    iso8601
+}
+  expiresAt {
+    unixTimestamp
+    iso8601
+}
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+}

@@ -1,0 +1,5 @@
+fragment CustomerCardConfigApiHeaderParts on CustomerCardConfigApiHeader {
+  __typename
+  name
+  value
+}

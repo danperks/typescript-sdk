@@ -1,0 +1,4 @@
+fragment SlackChannelMembershipParts on SlackChannelMembership {
+  __typename
+  slackChannelId
+}

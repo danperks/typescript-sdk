@@ -1,0 +1,11 @@
+mutation deleteThread($input: DeleteThreadInput!) {
+  deleteThread(input: $input) {
+    __typename
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

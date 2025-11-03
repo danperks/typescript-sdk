@@ -1,0 +1,11 @@
+query workspaceSlackChannelIntegrations($first: Int, $after: String, $last: Int, $before: String) {
+  workspaceSlackChannelIntegrations(first: $first, after: $after, last: $last, before: $before) {
+    ...WorkspaceSlackChannelIntegrationConnectionParts
+  }
+}
+
+#import "workspaceSlackChannelIntegrationConnectionParts.gql"
+#import "workspaceSlackChannelIntegrationEdgeParts.gql"
+#import "workspaceSlackChannelIntegrationParts.gql"
+#import "dateTimeParts.gql"
+#import "pageInfoParts.gql"

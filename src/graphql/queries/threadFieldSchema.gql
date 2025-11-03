@@ -1,0 +1,10 @@
+query threadFieldSchema($threadFieldSchemaId: ID!) {
+  threadFieldSchema(threadFieldSchemaId: $threadFieldSchemaId) {
+    ...ThreadFieldSchemaParts
+  }
+}
+
+#import "threadFieldSchemaParts.gql"
+#import "dependsOnThreadFieldTypeParts.gql"
+#import "dependsOnLabelTypeParts.gql"
+#import "dateTimeParts.gql"

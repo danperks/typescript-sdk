@@ -1,0 +1,5 @@
+query searchKnowledgeSources($searchQuery: String!, $pageSize: Int, $options: SearchKnowledgeSourcesOptions) {
+  searchKnowledgeSources(searchQuery: $searchQuery, pageSize: $pageSize, options: $options) {
+    __typename
+  }
+}

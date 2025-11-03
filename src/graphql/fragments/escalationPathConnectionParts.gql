@@ -1,0 +1,9 @@
+fragment EscalationPathConnectionParts on EscalationPathConnection {
+  __typename
+  edges {
+  ...EscalationPathEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+}

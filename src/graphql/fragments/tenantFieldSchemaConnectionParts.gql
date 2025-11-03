@@ -1,0 +1,9 @@
+fragment TenantFieldSchemaConnectionParts on TenantFieldSchemaConnection {
+  __typename
+  edges {
+  ...TenantFieldSchemaEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+}

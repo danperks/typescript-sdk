@@ -1,0 +1,6 @@
+fragment MutationFieldErrorParts on MutationFieldError {
+  __typename
+  field
+  message
+  type
+}

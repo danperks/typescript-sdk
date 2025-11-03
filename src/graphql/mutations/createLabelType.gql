@@ -1,10 +1,16 @@
 mutation createLabelType($input: CreateLabelTypeInput!) {
   createLabelType(input: $input) {
+    __typename
     labelType {
-      ...LabelTypeParts
-    }
+    ...LabelTypeParts
+  }
     error {
-      ...MutationErrorParts
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "labelTypeParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

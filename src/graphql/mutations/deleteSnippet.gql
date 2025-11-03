@@ -1,0 +1,16 @@
+mutation deleteSnippet($input: DeleteSnippetInput!) {
+  deleteSnippet(input: $input) {
+    __typename
+    snippet {
+    ...SnippetParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "snippetParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

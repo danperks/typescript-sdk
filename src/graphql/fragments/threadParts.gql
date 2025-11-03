@@ -2,51 +2,377 @@ fragment ThreadParts on Thread {
   __typename
   id
   ref
-  externalId
   customer {
     id
-  }
-
-  status
-  statusDetail {
-    ...ThreadStatusDetailParts
-  }
-  statusChangedAt {
-    ...DateTimeParts
-  }
-
+    externalId
+    fullName
+    shortName
+    email {
+    email
+    isVerified
+}
+    avatarUrl
+    assignedToUser {
+    userId
+}
+    assignedAt {
+    unixTimestamp
+    iso8601
+}
+    company {
+    id
+    name
+    domainName
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+    contractValue
+    isDeleted
+    deletedBy {
+  __typename
+}
+}
+    isAnonymous
+    createdAt {
+    unixTimestamp
+    iso8601
+}
+    createdBy {
+  __typename
+}
+    updatedAt {
+    unixTimestamp
+    iso8601
+}
+    updatedBy {
+  __typename
+}
+    markedAsSpamAt {
+    unixTimestamp
+    iso8601
+}
+    markedAsSpamBy {
+  __typename
+}
+    identities {
+  __typename
+}
+    status
+    statusChangedAt {
+    unixTimestamp
+    iso8601
+}
+    lastIdleAt {
+    unixTimestamp
+    iso8601
+}
+}
   title
   description
   previewText
   priority
-  tenant {
-    ...TenantParts
-  }
-
-  labels {
-    ...LabelParts
-  }
-  threadFields {
-    ...ThreadFieldParts
-  }
-  assignedAt {
-    ...DateTimeParts
-  }
+  externalId
+  status
+  statusChangedAt {
+    unixTimestamp
+    iso8601
+}
+  statusChangedBy {
+  __typename
+}
+  statusDetail {
+  __typename
+}
   assignedTo {
-    ...ThreadAssigneeParts
-  }
-
+  __typename
+}
+  assignedAt {
+    unixTimestamp
+    iso8601
+}
+  additionalAssignees {
+  __typename
+}
+  labels {
+    id
+    labelType {
+    id
+    name
+    icon
+    color
+    type
+    description
+    position
+    externalId
+    isArchived
+    archivedBy {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+    createdAt {
+    unixTimestamp
+    iso8601
+}
+    createdBy {
+  __typename
+}
+    updatedAt {
+    unixTimestamp
+    iso8601
+}
+    updatedBy {
+  __typename
+}
+}
+  threadFields {
+    id
+    threadId
+    key
+    type
+    isAiGenerated
+    stringValue
+    booleanValue
+    createdAt {
+    unixTimestamp
+    iso8601
+}
+    createdBy {
+  __typename
+}
+    updatedAt {
+    unixTimestamp
+    iso8601
+}
+    updatedBy {
+  __typename
+}
+}
+  threadDiscussions {
+    id
+    threadId
+    title
+    resolvedAt {
+    unixTimestamp
+    iso8601
+}
+    createdAt {
+    unixTimestamp
+    iso8601
+}
+    createdBy {
+  __typename
+}
+    updatedAt {
+    unixTimestamp
+    iso8601
+}
+    updatedBy {
+  __typename
+}
+    channelDetails {
+  __typename
+}
+    type
+    slackTeamId
+    slackChannelId
+    slackChannelName
+    slackMessageLink
+    emailRecipients
+}
+  firstInboundMessageInfo {
+    timestamp {
+    unixTimestamp
+    iso8601
+}
+    messageSource
+}
+  firstOutboundMessageInfo {
+    timestamp {
+    unixTimestamp
+    iso8601
+}
+    messageSource
+}
+  lastInboundMessageInfo {
+    timestamp {
+    unixTimestamp
+    iso8601
+}
+    messageSource
+}
+  lastOutboundMessageInfo {
+    timestamp {
+    unixTimestamp
+    iso8601
+}
+    messageSource
+}
   createdAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   createdBy {
-    ...ActorParts
-  }
-
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   updatedBy {
-    ...ActorParts
-  }
+  __typename
+}
+  supportEmailAddresses
+  tenant {
+    id
+    name
+    externalId
+    url
+    source
+    tier {
+    id
+    name
+    externalId
+    color
+    isDefault
+    defaultPriority
+    defaultThreadPriority
+    isMachineTier
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+    tenantFields {
+    id
+    externalFieldId
+    value {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+    createdAt {
+    unixTimestamp
+    iso8601
+}
+    createdBy {
+  __typename
+}
+    updatedAt {
+    unixTimestamp
+    iso8601
+}
+    updatedBy {
+  __typename
+}
+}
+  tier {
+    id
+    name
+    externalId
+    color
+    isDefault
+    defaultPriority
+    defaultThreadPriority
+    isMachineTier
+    serviceLevelAgreements {
+    id
+    useBusinessHoursOnly
+    threadPriorityFilter
+    breachActions {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+    createdAt {
+    unixTimestamp
+    iso8601
+}
+    createdBy {
+  __typename
+}
+    updatedAt {
+    unixTimestamp
+    iso8601
+}
+    updatedBy {
+  __typename
+}
+}
+  serviceLevelAgreementStatusSummary {
+    firstResponseTime {
+  __typename
+}
+    nextResponseTime {
+  __typename
+}
+}
+  channel
+  channelDetails {
+  __typename
+}
+  surveyResponse {
+    id
+    sentiment
+    rating
+    surveyId
+    comment
+    respondedAt {
+    unixTimestamp
+    iso8601
+}
+    createdAt {
+    unixTimestamp
+    iso8601
+}
+    createdBy {
+  __typename
+}
+    updatedAt {
+    unixTimestamp
+    iso8601
+}
+    updatedBy {
+  __typename
+}
+}
+  escalationDetails {
+    escalationPath {
+    id
+    name
+    steps {
+  __typename
+}
+    description
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+    nextEscalationPathStep {
+  __typename
+}
+}
 }

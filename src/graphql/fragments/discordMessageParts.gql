@@ -1,0 +1,41 @@
+fragment DiscordMessageParts on DiscordMessage {
+  __typename
+  discordMessageId
+  markdownContent
+  attachments {
+    id
+    fileName
+    fileExtension
+    fileMimeType
+    type
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  lastEditedOnDiscordAt {
+    unixTimestamp
+    iso8601
+}
+  deletedOnDiscordAt {
+    unixTimestamp
+    iso8601
+}
+  discordMessageLink
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+}

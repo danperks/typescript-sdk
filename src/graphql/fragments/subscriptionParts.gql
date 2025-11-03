@@ -1,0 +1,12 @@
+fragment SubscriptionParts on Subscription {
+  __typename
+  threadChanges {
+    changeType
+}
+  userChanges {
+    changeType
+}
+  threadFieldSchemaChanges {
+    changeType
+}
+}

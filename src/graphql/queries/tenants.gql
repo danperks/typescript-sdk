@@ -1,13 +1,13 @@
 query tenants($first: Int, $after: String, $last: Int, $before: String) {
   tenants(first: $first, after: $after, last: $last, before: $before) {
-    edges {
-      cursor
-      node {
-        ...TenantParts
-      }
-    }
-    pageInfo {
-      ...PageInfoParts
-    }
+    ...TenantConnectionParts
   }
 }
+
+#import "tenantConnectionParts.gql"
+#import "tenantEdgeParts.gql"
+#import "tenantParts.gql"
+#import "tierParts.gql"
+#import "dateTimeParts.gql"
+#import "tenantFieldParts.gql"
+#import "pageInfoParts.gql"

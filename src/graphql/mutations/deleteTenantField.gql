@@ -1,0 +1,16 @@
+mutation deleteTenantField($input: DeleteTenantFieldInput!) {
+  deleteTenantField(input: $input) {
+    __typename
+    tenantField {
+    ...TenantFieldParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "tenantFieldParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

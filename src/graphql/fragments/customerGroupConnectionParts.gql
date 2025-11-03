@@ -1,0 +1,9 @@
+fragment CustomerGroupConnectionParts on CustomerGroupConnection {
+  __typename
+  edges {
+  ...CustomerGroupEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+}

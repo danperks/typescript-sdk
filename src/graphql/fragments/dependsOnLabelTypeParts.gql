@@ -1,0 +1,4 @@
+fragment DependsOnLabelTypeParts on DependsOnLabelType {
+  __typename
+  labelTypeId
+}

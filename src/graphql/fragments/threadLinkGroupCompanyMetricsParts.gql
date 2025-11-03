@@ -1,0 +1,6 @@
+fragment ThreadLinkGroupCompanyMetricsParts on ThreadLinkGroupCompanyMetrics {
+  __typename
+  noCompany {
+    totalCount
+}
+}

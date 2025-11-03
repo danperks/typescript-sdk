@@ -1,0 +1,7 @@
+fragment ServiceLevelAgreementStatusDetailCancelledParts on ServiceLevelAgreementStatusDetailCancelled {
+  __typename
+  cancelledAt {
+    unixTimestamp
+    iso8601
+}
+}

@@ -1,0 +1,11 @@
+mutation deleteMyServiceAuthorization($input: DeleteMyServiceAuthorizationInput!) {
+  deleteMyServiceAuthorization(input: $input) {
+    __typename
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

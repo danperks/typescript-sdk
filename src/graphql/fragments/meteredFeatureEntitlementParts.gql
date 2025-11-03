@@ -1,0 +1,7 @@
+fragment MeteredFeatureEntitlementParts on MeteredFeatureEntitlement {
+  __typename
+  feature
+  isEntitled
+  current
+  limit
+}

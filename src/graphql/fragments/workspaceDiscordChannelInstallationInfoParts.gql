@@ -1,0 +1,4 @@
+fragment WorkspaceDiscordChannelInstallationInfoParts on WorkspaceDiscordChannelInstallationInfo {
+  __typename
+  installationUrl
+}

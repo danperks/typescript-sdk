@@ -1,0 +1,7 @@
+query subscriptionEventTypes {
+  subscriptionEventTypes {
+    ...SubscriptionEventTypeParts
+  }
+}
+
+#import "subscriptionEventTypeParts.gql"

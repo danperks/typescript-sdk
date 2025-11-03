@@ -1,0 +1,7 @@
+fragment WorkspaceInviteEdgeParts on WorkspaceInviteEdge {
+  __typename
+  cursor
+  node {
+  ...WorkspaceInviteParts
+}
+}

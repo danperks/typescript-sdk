@@ -1,0 +1,16 @@
+mutation createTier($input: CreateTierInput!) {
+  createTier(input: $input) {
+    __typename
+    tier {
+    ...TierParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "tierParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

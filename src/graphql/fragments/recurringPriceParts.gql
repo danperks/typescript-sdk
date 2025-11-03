@@ -1,0 +1,6 @@
+fragment RecurringPriceParts on RecurringPrice {
+  __typename
+  billingIntervalUnit
+  billingIntervalCount
+  currency
+}

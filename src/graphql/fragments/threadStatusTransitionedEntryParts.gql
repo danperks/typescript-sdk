@@ -1,0 +1,11 @@
+fragment ThreadStatusTransitionedEntryParts on ThreadStatusTransitionedEntry {
+  __typename
+  previousStatus
+  previousStatusDetail {
+  __typename
+}
+  nextStatus
+  nextStatusDetail {
+  __typename
+}
+}

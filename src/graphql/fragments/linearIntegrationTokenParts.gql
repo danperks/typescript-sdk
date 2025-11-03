@@ -1,0 +1,4 @@
+fragment LinearIntegrationTokenParts on LinearIntegrationToken {
+  __typename
+  token
+}

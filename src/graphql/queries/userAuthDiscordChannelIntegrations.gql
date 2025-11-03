@@ -1,0 +1,11 @@
+query userAuthDiscordChannelIntegrations($first: Int, $after: String, $last: Int, $before: String) {
+  userAuthDiscordChannelIntegrations(first: $first, after: $after, last: $last, before: $before) {
+    ...UserAuthDiscordChannelIntegrationConnectionParts
+  }
+}
+
+#import "userAuthDiscordChannelIntegrationConnectionParts.gql"
+#import "userAuthDiscordChannelIntegrationEdgeParts.gql"
+#import "userAuthDiscordChannelIntegrationParts.gql"
+#import "dateTimeParts.gql"
+#import "pageInfoParts.gql"

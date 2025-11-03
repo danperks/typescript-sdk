@@ -1,0 +1,10 @@
+fragment ConnectedSlackChannelConnectionParts on ConnectedSlackChannelConnection {
+  __typename
+  pageInfo {
+  ...PageInfoParts
+}
+  edges {
+  ...ConnectedSlackChannelEdgeParts
+}
+  totalCount
+}

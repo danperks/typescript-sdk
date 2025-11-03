@@ -1,0 +1,7 @@
+query myLinearInstallationInfo($redirectUrl: String!) {
+  myLinearInstallationInfo(redirectUrl: $redirectUrl) {
+    ...UserLinearInstallationInfoParts
+  }
+}
+
+#import "userLinearInstallationInfoParts.gql"

@@ -1,0 +1,20 @@
+fragment ThreadEscalationDetailsParts on ThreadEscalationDetails {
+  __typename
+  escalationPath {
+    id
+    name
+    steps {
+  __typename
+}
+    description
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  nextEscalationPathStep {
+  __typename
+}
+}

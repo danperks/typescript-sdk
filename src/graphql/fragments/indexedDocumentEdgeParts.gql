@@ -1,0 +1,7 @@
+fragment IndexedDocumentEdgeParts on IndexedDocumentEdge {
+  __typename
+  cursor
+  node {
+  ...IndexedDocumentParts
+}
+}

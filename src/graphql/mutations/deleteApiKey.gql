@@ -1,0 +1,16 @@
+mutation deleteApiKey($input: DeleteApiKeyInput!) {
+  deleteApiKey(input: $input) {
+    __typename
+    apiKey {
+    ...ApiKeyParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "apiKeyParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

@@ -1,0 +1,16 @@
+mutation updateCustomerSurvey($input: UpdateCustomerSurveyInput!) {
+  updateCustomerSurvey(input: $input) {
+    __typename
+    customerSurvey {
+    ...CustomerSurveyParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "customerSurveyParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

@@ -1,6 +1,11 @@
 # @team-plain/typescript-sdk
 
-[Changelog](./CHANGELOG.md)
+## Documentation
+
+- 📖 [Getting Started](#plain-client) - Basic usage and examples
+- 🤖 [Code Generation Guide](./docs/CODEGEN.md) - How the auto-generation system works
+- 🔧 [Override System Guide](./docs/OVERRIDES_GUIDE.md) - Customize generated code
+- 📋 [Changelog](./CHANGELOG.md) - Version history and release notes
 
 ## Plain Client
 
@@ -140,6 +145,40 @@ if (webhookResult.error instanceof PlainWebhookSignatureVerificationError) {
   // webhookResult.data is now a typed object.
 }
 ```
+
+## Auto-Generated SDK (v6.0.0+)
+
+Starting from v6.0.0, this SDK is **auto-generated** from Plain's GraphQL schema, ensuring 100% API coverage.
+
+### What This Means for You
+
+- **Complete Coverage**: Every operation in Plain's API is available
+- **Always Up-to-Date**: Daily automated checks detect API changes
+- **Type Safety**: Full TypeScript types for all operations
+- **Backwards Compatible**: Existing code continues to work
+
+### Advanced Usage
+
+For custom field selection or operations not covered by the default methods, use `rawRequest` with typed document nodes:
+
+```ts
+import { CustomerByIdDocument } from '@team-plain/typescript-sdk';
+
+const result = await client.rawRequest({
+  query: CustomerByIdDocument,
+  variables: { customerId: 'c_123' }
+});
+```
+
+### Learn More
+
+See [CODEGEN.md](./docs/CODEGEN.md) for detailed documentation on:
+- How the generation system works
+- Customizing generated code
+- Creating override files
+- Troubleshooting
+
+For custom field selection, see [OVERRIDES_GUIDE.md](./docs/OVERRIDES_GUIDE.md)
 
 ## Contributing
 

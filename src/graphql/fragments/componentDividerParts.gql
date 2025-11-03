@@ -1,0 +1,5 @@
+fragment ComponentDividerParts on ComponentDivider {
+  __typename
+  dividerSpacingSize
+  spacingSize
+}

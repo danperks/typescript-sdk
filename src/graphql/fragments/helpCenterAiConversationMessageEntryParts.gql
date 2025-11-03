@@ -1,0 +1,7 @@
+fragment HelpCenterAiConversationMessageEntryParts on HelpCenterAiConversationMessageEntry {
+  __typename
+  helpCenterId
+  helpCenterAiConversationId
+  messageId
+  markdown
+}

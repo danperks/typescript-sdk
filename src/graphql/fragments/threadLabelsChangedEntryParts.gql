@@ -1,0 +1,21 @@
+fragment ThreadLabelsChangedEntryParts on ThreadLabelsChangedEntry {
+  __typename
+  previousLabels {
+    id
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  nextLabels {
+    id
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+}

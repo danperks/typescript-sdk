@@ -1,0 +1,23 @@
+fragment ThreadFieldSchemaChangeParts on ThreadFieldSchemaChange {
+  __typename
+  changeType
+  threadFieldSchema {
+    id
+    label
+    key
+    description
+    order
+    type
+    enumValues
+    defaultStringValue
+    defaultBooleanValue
+    isRequired
+    isAiAutoFillEnabled
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+}

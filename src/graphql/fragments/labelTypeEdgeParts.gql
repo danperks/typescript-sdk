@@ -1,0 +1,7 @@
+fragment LabelTypeEdgeParts on LabelTypeEdge {
+  __typename
+  cursor
+  node {
+  ...LabelTypeParts
+}
+}

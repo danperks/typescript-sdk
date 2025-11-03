@@ -1,0 +1,20 @@
+fragment HelpCenterArticleGroupParts on HelpCenterArticleGroup {
+  __typename
+  id
+  name
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+  slug
+}

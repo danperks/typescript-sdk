@@ -1,0 +1,16 @@
+mutation createEscalationPath($input: CreateEscalationPathInput!) {
+  createEscalationPath(input: $input) {
+    __typename
+    escalationPath {
+    ...EscalationPathParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "escalationPathParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

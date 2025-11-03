@@ -1,0 +1,12 @@
+fragment ThreadStatusDetailThreadLinkUpdatedParts on ThreadStatusDetailThreadLinkUpdated {
+  __typename
+  statusChangedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  linearIssueId
+}

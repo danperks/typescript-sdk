@@ -1,0 +1,11 @@
+fragment ThreadStatusDetailNewReplyParts on ThreadStatusDetailNewReply {
+  __typename
+  statusChangedAt {
+    unixTimestamp
+    iso8601
+}
+  newReplyAt {
+    unixTimestamp
+    iso8601
+}
+}

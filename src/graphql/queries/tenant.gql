@@ -3,3 +3,8 @@ query tenant($tenantId: ID!) {
     ...TenantParts
   }
 }
+
+#import "tenantParts.gql"
+#import "tierParts.gql"
+#import "dateTimeParts.gql"
+#import "tenantFieldParts.gql"

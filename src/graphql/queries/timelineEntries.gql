@@ -1,0 +1,11 @@
+query timelineEntries($customerId: ID!, $first: Int, $after: String, $last: Int, $before: String) {
+  timelineEntries(customerId: $customerId, first: $first, after: $after, last: $last, before: $before) {
+    ...TimelineEntryConnectionParts
+  }
+}
+
+#import "timelineEntryConnectionParts.gql"
+#import "timelineEntryEdgeParts.gql"
+#import "timelineEntryParts.gql"
+#import "dateTimeParts.gql"
+#import "pageInfoParts.gql"

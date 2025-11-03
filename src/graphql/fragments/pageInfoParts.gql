@@ -1,6 +1,7 @@
 fragment PageInfoParts on PageInfo {
-  hasNextPage
+  __typename
   hasPreviousPage
+  hasNextPage
   startCursor
   endCursor
 }

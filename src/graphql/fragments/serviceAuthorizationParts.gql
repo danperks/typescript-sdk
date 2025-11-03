@@ -1,0 +1,30 @@
+fragment ServiceAuthorizationParts on ServiceAuthorization {
+  __typename
+  id
+  serviceIntegration {
+    name
+    key
+}
+  status
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+  connectedAt {
+    unixTimestamp
+    iso8601
+}
+  connectedBy {
+  __typename
+}
+}

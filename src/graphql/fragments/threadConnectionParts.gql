@@ -1,0 +1,10 @@
+fragment ThreadConnectionParts on ThreadConnection {
+  __typename
+  pageInfo {
+  ...PageInfoParts
+}
+  edges {
+  ...ThreadEdgeParts
+}
+  totalCount
+}

@@ -1,0 +1,25 @@
+fragment WorkflowRuleParts on WorkflowRule {
+  __typename
+  id
+  name
+  payload
+  publishedAt {
+    unixTimestamp
+    iso8601
+}
+  order
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+}

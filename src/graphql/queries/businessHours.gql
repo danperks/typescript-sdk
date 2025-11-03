@@ -1,0 +1,11 @@
+query businessHours {
+  businessHours {
+    ...BusinessHoursParts
+  }
+}
+
+#import "businessHoursParts.gql"
+#import "businessHoursWeekDaysParts.gql"
+#import "businessHoursWeekDayParts.gql"
+#import "timeParts.gql"
+#import "dateTimeParts.gql"

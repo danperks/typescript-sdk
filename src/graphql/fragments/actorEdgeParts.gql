@@ -1,0 +1,7 @@
+fragment ActorEdgeParts on ActorEdge {
+  __typename
+  cursor
+  node {
+  __typename
+}
+}

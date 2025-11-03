@@ -1,0 +1,9 @@
+fragment ThreadDiscussionMessageConnectionParts on ThreadDiscussionMessageConnection {
+  __typename
+  edges {
+  ...ThreadDiscussionMessageEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+}

@@ -1,0 +1,35 @@
+fragment SlackReplyEntryParts on SlackReplyEntry {
+  __typename
+  slackMessageLink
+  slackWebMessageLink
+  customerId
+  text
+  attachments {
+    id
+    fileName
+    fileExtension
+    fileMimeType
+    type
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  lastEditedOnSlackAt {
+    unixTimestamp
+    iso8601
+}
+  deletedOnSlackAt {
+    unixTimestamp
+    iso8601
+}
+  reactions {
+    name
+    actors {
+  __typename
+}
+    imageUrl
+}
+}

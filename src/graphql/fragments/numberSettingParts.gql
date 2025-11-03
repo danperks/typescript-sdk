@@ -1,0 +1,9 @@
+fragment NumberSettingParts on NumberSetting {
+  __typename
+  code
+  numberValue
+  scope {
+    id
+    scopeType
+}
+}

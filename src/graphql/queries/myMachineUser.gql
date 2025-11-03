@@ -1,0 +1,11 @@
+query myMachineUser {
+  myMachineUser {
+    ...MachineUserParts
+  }
+}
+
+#import "machineUserParts.gql"
+#import "workspaceFileParts.gql"
+#import "fileSizeParts.gql"
+#import "workspaceFileDownloadUrlParts.gql"
+#import "dateTimeParts.gql"

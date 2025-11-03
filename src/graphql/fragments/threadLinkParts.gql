@@ -1,0 +1,25 @@
+fragment ThreadLinkParts on ThreadLink {
+  __typename
+  id
+  threadId
+  sourceId
+  sourceType
+  title
+  description
+  url
+  status
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+}

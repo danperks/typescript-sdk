@@ -3,17 +3,37 @@ fragment TierParts on Tier {
   id
   name
   externalId
+  color
+  isDefault
+  defaultPriority
   defaultThreadPriority
+  isMachineTier
+  serviceLevelAgreements {
+    id
+    useBusinessHoursOnly
+    threadPriorityFilter
+    breachActions {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
   createdAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   createdBy {
-    ...InternalActorParts
-  }
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   updatedBy {
-    ...InternalActorParts
-  }
+  __typename
+}
 }

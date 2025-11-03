@@ -1,0 +1,19 @@
+mutation sendThreadDiscussionMessage($input: SendThreadDiscussionMessageInput!) {
+  sendThreadDiscussionMessage(input: $input) {
+    __typename
+    threadDiscussionMessage {
+    ...ThreadDiscussionMessageParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "threadDiscussionMessageParts.gql"
+#import "attachmentParts.gql"
+#import "fileSizeParts.gql"
+#import "dateTimeParts.gql"
+#import "threadDiscussionMessageReactionParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

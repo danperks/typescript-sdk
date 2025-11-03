@@ -1,0 +1,8 @@
+query threadSlackUser($threadId: ID!, $slackUserId: ID!) {
+  threadSlackUser(threadId: $threadId, slackUserId: $slackUserId) {
+    ...SlackUserParts
+  }
+}
+
+#import "slackUserParts.gql"
+#import "dateTimeParts.gql"

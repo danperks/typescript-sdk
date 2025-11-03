@@ -1,0 +1,7 @@
+fragment RoleEdgeParts on RoleEdge {
+  __typename
+  cursor
+  node {
+  ...RoleParts
+}
+}

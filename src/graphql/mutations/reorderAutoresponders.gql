@@ -1,0 +1,16 @@
+mutation reorderAutoresponders($input: ReorderAutorespondersInput!) {
+  reorderAutoresponders(input: $input) {
+    __typename
+    autoresponders {
+    ...AutoresponderParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "autoresponderParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

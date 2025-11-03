@@ -3,10 +3,25 @@ fragment AttachmentParts on Attachment {
   id
   fileName
   fileSize {
-    ...FileSizeParts
-  }
+    bytes
+    kiloBytes
+    megaBytes
+}
   fileExtension
+  fileMimeType
+  type
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
 }

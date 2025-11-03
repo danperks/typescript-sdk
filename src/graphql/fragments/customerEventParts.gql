@@ -3,16 +3,21 @@ fragment CustomerEventParts on CustomerEvent {
   id
   customerId
   title
+  components {
+  __typename
+}
   createdAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   createdBy {
-    ...ActorParts
-  }
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   updatedBy {
-    ...ActorParts
-  }
+  __typename
+}
 }

@@ -1,0 +1,17 @@
+mutation upsertCustomerGroup($input: UpsertCustomerGroupInput!) {
+  upsertCustomerGroup(input: $input) {
+    __typename
+    customerGroup {
+    ...CustomerGroupParts
+  }
+    result
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "customerGroupParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

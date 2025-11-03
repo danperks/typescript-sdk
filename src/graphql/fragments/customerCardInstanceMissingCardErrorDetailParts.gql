@@ -1,0 +1,5 @@
+fragment CustomerCardInstanceMissingCardErrorDetailParts on CustomerCardInstanceMissingCardErrorDetail {
+  __typename
+  message
+  cardKey
+}

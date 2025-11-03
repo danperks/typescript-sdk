@@ -1,0 +1,22 @@
+query company($companyId: ID!) {
+  company(companyId: $companyId) {
+    ...CompanyParts
+  }
+}
+
+#import "companyParts.gql"
+#import "dateTimeParts.gql"
+#import "tierParts.gql"
+#import "userParts.gql"
+#import "roleParts.gql"
+#import "roleScopeDefinitionParts.gql"
+#import "roleScopeParts.gql"
+#import "slackUserIdentityParts.gql"
+#import "labelParts.gql"
+#import "labelTypeParts.gql"
+#import "savedThreadsViewParts.gql"
+#import "savedThreadsViewFilterParts.gql"
+#import "savedThreadsViewFilterThreadFieldParts.gql"
+#import "savedThreadsViewFilterTenantFieldParts.gql"
+#import "savedThreadsViewSortParts.gql"
+#import "threadsDisplayOptionsParts.gql"

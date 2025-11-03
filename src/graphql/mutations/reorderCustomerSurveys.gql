@@ -1,0 +1,16 @@
+mutation reorderCustomerSurveys($input: ReorderCustomerSurveysInput!) {
+  reorderCustomerSurveys(input: $input) {
+    __typename
+    customerSurveys {
+    ...CustomerSurveyParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "customerSurveyParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

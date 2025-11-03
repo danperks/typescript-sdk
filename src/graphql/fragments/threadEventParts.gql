@@ -1,18 +1,24 @@
 fragment ThreadEventParts on ThreadEvent {
+  __typename
   id
+  customerId
   threadId
   title
-  customerId
+  components {
+  __typename
+}
   createdAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   createdBy {
-    ...ActorParts
-  }
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   updatedBy {
-    ...ActorParts
-  }
+  __typename
+}
 }

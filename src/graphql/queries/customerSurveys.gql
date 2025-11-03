@@ -1,0 +1,11 @@
+query customerSurveys($first: Int, $after: String, $last: Int, $before: String) {
+  customerSurveys(first: $first, after: $after, last: $last, before: $before) {
+    ...CustomerSurveyConnectionParts
+  }
+}
+
+#import "customerSurveyConnectionParts.gql"
+#import "customerSurveyEdgeParts.gql"
+#import "customerSurveyParts.gql"
+#import "dateTimeParts.gql"
+#import "pageInfoParts.gql"

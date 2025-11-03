@@ -1,0 +1,9 @@
+fragment EmailAddressParts on EmailAddress {
+  __typename
+  email
+  isVerified
+  verifiedAt {
+    unixTimestamp
+    iso8601
+}
+}

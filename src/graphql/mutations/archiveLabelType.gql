@@ -1,11 +1,16 @@
 mutation archiveLabelType($input: ArchiveLabelTypeInput!) {
   archiveLabelType(input: $input) {
+    __typename
     labelType {
-      ...LabelTypeParts
-    }
-
+    ...LabelTypeParts
+  }
     error {
-      message
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "labelTypeParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

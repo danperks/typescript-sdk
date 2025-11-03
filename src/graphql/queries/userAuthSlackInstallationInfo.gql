@@ -1,0 +1,7 @@
+query userAuthSlackInstallationInfo($redirectUrl: String!, $slackTeamId: String) {
+  userAuthSlackInstallationInfo(redirectUrl: $redirectUrl, slackTeamId: $slackTeamId) {
+    ...UserAuthSlackInstallationInfoParts
+  }
+}
+
+#import "userAuthSlackInstallationInfoParts.gql"

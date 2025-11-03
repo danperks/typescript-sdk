@@ -1,0 +1,24 @@
+fragment RoleChangeCostParts on RoleChangeCost {
+  __typename
+  totalPrice {
+    amount
+    currency
+}
+  fullPrice {
+    amount
+    currency
+}
+  adjustedPrice {
+    amount
+    currency
+}
+  dueNowPrice {
+    amount
+    currency
+}
+  quantity
+  intervalUnit
+  intervalCount
+  addingSeatType
+  removingSeatType
+}

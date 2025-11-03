@@ -1,0 +1,10 @@
+query webhookVersions($first: Int, $after: String, $last: Int, $before: String) {
+  webhookVersions(first: $first, after: $after, last: $last, before: $before) {
+    ...WebhookVersionConnectionParts
+  }
+}
+
+#import "webhookVersionConnectionParts.gql"
+#import "webhookVersionEdgeParts.gql"
+#import "webhookVersionParts.gql"
+#import "pageInfoParts.gql"

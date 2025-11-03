@@ -1,22 +1,38 @@
 fragment LabelParts on Label {
   __typename
   id
-
   labelType {
-    ...LabelTypeParts
-  }
-
+    id
+    name
+    icon
+    color
+    type
+    description
+    position
+    externalId
+    isArchived
+    archivedBy {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
   createdAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   createdBy {
-    ...ActorParts
-  }
-
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
   updatedBy {
-    ...ActorParts
-  }
+  __typename
+}
 }

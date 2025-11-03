@@ -1,0 +1,17 @@
+mutation bulkUpsertThreadFields($input: BulkUpsertThreadFieldsInput!) {
+  bulkUpsertThreadFields(input: $input) {
+    __typename
+    results {
+    ...BulkUpsertThreadFieldResultParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "bulkUpsertThreadFieldResultParts.gql"
+#import "threadFieldParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

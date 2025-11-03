@@ -1,0 +1,4 @@
+fragment SlackMessageEntryRelatedThreadParts on SlackMessageEntryRelatedThread {
+  __typename
+  threadId
+}

@@ -1,0 +1,16 @@
+mutation updateCustomerGroup($input: UpdateCustomerGroupInput!) {
+  updateCustomerGroup(input: $input) {
+    __typename
+    customerGroup {
+    ...CustomerGroupParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "customerGroupParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

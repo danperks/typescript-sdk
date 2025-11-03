@@ -1,0 +1,21 @@
+fragment AttachmentDownloadUrlParts on AttachmentDownloadUrl {
+  __typename
+  attachment {
+    id
+    fileName
+    fileExtension
+    fileMimeType
+    type
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  downloadUrl
+  expiresAt {
+    unixTimestamp
+    iso8601
+}
+}

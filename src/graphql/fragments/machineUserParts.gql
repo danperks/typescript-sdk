@@ -4,7 +4,40 @@ fragment MachineUserParts on MachineUser {
   fullName
   publicName
   description
+  type
+  avatar {
+    id
+    fileName
+    fileExtension
+    fileMimeType
+    visibility
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  createdBy {
+  __typename
+}
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
   updatedAt {
-    ...DateTimeParts
-  }
+    unixTimestamp
+    iso8601
+}
+  isDeleted
+  deletedAt {
+    unixTimestamp
+    iso8601
+}
+  deletedBy {
+  __typename
+}
 }

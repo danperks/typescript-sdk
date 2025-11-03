@@ -1,0 +1,11 @@
+query workflowRules($first: Int, $after: String, $last: Int, $before: String) {
+  workflowRules(first: $first, after: $after, last: $last, before: $before) {
+    ...WorkflowRuleConnectionParts
+  }
+}
+
+#import "workflowRuleConnectionParts.gql"
+#import "workflowRuleEdgeParts.gql"
+#import "workflowRuleParts.gql"
+#import "dateTimeParts.gql"
+#import "pageInfoParts.gql"

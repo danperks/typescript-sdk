@@ -1,0 +1,4 @@
+fragment WorkspaceChatSettingsParts on WorkspaceChatSettings {
+  __typename
+  isEnabled
+}

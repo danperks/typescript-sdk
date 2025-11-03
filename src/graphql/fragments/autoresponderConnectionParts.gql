@@ -1,0 +1,9 @@
+fragment AutoresponderConnectionParts on AutoresponderConnection {
+  __typename
+  edges {
+  ...AutoresponderEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+}

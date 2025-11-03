@@ -1,0 +1,31 @@
+fragment HelpCenterPortalSettingsThreadDetailsParts on HelpCenterPortalSettingsThreadDetails {
+  __typename
+  labelTypes {
+    id
+    name
+    icon
+    color
+    type
+    description
+    position
+    externalId
+    isArchived
+    archivedBy {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  priority
+  assignees {
+  __typename
+}
+  threadFields {
+    selectedStringValue
+    selectedBooleanValue
+}
+}

@@ -1,10 +1,19 @@
 mutation upsertTenant($input: UpsertTenantInput!) {
   upsertTenant(input: $input) {
+    __typename
     tenant {
-      ...TenantParts
-    }
+    ...TenantParts
+  }
+    result
     error {
-      ...MutationErrorParts
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "tenantParts.gql"
+#import "tierParts.gql"
+#import "dateTimeParts.gql"
+#import "tenantFieldParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

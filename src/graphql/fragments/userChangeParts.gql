@@ -1,0 +1,22 @@
+fragment UserChangeParts on UserChange {
+  __typename
+  changeType
+  user {
+    id
+    fullName
+    publicName
+    avatarUrl
+    email
+    status
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+    isDeleted
+    deletedBy {
+  __typename
+}
+}
+}

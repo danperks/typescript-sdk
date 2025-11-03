@@ -1,0 +1,18 @@
+mutation updateWorkspaceEmailSettings($input: UpdateWorkspaceEmailSettingsInput!) {
+  updateWorkspaceEmailSettings(input: $input) {
+    __typename
+    workspaceEmailSettings {
+    ...WorkspaceEmailSettingsParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "workspaceEmailSettingsParts.gql"
+#import "workspaceEmailDomainSettingsParts.gql"
+#import "dnsRecordParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

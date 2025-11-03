@@ -1,0 +1,5 @@
+fragment SavedThreadsViewSortParts on SavedThreadsViewSort {
+  __typename
+  field
+  direction
+}

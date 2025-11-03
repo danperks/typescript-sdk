@@ -1,0 +1,12 @@
+mutation deleteGithubUserAuthIntegration {
+  deleteGithubUserAuthIntegration {
+    __typename
+    deletedIntegrationId
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

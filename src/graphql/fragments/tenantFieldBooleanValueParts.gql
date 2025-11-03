@@ -1,0 +1,4 @@
+fragment TenantFieldBooleanValueParts on TenantFieldBooleanValue {
+  __typename
+  booleanValue
+}

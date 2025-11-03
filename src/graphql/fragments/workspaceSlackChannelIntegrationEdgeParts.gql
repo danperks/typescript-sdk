@@ -1,0 +1,7 @@
+fragment WorkspaceSlackChannelIntegrationEdgeParts on WorkspaceSlackChannelIntegrationEdge {
+  __typename
+  cursor
+  node {
+  ...WorkspaceSlackChannelIntegrationParts
+}
+}

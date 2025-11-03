@@ -1,0 +1,4 @@
+fragment PermissionsParts on Permissions {
+  __typename
+  permissions
+}

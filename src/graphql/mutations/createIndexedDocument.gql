@@ -1,0 +1,17 @@
+mutation createIndexedDocument($input: CreateIndexedDocumentInput!) {
+  createIndexedDocument(input: $input) {
+    __typename
+    error {
+    ...MutationErrorParts
+  }
+    indexedDocument {
+    ...IndexedDocumentParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"
+#import "indexedDocumentParts.gql"
+#import "labelTypeParts.gql"
+#import "dateTimeParts.gql"

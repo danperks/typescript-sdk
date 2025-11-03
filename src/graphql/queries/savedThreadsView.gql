@@ -1,0 +1,13 @@
+query savedThreadsView($savedThreadsViewId: ID!) {
+  savedThreadsView(savedThreadsViewId: $savedThreadsViewId) {
+    ...SavedThreadsViewParts
+  }
+}
+
+#import "savedThreadsViewParts.gql"
+#import "savedThreadsViewFilterParts.gql"
+#import "savedThreadsViewFilterThreadFieldParts.gql"
+#import "savedThreadsViewFilterTenantFieldParts.gql"
+#import "dateTimeParts.gql"
+#import "savedThreadsViewSortParts.gql"
+#import "threadsDisplayOptionsParts.gql"

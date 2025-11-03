@@ -1,0 +1,16 @@
+mutation createWorkspaceCursorIntegration($input: CreateWorkspaceCursorIntegrationInput!) {
+  createWorkspaceCursorIntegration(input: $input) {
+    __typename
+    integration {
+    ...WorkspaceCursorIntegrationParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "workspaceCursorIntegrationParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

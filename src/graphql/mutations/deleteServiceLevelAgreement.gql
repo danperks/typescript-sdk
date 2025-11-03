@@ -1,0 +1,14 @@
+mutation deleteServiceLevelAgreement($input: DeleteServiceLevelAgreementInput!) {
+  deleteServiceLevelAgreement(input: $input) {
+    __typename
+    serviceLevelAgreement {
+    ...ServiceLevelAgreementParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

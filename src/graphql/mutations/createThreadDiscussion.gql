@@ -1,0 +1,16 @@
+mutation createThreadDiscussion($input: CreateThreadDiscussionInput!) {
+  createThreadDiscussion(input: $input) {
+    __typename
+    threadDiscussion {
+    ...ThreadDiscussionParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "threadDiscussionParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

@@ -1,0 +1,19 @@
+mutation deleteMachineUser($input: DeleteMachineUserInput!) {
+  deleteMachineUser(input: $input) {
+    __typename
+    machineUser {
+    ...MachineUserParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "machineUserParts.gql"
+#import "workspaceFileParts.gql"
+#import "fileSizeParts.gql"
+#import "workspaceFileDownloadUrlParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

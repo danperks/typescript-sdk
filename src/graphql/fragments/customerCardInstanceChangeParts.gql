@@ -1,0 +1,15 @@
+fragment CustomerCardInstanceChangeParts on CustomerCardInstanceChange {
+  __typename
+  changeType
+  customerCardInstance {
+    id
+    customerId
+    threadId
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+}

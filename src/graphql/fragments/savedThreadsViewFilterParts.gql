@@ -1,0 +1,58 @@
+fragment SavedThreadsViewFilterParts on SavedThreadsViewFilter {
+  __typename
+  statuses
+  statusDetails
+  priorities
+  assignedToUser
+  participants
+  customerGroups
+  companies
+  tenants
+  tiers
+  labelTypeIds
+  messageSource
+  supportEmailAddresses
+  slaTypes
+  slaStatuses
+  threadFields {
+    key
+    stringValue
+    booleanValue
+}
+  tenantFields {
+    externalFieldId
+    stringValue
+    booleanValue
+    numberValue
+    stringArrayValue
+}
+  threadLinkGroupIds
+  createdAtFilter {
+    after
+    before
+}
+  sort {
+    field
+    direction
+}
+  displayOptions {
+    hasStatus
+    hasCustomer
+    hasCompany
+    hasPreviewText
+    hasTier
+    hasCustomerGroups
+    hasLabels
+    hasLinearIssues
+    hasJiraIssues
+    hasLinkedThreads
+    hasServiceLevelAgreements
+    hasChannels
+    hasLastUpdated
+    hasAssignees
+    hasRef
+    hasIssueTrackerIssues
+}
+  groupBy
+  layout
+}

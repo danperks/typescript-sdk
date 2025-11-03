@@ -1,0 +1,11 @@
+mutation markThreadDiscussionAsResolved($input: MarkThreadDiscussionAsResolvedInput!) {
+  markThreadDiscussionAsResolved(input: $input) {
+    __typename
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

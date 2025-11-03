@@ -3,3 +3,6 @@ query labelType($labelTypeId: ID!) {
     ...LabelTypeParts
   }
 }
+
+#import "labelTypeParts.gql"
+#import "dateTimeParts.gql"

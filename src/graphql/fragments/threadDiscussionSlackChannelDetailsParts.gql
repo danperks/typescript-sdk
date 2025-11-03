@@ -1,0 +1,7 @@
+fragment ThreadDiscussionSlackChannelDetailsParts on ThreadDiscussionSlackChannelDetails {
+  __typename
+  slackTeamId
+  slackChannelId
+  slackChannelName
+  slackMessageLink
+}

@@ -1,0 +1,18 @@
+mutation createThreadFieldSchema($input: CreateThreadFieldSchemaInput!) {
+  createThreadFieldSchema(input: $input) {
+    __typename
+    threadFieldSchema {
+    ...ThreadFieldSchemaParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "threadFieldSchemaParts.gql"
+#import "dependsOnThreadFieldTypeParts.gql"
+#import "dependsOnLabelTypeParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

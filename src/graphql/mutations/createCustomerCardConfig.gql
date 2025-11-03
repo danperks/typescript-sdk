@@ -1,10 +1,17 @@
 mutation createCustomerCardConfig($input: CreateCustomerCardConfigInput!) {
   createCustomerCardConfig(input: $input) {
+    __typename
     customerCardConfig {
-      ...CustomerCardConfigParts
-    }
+    ...CustomerCardConfigParts
+  }
     error {
-      ...MutationErrorParts
-    }
+    ...MutationErrorParts
+  }
   }
 }
+
+#import "customerCardConfigParts.gql"
+#import "customerCardConfigApiHeaderParts.gql"
+#import "dateTimeParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

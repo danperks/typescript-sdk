@@ -1,0 +1,15 @@
+mutation createUserAccount($input: CreateUserAccountInput!) {
+  createUserAccount(input: $input) {
+    __typename
+    userAccount {
+    ...UserAccountParts
+  }
+    error {
+    ...MutationErrorParts
+  }
+  }
+}
+
+#import "userAccountParts.gql"
+#import "mutationErrorParts.gql"
+#import "mutationFieldErrorParts.gql"

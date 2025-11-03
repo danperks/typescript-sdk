@@ -1,0 +1,4 @@
+fragment HelpCenterAuthMechanismWorkosAuthkitParts on HelpCenterAuthMechanismWorkosAuthkit {
+  __typename
+  type
+}

@@ -1,0 +1,7 @@
+query workspaceDiscordChannelInstallationInfo($redirectUrl: String!) {
+  workspaceDiscordChannelInstallationInfo(redirectUrl: $redirectUrl) {
+    ...WorkspaceDiscordChannelInstallationInfoParts
+  }
+}
+
+#import "workspaceDiscordChannelInstallationInfoParts.gql"

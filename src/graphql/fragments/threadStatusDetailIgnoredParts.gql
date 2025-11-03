@@ -1,0 +1,7 @@
+fragment ThreadStatusDetailIgnoredParts on ThreadStatusDetailIgnored {
+  __typename
+  statusChangedAt {
+    unixTimestamp
+    iso8601
+}
+}

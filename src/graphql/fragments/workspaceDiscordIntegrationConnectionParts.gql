@@ -1,0 +1,9 @@
+fragment WorkspaceDiscordIntegrationConnectionParts on WorkspaceDiscordIntegrationConnection {
+  __typename
+  edges {
+  ...WorkspaceDiscordIntegrationEdgeParts
+}
+  pageInfo {
+  ...PageInfoParts
+}
+}

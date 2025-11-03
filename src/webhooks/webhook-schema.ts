@@ -310,6 +310,7 @@ export interface WebhooksSchemaDefinition {
     | "thread.thread_field_updated"
     | "thread.thread_field_deleted"
     | "thread.service_level_agreement_status_transitioned"
+    | "thread.thread_tenant_updated"
     | "customer.customer_created"
     | "customer.customer_updated"
     | "customer.customer_deleted"
@@ -639,6 +640,7 @@ export interface LabelType {
   isArchived?: boolean;
   archivedAt: Datetime | null;
   archivedBy: InternalActor | null;
+  externalId?: string | null;
   createdAt: Datetime;
   createdBy: InternalActor;
   updatedAt: Datetime;

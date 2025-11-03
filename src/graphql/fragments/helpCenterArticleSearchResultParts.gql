@@ -1,0 +1,48 @@
+fragment HelpCenterArticleSearchResultParts on HelpCenterArticleSearchResult {
+  __typename
+  content
+  helpCenterArticle {
+    id
+    title
+    description
+    contentHtml
+    slug
+    status
+    statusChangedBy {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+  helpCenter {
+    id
+    type
+    publicName
+    internalName
+    description
+    headCustomJs
+    bodyCustomJs
+    isChatEnabled
+    color
+    authMechanism {
+  __typename
+}
+    publishedBy {
+  __typename
+}
+    isDeleted
+    deletedBy {
+  __typename
+}
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+}
+}

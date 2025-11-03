@@ -1,0 +1,11 @@
+query tenantFieldSchemas($filters: TenantFieldSchemasFilter, $first: Int, $after: String, $last: Int, $before: String) {
+  tenantFieldSchemas(filters: $filters, first: $first, after: $after, last: $last, before: $before) {
+    ...TenantFieldSchemaConnectionParts
+  }
+}
+
+#import "tenantFieldSchemaConnectionParts.gql"
+#import "tenantFieldSchemaEdgeParts.gql"
+#import "tenantFieldSchemaParts.gql"
+#import "dateTimeParts.gql"
+#import "pageInfoParts.gql"

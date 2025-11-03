@@ -1,21 +1,25 @@
 fragment WebhookTargetParts on WebhookTarget {
+  __typename
   id
   url
-  isEnabled
   description
-  createdAt {
-    ...DateTimeParts
-  }
-  createdBy {
-    ...ActorParts
-  }
-  updatedAt {
-    ...DateTimeParts
-  }
-  updatedBy {
-    ...ActorParts
-  }
   eventSubscriptions {
-    ...WebhookTargetEventSubscriptionParts
-  }
+    eventType
+}
+  version
+  isEnabled
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
 }

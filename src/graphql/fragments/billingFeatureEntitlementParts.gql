@@ -1,0 +1,5 @@
+fragment BillingFeatureEntitlementParts on BillingFeatureEntitlement {
+  __typename
+  feature
+  isEntitled
+}

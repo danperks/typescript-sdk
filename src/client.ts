@@ -1,4 +1,4 @@
-import type { VariablesOf } from '@graphql-typed-document-node/core';
+import type { VariablesOf, TypedDocumentNode } from '@graphql-typed-document-node/core';
 
 import type { Context } from './context';
 import type { PlainSDKError } from './error';
@@ -151,16 +151,24 @@ export class PlainClient {
   }
 
   /**
-   * If you need to do something custom you can use this method to do
+   * If you need to do something custom you can use this method.
+   * Supports both raw string queries and typed document nodes.
    */
-  async rawRequest(args: {
-    query: string;
-    variables: Record<string, unknown>;
-  }): SDKResult<unknown> {
+  async rawRequest<TResult = unknown, TVariables = Record<string, unknown>>(
+    args:
+      | {
+          query: string;
+          variables?: Record<string, unknown>;
+        }
+      | {
+          query: TypedDocumentNode<TResult, TVariables>;
+          variables?: TVariables;
+        }
+  ): SDKResult<TResult> {
     return request(this.#ctx, {
       query: args.query,
       variables: args.variables,
-    });
+    }) as SDKResult<TResult>;
   }
 
   /**

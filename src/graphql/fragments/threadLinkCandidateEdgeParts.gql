@@ -1,0 +1,7 @@
+fragment ThreadLinkCandidateEdgeParts on ThreadLinkCandidateEdge {
+  __typename
+  cursor
+  node {
+  ...ThreadLinkCandidateParts
+}
+}

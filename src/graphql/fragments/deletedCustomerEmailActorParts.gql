@@ -1,0 +1,4 @@
+fragment DeletedCustomerEmailActorParts on DeletedCustomerEmailActor {
+  __typename
+  customerId
+}

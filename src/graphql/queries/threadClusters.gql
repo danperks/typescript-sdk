@@ -1,0 +1,9 @@
+query threadClusters($variant: String) {
+  threadClusters(variant: $variant) {
+    ...ThreadClusterParts
+  }
+}
+
+#import "threadClusterParts.gql"
+#import "dateTimeParts.gql"
+#import "minimalThreadWithDistanceParts.gql"

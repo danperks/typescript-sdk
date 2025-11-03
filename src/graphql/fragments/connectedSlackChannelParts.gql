@@ -1,0 +1,35 @@
+fragment ConnectedSlackChannelParts on ConnectedSlackChannel {
+  __typename
+  id
+  slackTeamId
+  slackChannelId
+  name
+  channelType
+  isEnabled
+  isPrivate
+  createdAt {
+    unixTimestamp
+    iso8601
+}
+  createdBy {
+  __typename
+}
+  updatedAt {
+    unixTimestamp
+    iso8601
+}
+  updatedBy {
+  __typename
+}
+  threadChannelAssociations {
+    id
+    companyId
+    createdBy {
+  __typename
+}
+    updatedBy {
+  __typename
+}
+    connectedSlackChannelId
+}
+}

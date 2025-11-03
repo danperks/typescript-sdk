@@ -1,0 +1,7 @@
+fragment PerSeatRecurringPriceParts on PerSeatRecurringPrice {
+  __typename
+  billingIntervalUnit
+  billingIntervalCount
+  currency
+  perSeatAmount
+}

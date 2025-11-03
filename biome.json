@@ -27,13 +27,19 @@
       "biome.json",
       "vitest.*.js",
       "src/**/*.ts",
-      "src/**/*.gql"
+      "src/**/*.gql",
+      "scripts/**/*.ts"
     ],
     "ignore": [
       "dist/**",
       "node_modules/**",
       "src/graphql/types.ts",
-      "src/webhooks/webhook-schema.ts"
+      "src/webhooks/webhook-schema.ts",
+      "src/client.generated.ts",
+      "src/graphql/fragments/*.gql",
+      "src/graphql/mutations/*.gql",
+      "src/graphql/queries/*.gql",
+      "src/graphql/**/*.override.gql"
     ]
   },
   "linter": {

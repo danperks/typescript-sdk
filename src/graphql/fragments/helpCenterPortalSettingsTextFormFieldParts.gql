@@ -1,0 +1,14 @@
+fragment HelpCenterPortalSettingsTextFormFieldParts on HelpCenterPortalSettingsTextFormField {
+  __typename
+  id
+  type
+  label
+  placeholder
+  isRequired
+  threadDetails {
+    priority
+    assignees {
+  __typename
+}
+}
+}
