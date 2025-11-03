@@ -26,26 +26,27 @@ import {
   CreateWebhookTargetDocument,
   CustomerByEmailDocument,
   CustomerByExternalIdDocument,
-  CustomerByIdDocument,
+  CustomerDocument,
   type CustomerCardConfigPartsFragment,
   CustomerCustomerGroupsDocument,
   type CustomerEventPartsFragment,
-  CustomerGroupByIdDocument,
+  CustomerGroupDocument,
   type CustomerGroupMembershipPartsFragment,
   type CustomerGroupPartsFragment,
   CustomerGroupsDocument,
   type CustomerPartsFragment,
   type CustomerTenantMembershipPartsFragment,
-  CustomerTenantsDocument,
   CustomersDocument,
   DeleteCustomerCardConfigDocument,
   DeleteCustomerDocument,
   DeleteThreadFieldDocument,
   DeleteWebhookTargetDocument,
   type EmailPartsFragment,
-  IndexDocumentDocument,
+  CreateIndexedDocumentDocument,
+  IndexedDocumentsDocument,
   type IndexedDocumentPartsFragment,
-  type KnowledgeSourcePartsFragment,
+  type KnowledgeSourceSitemapPartsFragment,
+  type KnowledgeSourceUrlPartsFragment,
   type LabelPartsFragment,
   LabelTypeDocument,
   type LabelTypePartsFragment,
@@ -97,7 +98,7 @@ import {
   UpsertTenantDocument,
   UpsertThreadFieldDocument,
   UserByEmailDocument,
-  UserByIdDocument,
+  UserDocument,
   type UserPartsFragment,
   WebhookTargetDocument,
   type WebhookTargetPartsFragment,
@@ -204,10 +205,10 @@ export class PlainClient {
    * Get a user by id
    */
   async getUserById(
-    variables: VariablesOf<typeof UserByIdDocument>
+    variables: VariablesOf<typeof UserDocument>
   ): SDKResult<UserPartsFragment | null> {
     const res = await request(this.#ctx, {
-      query: UserByIdDocument,
+      query: UserDocument,
       variables,
     });
 
@@ -238,10 +239,10 @@ export class PlainClient {
    * If the customer is not found this will return null.
    */
   async getCustomerById(
-    variables: VariablesOf<typeof CustomerByIdDocument>
+    variables: VariablesOf<typeof CustomerDocument>
   ): SDKResult<CustomerPartsFragment | null> {
     const res = await request(this.#ctx, {
-      query: CustomerByIdDocument,
+      query: CustomerDocument,
       variables,
     });
 
@@ -332,10 +333,10 @@ export class PlainClient {
    * If the customer group is not found this will return null.
    */
   async getCustomerGroupById(
-    variables: VariablesOf<typeof CustomerGroupByIdDocument>
+    variables: VariablesOf<typeof CustomerGroupDocument>
   ): SDKResult<CustomerGroupPartsFragment | null> {
     const res = await request(this.#ctx, {
-      query: CustomerGroupByIdDocument,
+      query: CustomerGroupDocument,
       variables,
     });
 
@@ -416,13 +417,13 @@ export class PlainClient {
   }
 
   async getCustomerTenantMemberships(
-    variables: VariablesOf<typeof CustomerTenantsDocument>
+    variables: VariablesOf<typeof CustomerDocument>
   ): SDKResult<{
     tenantMemberships: CustomerTenantMembershipPartsFragment[];
     pageInfo: PageInfo | null;
   }> {
     const res = await request(this.#ctx, {
-      query: CustomerTenantsDocument,
+      query: CustomerDocument,
       variables,
     });
 
@@ -1203,10 +1204,10 @@ export class PlainClient {
   }
 
   async indexDocument(
-    input: VariablesOf<typeof IndexDocumentDocument>['input']
+    input: VariablesOf<typeof CreateIndexedDocumentDocument>['input']
   ): SDKResult<IndexedDocumentPartsFragment> {
     const res = await request(this.#ctx, {
-      query: IndexDocumentDocument,
+      query: CreateIndexedDocumentDocument,
       variables: {
         input,
       },

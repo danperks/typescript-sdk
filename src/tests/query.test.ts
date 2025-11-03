@@ -4,7 +4,7 @@ import { describe, expect, test } from 'vitest';
 import { PlainClient } from '..';
 import type { PlainSDKError } from '../error';
 import type { PlainGraphQLError } from '../graphql-utlities';
-import { CustomerByIdDocument, type CustomerPartsFragment } from '../graphql/types';
+import { CustomerDocument, type CustomerPartsFragment } from '../graphql/types';
 import { testHelpers } from './test-helpers';
 
 describe('query test - customer by id', () => {
@@ -58,7 +58,7 @@ describe('query test - customer by id', () => {
     expectRequest({
       apiKey: 'abc',
       responseBody: {
-        query: print(CustomerByIdDocument),
+        query: print(CustomerDocument),
         variables: { customerId: customerId },
       },
     });
@@ -89,7 +89,7 @@ describe('query test - customer by id', () => {
     expectRequest({
       apiKey: '123',
       responseBody: {
-        query: print(CustomerByIdDocument),
+        query: print(CustomerDocument),
         variables: { customerId: customerId },
       },
     });
@@ -136,7 +136,7 @@ describe('query test - customer by id', () => {
     expectRequest({
       apiKey: '456',
       responseBody: {
-        query: print(CustomerByIdDocument),
+        query: print(CustomerDocument),
         variables: {},
       },
     });

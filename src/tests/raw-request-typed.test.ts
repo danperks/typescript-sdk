@@ -1,7 +1,7 @@
 import { print } from 'graphql';
 import { describe, expect, test } from 'vitest';
 import { PlainClient } from '..';
-import { CustomerByIdDocument, type CustomerPartsFragment } from '../graphql/types';
+import { CustomerDocument, type CustomerPartsFragment } from '../graphql/types';
 import { testHelpers } from './test-helpers';
 
 describe('Enhanced rawRequest with TypedDocumentNode', () => {
@@ -53,14 +53,14 @@ describe('Enhanced rawRequest with TypedDocumentNode', () => {
     
     // Use rawRequest with typed document node
     const result = await client.rawRequest({
-      query: CustomerByIdDocument,
+      query: CustomerDocument,
       variables: { customerId },
     });
 
     expectRequest({
       apiKey: 'abc',
       responseBody: {
-        query: print(CustomerByIdDocument),
+        query: print(CustomerDocument),
         variables: { customerId },
       },
     });
