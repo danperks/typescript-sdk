@@ -24,3 +24,6 @@ docs
 
 # SDK generation cache and reports (generated files are committed)
 .sdk/
+
+# pnpm
+.pnpm-store/
