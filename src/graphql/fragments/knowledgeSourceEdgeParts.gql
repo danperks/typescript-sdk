@@ -1,7 +1,0 @@
-fragment KnowledgeSourceEdgeParts on KnowledgeSourceEdge {
-  __typename
-  cursor
-  node {
-  __typename
-}
-}

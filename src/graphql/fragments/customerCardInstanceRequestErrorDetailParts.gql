@@ -1,5 +1,0 @@
-fragment CustomerCardInstanceRequestErrorDetailParts on CustomerCardInstanceRequestErrorDetail {
-  __typename
-  message
-  errorCode
-}

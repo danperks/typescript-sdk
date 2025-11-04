@@ -1,9 +1,0 @@
-fragment HelpCenterArticleConnectionParts on HelpCenterArticleConnection {
-  __typename
-  edges {
-  ...HelpCenterArticleEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

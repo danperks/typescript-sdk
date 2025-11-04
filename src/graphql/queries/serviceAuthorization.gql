@@ -1,8 +1,0 @@
-query serviceAuthorization($serviceAuthorizationId: ID!) {
-  serviceAuthorization(serviceAuthorizationId: $serviceAuthorizationId) {
-    ...ServiceAuthorizationParts
-  }
-}
-
-#import "serviceAuthorizationParts.gql"
-#import "dateTimeParts.gql"

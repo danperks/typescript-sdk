@@ -1,9 +1,0 @@
-query helpCenterIndex($id: ID!) {
-  helpCenterIndex(id: $id) {
-    ...HelpCenterIndexParts
-  }
-}
-
-#import "helpCenterIndexParts.gql"
-#import "helpCenterIndexItemParts.gql"
-#import "dateTimeParts.gql"

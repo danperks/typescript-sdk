@@ -1,7 +1,0 @@
-query myUserAccount {
-  myUserAccount {
-    ...UserAccountParts
-  }
-}
-
-#import "userAccountParts.gql"

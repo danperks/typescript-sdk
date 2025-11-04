@@ -1,6 +1,0 @@
-fragment ThreadLinkGroupParts on ThreadLinkGroup {
-  __typename
-  id
-  defaultViewRank
-  currentViewRank
-}

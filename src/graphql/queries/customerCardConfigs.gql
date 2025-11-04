@@ -1,9 +1,0 @@
-query customerCardConfigs {
-  customerCardConfigs {
-    ...CustomerCardConfigParts
-  }
-}
-
-#import "customerCardConfigParts.gql"
-#import "customerCardConfigApiHeaderParts.gql"
-#import "dateTimeParts.gql"

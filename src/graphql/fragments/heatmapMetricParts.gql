@@ -1,9 +1,0 @@
-fragment HeatmapMetricParts on HeatmapMetric {
-  __typename
-  days {
-    percentage
-    total
-    threadIds
-    messageCount
-}
-}

@@ -1,9 +1,0 @@
-fragment CompanySearchResultConnectionParts on CompanySearchResultConnection {
-  __typename
-  edges {
-  ...CompanySearchResultEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

@@ -1,7 +1,0 @@
-fragment TierMembershipEdgeParts on TierMembershipEdge {
-  __typename
-  cursor
-  node {
-  __typename
-}
-}

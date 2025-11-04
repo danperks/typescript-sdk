@@ -1,7 +1,0 @@
-fragment AiAgentFeedbackDetailsParts on AiAgentFeedbackDetails {
-  __typename
-  reason
-  comment
-  threadId
-  timelineEntryId
-}

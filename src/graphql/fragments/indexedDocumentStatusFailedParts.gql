@@ -1,8 +1,0 @@
-fragment IndexedDocumentStatusFailedParts on IndexedDocumentStatusFailed {
-  __typename
-  reason
-  failedAt {
-    unixTimestamp
-    iso8601
-}
-}

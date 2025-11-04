@@ -1,5 +1,0 @@
-fragment ThreadPriorityChangedEntryParts on ThreadPriorityChangedEntry {
-  __typename
-  previousPriority
-  nextPriority
-}

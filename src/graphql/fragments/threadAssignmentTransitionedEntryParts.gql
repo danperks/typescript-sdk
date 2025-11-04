@@ -1,9 +1,0 @@
-fragment ThreadAssignmentTransitionedEntryParts on ThreadAssignmentTransitionedEntry {
-  __typename
-  previousAssignee {
-  __typename
-}
-  nextAssignee {
-  __typename
-}
-}

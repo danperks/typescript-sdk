@@ -1,9 +1,0 @@
-fragment ThreadDiscussionEntryParts on ThreadDiscussionEntry {
-  __typename
-  customerId
-  threadDiscussionId
-  discussionType
-  emailRecipients
-  slackChannelName
-  slackMessageLink
-}

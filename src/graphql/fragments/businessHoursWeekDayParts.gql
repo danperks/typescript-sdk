@@ -1,9 +1,0 @@
-fragment BusinessHoursWeekDayParts on BusinessHoursWeekDay {
-  __typename
-  startTime {
-    iso8601
-}
-  endTime {
-    iso8601
-}
-}

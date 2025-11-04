@@ -1,9 +1,0 @@
-fragment LabelTypeConnectionParts on LabelTypeConnection {
-  __typename
-  edges {
-  ...LabelTypeEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

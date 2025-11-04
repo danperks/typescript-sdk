@@ -1,7 +1,0 @@
-fragment CustomerCardInstanceCardTooBigErrorDetailParts on CustomerCardInstanceCardTooBigErrorDetail {
-  __typename
-  message
-  cardKey
-  sizeBytes
-  maxSizeBytes
-}

@@ -1,7 +1,0 @@
-query userSlackChannelMemberships($slackTeamId: String!) {
-  userSlackChannelMemberships(slackTeamId: $slackTeamId) {
-    ...SlackChannelMembershipParts
-  }
-}
-
-#import "slackChannelMembershipParts.gql"

@@ -1,7 +1,0 @@
-fragment IssueTrackerFieldOptionParts on IssueTrackerFieldOption {
-  __typename
-  name
-  value
-  icon
-  color
-}

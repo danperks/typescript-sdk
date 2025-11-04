@@ -1,187 +1,423 @@
-# @team-plain/typescript-sdk
+# Plain TypeScript SDK
 
-## Documentation
+Official TypeScript SDK for the Plain API with lazy loading and gradual graph navigation.
 
-- 📖 [Getting Started](#plain-client) - Basic usage and examples
-- 🤖 [Code Generation Guide](./docs/CODEGEN.md) - How the auto-generation system works
-- 🔧 [Override System Guide](./docs/OVERRIDES_GUIDE.md) - Customize generated code
-- 📋 [Changelog](./CHANGELOG.md) - Version history and release notes
+> **Note**: This is v6.0.0, a complete rewrite featuring lazy loading and Linear-style architecture. See [Migration Guide](#migrating-from-v5x) below.
 
-## Plain Client
+## Features
 
-This is the typescript/node SDK for Plain.com's Core GraphQL API. It makes it easy to make common API calls in just a few lines of code.
+- ✨ **Lazy Loading**: Navigate the graph gradually, fetching only what you need
+- 🔄 **Automatic Pagination**: Built-in helpers for paginated queries  
+- 📘 **Full Type Safety**: Complete TypeScript types for all operations
+- 🎯 **Intuitive API**: Clean, promise-based interface
+- 🚀 **Auto-Generated**: Stays in sync with Plain's GraphQL schema
 
-If you run into any issues please open an issue or get in touch with us at <help@plain.com>.
+## Installation
 
-#### Basic example
+```bash
+npm install @team-plain/typescript-sdk
+# or
+pnpm add @team-plain/typescript-sdk
+# or
+yarn add @team-plain/typescript-sdk
+```
 
-```ts
+## Quick Start
+
+```typescript
 import { PlainClient } from '@team-plain/typescript-sdk';
 
 const client = new PlainClient({
-  apiKey: 'plainApiKey__tmRD_xF5qiMH0657LkbLCC1maN4hLsBIbyOgjqEP4w',
+  apiKey: 'plainApiKey_xxx',
 });
 
-const result = await client.getCustomerById({ customerId: 'c_01GHC4A88A9D49Q30AAWR3BN7P' });
+// Fetch a customer
+const customer = await client.customer({ customerId: 'c_123' });
+console.log(customer.fullName); // Access scalar fields immediately
 
-if (result.error) {
-  console.log(result.error);
-} else {
-  console.log(result.data.fullName);
+// Lazy load related objects
+const company = await customer.company; // Fetches company on demand
+console.log(company?.name);
+
+// Navigate deeply with lazy loading
+const threads = await customer.assignedThreads; // Fetches when accessed
+for await (const thread of threads) {
+  const assignee = await thread.assignedToUser;
+  console.log(`Thread ${thread.id} assigned to ${assignee?.user?.fullName}`);
 }
 ```
 
-You can find out how to make an API key in our documentation: <https://docs.plain.com/core-api/authentication>
+## Lazy Loading Explained
 
-#### Documentation
+The SDK fetches data on-demand rather than all at once:
 
-Every method in the SDK corresponds to a graphql [query](./src/graphql/queries/) or [mutation](./src/graphql/mutations/).
+```typescript
+const thread = await client.thread({ threadId: 't_123' });
 
-You can find the generated documentation here:
+// ✓ Available immediately (included in initial query):
+console.log(thread.title);
+console.log(thread.status);
+console.log(thread.createdAt);
 
-**[Documentation](https://plain-typescript-sdk-docs.vercel.app/classes/PlainClient.html)**
+// ⏳ Fetched on-demand when accessed (separate API calls):
+const customer = await thread.customer; // Loads customer data
+const labels = await thread.labels;     // Loads labels
+const company = await customer.company; // Chains work too!
+```
 
-If you would like to add a query or mutation please open an issue and we can add it for you.
+This means:
+- **Better performance**: Only fetch what you need
+- **Lower bandwidth**: No over-fetching
+- **Flexible**: Navigate the graph at your own pace
 
-#### Error handling
+## Pagination
 
-Every SDK method will return an object with either data or an error.
+Built-in support for Relay-style pagination:
 
-**You will either receive an error or data, never both.**
+```typescript
+// Fetch with pagination
+const threadsConnection = await client.threads({ first: 50 });
 
-Here is an example:
+// Access current page
+console.log(threadsConnection.nodes.length);
+console.log(threadsConnection.pageInfo.hasNextPage);
 
-```ts
-const client = new PlainClient({
-  apiKey: 'plainApiKey__tmRD_xF5qiMH0667LkbLCC1maN2hLsBIbyOgjqEP4w',
+// Fetch next page
+if (threadsConnection.pageInfo.hasNextPage) {
+  const nextPage = await threadsConnection.fetchNext();
+}
+
+// Or iterate through all pages
+for await (const thread of client.threads()) {
+  console.log(thread.title);
+}
+
+// Paginate manually
+const allThreads = await client.paginate(
+  client.threads, 
+  { first: 100 }
+);
+```
+
+## Mutations
+
+```typescript
+// Create a customer
+const result = await client.upsertCustomer({
+  identifier: {
+    emailAddress: 'customer@example.com',
+  },
+  onCreate: {
+    fullName: 'Jane Doe',
+    email: { email: 'customer@example.com', isVerified: true },
+  },
+  onUpdate: {},
 });
 
-function doThing() {
-  const result = await client.getCustomerById({ customerId: 'c_01GHC4A88A9D49Q30AAWR3BN7P' });
+if (result.customer) {
+  console.log('Customer created:', result.customer.id);
+  
+  // Lazy load related data immediately
+  const company = await result.customer.company;
+  console.log('Company:', company?.name);
+}
 
-  if (result.error) {
-    console.log(result.error);
+if (result.error) {
+  console.error('Error:', result.error.message);
+  console.error('Type:', result.error.type);
+}
+```
+
+## Configuration
+
+```typescript
+const client = new PlainClient({
+  apiKey: 'plainApiKey_xxx',
+  apiUrl: 'https://core-api.uk.plain.com/graphql/v1', // Optional
+});
+```
+
+### Regional Endpoints
+
+```typescript
+// UK (default)
+const ukClient = new PlainClient({ 
+  apiKey: 'xxx',
+  apiUrl: 'https://core-api.uk.plain.com/graphql/v1' 
+});
+
+// US
+const usClient = new PlainClient({ 
+  apiKey: 'xxx',
+  apiUrl: 'https://core-api.us.plain.com/graphql/v1' 
+});
+```
+
+## Webhooks
+
+The SDK includes webhook verification and parsing utilities:
+
+```typescript
+import { parseWebhook } from '@team-plain/typescript-sdk';
+
+// In your webhook handler
+app.post('/webhooks/plain', (req, res) => {
+  const event = parseWebhook(req.body, req.headers['plain-signature'], webhookSecret);
+  
+  if (event) {
+    switch (event.type) {
+      case 'thread.created':
+        console.log('New thread:', event.payload.thread.id);
+        break;
+      case 'customer.updated':
+        console.log('Customer updated:', event.payload.customer.id);
+        break;
+    }
+  }
+  
+  res.sendStatus(200);
+});
+```
+
+## Migrating from v5.x
+
+v6.0.0 introduces lazy loading as a breaking change.
+
+### Before (v5.x - eager loading)
+
+```typescript
+// Everything fetched upfront
+const customer = await client.getCustomer({ customerId: 'c_123' });
+// customer.company is already loaded (or null)
+console.log(customer.company.name); // Direct access
+```
+
+### After (v6.0.0 - lazy loading)
+
+```typescript
+// Base fields fetched, relations loaded on demand
+const customer = await client.customer({ customerId: 'c_123' });
+// customer.company is a promise, must be awaited
+const company = await customer.company; // Separate fetch
+console.log(company?.name);
+```
+
+### Migration checklist
+
+1. **Update method names**: `getCustomer` → `customer`, etc.
+2. **Await related objects**: All relations are now `async`
+3. **Handle nullability**: Use optional chaining (`?.`) for nullable relations
+4. **Update pagination**: Use new connection-based pagination
+5. **Test thoroughly**: Lazy loading changes data access patterns
+
+## API Reference
+
+### PlainClient
+
+Main client class extending `PlainSdk` with lazy-loading models.
+
+#### Queries
+
+All query methods are available directly on the client:
+- `customer({ customerId })`
+- `thread({ threadId })`
+- `threads({ first?, after? })`
+- `workspace()`
+- And 600+ more...
+
+#### Mutations
+
+All mutation methods follow the pattern:
+- `upsertCustomer(input)`
+- `createThread(input)`
+- `updateThread(input)`
+- And 200+ more...
+
+### Model Classes
+
+Every GraphQL type becomes a class with:
+- **Scalar fields**: Direct property access
+- **Relations**: Async getters that fetch on demand
+- **Type safety**: Full TypeScript support
+
+Example: `Customer` class
+```typescript
+class Customer {
+  id: string;              // Scalar - immediate access
+  fullName: string;        // Scalar - immediate access
+  email: EmailAddress;     // Object - immediate access
+  
+  get company(): Promise<Company | undefined>;  // Lazy - fetches on access
+  get assignedThreads(): Promise<ThreadConnection>; // Lazy pagination
+}
+```
+
+### Connection Classes
+
+All `*Connection` types support pagination:
+
+```typescript
+class ThreadConnection {
+  nodes: Thread[];
+  pageInfo: PageInfo;
+  
+  fetchNext(): Promise<ThreadConnection>;
+  fetchAll(): Promise<Thread[]>;
+}
+```
+
+## Advanced Usage
+
+### Custom GraphQL Queries
+
+For operations not in the SDK:
+
+```typescript
+import { gql } from 'graphql-tag';
+
+const customQuery = gql`
+  query CustomQuery($id: ID!) {
+    customer(customerId: $id) {
+      id
+      fullName
+      email {
+        email
+        isVerified
+      }
+    }
+  }
+`;
+
+const result = await client.client.request(customQuery, { id: 'c_123' });
+```
+
+### Error Handling
+
+```typescript
+try {
+  const customer = await client.customer({ customerId: 'invalid' });
+} catch (error) {
+  if (error.message.includes('not found')) {
+    // Handle not found
   } else {
-    console.log(result.data.fullName);
+    // Handle other errors
   }
 }
 ```
 
-An error can be **one of** the below:
+### Optimizing Requests
 
-###### MutationError
+Lazy loading means you control performance:
 
-[(view source)](./src/error.ts)
-This is the richest error type. It is called `MutationError` since it maps to the `MutationError` type in our GraphQL schema and is returned as part of every mutation in our API.
+```typescript
+// ❌ Sequential fetches (slow)
+const customer = await client.customer({ customerId: 'c_123' });
+const company = await customer.company;  // Wait for customer first
+const threads = await customer.assignedThreads;  // Then wait for threads
 
-You can view the full details of this error under `errorDetails`.
-
-Every mutation error will contain:
-
-- **message**: an English technical description of the error. This error is usually meant to be read by a developer and not an end user.
-- **type**: one of `VALIDATION`, `FORBIDDEN`, `INTERNAL`. See [MutationErrorType](https://docs.plain.com/core-api/reference/enums/mutation-error-type) for a description of each value.
-- **code**: a unique error code for each type of error returned. This code can be used to provide a localized or user-friendly error message. You can find the list of error codes [in our docs](https://docs.plain.com/error-codes) .
-- **fields**: an array containing all the fields that errored. Each field:
-  - **field**: the name of the input field the error is for
-  - **message**: an English technical description of the error. This error is usually meant to be read by a developer and not an end user.
-    type: one of `VALIDATION`, `REQUIRED`, `NOT_FOUND`. See [Error codes
-    ](https://www.plain.com/docs/graphql/error-codes) in our docs for a description of each value.
-
-###### BadRequestError
-
-[(view source)](./src/error.ts)
-Equivalent to a 400 response. If you are using typescript it's unlikely you will run into this since types will prevent this but if you are using javascript this likely means you are providing a wrong input/argument to a query or mutation.
-
-###### ForbiddenError
-
-[(view source)](./src/error.ts)
-Equivalent to a 401 or 403 response. Normally means your API key doesn't exist or that you are trying to query something that you do not have permissions for.
-
-###### InternalServerError
-
-[(view source)](./src/error.ts)
-Equivalent to a 500 response. If this happens something unexpected within Plain happened.
-
-###### UnknownError
-
-[(view source)](./src/error.ts)
-Fallback error type when something unexpected happens.
-
-## Webhooks
-
-Plain signs the [webhooks](https://www.plain.com/docs/api-reference/webhooks) it sends to your endpoint,
-allowing you to validate that they were not sent by a third-party. You can read more about it [here](https://www.plain.com/docs/api-reference/request-signing).
-The SDK provides a convenient helper function to verify the signature, prevent replay attacks, and parse the payload to a typed object.
-
-```ts
-import {
-  PlainWebhookSignatureVerificationError,
-  PlainWebhookVersionMismatchError,
-  verifyPlainWebhook,
-} from '@team-plain/typescript-sdk';
-
-// You must pass the raw request body, exactly as received from Plain,
-// this will not work with a parsed (i.e., JSON) request body.
-const payload = '...';
-
-// The value of the `Plain-Request-Signature` header from the webhook request.
-const signature = '...';
-
-// Plain Request Signature Secret. You can find this in Plain's settings.
-const secret = '...';
-
-const webhookResult = verifyPlainWebhook(payload, signature, secret);
-if (webhookResult.error instanceof PlainWebhookSignatureVerificationError) {
-  // Signature verification failed.
-} else if (webhookResult.error instanceof PlainWebhookVersionMismatchError) {
-  // The SDK is not compatible with the received webhook version.
-  // Consider updating the SDK and the webhook target to the latest version.
-  // Consult the changelog or https://plain.com/docs/api-reference/webhooks/versions for more information.
-} else if (webhookResult.error) {
-  // Unexpected error. Most likely due to an error in Plain's webhook server or a bug in the SDK.
-  // Treat this as a 500 response from Plain.
-  // We also recommend logging the error and sharing it with Plain's support team.
-} else {
-  // webhookResult.data is now a typed object.
-}
+// ✅ Parallel fetches (fast)
+const customer = await client.customer({ customerId: 'c_123' });
+const [company, threads] = await Promise.all([
+  customer.company,
+  customer.assignedThreads,
+]); // Fetch both simultaneously
 ```
 
-## Auto-Generated SDK (v6.0.0+)
+## Development
 
-Starting from v6.0.0, this SDK is **auto-generated** from Plain's GraphQL schema, ensuring 100% API coverage.
+### Prerequisites
 
-### What This Means for You
+- Node.js 18+
+- pnpm 8+
 
-- **Complete Coverage**: Every operation in Plain's API is available
-- **Always Up-to-Date**: Daily automated checks detect API changes
-- **Type Safety**: Full TypeScript types for all operations
-- **Backwards Compatible**: Existing code continues to work
+### Setup
 
-### Advanced Usage
-
-For custom field selection or operations not covered by the default methods, use `rawRequest` with typed document nodes:
-
-```ts
-import { CustomerByIdDocument } from '@team-plain/typescript-sdk';
-
-const result = await client.rawRequest({
-  query: CustomerByIdDocument,
-  variables: { customerId: 'c_123' }
-});
+```bash
+git clone <repository>
+cd typescript-sdk
+pnpm install
 ```
 
-### Learn More
+### Code Generation
 
-See [CODEGEN.md](./docs/CODEGEN.md) for detailed documentation on:
-- How the generation system works
-- Customizing generated code
-- Creating override files
-- Troubleshooting
+The SDK is auto-generated from Plain's GraphQL schema:
 
-For custom field selection, see [OVERRIDES_GUIDE.md](./docs/OVERRIDES_GUIDE.md)
+```bash
+# Download latest schema
+curl https://core-api.uk.plain.com/graphql/v1/schema.graphql > packages/sdk/src/schema.graphql
+
+# Generate SDK
+cd packages/sdk
+pnpm run codegen
+
+# This runs:
+# 1. codegen:doc - Generates fragments and operations
+# 2. codegen:types - Generates TypeScript types
+# 3. codegen:sdk - Generates model classes with lazy loading
+```
+
+### Testing
+
+```bash
+pnpm test        # Run tests
+pnpm typecheck   # Type check
+pnpm build       # Build for distribution
+```
+
+### Architecture
+
+```
+packages/
+├── codegen-doc/     # GraphQL fragment & operation generator
+├── codegen-sdk/     # TypeScript model class generator
+└── sdk/             # @team-plain/typescript-sdk
+    ├── src/
+    │   ├── _generated_documents.graphql  # Generated fragments
+    │   ├── _generated_documents.ts       # Generated types
+    │   ├── _generated_sdk.ts            # Generated models
+    │   ├── client.ts                    # PlainClient wrapper
+    │   ├── graphql-client.ts           # GraphQL request handler
+    │   └── webhooks/                    # Webhook utilities
+    └── README.md
+```
+
+The codegen plugins are adapted from [Linear's SDK](https://github.com/linear/linear) with Plain-specific enhancements:
+- Cycle detection for circular references
+- Depth limiting for self-referential types
+- Field aliasing for union conflicts
+- Comprehensive fragment generation
+
+## Known Limitations
+
+Due to Plain's schema design, some fields are not available in the SDK:
+
+- `Subscription.customerCardInstanceChanges` - requires `customerId` argument
+- `Subscription.threadTimelineChanges` - requires `threadId` argument
+- `Subscription.timelineChanges` - requires `customerId` argument
+- `Workspace.apiKey` - requires `apiKeyId` argument
+
+These can still be accessed via custom GraphQL queries if needed.
 
 ## Contributing
 
-When submitting a PR, remember to run `pnpm changeset` and provide an easy to understand description of the changes you're making so that the changelog is populated.
+Contributions welcome! Please:
 
-When a PR with a changelog is merged a separate PR will be automatically raised which rolls up any merged changes and handles assigning a new version for release and publishing to NPM.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run `pnpm typecheck` and `pnpm test`
+5. Submit a pull request
+
+## License
+
+MIT
+
+## Support
+
+- [Plain Documentation](https://www.plain.com/docs)
+- [API Reference](https://www.plain.com/docs/api-reference)
+- [GitHub Issues](https://github.com/team-plain/typescript-sdk/issues)
+
+## Acknowledgments
+
+This SDK's architecture is inspired by [Linear's TypeScript SDK](https://github.com/linear/linear), adapted for Plain's GraphQL API with additional features for schema compatibility.

@@ -1,7 +1,0 @@
-fragment WorkspaceEdgeParts on WorkspaceEdge {
-  __typename
-  cursor
-  node {
-  ...WorkspaceParts
-}
-}

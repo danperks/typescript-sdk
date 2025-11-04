@@ -1,9 +1,0 @@
-fragment WebhookTargetConnectionParts on WebhookTargetConnection {
-  __typename
-  edges {
-  ...WebhookTargetEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

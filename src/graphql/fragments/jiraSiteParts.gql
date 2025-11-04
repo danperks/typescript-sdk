@@ -1,7 +1,0 @@
-fragment JiraSiteParts on JiraSite {
-  __typename
-  id
-  name
-  url
-  avatarUrl
-}

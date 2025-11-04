@@ -1,4 +1,0 @@
-fragment DiscordCustomerIdentityParts on DiscordCustomerIdentity {
-  __typename
-  discordUserId
-}

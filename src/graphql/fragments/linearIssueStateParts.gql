@@ -1,6 +1,0 @@
-fragment LinearIssueStateParts on LinearIssueState {
-  __typename
-  type
-  label
-  color
-}

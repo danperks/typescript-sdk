@@ -1,5 +1,0 @@
-fragment UploadFormDataParts on UploadFormData {
-  __typename
-  key
-  value
-}

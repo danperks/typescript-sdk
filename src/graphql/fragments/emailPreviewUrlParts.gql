@@ -1,8 +1,0 @@
-fragment EmailPreviewUrlParts on EmailPreviewUrl {
-  __typename
-  previewUrl
-  expiresAt {
-    unixTimestamp
-    iso8601
-}
-}

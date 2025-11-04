@@ -1,8 +1,0 @@
-query mySlackIntegration {
-  mySlackIntegration {
-    ...UserSlackIntegrationParts
-  }
-}
-
-#import "userSlackIntegrationParts.gql"
-#import "dateTimeParts.gql"

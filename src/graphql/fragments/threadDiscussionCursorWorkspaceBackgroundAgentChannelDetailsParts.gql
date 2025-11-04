@@ -1,5 +1,0 @@
-fragment ThreadDiscussionCursorWorkspaceBackgroundAgentChannelDetailsParts on ThreadDiscussionCursorWorkspaceBackgroundAgentChannelDetails {
-  __typename
-  cursorWorkspaceIntegrationId
-  repositoryUrl
-}

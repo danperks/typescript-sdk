@@ -1,9 +1,0 @@
-fragment WorkspaceInviteConnectionParts on WorkspaceInviteConnection {
-  __typename
-  edges {
-  ...WorkspaceInviteEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

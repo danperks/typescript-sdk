@@ -1,6 +1,0 @@
-fragment CursorRepositoryParts on CursorRepository {
-  __typename
-  owner
-  name
-  repository
-}

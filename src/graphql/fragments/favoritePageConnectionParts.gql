@@ -1,9 +1,0 @@
-fragment FavoritePageConnectionParts on FavoritePageConnection {
-  __typename
-  pageInfo {
-  ...PageInfoParts
-}
-  edges {
-  ...FavoritePageEdgeParts
-}
-}

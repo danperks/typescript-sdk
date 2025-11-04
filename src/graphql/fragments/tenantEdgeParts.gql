@@ -1,7 +1,0 @@
-fragment TenantEdgeParts on TenantEdge {
-  __typename
-  cursor
-  node {
-  ...TenantParts
-}
-}

@@ -1,7 +1,0 @@
-query myPaymentMethod {
-  myPaymentMethod {
-    ...PaymentMethodParts
-  }
-}
-
-#import "paymentMethodParts.gql"

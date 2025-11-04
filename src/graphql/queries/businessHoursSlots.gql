@@ -1,8 +1,0 @@
-query businessHoursSlots {
-  businessHoursSlots {
-    ...BusinessHoursSlotParts
-  }
-}
-
-#import "businessHoursSlotParts.gql"
-#import "timezoneParts.gql"

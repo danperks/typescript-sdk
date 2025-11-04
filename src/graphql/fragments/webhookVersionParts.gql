@@ -1,6 +1,0 @@
-fragment WebhookVersionParts on WebhookVersion {
-  __typename
-  version
-  isDeprecated
-  isLatest
-}

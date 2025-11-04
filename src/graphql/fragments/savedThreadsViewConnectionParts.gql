@@ -1,9 +1,0 @@
-fragment SavedThreadsViewConnectionParts on SavedThreadsViewConnection {
-  __typename
-  pageInfo {
-  ...PageInfoParts
-}
-  edges {
-  ...SavedThreadsViewEdgeParts
-}
-}

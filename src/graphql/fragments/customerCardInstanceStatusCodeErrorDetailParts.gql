@@ -1,6 +1,0 @@
-fragment CustomerCardInstanceStatusCodeErrorDetailParts on CustomerCardInstanceStatusCodeErrorDetail {
-  __typename
-  message
-  statusCode
-  responseBody
-}

@@ -1,4 +1,0 @@
-fragment CustomerSurveyTiersConditionParts on CustomerSurveyTiersCondition {
-  __typename
-  tierIds
-}

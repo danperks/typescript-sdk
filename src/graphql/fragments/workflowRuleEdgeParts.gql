@@ -1,7 +1,0 @@
-fragment WorkflowRuleEdgeParts on WorkflowRuleEdge {
-  __typename
-  cursor
-  node {
-  ...WorkflowRuleParts
-}
-}

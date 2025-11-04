@@ -1,8 +1,0 @@
-fragment JiraIntegrationTokenParts on JiraIntegrationToken {
-  __typename
-  token
-  createdAt {
-    unixTimestamp
-    iso8601
-}
-}

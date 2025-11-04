@@ -1,7 +1,0 @@
-fragment MSTeamsThreadChannelDetailsParts on MSTeamsThreadChannelDetails {
-  __typename
-  msTeamsTeamId
-  msTeamsTeamName
-  msTeamsChannelId
-  msTeamsChannelName
-}

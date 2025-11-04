@@ -1,9 +1,0 @@
-fragment ServiceLevelAgreementStatusSummaryParts on ServiceLevelAgreementStatusSummary {
-  __typename
-  firstResponseTime {
-  __typename
-}
-  nextResponseTime {
-  __typename
-}
-}

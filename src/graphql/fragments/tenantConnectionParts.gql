@@ -1,9 +1,0 @@
-fragment TenantConnectionParts on TenantConnection {
-  __typename
-  edges {
-  ...TenantEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

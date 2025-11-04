@@ -1,7 +1,0 @@
-fragment ThreadSearchResultEdgeParts on ThreadSearchResultEdge {
-  __typename
-  cursor
-  node {
-  ...ThreadSearchResultParts
-}
-}

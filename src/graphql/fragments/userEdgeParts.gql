@@ -1,7 +1,0 @@
-fragment UserEdgeParts on UserEdge {
-  __typename
-  cursor
-  node {
-  ...UserParts
-}
-}

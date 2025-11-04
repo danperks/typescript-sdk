@@ -1,7 +1,0 @@
-fragment TenantFieldDateTimeValueParts on TenantFieldDateTimeValue {
-  __typename
-  dateValue {
-    unixTimestamp
-    iso8601
-}
-}

@@ -1,0 +1,13 @@
+overwrite: true
+schema: ./src/schema.graphql
+hooks:
+  afterOneFileWrite:
+    - biome format --write
+config:
+  skipComments: []
+  skipFields: []
+  dedupeFragments: true
+generates:
+  src/_generated_documents.graphql:
+    plugins:
+      - "@plain/codegen-doc"

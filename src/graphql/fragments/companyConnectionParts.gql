@@ -1,9 +1,0 @@
-fragment CompanyConnectionParts on CompanyConnection {
-  __typename
-  edges {
-  ...CompanyEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

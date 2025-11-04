@@ -1,7 +1,0 @@
-fragment CustomerGroupEdgeParts on CustomerGroupEdge {
-  __typename
-  cursor
-  node {
-  ...CustomerGroupParts
-}
-}

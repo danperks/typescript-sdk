@@ -1,9 +1,0 @@
-fragment TenantSearchResultConnectionParts on TenantSearchResultConnection {
-  __typename
-  edges {
-  ...TenantSearchResultEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

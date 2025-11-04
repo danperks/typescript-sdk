@@ -1,9 +1,0 @@
-fragment ThreadLinkGroupConnectionParts on ThreadLinkGroupConnection {
-  __typename
-  edges {
-  ...ThreadLinkGroupEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

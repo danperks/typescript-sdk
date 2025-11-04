@@ -1,7 +1,0 @@
-fragment CompanySearchResultEdgeParts on CompanySearchResultEdge {
-  __typename
-  cursor
-  node {
-  ...CompanySearchResultParts
-}
-}

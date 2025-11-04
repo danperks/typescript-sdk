@@ -1,7 +1,0 @@
-fragment ThreadStatusDetailDoneManuallySetParts on ThreadStatusDetailDoneManuallySet {
-  __typename
-  statusChangedAt {
-    unixTimestamp
-    iso8601
-}
-}

@@ -1,7 +1,0 @@
-fragment BillingPlanEdgeParts on BillingPlanEdge {
-  __typename
-  cursor
-  node {
-  ...BillingPlanParts
-}
-}

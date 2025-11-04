@@ -1,7 +1,0 @@
-query workspaceSlackInstallationInfo($redirectUrl: String!) {
-  workspaceSlackInstallationInfo(redirectUrl: $redirectUrl) {
-    ...WorkspaceSlackInstallationInfoParts
-  }
-}
-
-#import "workspaceSlackInstallationInfoParts.gql"

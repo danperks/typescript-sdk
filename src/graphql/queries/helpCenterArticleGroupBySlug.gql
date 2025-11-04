@@ -1,8 +1,0 @@
-query helpCenterArticleGroupBySlug($helpCenterId: ID!, $slug: String!) {
-  helpCenterArticleGroupBySlug(helpCenterId: $helpCenterId, slug: $slug) {
-    ...HelpCenterArticleGroupParts
-  }
-}
-
-#import "helpCenterArticleGroupParts.gql"
-#import "dateTimeParts.gql"

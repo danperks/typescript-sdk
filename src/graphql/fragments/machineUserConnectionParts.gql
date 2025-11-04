@@ -1,9 +1,0 @@
-fragment MachineUserConnectionParts on MachineUserConnection {
-  __typename
-  edges {
-  ...MachineUserEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

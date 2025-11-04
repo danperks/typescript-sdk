@@ -1,4 +1,0 @@
-fragment TenantFieldStringArrayValueParts on TenantFieldStringArrayValue {
-  __typename
-  arrayValue
-}

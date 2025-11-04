@@ -1,4 +1,0 @@
-fragment AutoresponderBusinessHoursConditionParts on AutoresponderBusinessHoursCondition {
-  __typename
-  isOutsideBusinessHours
-}

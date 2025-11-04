@@ -1,4 +1,0 @@
-fragment AutoresponderPrioritiesConditionParts on AutoresponderPrioritiesCondition {
-  __typename
-  priorities
-}

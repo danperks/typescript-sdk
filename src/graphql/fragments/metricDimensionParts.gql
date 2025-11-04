@@ -1,5 +1,0 @@
-fragment MetricDimensionParts on MetricDimension {
-  __typename
-  type
-  value
-}

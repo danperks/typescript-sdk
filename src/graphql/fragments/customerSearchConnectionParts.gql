@@ -1,9 +1,0 @@
-fragment CustomerSearchConnectionParts on CustomerSearchConnection {
-  __typename
-  edges {
-  ...CustomerSearchEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

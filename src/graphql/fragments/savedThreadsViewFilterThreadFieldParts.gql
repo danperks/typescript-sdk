@@ -1,6 +1,0 @@
-fragment SavedThreadsViewFilterThreadFieldParts on SavedThreadsViewFilterThreadField {
-  __typename
-  key
-  stringValue
-  booleanValue
-}

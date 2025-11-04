@@ -1,9 +1,0 @@
-query threadCluster($id: ID!) {
-  threadCluster(id: $id) {
-    ...ThreadClusterParts
-  }
-}
-
-#import "threadClusterParts.gql"
-#import "dateTimeParts.gql"
-#import "minimalThreadWithDistanceParts.gql"

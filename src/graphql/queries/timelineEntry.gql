@@ -1,8 +1,0 @@
-query timelineEntry($customerId: ID!, $timelineEntryId: ID!) {
-  timelineEntry(customerId: $customerId, timelineEntryId: $timelineEntryId) {
-    ...TimelineEntryParts
-  }
-}
-
-#import "timelineEntryParts.gql"
-#import "dateTimeParts.gql"

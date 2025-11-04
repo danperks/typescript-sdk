@@ -1,9 +1,0 @@
-fragment ThreadClusterConnectionParts on ThreadClusterConnection {
-  __typename
-  edges {
-  ...ThreadClusterEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

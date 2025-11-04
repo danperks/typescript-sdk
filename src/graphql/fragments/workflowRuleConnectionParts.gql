@@ -1,9 +1,0 @@
-fragment WorkflowRuleConnectionParts on WorkflowRuleConnection {
-  __typename
-  edges {
-  ...WorkflowRuleEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

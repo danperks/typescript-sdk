@@ -1,8 +1,0 @@
-query snippet($snippetId: ID!) {
-  snippet(snippetId: $snippetId) {
-    ...SnippetParts
-  }
-}
-
-#import "snippetParts.gql"
-#import "dateTimeParts.gql"

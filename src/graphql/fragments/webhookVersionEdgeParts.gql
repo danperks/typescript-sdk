@@ -1,7 +1,0 @@
-fragment WebhookVersionEdgeParts on WebhookVersionEdge {
-  __typename
-  cursor
-  node {
-  ...WebhookVersionParts
-}
-}

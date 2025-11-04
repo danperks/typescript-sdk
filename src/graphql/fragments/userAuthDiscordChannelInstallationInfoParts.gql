@@ -1,4 +1,0 @@
-fragment UserAuthDiscordChannelInstallationInfoParts on UserAuthDiscordChannelInstallationInfo {
-  __typename
-  installationUrl
-}

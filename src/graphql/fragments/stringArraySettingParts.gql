@@ -1,9 +1,0 @@
-fragment StringArraySettingParts on StringArraySetting {
-  __typename
-  code
-  stringArrayValue
-  scope {
-    id
-    scopeType
-}
-}

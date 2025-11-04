@@ -1,9 +1,0 @@
-query helpCenterArticle($id: ID!) {
-  helpCenterArticle(id: $id) {
-    ...HelpCenterArticleParts
-  }
-}
-
-#import "helpCenterArticleParts.gql"
-#import "dateTimeParts.gql"
-#import "helpCenterArticleGroupParts.gql"

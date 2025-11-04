@@ -1,5 +1,0 @@
-fragment JiraIssueTypeParts on JiraIssueType {
-  __typename
-  name
-  iconUrl
-}

@@ -1,7 +1,0 @@
-fragment ConnectedDiscordChannelEdgeParts on ConnectedDiscordChannelEdge {
-  __typename
-  cursor
-  node {
-  ...ConnectedDiscordChannelParts
-}
-}

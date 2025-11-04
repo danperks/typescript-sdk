@@ -1,9 +1,0 @@
-fragment TierConnectionParts on TierConnection {
-  __typename
-  edges {
-  ...TierEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

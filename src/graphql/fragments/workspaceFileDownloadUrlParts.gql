@@ -1,8 +1,0 @@
-fragment WorkspaceFileDownloadUrlParts on WorkspaceFileDownloadUrl {
-  __typename
-  downloadUrl
-  expiresAt {
-    unixTimestamp
-    iso8601
-}
-}

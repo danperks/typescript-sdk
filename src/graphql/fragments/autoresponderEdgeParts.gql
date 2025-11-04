@@ -1,7 +1,0 @@
-fragment AutoresponderEdgeParts on AutoresponderEdge {
-  __typename
-  cursor
-  node {
-  ...AutoresponderParts
-}
-}

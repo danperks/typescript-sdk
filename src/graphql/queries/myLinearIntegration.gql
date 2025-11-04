@@ -1,8 +1,0 @@
-query myLinearIntegration {
-  myLinearIntegration {
-    ...UserLinearIntegrationParts
-  }
-}
-
-#import "userLinearIntegrationParts.gql"
-#import "dateTimeParts.gql"

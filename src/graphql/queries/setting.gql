@@ -1,5 +1,0 @@
-query setting($code: String!, $scope: SettingScopeInput!) {
-  setting(code: $code, scope: $scope) {
-    __typename
-  }
-}

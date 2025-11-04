@@ -1,5 +1,0 @@
-fragment SlackUserIdentityParts on SlackUserIdentity {
-  __typename
-  slackTeamId
-  slackUserId
-}

@@ -1,7 +1,0 @@
-fragment WebhookTargetEdgeParts on WebhookTargetEdge {
-  __typename
-  cursor
-  node {
-  ...WebhookTargetParts
-}
-}

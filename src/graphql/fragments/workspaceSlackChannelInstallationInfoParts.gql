@@ -1,4 +1,0 @@
-fragment WorkspaceSlackChannelInstallationInfoParts on WorkspaceSlackChannelInstallationInfo {
-  __typename
-  installationUrl
-}

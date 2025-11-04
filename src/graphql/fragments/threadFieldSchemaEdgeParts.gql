@@ -1,7 +1,0 @@
-fragment ThreadFieldSchemaEdgeParts on ThreadFieldSchemaEdge {
-  __typename
-  cursor
-  node {
-  ...ThreadFieldSchemaParts
-}
-}

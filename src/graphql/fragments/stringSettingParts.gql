@@ -1,9 +1,0 @@
-fragment StringSettingParts on StringSetting {
-  __typename
-  code
-  stringValue
-  scope {
-    id
-    scopeType
-}
-}

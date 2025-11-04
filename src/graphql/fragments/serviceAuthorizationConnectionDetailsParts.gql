@@ -1,6 +1,0 @@
-fragment ServiceAuthorizationConnectionDetailsParts on ServiceAuthorizationConnectionDetails {
-  __typename
-  serviceIntegrationKey
-  serviceAuthorizationId
-  hmacDigest
-}

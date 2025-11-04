@@ -1,5 +1,0 @@
-fragment ImportThreadChannelDetailsParts on ImportThreadChannelDetails {
-  __typename
-  importSourceUrl
-  importIntegrationKey
-}

@@ -1,4 +1,0 @@
-fragment AutoresponderTierConditionParts on AutoresponderTierCondition {
-  __typename
-  tierId
-}

@@ -1,7 +1,0 @@
-fragment ServiceAuthorizationEdgeParts on ServiceAuthorizationEdge {
-  __typename
-  cursor
-  node {
-  ...ServiceAuthorizationParts
-}
-}

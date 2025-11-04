@@ -1,7 +1,0 @@
-fragment IndexingStatusIndexedParts on IndexingStatusIndexed {
-  __typename
-  indexedAt {
-    unixTimestamp
-    iso8601
-}
-}

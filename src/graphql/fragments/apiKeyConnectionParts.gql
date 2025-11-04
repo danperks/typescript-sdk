@@ -1,9 +1,0 @@
-fragment ApiKeyConnectionParts on ApiKeyConnection {
-  __typename
-  edges {
-  ...ApiKeyEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

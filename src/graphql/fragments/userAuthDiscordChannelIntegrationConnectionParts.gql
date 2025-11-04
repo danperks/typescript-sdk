@@ -1,9 +1,0 @@
-fragment UserAuthDiscordChannelIntegrationConnectionParts on UserAuthDiscordChannelIntegrationConnection {
-  __typename
-  edges {
-  ...UserAuthDiscordChannelIntegrationEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

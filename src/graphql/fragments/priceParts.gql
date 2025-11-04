@@ -1,5 +1,0 @@
-fragment PriceParts on Price {
-  __typename
-  amount
-  currency
-}

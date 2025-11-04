@@ -1,6 +1,0 @@
-fragment RoleScopeParts on RoleScope {
-  __typename
-  primitiveType
-  accessMode
-  values
-}

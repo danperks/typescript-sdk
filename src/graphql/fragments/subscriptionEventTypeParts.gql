@@ -1,5 +1,0 @@
-fragment SubscriptionEventTypeParts on SubscriptionEventType {
-  __typename
-  eventType
-  description
-}

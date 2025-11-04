@@ -1,7 +1,0 @@
-fragment HelpCenterEdgeParts on HelpCenterEdge {
-  __typename
-  cursor
-  node {
-  ...HelpCenterParts
-}
-}

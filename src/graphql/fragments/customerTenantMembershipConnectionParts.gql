@@ -1,9 +1,0 @@
-fragment CustomerTenantMembershipConnectionParts on CustomerTenantMembershipConnection {
-  __typename
-  edges {
-  ...CustomerTenantMembershipEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

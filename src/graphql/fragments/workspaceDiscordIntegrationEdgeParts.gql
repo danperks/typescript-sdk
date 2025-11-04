@@ -1,7 +1,0 @@
-fragment WorkspaceDiscordIntegrationEdgeParts on WorkspaceDiscordIntegrationEdge {
-  __typename
-  cursor
-  node {
-  ...WorkspaceDiscordIntegrationParts
-}
-}

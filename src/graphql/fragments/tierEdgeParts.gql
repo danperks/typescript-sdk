@@ -1,7 +1,0 @@
-fragment TierEdgeParts on TierEdge {
-  __typename
-  cursor
-  node {
-  ...TierParts
-}
-}

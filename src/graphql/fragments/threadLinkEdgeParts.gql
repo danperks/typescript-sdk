@@ -1,7 +1,0 @@
-fragment ThreadLinkEdgeParts on ThreadLinkEdge {
-  __typename
-  cursor
-  node {
-  ...ThreadLinkParts
-}
-}

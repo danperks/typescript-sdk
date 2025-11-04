@@ -1,9 +1,0 @@
-fragment CustomerSurveyConnectionParts on CustomerSurveyConnection {
-  __typename
-  edges {
-  ...CustomerSurveyEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

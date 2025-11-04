@@ -1,9 +1,0 @@
-fragment IndexedDocumentConnectionParts on IndexedDocumentConnection {
-  __typename
-  edges {
-  ...IndexedDocumentEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

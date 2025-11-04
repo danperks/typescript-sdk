@@ -1,9 +1,0 @@
-fragment SnippetConnectionParts on SnippetConnection {
-  __typename
-  edges {
-  ...SnippetEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

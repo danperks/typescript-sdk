@@ -1,7 +1,0 @@
-fragment ApiKeyEdgeParts on ApiKeyEdge {
-  __typename
-  cursor
-  node {
-  ...ApiKeyParts
-}
-}

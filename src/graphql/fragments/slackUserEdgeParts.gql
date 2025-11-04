@@ -1,7 +1,0 @@
-fragment SlackUserEdgeParts on SlackUserEdge {
-  __typename
-  cursor
-  node {
-  ...SlackUserParts
-}
-}

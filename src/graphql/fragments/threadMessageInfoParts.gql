@@ -1,8 +1,0 @@
-fragment ThreadMessageInfoParts on ThreadMessageInfo {
-  __typename
-  timestamp {
-    unixTimestamp
-    iso8601
-}
-  messageSource
-}

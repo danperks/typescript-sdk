@@ -1,9 +1,0 @@
-query singleValueMetric($name: String!, $options: SingleValueMetricOptions) {
-  singleValueMetric(name: $name, options: $options) {
-    ...SingleValueMetricParts
-  }
-}
-
-#import "singleValueMetricParts.gql"
-#import "singleValueMetricValueParts.gql"
-#import "metricDimensionParts.gql"

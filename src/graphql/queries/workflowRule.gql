@@ -1,8 +1,0 @@
-query workflowRule($workflowRuleId: ID!) {
-  workflowRule(workflowRuleId: $workflowRuleId) {
-    ...WorkflowRuleParts
-  }
-}
-
-#import "workflowRuleParts.gql"
-#import "dateTimeParts.gql"

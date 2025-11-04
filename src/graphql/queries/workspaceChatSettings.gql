@@ -1,7 +1,0 @@
-query workspaceChatSettings {
-  workspaceChatSettings {
-    ...WorkspaceChatSettingsParts
-  }
-}
-
-#import "workspaceChatSettingsParts.gql"

@@ -1,4 +1,0 @@
-fragment TimezoneParts on Timezone {
-  __typename
-  name
-}

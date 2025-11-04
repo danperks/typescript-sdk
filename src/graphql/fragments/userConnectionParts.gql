@@ -1,9 +1,0 @@
-fragment UserConnectionParts on UserConnection {
-  __typename
-  edges {
-  ...UserEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

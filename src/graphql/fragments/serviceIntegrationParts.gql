@@ -1,5 +1,0 @@
-fragment ServiceIntegrationParts on ServiceIntegration {
-  __typename
-  name
-  key
-}

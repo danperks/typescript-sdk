@@ -1,5 +1,0 @@
-query knowledgeSource($knowledgeSourceId: ID!) {
-  knowledgeSource(knowledgeSourceId: $knowledgeSourceId) {
-    __typename
-  }
-}

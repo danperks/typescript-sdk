@@ -1,7 +1,0 @@
-fragment TenantSearchResultEdgeParts on TenantSearchResultEdge {
-  __typename
-  cursor
-  node {
-  ...TenantSearchResultParts
-}
-}

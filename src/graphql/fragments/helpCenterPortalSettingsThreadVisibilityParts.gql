@@ -1,5 +1,0 @@
-fragment HelpCenterPortalSettingsThreadVisibilityParts on HelpCenterPortalSettingsThreadVisibility {
-  __typename
-  customerCompany
-  customerTenants
-}

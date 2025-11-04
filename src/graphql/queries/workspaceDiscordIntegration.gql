@@ -1,8 +1,0 @@
-query workspaceDiscordIntegration($integrationId: ID!) {
-  workspaceDiscordIntegration(integrationId: $integrationId) {
-    ...WorkspaceDiscordIntegrationParts
-  }
-}
-
-#import "workspaceDiscordIntegrationParts.gql"
-#import "dateTimeParts.gql"

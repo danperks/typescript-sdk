@@ -1,7 +1,0 @@
-query userAuthDiscordChannelInstallationInfo($redirectUrl: String!) {
-  userAuthDiscordChannelInstallationInfo(redirectUrl: $redirectUrl) {
-    ...UserAuthDiscordChannelInstallationInfoParts
-  }
-}
-
-#import "userAuthDiscordChannelInstallationInfoParts.gql"

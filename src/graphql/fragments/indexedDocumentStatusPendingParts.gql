@@ -1,7 +1,0 @@
-fragment IndexedDocumentStatusPendingParts on IndexedDocumentStatusPending {
-  __typename
-  startedAt {
-    unixTimestamp
-    iso8601
-}
-}

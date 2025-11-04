@@ -1,9 +1,0 @@
-fragment ThreadSearchResultConnectionParts on ThreadSearchResultConnection {
-  __typename
-  edges {
-  ...ThreadSearchResultEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

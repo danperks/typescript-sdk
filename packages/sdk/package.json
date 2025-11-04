@@ -1,0 +1,48 @@
+{
+  "name": "@team-plain/typescript-sdk",
+  "version": "6.0.0",
+  "description": "Typescript SDK for Plain's Core GraphQL API with lazy loading",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && rollup -c",
+    "codegen:doc": "graphql-codegen -c codegen.doc.js && node comprehensive-fix.js && node add-missing-fragments.js",
+    "codegen:types": "graphql-codegen -c codegen.types.yml",
+    "codegen:sdk": "graphql-codegen -c codegen.sdk.js && node -e \"const fs=require('fs'); let c=fs.readFileSync('src/_generated_sdk.ts','utf-8'); c=c.replace(/\\[object Object\\]/g,'string'); fs.writeFileSync('src/_generated_sdk.ts',c);\"",
+    "codegen": "pnpm codegen:doc && pnpm codegen:types && pnpm codegen:sdk",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1",
+    "graphql": "^16.6.0",
+    "lodash.get": "^4.4.2",
+    "zod": "3.22.4"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/typed-document-node": "^5.0.0",
+    "@graphql-codegen/typescript": "^4.0.0",
+    "@graphql-codegen/typescript-operations": "^4.0.0",
+    "@plain/codegen-doc": "file:../codegen-doc",
+    "@plain/codegen-sdk": "file:../codegen-sdk",
+    "@rollup/plugin-json": "^6.1.0",
+    "@types/lodash.get": "^4.4.7",
+    "@types/node": "^22.7.2",
+    "rollup": "^3.21.5",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "typescript": "^5.1.6",
+    "vitest": "^0.31.0"
+  }
+}

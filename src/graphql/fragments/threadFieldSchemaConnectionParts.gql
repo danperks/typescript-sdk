@@ -1,9 +1,0 @@
-fragment ThreadFieldSchemaConnectionParts on ThreadFieldSchemaConnection {
-  __typename
-  edges {
-  ...ThreadFieldSchemaEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

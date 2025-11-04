@@ -1,8 +1,0 @@
-query workspaceHmac {
-  workspaceHmac {
-    ...WorkspaceHmacParts
-  }
-}
-
-#import "workspaceHmacParts.gql"
-#import "dateTimeParts.gql"

@@ -1,9 +1,0 @@
-fragment RoleConnectionParts on RoleConnection {
-  __typename
-  edges {
-  ...RoleEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

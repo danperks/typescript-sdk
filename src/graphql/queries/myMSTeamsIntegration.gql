@@ -1,8 +1,0 @@
-query myMSTeamsIntegration {
-  myMSTeamsIntegration {
-    ...UserMSTeamsIntegrationParts
-  }
-}
-
-#import "userMSTeamsIntegrationParts.gql"
-#import "dateTimeParts.gql"

@@ -1,6 +1,0 @@
-fragment DiscordThreadChannelDetailsParts on DiscordThreadChannelDetails {
-  __typename
-  discordGuildId
-  discordChannelId
-  discordChannelName
-}

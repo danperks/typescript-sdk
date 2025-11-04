@@ -1,9 +1,0 @@
-fragment ChatAppConnectionParts on ChatAppConnection {
-  __typename
-  edges {
-  ...ChatAppEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

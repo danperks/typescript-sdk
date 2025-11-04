@@ -1,7 +1,0 @@
-fragment ThreadLinkSourceStatusParts on ThreadLinkSourceStatus {
-  __typename
-  key
-  label
-  color
-  icon
-}

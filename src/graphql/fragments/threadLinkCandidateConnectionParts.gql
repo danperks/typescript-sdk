@@ -1,9 +1,0 @@
-fragment ThreadLinkCandidateConnectionParts on ThreadLinkCandidateConnection {
-  __typename
-  edges {
-  ...ThreadLinkCandidateEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

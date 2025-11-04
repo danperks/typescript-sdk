@@ -1,8 +1,0 @@
-query labelType($labelTypeId: ID!) {
-  labelType(labelTypeId: $labelTypeId) {
-    ...LabelTypeParts
-  }
-}
-
-#import "labelTypeParts.gql"
-#import "dateTimeParts.gql"

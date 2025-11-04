@@ -1,5 +1,0 @@
-fragment CsatCustomerSurveyTemplateParts on CsatCustomerSurveyTemplate {
-  __typename
-  type
-  questionText
-}

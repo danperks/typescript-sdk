@@ -1,7 +1,0 @@
-fragment CompanyEdgeParts on CompanyEdge {
-  __typename
-  cursor
-  node {
-  ...CompanyParts
-}
-}

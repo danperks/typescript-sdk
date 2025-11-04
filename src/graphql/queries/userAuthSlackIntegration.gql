@@ -1,8 +1,0 @@
-query userAuthSlackIntegration($slackTeamId: String!) {
-  userAuthSlackIntegration(slackTeamId: $slackTeamId) {
-    ...UserAuthSlackIntegrationParts
-  }
-}
-
-#import "userAuthSlackIntegrationParts.gql"
-#import "dateTimeParts.gql"

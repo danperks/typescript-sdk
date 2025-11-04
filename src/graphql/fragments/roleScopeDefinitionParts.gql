@@ -1,9 +1,0 @@
-fragment RoleScopeDefinitionParts on RoleScopeDefinition {
-  __typename
-  resource
-  scopes {
-    primitiveType
-    accessMode
-    values
-}
-}

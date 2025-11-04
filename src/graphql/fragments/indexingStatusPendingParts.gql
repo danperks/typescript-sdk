@@ -1,7 +1,0 @@
-fragment IndexingStatusPendingParts on IndexingStatusPending {
-  __typename
-  startedAt {
-    unixTimestamp
-    iso8601
-}
-}

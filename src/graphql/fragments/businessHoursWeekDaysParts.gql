@@ -1,4 +1,0 @@
-fragment BusinessHoursWeekDaysParts on BusinessHoursWeekDays {
-  __typename
-  
-}

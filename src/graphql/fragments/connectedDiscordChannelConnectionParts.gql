@@ -1,9 +1,0 @@
-fragment ConnectedDiscordChannelConnectionParts on ConnectedDiscordChannelConnection {
-  __typename
-  pageInfo {
-  ...PageInfoParts
-}
-  edges {
-  ...ConnectedDiscordChannelEdgeParts
-}
-}

@@ -1,4 +1,0 @@
-fragment AutoresponderLabelConditionParts on AutoresponderLabelCondition {
-  __typename
-  labelTypeIds
-}

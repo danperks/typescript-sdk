@@ -1,5 +1,0 @@
-fragment DependsOnThreadFieldTypeParts on DependsOnThreadFieldType {
-  __typename
-  threadFieldSchemaId
-  threadFieldSchemaValue
-}

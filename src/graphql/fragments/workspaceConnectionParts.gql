@@ -1,9 +1,0 @@
-fragment WorkspaceConnectionParts on WorkspaceConnection {
-  __typename
-  edges {
-  ...WorkspaceEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

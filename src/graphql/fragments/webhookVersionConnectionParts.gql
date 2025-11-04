@@ -1,9 +1,0 @@
-fragment WebhookVersionConnectionParts on WebhookVersionConnection {
-  __typename
-  edges {
-  ...WebhookVersionEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

@@ -1,5 +1,0 @@
-fragment ComponentBadgeParts on ComponentBadge {
-  __typename
-  badgeLabel
-  badgeColor
-}

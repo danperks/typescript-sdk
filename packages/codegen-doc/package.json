@@ -1,0 +1,37 @@
+{
+  "name": "@plain/codegen-doc",
+  "private": true,
+  "description": "Plugin for generating GraphQL fragments and documents from Plain's schema",
+  "version": "7.0.0",
+  "author": "Plain",
+  "license": "MIT",
+  "main": "dist/index-cjs.min.js",
+  "module": "dist/index-es.min.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:clean": "rimraf dist .rollup-cache tsconfig.tsbuildinfo",
+    "build": "pnpm build:clean && rollup -c",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "pascal-case": "^3.1.2",
+    "tracer": "^1.1.4"
+  },
+  "devDependencies": {
+    "@graphql-codegen/plugin-helpers": "^5.0.0",
+    "@graphql-codegen/visitor-plugin-common": "^4.0.0",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "auto-bind": "^4.0.0",
+    "graphql": "^16.6.0",
+    "rollup": "^3.21.5",
+    "rollup-plugin-gzip": "^4.1.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rimraf": "^5.0.0"
+  }
+}

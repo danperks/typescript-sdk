@@ -1,7 +1,0 @@
-query permissions {
-  permissions {
-    ...PermissionsParts
-  }
-}
-
-#import "permissionsParts.gql"

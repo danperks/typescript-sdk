@@ -1,4 +1,0 @@
-fragment TimeParts on Time {
-  __typename
-  iso8601
-}

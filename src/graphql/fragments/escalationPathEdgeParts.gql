@@ -1,7 +1,0 @@
-fragment EscalationPathEdgeParts on EscalationPathEdge {
-  __typename
-  cursor
-  node {
-  ...EscalationPathParts
-}
-}

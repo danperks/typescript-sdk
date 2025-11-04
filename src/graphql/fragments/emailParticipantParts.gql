@@ -1,8 +1,0 @@
-fragment EmailParticipantParts on EmailParticipant {
-  __typename
-  name
-  email
-  emailActor {
-  __typename
-}
-}

@@ -1,7 +1,0 @@
-fragment HelpCenterAuthMechanismWorkosConnectParts on HelpCenterAuthMechanismWorkosConnect {
-  __typename
-  type
-  appClientId
-  appSecretMasked
-  apiHost
-}

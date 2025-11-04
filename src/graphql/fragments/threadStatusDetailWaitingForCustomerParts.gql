@@ -1,7 +1,0 @@
-fragment ThreadStatusDetailWaitingForCustomerParts on ThreadStatusDetailWaitingForCustomer {
-  __typename
-  statusChangedAt {
-    unixTimestamp
-    iso8601
-}
-}

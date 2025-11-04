@@ -1,8 +1,0 @@
-query slackUser($slackTeamId: String!, $slackChannelId: String!, $slackUserId: ID!) {
-  slackUser(slackTeamId: $slackTeamId, slackChannelId: $slackChannelId, slackUserId: $slackUserId) {
-    ...SlackUserParts
-  }
-}
-
-#import "slackUserParts.gql"
-#import "dateTimeParts.gql"

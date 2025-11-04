@@ -1,6 +1,0 @@
-fragment ComponentContainerParts on ComponentContainer {
-  __typename
-  containerContent {
-  __typename
-}
-}

@@ -1,5 +1,0 @@
-fragment DateTimeParts on DateTime {
-  __typename
-  unixTimestamp
-  iso8601
-}

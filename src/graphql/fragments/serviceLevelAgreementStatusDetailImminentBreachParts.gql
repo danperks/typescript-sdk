@@ -1,7 +1,0 @@
-fragment ServiceLevelAgreementStatusDetailImminentBreachParts on ServiceLevelAgreementStatusDetailImminentBreach {
-  __typename
-  breachingAt {
-    unixTimestamp
-    iso8601
-}
-}

@@ -1,9 +1,0 @@
-fragment ServiceAuthorizationConnectionParts on ServiceAuthorizationConnection {
-  __typename
-  edges {
-  ...ServiceAuthorizationEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

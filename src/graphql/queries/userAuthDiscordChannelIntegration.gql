@@ -1,8 +1,0 @@
-query userAuthDiscordChannelIntegration($discordGuildId: String!) {
-  userAuthDiscordChannelIntegration(discordGuildId: $discordGuildId) {
-    ...UserAuthDiscordChannelIntegrationParts
-  }
-}
-
-#import "userAuthDiscordChannelIntegrationParts.gql"
-#import "dateTimeParts.gql"

@@ -1,9 +1,0 @@
-fragment TimelineEntryConnectionParts on TimelineEntryConnection {
-  __typename
-  edges {
-  ...TimelineEntryEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

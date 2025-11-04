@@ -1,4 +1,0 @@
-fragment CustomerSurveySupportEmailsConditionParts on CustomerSurveySupportEmailsCondition {
-  __typename
-  supportEmailAddresses
-}

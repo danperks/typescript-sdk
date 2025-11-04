@@ -1,7 +1,0 @@
-fragment CustomRoleEdgeParts on CustomRoleEdge {
-  __typename
-  cursor
-  node {
-  ...CustomRoleParts
-}
-}

@@ -1,0 +1,38 @@
+{
+  "name": "@plain/codegen-sdk",
+  "private": true,
+  "description": "Plugin for generating the Plain SDK from fragments and documents",
+  "version": "7.0.0",
+  "author": "Plain",
+  "license": "MIT",
+  "main": "dist/index-cjs.min.js",
+  "module": "dist/index-es.min.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:clean": "rimraf dist .rollup-cache tsconfig.tsbuildinfo",
+    "build": "pnpm build:clean && rollup -c",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@plain/codegen-doc": "workspace:*"
+  },
+  "devDependencies": {
+    "@graphql-codegen/plugin-helpers": "^5.0.0",
+    "@graphql-codegen/visitor-plugin-common": "^4.0.0",
+    "@graphql-tools/graphql-file-loader": "^8.0.0",
+    "@graphql-tools/load": "^8.0.0",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "auto-bind": "^4.0.0",
+    "graphql": "^16.6.0",
+    "rollup": "^3.21.5",
+    "rollup-plugin-gzip": "^4.1.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rimraf": "^5.0.0"
+  }
+}

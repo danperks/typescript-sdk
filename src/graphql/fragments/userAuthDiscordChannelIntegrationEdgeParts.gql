@@ -1,7 +1,0 @@
-fragment UserAuthDiscordChannelIntegrationEdgeParts on UserAuthDiscordChannelIntegrationEdge {
-  __typename
-  cursor
-  node {
-  ...UserAuthDiscordChannelIntegrationParts
-}
-}

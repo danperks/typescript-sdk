@@ -1,7 +1,0 @@
-fragment ChatThreadChannelDetailsParts on ChatThreadChannelDetails {
-  __typename
-  customerReadAt {
-    unixTimestamp
-    iso8601
-}
-}

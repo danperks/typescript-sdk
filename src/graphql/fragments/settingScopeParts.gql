@@ -1,5 +1,0 @@
-fragment SettingScopeParts on SettingScope {
-  __typename
-  id
-  scopeType
-}

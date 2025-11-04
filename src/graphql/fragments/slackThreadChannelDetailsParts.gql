@@ -1,7 +1,0 @@
-fragment SlackThreadChannelDetailsParts on SlackThreadChannelDetails {
-  __typename
-  slackChannelId
-  slackChannelName
-  slackTeamId
-  slackTeamName
-}

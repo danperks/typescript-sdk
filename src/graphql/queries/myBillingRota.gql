@@ -1,7 +1,0 @@
-query myBillingRota {
-  myBillingRota {
-    ...BillingRotaParts
-  }
-}
-
-#import "billingRotaParts.gql"

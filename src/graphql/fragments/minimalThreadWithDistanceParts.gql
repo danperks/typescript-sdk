@@ -1,7 +1,0 @@
-fragment MinimalThreadWithDistanceParts on MinimalThreadWithDistance {
-  __typename
-  threadId
-  customerId
-  tierId
-  distance
-}

@@ -1,8 +1,0 @@
-query autoresponder($autoresponderId: ID!) {
-  autoresponder(autoresponderId: $autoresponderId) {
-    ...AutoresponderParts
-  }
-}
-
-#import "autoresponderParts.gql"
-#import "dateTimeParts.gql"

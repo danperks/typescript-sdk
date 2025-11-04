@@ -1,7 +1,0 @@
-fragment CustomerTenantMembershipEdgeParts on CustomerTenantMembershipEdge {
-  __typename
-  cursor
-  node {
-  ...CustomerTenantMembershipParts
-}
-}

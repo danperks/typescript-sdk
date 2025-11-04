@@ -1,9 +1,0 @@
-fragment ActorConnectionParts on ActorConnection {
-  __typename
-  edges {
-  ...ActorEdgeParts
-}
-  pageInfo {
-  ...PageInfoParts
-}
-}

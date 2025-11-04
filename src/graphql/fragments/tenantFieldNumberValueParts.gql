@@ -1,4 +1,0 @@
-fragment TenantFieldNumberValueParts on TenantFieldNumberValue {
-  __typename
-  numberValue
-}
